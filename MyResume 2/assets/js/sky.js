@@ -136,20 +136,34 @@ while (i < canvas.width) {
 }
 
 // Main animation loop
-const animate = () => {
-  // 1. Pulisce il canvas invece di riempirlo di nero
-  // Questo permette di vedere il gradiente del BODY sotto
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.shadowColor = "white";
+const animate = () => {
+  // Opzione A: Grigio standard (Silver)
+  // FORZATURA: Commenta queste due righe se esistono
+  // ctx.fillStyle = "black"; 
+  // ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // AGGIUNGI QUESTA: rende il canvas un vetro trasparente
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Opzione B: Grigio scuro (Antracite)
+  // ctx.fillStyle = "#333333"; 
+  
+  // Opzione C: Grigio medio bilanciato
+  // ctx.fillStyle = "gray"; 
+
+
+  // Add a glow effect
+  ctx.shadowColor = "aliceblue";
   ctx.shadowBlur = 10;
 
+  // Update and draw each cloud
   for (let c of clouds) {
     c.draw();
     c.update();
   }
 
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animate); // keep looping
 };
 
 animate();
@@ -159,3 +173,4 @@ window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
