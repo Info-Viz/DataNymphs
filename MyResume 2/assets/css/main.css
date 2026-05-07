@@ -580,9 +580,7 @@ body {
   background-attachment: scroll;
 }
 /* Assicurati che il canvas non abbia uno sfondo nero */
-#canvas {
-    background: var(--myth-gradient) !important;
-}
+
 
 .hero .container {
   position: relative;

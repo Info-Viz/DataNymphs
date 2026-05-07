@@ -174,3 +174,37 @@ window.addEventListener("resize", function () {
   canvas.height = window.innerHeight;
 });
 
+
+
+/*
+vanta-clouds2 demo
+*/
+"use strict";
+console.clear();
+
+(function () {
+  const vanta = VANTA.CLOUDS2({
+    el: "#vanta",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.0,
+    minWidth: 200.0,
+
+    backgroundColor: 0x000000,
+    skyColor: 0x5ca6ca,
+    cloudColor: 0x334d80,
+    lightColor: 0xffffff,
+    speed: 0.5, //1.0
+    texturePath:
+      "https://raw.githubusercontent.com/happy358/misc/main/image/clouds2/noise.png", //"./gallery/noise.png",
+    scaleMobile: 1 //4
+  });
+  window.addEventListener(
+    "resize",
+    () => {
+      vanta.resize();
+    },
+    false
+  );
+})();
