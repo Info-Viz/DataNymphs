@@ -76,7 +76,7 @@ class Cloud {
   // Draw a lightning strike from the cloud
   drawLightning(color) {
     // Create a flash effect on the whole canvas
-    ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
+    ctx.fillStyle = "rgba(255, 255, 255, 0.86)"; // Riduci l'opacità da 0.85 a 0.15
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     let sx = this.x,
@@ -141,7 +141,7 @@ const animate = () => {
   // Questo permette di vedere il gradiente del BODY sotto
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.shadowColor = "aliceblue";
+  ctx.shadowColor = "white";
   ctx.shadowBlur = 10;
 
   for (let c of clouds) {
