@@ -149,3 +149,192 @@ canvas#canvas {
     to { transform: translateY(50%); } /* Scorre verso il basso */
 }
 
+
+/* ==============================
+   HOME - CHAOS PRIMORDIALE
+============================== */
+
+#home.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home.hero:before {
+  display: none;
+}
+
+#home .container {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .row,
+#home .col-lg-9 {
+  width: 100%;
+}
+
+.primordial-fog {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(180, 210, 255, 0.18), transparent 35%),
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.12), transparent 35%),
+    radial-gradient(circle at 75% 60%, rgba(120, 160, 255, 0.16), transparent 40%);
+  filter: blur(12px);
+  animation: primordialFade 7s ease-out forwards;
+}
+
+.fog-mass {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  background: rgba(210, 225, 255, 0.35);
+  animation: fogFloat 10s ease-in-out infinite, fogDissolve 7s ease-out forwards;
+}
+
+.fog-1 {
+  width: 900px;
+  height: 900px;
+  top: -20%;
+  left: -15%;
+}
+
+.fog-2 {
+  width: 1000px;
+  height: 1000px;
+  top: -25%;
+  right: -20%;
+}
+
+.fog-3 {
+  width: 850px;
+  height: 850px;
+  bottom: -25%;
+  left: 5%;
+}
+
+.fog-4 {
+  width: 1100px;
+  height: 1100px;
+  bottom: -35%;
+  right: -20%;
+}
+
+/* elimina l’effetto pixel */
+.fog-noise {
+  display: none;
+}
+
+@keyframes fogFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(40px, -35px) scale(1.08);
+  }
+}
+
+@keyframes fogDissolve {
+  0% {
+    opacity: 0.95;
+    filter: blur(100px);
+  }
+
+  60% {
+    opacity: 0.55;
+  }
+
+  100% {
+    opacity: 0.08;
+    filter: blur(160px);
+  }
+}
+
+@keyframes primordialFade {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.15;
+  }
+}
+
+/* ==============================
+   TITOLO CENTRALE
+============================== */
+
+.myth-title {
+  text-align: center;
+  color: #ffffff !important;
+  font-family: var(--heading-font);
+  font-size: clamp(4rem, 10vw, 9rem) !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0;
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.85);
+  filter: blur(18px);
+
+  text-shadow:
+    0 0 25px rgba(255,255,255,0.55),
+    0 0 80px rgba(120,180,255,0.45),
+    0 0 150px rgba(120,180,255,0.25);
+
+  animation: titleReveal 3.5s ease-out 2s forwards;
+}
+
+.myth-subtitle {
+  text-align: center;
+  color: rgba(255,255,255,0.85) !important;
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  max-width: 900px;
+  margin: 25px auto 0 auto !important;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: subtitleReveal 2.5s ease-out 4s forwards;
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.85);
+    filter: blur(18px);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateY(0) scale(1.04);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes subtitleReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
