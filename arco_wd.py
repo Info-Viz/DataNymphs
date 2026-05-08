@@ -10,15 +10,15 @@ arco_endpoint = "https://dati.cultura.gov.it/sparql"
 wd_endpoint = "https://query.wikidata.org/bigdata/namespace/wdq/sparql" # sui tutorial c'è questo
 
 # inizializzazione lista dei risultati: raccoglie i df di ogni query, che vengono concatenati nel df finale (wikidata_results)
-all_results_list = []
+#all_results_list = []
 
 # inizializzazione dataframe per risultati complessivi wikidata
-wikidata_results = pd.DataFrame()
+#wikidata_results = pd.DataFrame()
 
 # estrazione di divinità, personaggi, creature ed episodi tratti dalla mitologia greca e romana divisi per query (sia "istanze di" che "sottoclasse di" a livelli gerarchici diversi)
 
 # set endpoint
-sparql_wd = SPARQLWrapper(wd_endpoint)
+#sparql_wd = SPARQLWrapper(wd_endpoint)
 
 lista_query = ["""SELECT ?entità ?entLabel (GROUP_CONCAT(DISTINCT ?aka; separator=", ") AS ?aliases) ?descrizione
 WHERE {
@@ -224,7 +224,7 @@ WHERE {
     FILTER(LANG(?descrizione) = "it")
   }
 }
-# Nel GROUP BY devi mettere tutte le variabili che NON sono dentro una funzione (come GROUP_CONCAT)
+
 GROUP BY ?entità ?entLabel ?descrizione
 ORDER BY ?entLabel
 """,
@@ -284,11 +284,10 @@ WHERE {
     FILTER(LANG(?descrizione) = "it")
   }
 }
-# Nel GROUP BY devi mettere tutte le variabili che NON sono dentro una funzione (come GROUP_CONCAT)
 GROUP BY ?entità ?entLabel ?descrizione
 ORDER BY ?entLabel"""]
 
-all_results_list = [] # Qui accumuleremo tutti i DataFrame delle 8 query
+""" all_results_list = [] # Qui accumuleremo tutti i DataFrame delle 8 query
 
 for i, q in enumerate(lista_query):
     sparql_wd.setQuery(q)
@@ -315,10 +314,10 @@ for i, q in enumerate(lista_query):
             print(f"Query {i+1} completata: trovate {len(df_temp)} righe.")
         
     except Exception as e:
-        print(f"Errore nella query {i+1}: {e}")
+        print(f"Errore nella query {i+1}: {e}") """
 
 # concatena tutti i DataFrame trovati in uno solo
-if all_results_list:
+""" if all_results_list:
     wikidata_results = pd.concat(all_results_list, ignore_index=True)
     print(f"Totale finale: {len(wikidata_results)} righe.") # in totale, prima di pulire righe identiche e intrusi, dovrebbero essere 7098 righe (corretto)
     # remove duplicates
@@ -328,11 +327,15 @@ if all_results_list:
     empty_desc_count = wikidata_results['description'].isna().sum()
     print(f"Number of empty description fields: {empty_desc_count}") # campi senza descrizione: 1661
 else:
-    print("Nessun dato trovato.")
+    print("Nessun dato trovato.") """
 
 
 # store dataframe in a csv file to inspect it and clean it
-wikidata_csv = wikidata_results.to_csv("wd_dataset.csv", index=False, sep=",", encoding="utf-8")
+#wikidata_csv = wikidata_results.to_csv("wd_dataset.csv", index=False, sep=",", encoding="utf-8")
 # rimuovere entità uguali se ci sono; togliere intrusi; decidere cosa fare con entità che non hanno description
 
 # poi: mettere insieme i valori nella colonna label e aliases e usarli per filtrare i beni storici artistici su soggetto e title
+
+# aprire dataframe wikidata e usare quello per filtrare ArCo
+wikidata_dataset = pd.read_csv("wd_dataset.csv", encoding="utf-8")
+print(wikidata_dataset.head)
