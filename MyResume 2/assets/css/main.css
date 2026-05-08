@@ -1487,107 +1487,271 @@ section,
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# Cursori diversi per sezioni
---------------------------------------------------------------*/
-
-/* Sezione Hero / Cielo (Fulmini) */
-#fog {
-    /* Il ../ serve per uscire dalla cartella 'css' */
-    cursor: url('assets/img/cursors/lightning-removebg-preview.png'), 32 32, auto;
-}
-/* Sezione About / Cielo Sereno */
-#mare {
-    cursor: url('path/to/cloud-icon.png'), auto;
-}
-
-/* Sezione Terra / Erba */
-#terra {
-    cursor: url('path/to/leaf-icon.png'), auto;
-}
-
-/* Sezione Mare (Poseidone) */
-#mare {
-    cursor: url('path/to/trident-icon.png'), auto;
-}
-
-/* Sezione Inferi (Ade) */
-#inferi {
-    cursor: url('path/to/skull-icon.png'), auto;
-}
 
 
-
-
+/* Sky button */
 .button-wrapper {
     display: flex;
     justify-content: center;
     padding: 40px 0;
+    background: transparent; /* Si adatterà al tuo sfondo nero */
 }
 
-.btn-descent {
+.btn-lightning {
     position: relative;
-    padding: 15px 35px;
-    font-family: 'Marcellus', serif; /* Il tuo font greco */
-    font-size: 1.2rem;
-    color: #b3a49e; /* Arancio fiamma */
+    padding: 15px 40px;
+    font-family: 'Marcellus', serif;
+    font-size: 1.1rem;
+    color: #ffffff; /* Bianco puro per il titolo */
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 2px;
-    background: rgba(20, 0, 0, 0.8); /* Nero bordeaux molto scuro */
-    border: 1px solid #eae4e4;
-    border-radius: 4px;
+    letter-spacing: 4px;
+    background: rgba(0, 0, 0, 0.7); /* Sfondo nero semi-trasparente */
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Bordo bianco netto */
+    border-radius: 4px; /* Più squadrato, più aggressivo */
     overflow: hidden;
-    transition: all 0.4s ease;
-    cursor: none; /* Ricorda di mantenere il cursore personalizzato */
+    transition: all 0.3s ease;
     display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.2); /* Leggero alone azzurro di base */
 }
 
-/* L'effetto brace sul bordo */
-.btn-descent::before {
+/* Bagliore elettrico esterno */
+.btn-lightning::before {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    box-shadow: inset 0 0 15px #7e7a7a;
-    opacity: 0.5;
-    transition: opacity 0.4s;
+    box-shadow: inset 0 0 0px #fff;
+    opacity: 0;
+    transition: all 0.3s;
 }
 
-/* Animazione del testo al passaggio */
-.btn-descent span {
+.btn-lightning span {
     position: relative;
     z-index: 2;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-/* L'effetto bagliore interno quando passi il mouse */
-.btn-descent:hover {
+/* Hover: Effetto Scarica Elettrica */
+.btn-lightning:hover {
     color: #fff;
-    border-color: #97857e;
-    box-shadow: 0 0 20px rgba(74, 71, 70, 0.4);
-    transform: translateY(-3px);
+    border-color: #c1dce9ec; /* Azzurro elettrico */
+    transform: translateY(5px);
+    box-shadow: 0 0 25px rgba(197, 229, 236, 0.91), 
+                0 0 50px rgba(255, 255, 255, 0.2);
+    /* Leggero tremolio tipico dei fulmini */
+    animation: electric-jolt 0.2s infinite; 
 }
 
-.btn-descent:hover .btn-fire-glow {
-    left: 100%;
-}
-
-/* Un lampo di luce che attraversa il bottone */
-.btn-fire-glow {
+/* Il lampo che attraversa il bottone */
+.lightning-flash {
     position: absolute;
     top: 0;
-    left: -100%;
+    left: -150%;
     width: 100%;
     height: 100%;
     background: linear-gradient(
         120deg,
         transparent,
-        rgba(180, 166, 161, 0.2),
+        rgba(255, 255, 255, 0.9), /* Lampo bianco accecante */
         transparent
     );
-    transition: all 0.6s;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-lightning:hover .lightning-flash {
+    left: 150%;
+}
+
+/* Animazione di micro-vibrazione elettrica */
+@keyframes electric-jolt {
+    0% { transform: translateY(5px) translateX(0); }
+    25% { transform: translateY(5px) translateX(1px); }
+    50% { transform: translateY(5px) translateX(-1px); }
+    75% { transform: translateY(5px) translateX(1px); }
+    100% { transform: translateY(5px) translateX(0); }
 }
 
 
 
 
 
+
+
+
+ /* TARTARUS */
+
+#inferi-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#canvas-tartarus-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    /* Rende le fiammelle più vellutate */
+    filter: blur(1px); 
+}
+
+
+
+
+
+/* INFERIContainer Principale */
+#inferi {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    cursor: none !important; /* Nasconde cursore standard */
+}
+
+/* Canvas WebGL (Sfondo) */
+#canvass-webgl-inferi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Canvas Particelle (Sopra WebGL) */
+#canvas-tartarus-dark-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    filter: blur(1px);
+}
+
+/* Contenuto Testuale */
+.container-inferi {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    font-family: 'Marcellus', serif;
+}
+
+.myth-title-inferi {
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Cursore Fuoco */
+#fire-pointer-inferi {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(255, 69, 0, 0.8) 0%, rgba(255, 0, 0, 0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    display: none; /* Appare via JS */
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+}
+
+#fire-pointer-inferi::after {
+    content: '🔥';
+    font-size: 20px;
+    filter: drop-shadow(0 0 5px gold);
+}
+
+
+
+/* Cursore FULMINE (Aether/Sky) */
+#home { 
+    cursor: none !important; 
+}
+
+/* Assicurati che anche i link o bottoni dentro la sezione non facciano riapparire la freccia */
+#home a, #home button, #home .btn-lightning {
+    cursor: none !important;
+}
+#lightning-pointer-sky {
+    width: 40px;
+    height: 40px;
+    /* Gradiente azzurro/bianco elettrico */
+    background: radial-gradient(circle, rgba(230, 211, 6, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none !important;
+    z-index: 9999;
+    display: none; /* Gestito via JS */
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    /* Effetto instabilità elettrica */
+    animation: lightning-flicker 0.2s infinite;
+}
+
+#lightning-pointer-sky::after {
+    content: '⚡';
+    font-size: 22px;
+    filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 5px #00d4ff);
+    pointer-events: none;
+}
+
+
+
+/* Cursore NUVOLA (Aether/Sky) */
+#sky-section-unique {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* FONDAMENTALE */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none !important; /* Sparisce la freccia */
+}
+
+/* Blocca la freccia anche sui link interni */
+#sky-section-unique *, #sky-section-unique a {
+    cursor: none !important;
+}
+
+/* Stile Nuvola */
+#cloud-pointer-sky {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(16, 148, 236, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none !important;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+}
+
+#cloud-pointer-sky::after {
+    content: '☁️';
+    font-size: 20px;
+    filter: drop-shadow(0 0 5px rgb(124, 197, 210));
+}

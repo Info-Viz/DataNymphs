@@ -494,3 +494,42 @@ canvas#canvas {
     transform: translateY(0);
   }
 }
+
+
+/* Modifica il wrapper del bottone per gestire l'apparizione */
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  
+  /* Stato iniziale: invisibile e sfocato (come il titolo) */
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(15px);
+  
+  /* Applichiamo l'animazione dedicata con ritardo di 6 secondi */
+  animation: buttonReveal 2.5s ease-out 6s forwards;
+}
+
+
+
+/* Animazione dedicata al bottone */
+@keyframes buttonReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Mantieni il tuo stile btn-lightning esistente, assicurati solo che sia cliccabile */
+.btn-lightning {
+  position: relative;
+  z-index: 25; /* Sopra la nebbia residua */
+  /* ... resto del tuo codice btn-lightning ... */
+}

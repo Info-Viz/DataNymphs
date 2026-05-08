@@ -163,3 +163,20 @@ window.addEventListener("resize", function () {
 });
 
 
+
+
+
+// scroll lento dalla home al cielo
+document.querySelector('.btn-lightning').addEventListener('click', function(e) {
+    e.preventDefault(); // Impedisce lo scatto immediato
+
+    const targetId = this.getAttribute('cielo'); // Prende "#sky-section"
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+        window.scrollTo({
+            top: targetSection.offsetTop, // Calcola la posizione della sezione
+            behavior: 'smooth'            // Rende lo scroll fluido
+        });
+    }
+});
