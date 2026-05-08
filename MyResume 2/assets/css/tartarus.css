@@ -12,21 +12,18 @@ html, body {
     overflow-x: hidden;
     height: auto;
     min-height: 100%;
+    background: rgb(31, 2, 2) !important;
 }
 
 .main {
     position: relative;
     z-index: 5; /* Sta sopra il canvas */
     /* FONDAMENTALE: Togliamo ogni sfondo da .main per vedere il canvas sotto */
-    background: transparent !important; 
 }
 
 /* --- 2. Rendiamo trasparenti tutte le sezioni interne --- */
 /* (Inclusi portfolio, services, about, ecc.) */
-.main .section {
-    background: transparent !important;
-    background-color: transparent !important;
-}
+
 
 /* --- 3. Posizionamento corretto delle Fiamme (Fire Glows) --- */
 /* Assicuriamoci che il contenitore del portfolio sia il riferimento */
@@ -38,11 +35,55 @@ html, body {
 #portfolio .fire-glow {
     position: absolute;
     /* Spostiamoli a un livello superiore ma non troppo alto per non coprire i link */
-    z-index: 6; /* Sopra .main e le sue sezioni, ma sotto eventuali modali */
     pointer-events: none; /* Cruciale: il mouse passa attraverso le fiamme */
 }
 
 /* Aggiusta l'opacità delle fiamme se risultano troppo scure sopra il WebGL */
 #portfolio .fire-glow .inner-glow {
-    opacity: 0.7; /* Prova valori tra 0.5 e 1.0 */
+
 }
+
+#inferi {
+    position: relative; /* Importante per contenere il canvas absolute */
+    overflow: hidden;
+    cursor: none !important; /* Nasconde la freccia del mouse */
+}
+
+#canvass {
+    position: absolute; /* Non più fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Assicurati che il contenuto della section stia sopra le fiamme */
+#inferi .container {
+    position: relative;
+    z-index: 1;
+    cursor: none !important;
+}
+
+
+/* fire pointer*/
+#fire-pointer {
+    width: 30px; /* Leggermente più grande per contenere l'icona */
+    height: 30px;
+    background: radial-gradient(circle, rgba(255, 69, 0, 0.8) 0%, rgba(255, 0, 0, 0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    display: flex;       /* Centra l'icona */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease-out; /* Rende il movimento più fluido */
+}
+
+#fire-pointer::after {
+    content: '🔥'; /* Puoi usare l'emoji o un'immagine con background-image */
+    font-size: 20px;
+    filter: drop-shadow(0 0 5px gold); /* Aggiunge un bagliore dorato alla fiamma */
+}
+

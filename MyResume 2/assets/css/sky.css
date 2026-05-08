@@ -37,12 +37,9 @@ canvas#canvas {
 /* LIVELLO 3: Il Contenuto (Testo e Bottoni) */
 .hero .container {
   position: relative; /* Relative serve per attivare lo z-index */
-  z-index: 10; /* Sta sopra a tutto, fulmini compresi */
-  
+  z-index: 9; /* Sta sopra a tutto, fulmini compresi */
 }
-.hero, .hero.section, #cielo, .fog-container {
-    background: blue !important;
-}
+
 
 
 @import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
@@ -57,3 +54,98 @@ canvas#canvas {
     align-items: center !important;
     padding-bottom: 0;
 }
+
+
+
+/* Stile del Body per centrare e applicare il tuo sfondo */
+.hero section{
+    top: 250px;
+}
+
+
+.divino-cielo-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    /* SFONDO: Usiamo il tuo colore specifico per la transizione */
+    background-color: #4985af; 
+    
+    /* MASCHERA AVANZATA: 
+       Combiniamo la sfumatura radiale con una forte dissolvenza verso il basso (85% -> 100%)
+       per raccordarsi al colore #4985af della sezione successiva. */
+    -webkit-mask-image: radial-gradient(
+        circle at 50% 40%, 
+        black 0%, 
+        rgba(0,0,0,0.8) 30%, 
+        rgba(0,0,0,0.4) 60%, 
+        transparent 90%
+    );
+    mask-image: radial-gradient(
+        circle at 50% 40%, 
+        black 0%, 
+        rgba(0,0,0,0.8) 30%, 
+        rgba(0,0,0,0.4) 60%, 
+        transparent 90%
+    );
+
+    /* AGGIUNTA: Un filtro per armonizzare leggermente i toni della foto al tuo blu */
+    filter: hue-rotate(-5deg) saturate(0.9);
+}
+
+/* Modifica opzionale alla nebbia per renderla più scura in basso */
+.fog-layer {
+    /* ... altre proprietà uguali ... */
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(255,255,255,0.2) 40%, 
+        rgba(73, 133, 175, 0.5) 100% /* Sfuma verso il tuo colore #4985af */
+    );
+    opacity: 0.4;
+}
+
+.divino-cielo-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* Rimuoviamo i bordi arrotondati se c'erano */
+    border-radius: 0; 
+    animation: focusFluido 8s infinite ease-in-out;
+}
+
+/* La nebbia ora si muove in verticale per seguire i raggi */
+.fog-layer {
+    position: absolute;
+    top: -100%; /* Parte dall'alto fuori campo */
+    left: 0;
+    width: 100%;
+    height: 200%; /* Altezza doppia per scorrimento verticale */
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0.3;
+    
+    /* Gradiente verticale più naturale */
+    background: linear-gradient(to bottom, 
+        transparent, 
+        rgba(255,255,255,0.4) 25%, 
+        transparent 50%, 
+        rgba(255,255,255,0.4) 75%, 
+        transparent);
+    
+    animation: movimentoNebbiaVerticale 12s linear infinite;
+}
+
+/* --- ANIMAZIONI CORRETTE --- */
+
+@keyframes focusFluido {
+    0%, 100% { filter: blur(2px) brightness(1); } /* Partiamo da un leggero blur per ammorbidire */
+    50% { filter: blur(6px) brightness(1.1); }   /* Sfocatura più intensa e morbida */
+}
+
+@keyframes movimentoNebbiaVerticale {
+    from { transform: translateY(0); }
+    to { transform: translateY(50%); } /* Scorre verso il basso */
+}
+

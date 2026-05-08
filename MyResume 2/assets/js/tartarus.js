@@ -70,7 +70,8 @@ const initWebGL = () => {
 const render = () => {
     const currentTime = (Date.now() - startTime) * 0.001;
 
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    // Cambia l'ultimo valore (alfa) da 1.0 a 0.0
+    gl.clearColor(0.0, 0.0, 0.0, 0.0); 
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     // Invio dati agli shader
@@ -119,8 +120,10 @@ const createProgram = (vs, fs) => {
 
 const resizeCanvas = () => {
     if (canvasElement) {
-        canvasElement.width = window.innerWidth;
-        canvasElement.height = window.innerHeight;
+        // Prende le dimensioni della sezione genitore invece che della finestra
+        const parent = canvasElement.parentElement;
+        canvasElement.width = parent.clientWidth;
+        canvasElement.height = parent.clientHeight;
         gl.viewport(0, 0, canvasElement.width, canvasElement.height);
     }
 };
@@ -132,3 +135,30 @@ window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX / window.innerWidth;
     mouseY = 1.0 - (e.clientY / window.innerHeight); // Invertiamo Y per WebGL
 });
+
+
+
+
+
+
+
+
+// fire cursor
+
+const firePointer = document.getElementById('fire-pointer');
+const tartarusSection = document.getElementById('inferi');
+
+tartarusSection.addEventListener('mousemove', (e) => {
+    firePointer.style.display = 'flex'; // Usiamo flex per centrare l'emoji
+    // Sottraiamo metà della larghezza/altezza (15px) per centrare perfettamente
+    firePointer.style.left = (e.clientX - 15) + 'px';
+    firePointer.style.top = (e.clientY - 15) + 'px';
+});
+
+tartarusSection.addEventListener('mouseleave', () => {
+    firePointer.style.display = 'none';
+});
+
+
+
+
