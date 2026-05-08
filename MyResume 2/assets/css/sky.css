@@ -149,3 +149,348 @@ canvas#canvas {
     to { transform: translateY(50%); } /* Scorre verso il basso */
 }
 
+
+/* =========================================
+   HOME - CHAOS PRIMORDIALE ATMOSFERICO
+   Nebbia/nube astratta che si dissolve
+========================================= */
+
+#home.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home.hero:before {
+  display: none;
+}
+
+#home canvas#canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+#home .container {
+  position: relative;
+  z-index: 20;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .row,
+#home .col-lg-9 {
+  width: 100%;
+}
+
+/* =========================================
+   MASSA PRIMORDIALE
+========================================= */
+
+.primordial-fog {
+  position: absolute;
+  inset: -25%;
+  z-index: 8;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  opacity: 1;
+
+  animation: primordialContainerFade 10s ease-out forwards;
+}
+
+/* Strati morbidi, non nuvole vere ma masse atmosferiche */
+.fog-mass {
+  position: absolute;
+
+  border-radius: 48% 52% 45% 55%;
+
+  background:
+    radial-gradient(
+      ellipse at 35% 40%,
+      rgba(255,255,255,0.92) 0%,
+      rgba(235,240,248,0.78) 22%,
+      rgba(205,218,235,0.46) 45%,
+      rgba(155,170,195,0.18) 68%,
+      transparent 100%
+    );
+
+  filter: blur(62px);
+
+  opacity: 0.95;
+
+  mix-blend-mode: screen;
+
+  animation:
+    atmosphericFloat 20s ease-in-out infinite,
+    atmosphericDissolve 10s ease-out forwards;
+}
+
+/* Grandi masse sovrapposte */
+.fog-1 {
+  width: 1200px;
+  height: 720px;
+
+  top: -12%;
+  left: -18%;
+}
+
+.fog-2 {
+  width: 1350px;
+  height: 760px;
+
+  top: -8%;
+  right: -22%;
+
+  background:
+    radial-gradient(
+      ellipse at 60% 45%,
+      rgba(255,255,255,0.88) 0%,
+      rgba(225,235,248,0.72) 26%,
+      rgba(190,205,225,0.38) 52%,
+      transparent 100%
+    );
+}
+
+.fog-3 {
+  width: 1450px;
+  height: 820px;
+
+  bottom: -26%;
+  left: -16%;
+
+  background:
+    radial-gradient(
+      ellipse at 45% 50%,
+      rgba(255,255,255,0.76) 0%,
+      rgba(230,236,246,0.58) 32%,
+      rgba(170,185,205,0.22) 62%,
+      transparent 100%
+    );
+
+  animation-delay: 0s, 0.4s;
+}
+
+.fog-4 {
+  width: 1300px;
+  height: 780px;
+
+  bottom: -28%;
+  right: -18%;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(245,250,255,0.82) 0%,
+      rgba(220,230,245,0.56) 35%,
+      rgba(160,178,205,0.2) 65%,
+      transparent 100%
+    );
+
+  animation-delay: 0s, 0.8s;
+}
+
+/* Velo centrale: copre il titolo all’inizio */
+.fog-center {
+  position: absolute;
+
+  width: 125vw;
+  height: 72vh;
+
+  top: 14%;
+  left: -12%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,0.82) 0%,
+      rgba(232,238,248,0.62) 30%,
+      rgba(195,208,228,0.32) 58%,
+      transparent 88%
+    );
+
+  filter: blur(78px);
+
+  opacity: 0.95;
+
+  mix-blend-mode: screen;
+
+  z-index: 9;
+
+  animation:
+    centerBreath 14s ease-in-out infinite,
+    centerDissolve 10s ease-out forwards;
+}
+
+/* Eventuale vecchio noise: spento */
+.fog-noise {
+  display: none;
+}
+
+/* =========================================
+   ANIMAZIONI NEBBIA
+========================================= */
+
+@keyframes atmosphericFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(45px, -22px) scale(1.04);
+  }
+
+  50% {
+    transform: translate(-35px, 28px) scale(1.08);
+  }
+
+  75% {
+    transform: translate(25px, 10px) scale(1.03);
+  }
+}
+
+@keyframes atmosphericDissolve {
+  0% {
+    opacity: 0.96;
+    filter: blur(58px);
+  }
+
+  35% {
+    opacity: 0.88;
+  }
+
+  65% {
+    opacity: 0.42;
+    filter: blur(78px);
+  }
+
+  100% {
+    opacity: 0.06;
+    filter: blur(105px);
+  }
+}
+
+@keyframes centerBreath {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+
+  50% {
+    transform: scale(1.08) translateY(-18px);
+  }
+}
+
+@keyframes centerDissolve {
+  0% {
+    opacity: 0.98;
+    filter: blur(72px);
+  }
+
+  45% {
+    opacity: 0.75;
+  }
+
+  75% {
+    opacity: 0.28;
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(120px);
+  }
+}
+
+@keyframes primordialContainerFade {
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.12;
+  }
+}
+
+/* =========================================
+   TITOLO CENTRALE
+========================================= */
+
+.myth-title {
+  text-align: center;
+  color: #ffffff !important;
+  font-family: var(--heading-font);
+
+  font-size: clamp(4rem, 10vw, 9rem) !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  margin: 0;
+
+  opacity: 0;
+  transform: translateY(35px) scale(0.9);
+  filter: blur(18px);
+
+  text-shadow:
+    0 0 25px rgba(255,255,255,0.65),
+    0 0 80px rgba(120,180,255,0.45),
+    0 0 150px rgba(120,180,255,0.25);
+
+  animation: titleReveal 3.8s ease-out 3s forwards;
+}
+
+.myth-subtitle {
+  text-align: center;
+
+  color: rgba(255,255,255,0.86) !important;
+
+  font-size: clamp(1rem, 2vw, 1.5rem) !important;
+  max-width: 900px;
+
+  margin: 25px auto 0 auto !important;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: subtitleReveal 2.5s ease-out 5s forwards;
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scale(0.9);
+    filter: blur(18px);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateY(0) scale(1.04);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes subtitleReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

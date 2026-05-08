@@ -335,4 +335,4 @@ else:
 wikidata_csv = wikidata_results.to_csv("wd_dataset.csv", index=False, sep=",", encoding="utf-8")
 # rimuovere entità uguali se ci sono; togliere intrusi; decidere cosa fare con entità che non hanno description
 
-# poi: mettere insieme i valori nella colonna label e aliases e usarli per filtrare i beni storici artistici su soggetto, description e historical information
+# poi: mettere insieme i valori nella colonna label e aliases e usarli per filtrare i beni storici artistici su soggetto e title
