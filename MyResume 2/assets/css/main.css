@@ -44,11 +44,11 @@
     #808c8de0 13%,    /* Passaggio al Bordeaux (Inferi/Ade) */
     #4e8cc9 15%,    /* Passaggio al Celeste (Aria/Cielo) */
     #1f5321 40%,    /* Passaggio al Verde (Terra/Gea) */
-    #1a237e 40%,    /* Passaggio al Blu (Mare/Poseidone) */
-    #4a0000 50%,    /* Passaggio al Bordeaux (Inferi/Ade) */
-    #7e1a1a 60%,    /* Passaggio al Bordeaux (Inferi/Ade) */
-    #cf1a1a 70%,    /* Passaggio al Bordeaux (Inferi/Ade) */
-    #ffc0cb 80%,    /* Passaggio al Rosa (Luce soffusa/Elysium) */
+    #1a237e 50%,    /* Passaggio al Blu (Mare/Poseidone) */
+    #4a0000 60%,    /* Passaggio al Bordeaux (Inferi/Ade) */
+    #7e1a1a 70%,    /* Passaggio al Bordeaux (Inferi/Ade) */
+    #cf1a1a 80%,    /* Passaggio al Bordeaux (Inferi/Ade) */
+    #ffc0cb 90%,    /* Passaggio al Rosa (Luce soffusa/Elysium) */
     #120a2a 100%    /* Finale: Viola Notte Profondo (Vuoto Cosmico) */
   );
 }
@@ -1519,6 +1519,73 @@ section,
 
 
 
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.btn-descent {
+    position: relative;
+    padding: 15px 35px;
+    font-family: 'Marcellus', serif; /* Il tuo font greco */
+    font-size: 1.2rem;
+    color: #b3a49e; /* Arancio fiamma */
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    background: rgba(20, 0, 0, 0.8); /* Nero bordeaux molto scuro */
+    border: 1px solid #eae4e4;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: none; /* Ricorda di mantenere il cursore personalizzato */
+    display: inline-block;
+}
+
+/* L'effetto brace sul bordo */
+.btn-descent::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: inset 0 0 15px #7e7a7a;
+    opacity: 0.5;
+    transition: opacity 0.4s;
+}
+
+/* Animazione del testo al passaggio */
+.btn-descent span {
+    position: relative;
+    z-index: 2;
+}
+
+/* L'effetto bagliore interno quando passi il mouse */
+.btn-descent:hover {
+    color: #fff;
+    border-color: #97857e;
+    box-shadow: 0 0 20px rgba(74, 71, 70, 0.4);
+    transform: translateY(-3px);
+}
+
+.btn-descent:hover .btn-fire-glow {
+    left: 100%;
+}
+
+/* Un lampo di luce che attraversa il bottone */
+.btn-fire-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(180, 166, 161, 0.2),
+        transparent
+    );
+    transition: all 0.6s;
+}
 
 
 
