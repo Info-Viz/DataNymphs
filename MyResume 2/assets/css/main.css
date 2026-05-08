@@ -40,12 +40,15 @@
   --myth-gradient: linear-gradient(
     to bottom,
     #000000 0%,     /* Inizio: Nero (Hero/Fulmini) */
-    #000000 15%,    /* Spazio per la tempesta di Zeus */
-    #87ceeb 25%,    /* Passaggio al Celeste (Aria/Cielo) */
-    #1f5321 40%,    /* Passaggio al Verde (Terra/Gea) */
-    #1a237e 60%,    /* Passaggio al Blu (Mare/Poseidone) */
-    #4a0000 80%,    /* Passaggio al Bordeaux (Inferi/Ade) */
-    #ffc0cb 92%,    /* Passaggio al Rosa (Luce soffusa/Elysium) */
+    #000000 10%,    /* Spazio per la tempesta di Zeus */
+    #a7a3a3e0 15%,    /* Passaggio al Bordeaux (Inferi/Ade) */
+    #87ceeb 17%,    /* Passaggio al Celeste (Aria/Cielo) */
+    #1f5321 30%,    /* Passaggio al Verde (Terra/Gea) */
+    #1a237e 40%,    /* Passaggio al Blu (Mare/Poseidone) */
+    #4a0000 50%,    /* Passaggio al Bordeaux (Inferi/Ade) */
+    #7e1a1a 60%,    /* Passaggio al Bordeaux (Inferi/Ade) */
+    #cf1a1a 70%,    /* Passaggio al Bordeaux (Inferi/Ade) */
+    #ffc0cb 80%,    /* Passaggio al Rosa (Luce soffusa/Elysium) */
     #120a2a 100%    /* Finale: Viola Notte Profondo (Vuoto Cosmico) */
   );
 }
@@ -231,7 +234,6 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  cursor: pointer;
   position: fixed;
   top: 15px;
   right: 15px;
@@ -323,7 +325,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--myth-gradient);
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
@@ -574,10 +576,7 @@ section,
     pointer-events: none;
 }
 
-body {
-  background-color: var(--myth-gradient);
-  background-attachment: scroll;
-}
+
 /* Assicurati che il canvas non abbia uno sfondo nero */
 
 
@@ -805,7 +804,6 @@ body {
 }
 
 .portfolio .portfolio-filters li {
-  cursor: pointer;
   display: inline-block;
   padding: 8px 20px 10px 20px;
   margin: 0;
@@ -1494,9 +1492,9 @@ body {
 --------------------------------------------------------------*/
 
 /* Sezione Hero / Cielo (Fulmini) */
-#cielo {
+#fog {
     /* Il ../ serve per uscire dalla cartella 'css' */
-    cursor: url('assets/img/cursors/lightning.png'), auto !important;
+    cursor: url('assets/img/cursors/lightning-removebg-preview.png'), 32 32, auto;
 }
 /* Sezione About / Cielo Sereno */
 #mare {

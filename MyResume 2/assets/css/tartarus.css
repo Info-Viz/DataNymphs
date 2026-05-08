@@ -1,0 +1,48 @@
+
+#canvass {
+      display: block;
+    }
+#canvass {
+    pointer-events: none !important; /* Il mouse "passa attraverso" il canvas */
+    touch-action: none;              /* Evita conflitti su mobile */
+    will-change: transform;          /* Suggerisce al browser di ottimizzare il rendering */
+}
+
+html, body {
+    overflow-x: hidden;
+    height: auto;
+    min-height: 100%;
+}
+
+.main {
+    position: relative;
+    z-index: 5; /* Sta sopra il canvas */
+    /* FONDAMENTALE: Togliamo ogni sfondo da .main per vedere il canvas sotto */
+    background: transparent !important; 
+}
+
+/* --- 2. Rendiamo trasparenti tutte le sezioni interne --- */
+/* (Inclusi portfolio, services, about, ecc.) */
+.main .section {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* --- 3. Posizionamento corretto delle Fiamme (Fire Glows) --- */
+/* Assicuriamoci che il contenitore del portfolio sia il riferimento */
+#portfolio {
+    position: relative;
+}
+
+/* Gestione dei div .fire-glow all'interno del portfolio */
+#portfolio .fire-glow {
+    position: absolute;
+    /* Spostiamoli a un livello superiore ma non troppo alto per non coprire i link */
+    z-index: 6; /* Sopra .main e le sue sezioni, ma sotto eventuali modali */
+    pointer-events: none; /* Cruciale: il mouse passa attraverso le fiamme */
+}
+
+/* Aggiusta l'opacità delle fiamme se risultano troppo scure sopra il WebGL */
+#portfolio .fire-glow .inner-glow {
+    opacity: 0.7; /* Prova valori tra 0.5 e 1.0 */
+}

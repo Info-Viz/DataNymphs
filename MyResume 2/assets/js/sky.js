@@ -21,7 +21,7 @@ class Cloud {
     this.x = x; // X position
     this.y = y; // Y position (top of canvas)
     this.size = Math.floor(Math.random() * 30); // Random radius for cloud
-    this.clr = "whiter"; // Cloud color
+    this.clr = "silver"; // Cloud color
     this.dir = getDir(); // Initial movement direction
     this.speed = Math.floor(Math.random() * 2) + 1; // Speed (1–2 px per frame)
   }
@@ -76,7 +76,7 @@ class Cloud {
   // Draw a lightning strike from the cloud
   drawLightning(color) {
     // Create a flash effect on the whole canvas
-    ctx.fillStyle = "rgba(255, 255, 255, 0.86)"; // Riduci l'opacità da 0.85 a 0.15
+    ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     let sx = this.x,
@@ -136,22 +136,10 @@ while (i < canvas.width) {
 }
 
 // Main animation loop
-
 const animate = () => {
-  // Opzione A: Grigio standard (Silver)
-  // FORZATURA: Commenta queste due righe se esistono
-  // ctx.fillStyle = "black"; 
-  // ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  // AGGIUNGI QUESTA: rende il canvas un vetro trasparente
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  // Opzione B: Grigio scuro (Antracite)
-  // ctx.fillStyle = "#333333"; 
-  
-  // Opzione C: Grigio medio bilanciato
-  // ctx.fillStyle = "gray"; 
-
+  // Fill background black
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Add a glow effect
   ctx.shadowColor = "aliceblue";
@@ -173,38 +161,3 @@ window.addEventListener("resize", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
-
-
-
-/*
-vanta-clouds2 demo
-*/
-"use strict";
-console.clear();
-
-(function () {
-  const vanta = VANTA.CLOUDS2({
-    el: "#vanta",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.0,
-    minWidth: 200.0,
-
-    backgroundColor: 0x000000,
-    skyColor: 0x5ca6ca,
-    cloudColor: 0x334d80,
-    lightColor: 0xffffff,
-    speed: 0.5, //1.0
-    texturePath:
-      "https://raw.githubusercontent.com/happy358/misc/main/image/clouds2/noise.png", //"./gallery/noise.png",
-    scaleMobile: 1 //4
-  });
-  window.addEventListener(
-    "resize",
-    () => {
-      vanta.resize();
-    },
-    false
-  );
-})();
