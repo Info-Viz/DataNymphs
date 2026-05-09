@@ -793,3 +793,46 @@ canvas#canvas {
     filter:blur(10px);
   }
 }
+
+/* =========================================
+   IMMAGINE DIVINA
+========================================= */
+
+.aether-divine-image {
+  position: absolute;
+  inset: 0; /* Copre tutta la sezione */
+  width: 100%;
+  height: 100%;
+  z-index: 40; /* Sotto le nuvole (50) ma sopra lo sfondo */
+  
+  opacity: 0; /* Invisibile all'inizio */
+  
+  /* Inizia dopo 8s: 4s di attesa nuvole + 4s di apertura */
+  animation: imageFadeIn 3s ease-in-out forwards 8s;
+}
+
+.aether-divine-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mantiene le proporzioni coprendo tutto lo schermo */
+  display: block;
+}
+
+/* Animazione per l'apparizione */
+@keyframes imageFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05); /* Leggero zoom out per dinamismo */
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* AGGIUNTA: Nascondi i puntatori durante l'animazione iniziale (opzionale) */
+#lightning-pointer-sky, #cloud-pointer-sky {
+  z-index: 100;
+}
