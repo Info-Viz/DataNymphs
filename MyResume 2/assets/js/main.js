@@ -528,3 +528,262 @@ $document.mousemove((e) => {
 		createSpark(position);
 });
 
+
+
+
+// TARTARUS
+
+(function() {
+    const canvas = document.getElementById('canvas-tartarus-dark');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    class TinyFlame {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height + 20;
+            // Forma a fiammella: più alta che larga
+            this.width = Math.random() * 8 + 4;
+            this.height = this.width * 1.5; 
+            
+            this.speedY = Math.random() * 0.5 + 0.2;
+            this.opacity = 0.5;
+            this.angle = Math.random() * Math.PI * 2; // Per l'ondeggiamento
+            
+            // Colore Rosso Bordeaux / Sangue scuro
+            this.color = "rgba(80, 10, 10, "; 
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.opacity -= 0.002;
+            // Ondeggiamento laterale leggero
+            this.angle += 0.02;
+            this.x += Math.sin(this.angle) * 0.3;
+            // La fiammella si restringe salendo
+            this.width *= 0.995;
+            this.height *= 0.995;
+        }
+
+        draw() {
+            ctx.save();
+            ctx.beginPath();
+            
+            // Creiamo un gradiente ellittico per simulare la fiammella
+            let grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.height);
+            grad.addColorStop(0, this.color + this.opacity + ")");
+            grad.addColorStop(1, "rgba(0,0,0,0)");
+
+            ctx.fillStyle = grad;
+            
+            // Disegniamo un'ellisse invece di un cerchio
+            ctx.ellipse(this.x, this.y, this.width, this.height, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+        }
+    }
+
+    function animate() {
+        // Puliamo rendendo tutto trasparente
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (particles.length < 40) { // Numero ridotto per non "scoppiettare"
+            particles.push(new TinyFlame());
+        }
+
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            if (particles[i].opacity <= 0 || particles[i].y < 0) {
+                particles.splice(i, 1);
+                i--;
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    animate();
+})();
+
+
+
+
+//INFERIIII
+(function() {
+    // --- COSTANTI E STATO LOCALE ---
+    const section = document.getElementById('inferi');
+    const canvasWebGL = document.getElementById('canvass-webgl-inferi');
+    const canvas2D = document.getElementById('canvas-tartarus-dark-particles');
+    const firePointer = document.getElementById('fire-pointer-inferi');
+    
+    if (!section || !canvasWebGL || !canvas2D) return;
+
+    const ctx2d = canvas2D.getContext('2d');
+    let gl;
+    let particles = [];
+    let startTime = Date.now();
+
+    // --- 1. GESTIONE DIMENSIONI ---
+    function resize() {
+        const w = window.innerWidth;
+        const h = section.offsetHeight;
+        
+        canvasWebGL.width = w;
+        canvasWebGL.height = h;
+        canvas2D.width = w;
+        canvas2D.height = h;
+        
+        if (gl) gl.viewport(0, 0, w, h);
+    }
+
+    // --- 2. LOGICA FIAMMELLE 2D ---
+    class TinyFlame {
+        constructor() {
+            this.x = Math.random() * canvas2D.width;
+            this.y = canvas2D.height + 20;
+            this.width = Math.random() * 6 + 3;
+            this.height = this.width * 1.8;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.opacity = Math.random() * 0.4 + 0.2;
+            this.angle = Math.random() * Math.PI * 2;
+        }
+        update() {
+            this.y -= this.speedY;
+            this.opacity -= 0.0015;
+            this.angle += 0.02;
+            this.x += Math.sin(this.angle) * 0.3;
+        }
+        draw() {
+            ctx2d.save();
+            let grad = ctx2d.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.height);
+            grad.addColorStop(0, `rgba(100, 20, 10, ${this.opacity})`);
+            grad.addColorStop(1, "rgba(0,0,0,0)");
+            ctx2d.fillStyle = grad;
+            ctx2d.beginPath();
+            ctx2d.ellipse(this.x, this.y, this.width, this.height, 0, 0, Math.PI * 2);
+            ctx2d.fill();
+            ctx2d.restore();
+        }
+    }
+
+    // --- 3. LOGICA CURSORE ---
+    section.addEventListener('mousemove', (e) => {
+        firePointer.style.display = 'flex';
+        firePointer.style.left = e.clientX + 'px';
+        firePointer.style.top = e.clientY + 'px';
+    });
+
+    section.addEventListener('mouseleave', () => {
+        firePointer.style.display = 'none';
+    });
+
+    // --- 4. ANIMAZIONE LOOP ---
+    function animate() {
+        // Pulizia Canvas 2D
+        ctx2d.clearRect(0, 0, canvas2D.width, canvas2D.height);
+
+        // Update Particelle
+        if (particles.length < 50) particles.push(new TinyFlame());
+        particles.forEach((p, i) => {
+            p.update();
+            p.draw();
+            if (p.opacity <= 0) particles.splice(i, 1);
+        });
+
+        // Qui andrebbe la logica gl.drawArrays se attiva lo shader
+        // (Assicurati di aver incluso gli shader VS/FS nell'HTML)
+
+        requestAnimationFrame(animate);
+    }
+
+    // --- START ---
+    window.addEventListener('resize', resize);
+    resize();
+    animate();
+
+})(); // Fine isolamento
+
+
+
+// pointer fulmine
+(function() {
+    const skySection = document.getElementById('home'); // Assicurati che l'ID corrisponda alla sezione Zeus
+    const lightningPointer = document.getElementById('lightning-pointer-sky');
+
+    if (!skySection || !lightningPointer) return;
+
+    skySection.addEventListener('mousemove', (e) => {
+        lightningPointer.style.display = 'flex';
+        lightningPointer.style.left = e.clientX + 'px';
+        lightningPointer.style.top = e.clientY + 'px';
+    });
+
+    skySection.addEventListener('mouseleave', () => {
+        lightningPointer.style.display = 'none';
+    });
+})();
+
+// pointer nuvola
+(function() {
+    const skySection = document.getElementById('sky-section'); // Sostituisci con l'ID della tua sezione cielo
+    const cloudPointer = document.getElementById('cloud-pointer-sky');
+
+    if (!skySection || !cloudPointer) return;
+
+    skySection.addEventListener('mousemove', (e) => {
+        cloudPointer.style.display = 'flex';
+        // Movimento fluido
+        requestAnimationFrame(() => {
+            cloudPointer.style.left = e.clientX + 'px';
+            cloudPointer.style.top = e.clientY + 'px';
+        });
+    });
+
+    skySection.addEventListener('mouseleave', () => {
+        cloudPointer.style.display = 'none';
+    });
+})();
+
+
+//pointer nuvola
+document.addEventListener('DOMContentLoaded', function() {
+    (function() {
+        const skySection = document.getElementById('sky-section-unique');
+        const cloudPointer = document.getElementById('cloud-pointer-sky');
+
+        if (!skySection || !cloudPointer) {
+            console.error("Errore: ID sky-section-unique o cloud-pointer-sky non trovati!");
+            return;
+        }
+
+        // 1. Mostra e muovi
+        skySection.addEventListener('mousemove', (e) => {
+            cloudPointer.style.display = 'flex';
+            
+            // Usiamo le coordinate client per il fixed position
+            const x = e.clientX;
+            const y = e.clientY;
+            
+            cloudPointer.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+        });
+
+        // 2. Nascondi quando esci
+        skySection.addEventListener('mouseleave', () => {
+            cloudPointer.style.display = 'none';
+        });
+
+        // 3. Fix per il touch (opzionale)
+        skySection.addEventListener('touchstart', () => {
+            cloudPointer.style.display = 'none';
+        }, {passive: true});
+
+    })();
+});
