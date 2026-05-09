@@ -559,6 +559,51 @@ canvas#canvas {
   overflow: hidden;
 }
 
+.aether-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh !important; /* Altezza iniziale bloccata */
+    transition: min-height 2s ease-in-out; /* Allungamento fluido */
+    overflow: hidden; 
+}
+
+/* Classe attivata via JavaScript dopo le nuvole */
+.aether-section.is-expanded {
+    min-height: 4000px; 
+    overflow: visible; /* Permette lo scroll */
+}
+
+/* L'immagine divina deve seguire l'allungamento */
+.aether-divine-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Si adatta all'altezza del genitore (#cielo) */
+    z-index: 40;
+    opacity: 0;
+    animation: imageFadeIn 3s ease-in-out forwards 8s;
+}
+
+.aether-divine-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fondamentale per non deformare la foto */
+}
+
+/* Stile per i contenuti extra in fondo */
+.aether-extra-content {
+    position: relative;
+    z-index: 60;
+    margin-top: 120vh; /* Li sposta sotto la prima schermata */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.is-expanded .aether-extra-content {
+    opacity: 1;
+}
+
 /* =========================================
    TESTO
 ========================================= */

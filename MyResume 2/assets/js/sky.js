@@ -181,3 +181,17 @@ document.querySelector('.btn-lightning').addEventListener('click', function(e) {
     }
 });
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const section = document.getElementById('cielo');
+
+    // Aspettiamo 9 secondi (fine apertura nuvole)
+    setTimeout(() => {
+        if (section) {
+            section.classList.add('is-expanded');
+            // Ora l'utente può scorrere verso il basso per vedere gli extra
+        }
+    }, 9000); 
+});
+
