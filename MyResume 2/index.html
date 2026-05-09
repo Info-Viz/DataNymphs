@@ -1019,8 +1019,28 @@ within the Digital Humanities and Digital Knowledge Master's Degree at Alma Mate
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/sky.js"></script>
+  <script>
+    const aetherSection = document.querySelector("#cielo");
+    const aetherLink = document.querySelector('a[href="#cielo"]');
+
+    function startAetherAnimation() {
+      if (!aetherSection.classList.contains("aether-start")) {
+        aetherSection.classList.add("aether-start");
+
+        setTimeout(() => {
+          aetherSection.classList.add("is-expanded");
+        }, 9000);
+      }
+    }
+
+    if (aetherLink) {
+      aetherLink.addEventListener("click", () => {
+        setTimeout(startAetherAnimation, 400);
+      });
+    }
+
+    aetherSection.addEventListener("click", startAetherAnimation);
+</script>
 
 
 
