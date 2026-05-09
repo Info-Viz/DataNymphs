@@ -538,346 +538,130 @@ canvas#canvas {
    SCENA AETHER
 ========================================= */
 
-.aether-cloud-scene{
+/* SCENA AETHER INIZIALMENTE FERMA */
+.aether-cloud-scene {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  z-index: 30;
+  z-index: 80;
   pointer-events: none;
+  opacity: 0;
 }
 
-/* SFONDO CIELO */
-.aether-section{
-  position: relative;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at top,
-    #e8f4ff 0%,
-    #bdd8ef 45%,
-    #8db8da 100%);
-    
-  overflow: hidden;
+.aether-section.aether-start .aether-cloud-scene {
+  opacity: 1;
 }
 
-.aether-section {
-    position: relative;
-    width: 100%;
-    min-height: 100vh !important; /* Altezza iniziale bloccata */
-    transition: min-height 2s ease-in-out; /* Allungamento fluido */
-    overflow: hidden; 
-}
-
-/* Classe attivata via JavaScript dopo le nuvole */
-.aether-section.is-expanded {
-    min-height: 4000px; 
-    overflow: visible; /* Permette lo scroll */
-}
-
-/* L'immagine divina deve seguire l'allungamento */
-.aether-divine-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Si adatta all'altezza del genitore (#cielo) */
-    z-index: 40;
-    opacity: 0;
-    animation: imageFadeIn 3s ease-in-out forwards 8s;
-}
-
-.aether-divine-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Fondamentale per non deformare la foto */
-}
-
-/* Stile per i contenuti extra in fondo */
-.aether-extra-content {
-    position: relative;
-    z-index: 60;
-    margin-top: 120vh; /* Li sposta sotto la prima schermata */
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-.is-expanded .aether-extra-content {
-    opacity: 1;
-}
-
-/* =========================================
-   TESTO
-========================================= */
-
-.aether-quote{
+/* CITAZIONE PIÙ IN ALTO */
+.aether-quote {
   position: absolute;
   inset: 0;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+
+  padding: 18vh 40px 40px;
 
   text-align: center;
+  z-index: 100;
 
-  z-index: 60;
+  opacity: 0;
+}
 
-  padding: 40px;
-
+.aether-section.aether-start .aether-quote {
   animation:
     quoteAppear 2s ease-out forwards,
     quoteDisappear 2s ease-in forwards 5s;
 }
 
-.aether-quote p{
+.aether-quote p {
   max-width: 1000px;
-
-  font-size: clamp(2rem,4vw,5rem);
+  font-size: clamp(2rem, 4vw, 5rem);
   line-height: 1.25;
-
   color: #314b68;
-
   font-family: "Marcellus", serif;
 
   text-shadow:
-    0 0 20px rgba(255,255,255,0.9),
-    0 0 40px rgba(255,255,255,0.7);
+    0 0 18px rgba(255,255,255,0.95),
+    0 0 35px rgba(255,255,255,0.75);
 }
 
-.aether-quote span{
-  margin-top: 30px;
-
-  letter-spacing: .2em;
-
-  color: rgba(49,75,104,.7);
-
-  font-size: 1rem;
-}
-
-/* =========================================
-   NUVOLE
-========================================= */
-
-.aether-clouds{
+/* NUVOLE */
+.aether-clouds {
   position: absolute;
-  inset: -10%;
-  
-  z-index: 50;
-
-  animation:
-    cloudsOpen 6s ease-in-out forwards 4s;
+  inset: -15%;
+  z-index: 90;
+  opacity: 1;
 }
 
-/* NUVOLE SINGOLE */
-.cloud{
+.aether-section.aether-start .aether-clouds {
+  animation: cloudsOpen 6s ease-in-out forwards 4s;
+}
+
+.cloud {
   position: absolute;
+  background:
+    radial-gradient(circle at 25% 35%, #ffffff 0%, #ffffff 32%, transparent 33%),
+    radial-gradient(circle at 50% 20%, #ffffff 0%, #ffffff 38%, transparent 39%),
+    radial-gradient(circle at 75% 38%, #ffffff 0%, #ffffff 30%, transparent 31%),
+    linear-gradient(to bottom, #ffffff 0%, #f3f7fb 65%, #dcebf7 100%);
 
-  background: white;
-
-  border-radius: 200px;
-
-  filter: blur(8px);
-
-  opacity: .96;
+  border-radius: 120px;
+  filter: blur(2px);
+  opacity: 0.98;
 
   box-shadow:
-    0 0 80px rgba(255,255,255,.9),
-    0 0 120px rgba(255,255,255,.6);
+    0 18px 35px rgba(95, 140, 180, 0.18),
+    0 0 45px rgba(255,255,255,0.85);
 
   animation: floatCloud linear infinite;
 }
 
-/* GOBBE DELLE NUVOLE */
 .cloud::before,
-.cloud::after{
-  content:"";
-  position:absolute;
-  background:white;
-  border-radius:50%;
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: inset -10px -16px 30px rgba(190, 215, 235, 0.35);
 }
 
-.cloud::before{
+.cloud::before {
   width: 55%;
-  height: 140%;
-
-  left: 10%;
-  top: -70%;
+  height: 145%;
+  left: 8%;
+  top: -75%;
 }
 
-.cloud::after{
-  width: 45%;
-  height: 120%;
-
-  right: 10%;
-  top: -50%;
+.cloud::after {
+  width: 48%;
+  height: 125%;
+  right: 8%;
+  top: -55%;
 }
 
-/* =========================================
-   DIMENSIONI VARIE
-========================================= */
-
-.cloud1{
-  width: 700px;
-  height: 180px;
-
-  top: 5%;
-  left: -10%;
-
-  animation-duration: 50s;
-}
-
-.cloud2{
-  width: 900px;
-  height: 220px;
-
-  top: 18%;
-  right: -20%;
-
-  animation-duration: 65s;
-}
-
-.cloud3{
-  width: 800px;
-  height: 200px;
-
-  top: 40%;
-  left: -15%;
-
-  animation-duration: 55s;
-}
-
-.cloud4{
-  width: 1000px;
-  height: 260px;
-
-  bottom: 5%;
-  right: -20%;
-
-  animation-duration: 70s;
-}
-
-.cloud5{
-  width: 1200px;
-  height: 280px;
-
-  bottom: -5%;
-  left: -10%;
-
-  animation-duration: 80s;
-}
-
-.cloud6{
-  width: 600px;
-  height: 160px;
-
-  top: 60%;
-  left: 25%;
-
-  animation-duration: 45s;
-}
-
-/* =========================================
-   MOVIMENTO
-========================================= */
-
-@keyframes floatCloud{
-
-  0%{
-    transform: translateX(0) translateY(0);
-  }
-
-  50%{
-    transform: translateX(60px) translateY(-20px);
-  }
-
-  100%{
-    transform: translateX(0) translateY(0);
-  }
-}
-
-/* APERTURA CENTRALE */
-
-@keyframes cloudsOpen{
-
-  0%{
-    transform: scale(1);
-    opacity:1;
-    filter: blur(0px);
-  }
-
-  60%{
-    opacity:1;
-  }
-
-  100%{
-    transform: scale(1.25);
-    opacity:0;
-    filter: blur(25px);
-  }
-}
-
-/* TESTO */
-
-@keyframes quoteAppear{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-    filter:blur(10px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-    filter:blur(0);
-  }
-}
-
-@keyframes quoteDisappear{
-  to{
-    opacity:0;
-    transform:translateY(-30px);
-    filter:blur(10px);
-  }
-}
-
-/* =========================================
-   IMMAGINE DIVINA
-========================================= */
-
+/* IMMAGINE OLIMPO FERMA ALL’INIZIO */
 .aether-divine-image {
   position: absolute;
-  inset: 0; /* Copre tutta la sezione */
+  inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 40; /* Sotto le nuvole (50) ma sopra lo sfondo */
-  
-  opacity: 0; /* Invisibile all'inizio */
-  
-  /* Inizia dopo 8s: 4s di attesa nuvole + 4s di apertura */
+  z-index: 40;
+
+  opacity: 0;
+  transform: scale(1.05);
+  filter: blur(10px);
+}
+
+.aether-section.aether-start .aether-divine-image {
   animation: imageFadeIn 3s ease-in-out forwards 8s;
 }
 
 .aether-divine-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Mantiene le proporzioni coprendo tutto lo schermo */
+  object-fit: cover;
   display: block;
-}
-
-/* Animazione per l'apparizione */
-@keyframes imageFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(1.05); /* Leggero zoom out per dinamismo */
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
-
-/* AGGIUNTA: Nascondi i puntatori durante l'animazione iniziale (opzionale) */
-#lightning-pointer-sky, #cloud-pointer-sky {
-  z-index: 100;
 }
