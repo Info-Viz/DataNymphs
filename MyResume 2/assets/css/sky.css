@@ -592,16 +592,30 @@ canvas#canvas {
 }
 
 /* Stile per i contenuti extra in fondo */
+/* Il contenitore che ospita lo slider */
 .aether-extra-content {
     position: relative;
-    z-index: 60;
-    margin-top: 120vh; /* Li sposta sotto la prima schermata */
+    z-index: 60 !important; /* Più alto dell'immagine (10) */
+    margin-top: 100vh; /* Appare DOPO la prima schermata */
     opacity: 0;
     transition: opacity 1s;
 }
 
 .is-expanded .aether-extra-content {
     opacity: 1;
+}
+
+/* Lo slider deve essere trasparente per mostrare l'Olimpo sotto */
+.indexslider {
+    background: transparent !important;
+    width: 100%;
+    padding: 100px 0;
+}
+
+.index-slide img {
+    /* Assicurati che le immagini dei personaggi non siano giganti */
+    max-height: 400px; 
+    object-fit: contain;
 }
 
 /* =========================================
@@ -880,4 +894,80 @@ canvas#canvas {
 /* AGGIUNTA: Nascondi i puntatori durante l'animazione iniziale (opzionale) */
 #lightning-pointer-sky, #cloud-pointer-sky {
   z-index: 100;
+}
+
+.aether-extra-content {
+   /* Lo stacchiamo dal flusso normale */
+    bottom: 50px;          /* Lo posizioniamo in basso rispetto alla sezione cielo */
+    left: 0;
+    width: 100%;
+    z-index: 100 !important; /* Valore più alto di .aether-divine-image (40) */
+    
+    /* Gestione apparizione: deve seguire i tempi dell'immagine */
+    opacity: 0;
+    animation: imageFadeIn 3s ease-in-out forwards 9s; /* Inizia 1s dopo l'inizio dell'immagine */
+    
+    pointer-events: all;   /* Fondamentale per rendere le slide cliccabili */
+}
+
+/* Rimuovi eventuali margini che spostano il contenuto fuori dall'immagine */
+.aether-extra-content section {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* homepage Slider */
+.indexslider{
+    height: 390px;
+    position: relative;
+    overflow-x: hidden; 
+    padding-top: 20px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-top: 10px;
+    width: auto; /* Adatta la larghezza in base al contenuto */
+    min-width: 100%; /* Impedisce che sia più piccolo della finestra */
+    overflow: clip;
+}
+.indexslide-track{
+    display: flex;
+    width: calc(250px * 40);
+    animation: scroll 40s linear infinite;
+    height: fit-content;
+    padding-top: 50px;
+}
+.indexslide-track:hover{
+    animation-play-state: paused;
+}
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px * 10));
+    }
+}
+.index-slide{
+    height: 280px;
+    width: 380px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+.indexslider img{
+    height: 240px !important;
+    width: 100% !important;
+}
+img:hover{
+    transform: translateZ(20px);
+    transition: transform 1s;
+}
+.container .text-center{
+    margin: -100px;
+    position: relative;
+    text-align: center;
 }
