@@ -54,14 +54,14 @@ def extend_matched_items(items_list):
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         PREFIX dc: <http://purl.org/dc/elements/1.1/>
 
-        SELECT ?identifier
-            (SAMPLE(?image) AS ?sampleImage) #  solo una tra quelle disponibili
-            (GROUP_CONCAT(DISTINCT ?date; separator=", ") AS ?dates) # nel caso in cui ci fossero più date associate con dc:date
+        SELECT ?identifier ?dateRange
             (GROUP_CONCAT(DISTINCT ?creator; separator=", ") AS ?creators) 
             (GROUP_CONCAT(DISTINCT ?type; separator=", ") AS ?types) 
             (GROUP_CONCAT(DISTINCT ?materialOrTechnique; separator=", ") AS ?materialsOrTechniques) 
             (GROUP_CONCAT(DISTINCT ?instituteOrSite; separator=", ") AS ?institutesOrSites) 
             (GROUP_CONCAT(DISTINCT ?creationLocation; separator=", ") AS ?creationLocations)
+            (SAMPLE(?image) AS ?sampleImage) #  solo una tra quelle disponibili
+        
         WHERE {
             VALUES ?item {"""+formatted_items+"""} .
             ?item arco:uniqueIdentifier ?identifier .
@@ -71,12 +71,23 @@ def extend_matched_items(items_list):
             OPTIONAL {?item a-dd:hasMaterialOrTechnique ?materialOrTechnique . }
             OPTIONAL {?item a-loc:hasCulturalInstituteOrSite ?instituteOrSite . }
             OPTIONAL {?item a-cd:hasCreationLocation ?creationLocation . } # per estrarre luogo di conservazione
-            OPTIONAL {?item dc:date ?date . } 
             OPTIONAL {?item foaf:depiction ?image . }
-                           
+            
+            # OPTIONAL separato per le date: ci possono essere più date associate a un'entità culturale con dc:date, quindi estraggo le date (inizio e fine) dell'evento di creazione associato al bene culturale e le concateno in una colonna
+            OPTIONAL {
+                ?item a-cd:hasDating ?dating .
+                ?dating a-cd:hasDatingEvent ?event .
+                ?event a-cd:specificTime ?time .
+                ?time arco:startTime ?startDate ;
+                      arco:endTime ?endDate .
+                FILTER(REGEX(STR(?event), "creation", "i")) # per estrarre solo date di creazione
+        
+            # Creiamo la variabile concatenata qui dentro
+            BIND(CONCAT(STR(?startDate), " - ", STR(?endDate)) AS ?dateRange) # concatenazione start + end
+            }                
         }
 
-        GROUP BY ?identifier
+        GROUP BY ?identifier ?dateRange
         """
         sparql_arco.setQuery(query_myth_items)
         sparql_arco.setReturnFormat(JSON)
