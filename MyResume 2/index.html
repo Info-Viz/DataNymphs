@@ -1026,7 +1026,26 @@ within the Digital Humanities and Digital Knowledge Master's Degree at Alma Mate
   <script src="assets/js/main.js"></script>
   <script src="assets/js/sky.js"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cieloSection = document.querySelector("#cielo");
 
+  if (!cieloSection) return;
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        cieloSection.classList.add("aether-start");
+        observer.unobserve(cieloSection);
+      }
+    });
+  }, {
+    threshold: 0.05
+  });
+
+  observer.observe(cieloSection);
+});
+</script>
 
 </body>
 
