@@ -534,440 +534,324 @@ canvas#canvas {
   /* ... resto del tuo codice btn-lightning ... */
 }
 
-/* =========================================
-   SCENA AETHER
-========================================= */
 
-.aether-cloud-scene{
+/* ===============================
+   AETHER - VERSIONE SOLO CSS
+================================ */
+
+#aether,
+#cielo.aether-section {
+  position: relative;
+  min-height: 2600px !important;
+  overflow: hidden;
+  background: #f7fbff;
+}
+
+/* immagine sotto */
+.aether-divine-image {
   position: absolute;
   inset: 0;
-  overflow: hidden;
-  z-index: 30;
-  pointer-events: none;
-}
-
-/* SFONDO CIELO */
-.aether-section{
-  position: relative;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at top,
-    #e8f4ff 0%,
-    #bdd8ef 45%,
-    #8db8da 100%);
-    
-  overflow: hidden;
-}
-
-.aether-section {
-    position: relative;
-    width: 100%;
-    min-height: 100vh !important; /* Altezza iniziale bloccata */
-    transition: min-height 2s ease-in-out; /* Allungamento fluido */
-    overflow: hidden; 
-}
-
-/* Classe attivata via JavaScript dopo le nuvole */
-.aether-section.is-expanded {
-    min-height: 4000px; 
-    overflow: visible; /* Permette lo scroll */
-}
-
-/* L'immagine divina deve seguire l'allungamento */
-.aether-divine-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Si adatta all'altezza del genitore (#cielo) */
-    z-index: 40;
-    opacity: 0;
-    animation: imageFadeIn 3s ease-in-out forwards 8s;
+  z-index: 1;
+  opacity: 0;
+  animation: aetherImageIn 3s ease forwards 6.5s;
 }
 
 .aether-divine-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Fondamentale per non deformare la foto */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
-/* Stile per i contenuti extra in fondo */
-/* Il contenitore che ospita lo slider */
-.aether-extra-content {
-    position: relative;
-    z-index: 60 !important; /* Più alto dell'immagine (10) */
-    margin-top: 100vh; /* Appare DOPO la prima schermata */
+@keyframes aetherImageIn {
+  from {
     opacity: 0;
-    transition: opacity 1s;
-}
+    filter: blur(10px);
+    transform: scale(1.05);
+  }
 
-.is-expanded .aether-extra-content {
+  to {
     opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
 }
 
-/* Lo slider deve essere trasparente per mostrare l'Olimpo sotto */
-.indexslider {
-    background: transparent !important;
-    width: 100%;
-    padding: 100px 0;
+/* contenuto sopra immagine */
+#cielo .section-title,
+#cielo .content-sky,
+#cielo .aether-extra-content {
+  position: relative;
+  z-index: 10;
 }
 
-.index-slide img {
-    /* Assicurati che le immagini dei personaggi non siano giganti */
-    max-height: 400px; 
-    object-fit: contain;
+/* titolo AETHER */
+#cielo .content-sky {
+  padding-top: 120px;
+  opacity: 0;
+  animation: aetherContentIn 2s ease forwards 8s;
 }
 
-/* =========================================
-   TESTO
-========================================= */
+@keyframes aetherContentIn {
+  to {
+    opacity: 1;
+  }
+}
 
-.aether-quote{
+/* scena nuvole */
+.aether-cloud-scene {
   position: absolute;
   inset: 0;
-  
+  height: 100vh;
+  z-index: 30;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* velo bianco in basso */
+.aether-cloud-scene::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10%;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(
+    to top,
+    #ffffff 0%,
+    rgba(255,255,255,.98) 45%,
+    rgba(255,255,255,.65) 75%,
+    transparent 100%
+  );
+  z-index: 4;
+  animation: bottomWhiteFade 3s ease forwards 6s;
+}
+
+@keyframes bottomWhiteFade {
+  to {
+    opacity: 0;
+  }
+}
+
+.aether-clouds {
+  position: absolute;
+  inset: -20%;
+  z-index: 5;
+}
+
+/* nuvole realistiche morbide */
+.cloud {
+  position: absolute;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 25% 45%, rgba(255,255,255,1) 0 20%, transparent 38%),
+    radial-gradient(circle at 45% 35%, rgba(255,255,255,.98) 0 24%, transparent 45%),
+    radial-gradient(circle at 67% 48%, rgba(255,255,255,.96) 0 22%, transparent 43%),
+    radial-gradient(circle at 50% 60%, rgba(230,238,248,.95) 0 36%, transparent 68%);
+  filter: blur(18px);
+  opacity: .98;
+  box-shadow:
+    0 0 90px rgba(255,255,255,.95),
+    0 0 170px rgba(255,255,255,.75);
+}
+
+/* copertura totale iniziale */
+.cloud1 {
+  width: 950px;
+  height: 450px;
+  top: -12%;
+  left: -18%;
+  animation: cloudLeftOpen 6s ease forwards 3.5s;
+}
+
+.cloud2 {
+  width: 1100px;
+  height: 520px;
+  top: -14%;
+  right: -22%;
+  animation: cloudRightOpen 6s ease forwards 3.5s;
+}
+
+.cloud3 {
+  width: 1250px;
+  height: 580px;
+  top: 18%;
+  left: -28%;
+  animation: cloudLeftOpen 6s ease forwards 3.8s;
+}
+
+.cloud4 {
+  width: 1350px;
+  height: 620px;
+  top: 20%;
+  right: -30%;
+  animation: cloudRightOpen 6s ease forwards 3.8s;
+}
+
+.cloud5 {
+  width: 1500px;
+  height: 720px;
+  bottom: -35%;
+  left: -24%;
+  animation: cloudLeftOpen 6s ease forwards 4s;
+}
+
+.cloud6 {
+  width: 1450px;
+  height: 700px;
+  bottom: -33%;
+  right: -24%;
+  animation: cloudRightOpen 6s ease forwards 4s;
+}
+
+@keyframes cloudLeftOpen {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(18px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-55vw) scale(1.35);
+    filter: blur(40px);
+  }
+}
+
+@keyframes cloudRightOpen {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(18px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(55vw) scale(1.35);
+    filter: blur(40px);
+  }
+}
+
+/* citazione */
+.aether-quote {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
   text-align: center;
-
-  z-index: 60;
-
   padding: 40px;
 
+  opacity: 0;
   animation:
-    quoteAppear 2s ease-out forwards,
-    quoteDisappear 2s ease-in forwards 5s;
+    quoteAppear 2s ease forwards .8s,
+    quoteDisappear 2s ease forwards 4.5s;
 }
 
-.aether-quote p{
+.aether-quote p {
   max-width: 1000px;
-
-  font-size: clamp(2rem,4vw,5rem);
+  font-size: clamp(2rem, 4vw, 5rem);
   line-height: 1.25;
-
   color: #314b68;
-
   font-family: "Marcellus", serif;
-
   text-shadow:
-    0 0 20px rgba(255,255,255,0.9),
-    0 0 40px rgba(255,255,255,0.7);
+    0 0 20px rgba(255,255,255,.95),
+    0 0 45px rgba(255,255,255,.8);
 }
 
-.aether-quote span{
+.aether-quote span {
   margin-top: 30px;
-
   letter-spacing: .2em;
-
   color: rgba(49,75,104,.7);
-
   font-size: 1rem;
 }
 
-/* =========================================
-   NUVOLE
-========================================= */
-
-.aether-clouds{
-  position: absolute;
-  inset: -10%;
-  
-  z-index: 50;
-
-  animation:
-    cloudsOpen 6s ease-in-out forwards 4s;
-}
-
-/* NUVOLE SINGOLE */
-.cloud{
-  position: absolute;
-
-  background: white;
-
-  border-radius: 200px;
-
-  filter: blur(8px);
-
-  opacity: .96;
-
-  box-shadow:
-    0 0 80px rgba(255,255,255,.9),
-    0 0 120px rgba(255,255,255,.6);
-
-  animation: floatCloud linear infinite;
-}
-
-/* GOBBE DELLE NUVOLE */
-.cloud::before,
-.cloud::after{
-  content:"";
-  position:absolute;
-  background:white;
-  border-radius:50%;
-}
-
-.cloud::before{
-  width: 55%;
-  height: 140%;
-
-  left: 10%;
-  top: -70%;
-}
-
-.cloud::after{
-  width: 45%;
-  height: 120%;
-
-  right: 10%;
-  top: -50%;
-}
-
-/* =========================================
-   DIMENSIONI VARIE
-========================================= */
-
-.cloud1{
-  width: 700px;
-  height: 180px;
-
-  top: 5%;
-  left: -10%;
-
-  animation-duration: 50s;
-}
-
-.cloud2{
-  width: 900px;
-  height: 220px;
-
-  top: 18%;
-  right: -20%;
-
-  animation-duration: 65s;
-}
-
-.cloud3{
-  width: 800px;
-  height: 200px;
-
-  top: 40%;
-  left: -15%;
-
-  animation-duration: 55s;
-}
-
-.cloud4{
-  width: 1000px;
-  height: 260px;
-
-  bottom: 5%;
-  right: -20%;
-
-  animation-duration: 70s;
-}
-
-.cloud5{
-  width: 1200px;
-  height: 280px;
-
-  bottom: -5%;
-  left: -10%;
-
-  animation-duration: 80s;
-}
-
-.cloud6{
-  width: 600px;
-  height: 160px;
-
-  top: 60%;
-  left: 25%;
-
-  animation-duration: 45s;
-}
-
-/* =========================================
-   MOVIMENTO
-========================================= */
-
-@keyframes floatCloud{
-
-  0%{
-    transform: translateX(0) translateY(0);
-  }
-
-  50%{
-    transform: translateX(60px) translateY(-20px);
-  }
-
-  100%{
-    transform: translateX(0) translateY(0);
-  }
-}
-
-/* APERTURA CENTRALE */
-
-@keyframes cloudsOpen{
-
-  0%{
-    transform: scale(1);
-    opacity:1;
-    filter: blur(0px);
-  }
-
-  60%{
-    opacity:1;
-  }
-
-  100%{
-    transform: scale(1.25);
-    opacity:0;
-    filter: blur(25px);
-  }
-}
-
-/* TESTO */
-
-@keyframes quoteAppear{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-    filter:blur(10px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-    filter:blur(0);
-  }
-}
-
-@keyframes quoteDisappear{
-  to{
-    opacity:0;
-    transform:translateY(-30px);
-    filter:blur(10px);
-  }
-}
-
-/* =========================================
-   IMMAGINE DIVINA
-========================================= */
-
-.aether-divine-image {
-  position: absolute;
-  inset: 0; /* Copre tutta la sezione */
-  width: 100%;
-  height: 100%;
-  z-index: 40; /* Sotto le nuvole (50) ma sopra lo sfondo */
-  
-  opacity: 0; /* Invisibile all'inizio */
-  
-  /* Inizia dopo 8s: 4s di attesa nuvole + 4s di apertura */
-  animation: imageFadeIn 3s ease-in-out forwards 8s;
-}
-
-.aether-divine-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Mantiene le proporzioni coprendo tutto lo schermo */
-  display: block;
-}
-
-/* Animazione per l'apparizione */
-@keyframes imageFadeIn {
+@keyframes quoteAppear {
   from {
     opacity: 0;
-    transform: scale(1.05); /* Leggero zoom out per dinamismo */
+    transform: translateY(30px);
     filter: blur(10px);
   }
+
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
     filter: blur(0);
   }
 }
 
-/* AGGIUNTA: Nascondi i puntatori durante l'animazione iniziale (opzionale) */
-#lightning-pointer-sky, #cloud-pointer-sky {
-  z-index: 100;
+@keyframes quoteDisappear {
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+    filter: blur(10px);
+  }
 }
+
+/* ===============================
+   SLIDER ORIZZONTALE RIPRISTINATO
+================================ */
 
 .aether-extra-content {
-   /* Lo stacchiamo dal flusso normale */
-    bottom: 50px;          /* Lo posizioniamo in basso rispetto alla sezione cielo */
-    left: 0;
-    width: 100%;
-    z-index: 100 !important; /* Valore più alto di .aether-divine-image (40) */
-    
-    /* Gestione apparizione: deve seguire i tempi dell'immagine */
-    opacity: 0;
-    animation: imageFadeIn 3s ease-in-out forwards 9s; /* Inizia 1s dopo l'inizio dell'immagine */
-    
-    pointer-events: all;   /* Fondamentale per rendere le slide cliccabili */
+  position: relative !important;
+  z-index: 20 !important;
+  margin-top: 105vh;
+  opacity: 1 !important;
+  width: 100%;
 }
 
-/* Rimuovi eventuali margini che spostano il contenuto fuori dall'immagine */
 .aether-extra-content section {
-    padding: 0;
-    margin: 0;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
+.indexslider {
+  width: 100% !important;
+  height: 420px !important;
+  overflow: hidden !important;
+  display: block !important;
+  position: relative !important;
+  background: transparent !important;
+}
 
+.indexslide-track {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: max-content !important;
+  height: 420px !important;
+  animation: scroll 40s linear infinite;
+}
 
-/* homepage Slider */
-.indexslider{
-    height: 390px;
-    position: relative;
-    overflow-x: hidden; 
-    padding-top: 20px;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    margin-top: 10px;
-    width: auto; /* Adatta la larghezza in base al contenuto */
-    min-width: 100%; /* Impedisce che sia più piccolo della finestra */
-    overflow: clip;
+.index-slide {
+  flex: 0 0 260px !important;
+  width: 260px !important;
+  height: 380px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 15px !important;
 }
-.indexslide-track{
-    display: flex;
-    width: calc(250px * 40);
-    animation: scroll 40s linear infinite;
-    height: fit-content;
-    padding-top: 50px;
+
+.index-slide img {
+  width: auto !important;
+  height: 330px !important;
+  max-width: 240px !important;
+  object-fit: contain !important;
+  display: block !important;
 }
-.indexslide-track:hover{
-    animation-play-state: paused;
-}
-@keyframes scroll{
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(calc(-250px * 10));
-    }
-}
-.index-slide{
-    height: 280px;
-    width: 380px;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    perspective: 100px;
-}
-.indexslider img{
-    height: 240px !important;
-    width: 100% !important;
-}
-img:hover{
-    transform: translateZ(20px);
-    transition: transform 1s;
-}
-.container .text-center{
-    margin: -100px;
-    position: relative;
-    text-align: center;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-1300px);
+  }
 }
