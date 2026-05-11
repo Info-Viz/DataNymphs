@@ -36,7 +36,7 @@ arco_items_list = list(set(df_matched_items))
 # extend_matched_items
 def extend_matched_items(items_list):
     # define a batch size
-    batch_size = 500
+    batch_size = 200
     all_dfs = []
 
     for i in range(0, len(items_list), batch_size):
@@ -47,7 +47,16 @@ def extend_matched_items(items_list):
         formatted_items = " ".join([f"<{uri}>" for uri in batch])
 
         query_myth_items = """
-        SELECT ?identifier 
+        PREFIX arco: <https://w3id.org/arco/ontology/arco/>
+        PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/>
+        PREFIX a-dd: <https://w3id.org/arco/ontology/denotative-description/>
+        PREFIX a-loc: <https://w3id.org/arco/ontology/location/>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+        PREFIX dc: <http://purl.org/dc/elements/1.1/>
+
+        SELECT ?identifier
+            (SAMPLE(?image) AS ?sampleImage) #  solo una tra quelle disponibili
+            (GROUP_CONCAT(DISTINCT ?date; separator=", ") AS ?dates) # nel caso in cui ci fossero più date associate con dc:date
             (GROUP_CONCAT(DISTINCT ?creator; separator=", ") AS ?creators) 
             (GROUP_CONCAT(DISTINCT ?type; separator=", ") AS ?types) 
             (GROUP_CONCAT(DISTINCT ?materialOrTechnique; separator=", ") AS ?materialsOrTechniques) 
@@ -62,8 +71,9 @@ def extend_matched_items(items_list):
             OPTIONAL {?item a-dd:hasMaterialOrTechnique ?materialOrTechnique . }
             OPTIONAL {?item a-loc:hasCulturalInstituteOrSite ?instituteOrSite . }
             OPTIONAL {?item a-cd:hasCreationLocation ?creationLocation . } # per estrarre luogo di conservazione
-            # non l'ho ancora fatto ma possiamo aggiungere anche un'immagine con foaf:depiction
-                
+            OPTIONAL {?item dc:date ?date . } 
+            OPTIONAL {?item foaf:depiction ?image . }
+                           
         }
 
         GROUP BY ?identifier
