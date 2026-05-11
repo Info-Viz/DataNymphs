@@ -1087,3 +1087,103 @@ canvas#canvas {
     transform: translateX(-1300px);
   }
 }
+
+
+/* =========================================
+   AETHER START ON SCROLL
+========================================= */
+
+/* stato iniziale */
+
+#cielo .aether-quote,
+#cielo .aether-divine-image,
+#cielo .content-sky {
+  opacity: 0;
+}
+
+/* NUVOLE FERME ALL'INIZIO */
+
+#cielo .cloud {
+  animation-play-state: paused !important;
+}
+
+/* =========================================
+   QUANDO PARTE
+========================================= */
+
+/* citazione */
+
+#cielo.aether-start .aether-quote {
+
+  animation:
+    quoteAppear 2s ease forwards,
+    quoteDisappear 2s ease forwards 5s;
+
+}
+
+/* nuvole attive */
+
+#cielo.aether-start .cloud {
+
+  animation-play-state: running !important;
+}
+
+/* apertura sinistra */
+
+#cielo.aether-start .cloud1,
+#cielo.aether-start .cloud3,
+#cielo.aether-start .cloud5,
+#cielo.aether-start .cloud7,
+#cielo.aether-start .cloud9,
+#cielo.aether-start .cloud11,
+#cielo.aether-start .cloud13 {
+  animation:
+    cloudFloat 8s ease-in-out infinite,
+    cloudLeft 7s ease forwards 5.5s !important;
+}
+
+#cielo.aether-start .cloud2,
+#cielo.aether-start .cloud4,
+#cielo.aether-start .cloud6,
+#cielo.aether-start .cloud8,
+#cielo.aether-start .cloud10,
+#cielo.aether-start .cloud12 {
+  animation:
+    cloudFloat 8s ease-in-out infinite,
+    cloudRight 7s ease forwards 5.5s !important;
+}
+
+/* foschia */
+
+#cielo.aether-start .aether-cloud-scene::after {
+
+  animation:
+    cloudsOpenSoft 7s ease forwards 5.5s;
+}
+
+/* immagine */
+
+#cielo.aether-start .aether-divine-image {
+
+  animation:
+    aetherImageReveal 3s ease forwards 7s;
+}
+
+/* contenuto */
+
+#cielo.aether-start .content-sky {
+
+  animation:
+    contentSkyReveal 2s ease forwards 8s;
+}
+
+/* BLOCCA TUTTE LE ANIMAZIONI AETHER ALL'AVVIO */
+
+#cielo:not(.aether-start) .cloud,
+#cielo:not(.aether-start) .aether-quote,
+#cielo:not(.aether-start) .aether-divine-image,
+#cielo:not(.aether-start) .content-sky,
+#cielo:not(.aether-start) .aether-cloud-scene::after {
+
+  animation: none !important;
+}
