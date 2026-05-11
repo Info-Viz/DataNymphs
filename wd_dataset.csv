@@ -42,7 +42,7 @@ http://www.wikidata.org/entity/Q1317994,Aletheia,,divinità greca della verità,
 http://www.wikidata.org/entity/Q911084,Alfeo,,divinità fluviale greca,greek_deity
 http://www.wikidata.org/entity/Q10405146,Algea,,spiriti del dolore nella mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q3611629,Alia,,"ninfa della mitologia greca, sorella dei Telchini",greek_deity
-http://www.wikidata.org/entity/Q5974711,Aliba,Liba,"personaggio della mitologia greca, ucciso dagli abitanti di Temeso",greek_deity
+http://www.wikidata.org/entity/Q5974711,Aliba,,"personaggio della mitologia greca, ucciso dagli abitanti di Temeso",greek_deity
 http://www.wikidata.org/entity/Q926123,Alpo,,"gigante della mitologia greca, ucciso da Dioniso",greek_deity
 http://www.wikidata.org/entity/Q18450783,Amadriade,,"figlia di Oreio, madre delle Amadriadi",greek_deity
 http://www.wikidata.org/entity/Q107785,Amaltea,Amalthea,personaggio della mitologia greca,greek_deity
@@ -79,7 +79,7 @@ http://www.wikidata.org/entity/Q622781,Asopo,,divinità fluviale della Beozia ne
 http://www.wikidata.org/entity/Q737614,Aspide,,divinità greca,greek_deity
 http://www.wikidata.org/entity/Q4830640,Assio,,"divinità fluviale della mitologia greca, padre di Pelagone",greek_deity
 http://www.wikidata.org/entity/Q931321,Assioche,Axioche,"ninfa della mitologia greca, madre di Crisippo",greek_deity
-http://www.wikidata.org/entity/Q130274,Ashtoreth,"dea della mitologia fenicia e cananea, divinità della guerra, fertilità e amore",greek_deity
+http://www.wikidata.org/entity/Q130274,Ashtoreth,,"dea della mitologia fenicia e cananea, divinità della guerra, fertilità e amore",greek_deity
 http://www.wikidata.org/entity/Q4810678,Asterione,,divinità fluviale greca,greek_deity
 http://www.wikidata.org/entity/Q748574,Asterodia,,"ninfa della mitologia greca, moglie di Eete e madre di Apsirto",greek_deity
 http://www.wikidata.org/entity/Q28563696,Asterope,,"Oceanina della mitologia greca, madre di Akragas",greek_deity
@@ -87,7 +87,7 @@ http://www.wikidata.org/entity/Q752353,Astioche,Astiope,"personaggio della mitol
 http://www.wikidata.org/entity/Q742680,Astrea,,dea greca dell'innocenza e della purezza,greek_deity
 http://www.wikidata.org/entity/Q250588,Astreo,,titano della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q2868617,Astreo,,gigante della mitologia greca,greek_deity
-http://www.wikidata.org/entity/Q8193547,Astri,"personaggio della mitologia greca, una delle Eliadi",greek_deity
+http://www.wikidata.org/entity/Q8193547,Astri,,"personaggio della mitologia greca, una delle Eliadi",greek_deity
 http://www.wikidata.org/entity/Q5710243,Atabirio,,divinità venerata nell'antichità a Rodi,greek_deity
 http://www.wikidata.org/entity/Q210871,Ate,,figura minore della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q37122,Atena,"Atritonia, Atena Chalkioikos, Pallade Atena, Athena","dea greca della sapienza, dell'ingegno, dell'artigianato e della guerra",greek_deity
@@ -320,8 +320,6 @@ http://www.wikidata.org/entity/Q690603,Iacco,,divinità greca,greek_deity
 http://www.wikidata.org/entity/Q106620096,Iante,,"personaggio della mitologia greca, Oceanina",greek_deity
 http://www.wikidata.org/entity/Q2676344,Icelo,,divinità greca del sonno e dei sogni,greek_deity
 http://www.wikidata.org/entity/Q3147753,Ida,,ninfa della mitologia greca,greek_deity
-http://www.wikidata.org/entity/Q10527935,Idaspe,,divinità fluviale greca,greek_deity
-http://www.wikidata.org/entity/Q2007963,Idea,,"ninfa della mitologia greca, moglie di Scamandro",greek_deity
 http://www.wikidata.org/entity/Q2293877,Idia,Idua,Oceanina della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q2024668,Idotea,,"personaggio della mitologia greca, figlia di Proteo",greek_deity
 http://www.wikidata.org/entity/Q10299840,Iera,,Oreade della mitologia greca,greek_deity
@@ -338,7 +336,7 @@ http://www.wikidata.org/entity/Q1640885,Iperbio,,gigante della mitologia greca,g
 http://www.wikidata.org/entity/Q179209,Iperione,,titano della vigilanza e dell'osservanza della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q2171892,Ippo,,Oceanina della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q1620048,Ippolito,,gigante della mitologia greca,greek_deity
-http://www.wikidata.org/entity/Q184570,Iris,Iride,"dea greca, personificazione dell'arcobaleno, messaggera degli dèi",greek_deity
+http://www.wikidata.org/entity/Q184570,,Iride,"dea greca, personificazione dell'arcobaleno, messaggera degli dèi",greek_deity
 http://www.wikidata.org/entity/Q5898666,Irpace,,"ninfa della mitologia greca, figlia di Borea",greek_deity
 http://www.wikidata.org/entity/Q6085037,Ismenide,,"Naiade della mitologia greca, madre di Creneo",greek_deity
 http://www.wikidata.org/entity/Q51078734,Ismeno,,dio-fiume nella mitologia greca,greek_deity
@@ -487,7 +485,6 @@ http://www.wikidata.org/entity/Q1432941,Sosipolis,,divinità greca,greek_deity
 http://www.wikidata.org/entity/Q2296243,Sparta,,"personaggio della mitologia greca, figlia di Eurota, eponima di Sparta",greek_deity
 http://www.wikidata.org/entity/Q8146057,Spermo,,"dea del grano nella mitologia greca, una delle Enotrope",greek_deity
 http://www.wikidata.org/entity/Q748963,Sterope,Asterope,"personaggio della mitologia greca, una delle sette Pleiadi",greek_deity
-http://www.wikidata.org/entity/Q542758,Stige,,ninfa della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q1576404,Stilbe,,"Naiade della mitologia greca, figlia di Peneo",greek_deity
 http://www.wikidata.org/entity/Q3625559,Strimone,,"re di Tracia nella mitologia greca, poi trasformato in divinità fluviale, figlio di Ares",greek_deity
 http://www.wikidata.org/entity/Q12777065,Syllis,,"ninfa della mitologia greca, madre di Zeussippo re di Sicione",greek_deity
@@ -597,8 +594,6 @@ http://www.wikidata.org/entity/Q1367680,Iuventas,Gioventù,dea romana della giov
 http://www.wikidata.org/entity/Q1806391,Lara (divinità),,dea romana,roman_deity
 http://www.wikidata.org/entity/Q1417853,Laverna,,divinità della mitologia romana,roman_deity
 http://www.wikidata.org/entity/Q1232375,Libitina,,divinità romana,roman_deity
-http://www.wikidata.org/entity/Q185498,Lucifero,"Stella del Mattino, Portatore di Luce, Helel","angelo caduto nella religione giudaico-cristiana associato al diavolo, precedentemente figura mitologica romana associata alla ""Stella del Mattino"" (il pianeta Venere)",roman_deity
-http://www.wikidata.org/entity/Q4270105,Lucifero,Venere,Stella del mattino,roman_deity
 http://www.wikidata.org/entity/Q2713122,Luperco,Lupercus,antica divinità romana della fertilità,roman_deity
 http://www.wikidata.org/entity/Q3843491,Maia,Maia Maiestas,divinità della mitologia romana,roman_deity
 http://www.wikidata.org/entity/Q767293,Mania,,"figura della mitologia etrusca, poi ripresa dalla mitologia romana",roman_deity
@@ -1121,7 +1116,7 @@ http://www.wikidata.org/entity/Q55803636,Asopide,,"personaggio della mitologia g
 http://www.wikidata.org/entity/Q1422535,Assilo,,"personaggio della mitologia greca, guerriero alleato dei Troiani",greek_mythological_character
 http://www.wikidata.org/entity/Q24055357,Asterione,,"personaggio della mitologia greca, figlio di Comete",greek_mythological_character
 http://www.wikidata.org/entity/Q748578,Asterodia,,"personaggio della mitologia greca, figlia di Euripilo e moglie di Icario",greek_mythological_character
-http://www.wikidata.org/entity/Q2868652,Asterodia,"personaggio della mitologia greca, figlia di Deione e moglie di Foco",greek_mythological_character
+http://www.wikidata.org/entity/Q2868652,Asterodia,,"personaggio della mitologia greca, figlia di Deione e moglie di Foco",greek_mythological_character
 http://www.wikidata.org/entity/Q9635388,Asterope,,una delle Esperidi nella mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q748909,Asteropeo,,"personaggio della mitologia greca, guerriero peone figlio di Pelegone",greek_mythological_character
 http://www.wikidata.org/entity/Q1215850,Astianassa,,personaggio della mitologia greca,greek_mythological_character
@@ -1915,7 +1910,7 @@ http://www.wikidata.org/entity/Q12899831,Eunice,,"Musa della mitologia greca, se
 http://www.wikidata.org/entity/Q1030030,Eunice,,Nereide della mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q2714687,Eunomo,,re di Sparta,greek_mythological_character
 http://www.wikidata.org/entity/Q25434033,Eunomo,,personaggio della mitologia greca,greek_mythological_character
-http://www.wikidata.org/entity/Q3562019,Eupalamo,"Eupalamone,"personaggio della mitologia greca, figlio di Metione",greek_mythological_character
+http://www.wikidata.org/entity/Q3562019,Eupalamo,Eupalamone,"personaggio della mitologia greca, figlio di Metione",greek_mythological_character
 http://www.wikidata.org/entity/Q13233212,Eupite,,personaggio della mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q12877384,Eupolemea,,"personaggio della mitologia greca, figlia di Mirmidone",greek_mythological_character
 http://www.wikidata.org/entity/Q1232668,Euporia,,figura della mitologia greca,greek_mythological_character
@@ -2069,7 +2064,6 @@ http://www.wikidata.org/entity/Q1615450,Fileo di Atene,,"personaggio della mitol
 http://www.wikidata.org/entity/Q2277624,Filezio,,"personaggio della mitologia greca, guardiano del bestiame del palazzo di Ulisse",greek_mythological_character
 http://www.wikidata.org/entity/Q12901503,Fillodoce,,Nereide della mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q18552931,Filodamia,,"personaggio della mitologia greca, figlia di Danao",greek_mythological_character
-http://www.wikidata.org/entity/Q108649237,Filodemo,,"personaggio della mitologia greca, uno dei pretentendi di Penelope",greek_mythological_character
 http://www.wikidata.org/entity/Q9259795,Filodice,,"personaggio della mitologia greca, moglie di Leucippo",greek_mythological_character
 http://www.wikidata.org/entity/Q3745492,Filolao,,"personaggio della mitologia greca, figlio di Minosse",greek_mythological_character
 http://www.wikidata.org/entity/Q115449,Filomela,Filomele,"personaggio della mitologia greca, figlia di Pandione",greek_mythological_character
@@ -2172,7 +2166,6 @@ http://www.wikidata.org/entity/Q1131939,Icetaone,Ichetaone,personaggio della mit
 http://www.wikidata.org/entity/Q106804079,Ida,,uno dei Dattili Idei (semidei venerati presso il monte Ida a Creta),greek_mythological_character
 http://www.wikidata.org/entity/Q1136130,Ida,Idas,"personaggio della mitologia greca, figlio di Afareo, argonauta",greek_mythological_character
 http://www.wikidata.org/entity/Q17575929,Ide,,"personaggio della mitologia greca, figlia di Coribante e moglie di Licasto",greek_mythological_character
-http://www.wikidata.org/entity/Q1568394,Idea,,"personaggio della mitologia greca, figlia di Dardano re di Scizia e moglie di Fineo",greek_mythological_character
 http://www.wikidata.org/entity/Q20828901,Ideo,,coribante della mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q19946274,Ideo,,"personaggio della mitologia greca, compagno di Enea",greek_mythological_character
 http://www.wikidata.org/entity/Q21400464,Ideo,,"re di Arcadia nella mitologia greca, figlio di Dardano",greek_mythological_character
@@ -2339,7 +2332,6 @@ http://www.wikidata.org/entity/Q1676086,Issione,,"re di Corinto nella mitologia 
 http://www.wikidata.org/entity/Q17516332,Istmio,,"personaggio della mitologia greca, figlio di Temeno",greek_mythological_character
 http://www.wikidata.org/entity/Q1638693,Istmio,,"personaggio della mitologia greca, figlio di Glauco",greek_mythological_character
 http://www.wikidata.org/entity/Q15613793,Istro,,"personaggio della mitologia greca, figlio di Egitto",greek_mythological_character
-http://www.wikidata.org/entity/Q2722978,Italo,Re Italo,eroe mitologico,greek_mythological_character
 http://www.wikidata.org/entity/Q1675360,Iti,,"personaggio della mitologia greca, figlio di Tereo",greek_mythological_character
 http://www.wikidata.org/entity/Q1675357,Itilo,,"personaggio della mitologia greca, figlio di Zeto",greek_mythological_character
 http://www.wikidata.org/entity/Q4205332,Itono,,"personaggio della mitologia greca, figlio di Anfizione",greek_mythological_character
@@ -2401,7 +2393,7 @@ http://www.wikidata.org/entity/Q1462644,Learco,,personaggio della mitologia grec
 http://www.wikidata.org/entity/Q28224981,Lechete,,"personaggio della mitologia greca, figlio di Poseidone",greek_mythological_character
 http://www.wikidata.org/entity/Q182019,Leda,,"personaggio della mitologia greca, figlia di Testio e moglie di Tindaro",greek_mythological_character
 http://www.wikidata.org/entity/Q6519945,Leimone,Leimonide,"personaggio della mitologia greca, figlia di Ippomene",greek_mythological_character
-http://www.wikidata.org/entity/Q3830028,Leimone,Limone,"personaggio della mitologia greca, figlio di Tegeate",greek_mythological_character
+http://www.wikidata.org/entity/Q3830028,Leimone,,"personaggio della mitologia greca, figlio di Tegeate",greek_mythological_character
 http://www.wikidata.org/entity/Q3830033,Leiocrito,Leocrito,"personaggio della mitologia greca, figlio di Arisbante",greek_mythological_character
 http://www.wikidata.org/entity/Q2393201,Leipefilene,,"personaggio della mitologia greca, figlia di Iolao",greek_mythological_character
 http://www.wikidata.org/entity/Q2194100,Leito,,"personaggio della mitologia greca, figlio di Alettore",greek_mythological_character
@@ -2412,7 +2404,7 @@ http://www.wikidata.org/entity/Q3830290,Leode,,"personaggio della mitologia grec
 http://www.wikidata.org/entity/Q3830288,Leodoco,Laodoco,"personaggio della mitologia greca, Argonauta figlio di Biante",greek_mythological_character
 http://www.wikidata.org/entity/Q199438,Leone di Nemea,Leone Nemeo,creatura dell'antica mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q440230,Leonte,,re di Sparta,greek_mythological_character
-http://www.wikidata.org/entity/Q4258941,Leonte,Leo,"personaggio della mitologia greca, eroe attico",greek_mythological_character
+http://www.wikidata.org/entity/Q4258941,Leonte,,"personaggio della mitologia greca, eroe attico",greek_mythological_character
 http://www.wikidata.org/entity/Q15825637,Leonte,,"personaggio della mitologia greca, figlio di Colono",greek_mythological_character
 http://www.wikidata.org/entity/Q1819543,Leonteo,,"re dei Lapiti nella mitologia greca, figlio di Corono",greek_mythological_character
 http://www.wikidata.org/entity/Q3830648,Leontofono,,"personaggio della mitologia greca, figlio di Odisseo",greek_mythological_character
@@ -2424,19 +2416,6 @@ http://www.wikidata.org/entity/Q1698724,Leucadio,,"personaggio della mitologia g
 http://www.wikidata.org/entity/Q4256655,Leucippe,,"personaggio della mitologia greca, figlia di Testore",greek_mythological_character
 http://www.wikidata.org/entity/Q40219631,Leucippe,,"personaggio della mitologia greca, madre di Priamo",greek_mythological_character
 http://www.wikidata.org/entity/Q3831215,Leucippe,Lisippa,"personaggio della mitologia greca, figlia di Minia",greek_mythological_character
-http://www.wikidata.org/entity/Q2316900,Leucippo,,"re di Messenia nella mitologia greca, figlio di Periere",greek_mythological_character
-http://www.wikidata.org/entity/Q38356,Leucippo,,"re di Sicione nella mitologia greca, figlio di Turimaco",greek_mythological_character
-http://www.wikidata.org/entity/Q1548269,Leucippo,,"personaggio della mitologia greca, figlio di Nasso",greek_mythological_character
-http://www.wikidata.org/entity/Q1629247,Leucippo,,"personaggio della mitologia greca, fondatore di Magnesia al Meandro",greek_mythological_character
-http://www.wikidata.org/entity/Q1746218,Leucippo,,"personaggio della mitologia greca, figlio di Eracle",greek_mythological_character
-http://www.wikidata.org/entity/Q1472590,Leucippo,,"personaggio della mitologia greca, figlia di Lampro",greek_mythological_character
-http://www.wikidata.org/entity/Q1637011,Leucippo,,"personaggio della mitologia greca, marito di Graia",greek_mythological_character
-http://www.wikidata.org/entity/Q1759053,Leucippo,,"personaggio della mitologia greca, fondatore di Metaponto",greek_mythological_character
-http://www.wikidata.org/entity/Q1821519,Leucippo,,"personaggio della mitologia greca, figlio di Xantio",greek_mythological_character
-http://www.wikidata.org/entity/Q1821517,Leucippo,,"personaggio della mitologia greca, figlio di Euripilo",greek_mythological_character
-http://www.wikidata.org/entity/Q1821522,Leucippo,,"personaggio della mitologia greca, figlio di Enomao",greek_mythological_character
-http://www.wikidata.org/entity/Q1821523,Leucippo,,"personaggio della mitologia greca, figlio di Policrito",greek_mythological_character
-http://www.wikidata.org/entity/Q1821520,Leucippo,,"personaggio della mitologia greca, figlio di Macareo",greek_mythological_character
 http://www.wikidata.org/entity/Q16328670,Leuco,,"personaggio della mitologia greca, figlio di Talo",greek_mythological_character
 http://www.wikidata.org/entity/Q3831220,Leuco,,"personaggio della mitologia greca, compagno di Odisseo",greek_mythological_character
 http://www.wikidata.org/entity/Q4256709,Leucocoma,,personaggio della mitologia greca,greek_mythological_character
@@ -2645,7 +2624,6 @@ http://www.wikidata.org/entity/Q1956649,Milete,,"personaggio della mitologia gre
 http://www.wikidata.org/entity/Q4293429,Milico,,re degli Iberi nella mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q10330161,Mimas,,"personaggio della mitologia greca, figlio di Eolo",greek_mythological_character
 http://www.wikidata.org/entity/Q3858182,Mimas,,personaggio della mitologia classica,greek_mythological_character
-http://www.wikidata.org/entity/Q6016931,Mineo,,"personaggio della mitologia greca, eponimo dei Mini",greek_mythological_character
 http://www.wikidata.org/entity/Q3331425,Minete,,"re di Lirnesso nella mitologia greca, figlio di Eveno",greek_mythological_character
 http://www.wikidata.org/entity/Q1466343,Minia,,re di Orcomeno in Beozia e progenitore dei Mini,greek_mythological_character
 http://www.wikidata.org/entity/Q25435122,Minosse,,"re di Creta nella mitologia greca, nonno del famoso omonimo",greek_mythological_character
@@ -2889,7 +2867,6 @@ http://www.wikidata.org/entity/Q2071913,Perse,,"personaggio della mitologia grec
 http://www.wikidata.org/entity/Q1351992,Perse,,"personaggio della mitologia greca, figlio di Perseo",greek_mythological_character
 http://www.wikidata.org/entity/Q28672720,Persefone,,"personaggio della mitologia greca, figlia di Minia",greek_mythological_character
 http://www.wikidata.org/entity/Q1760397,Perseo,,"personaggio della mitologia greca, figlio di Nestore",greek_mythological_character
-http://www.wikidata.org/entity/Q1540948,Persepoli,Perseptoli,"personaggio della mitologia greca, figlio di Telemaco e Nausicaa",greek_mythological_character
 http://www.wikidata.org/entity/Q12883447,Peucezio,,personaggio della mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q1349003,Phanes,Protogonos,divinità primigenia della cosmogonia orfica,greek_mythological_character
 http://www.wikidata.org/entity/Q1246244,Pharis,,"personaggio della mitologia greca, figlio di Hermes",greek_mythological_character
@@ -2901,7 +2878,6 @@ http://www.wikidata.org/entity/Q3411223,,Pilade,"re di Megara nella mitologia gr
 http://www.wikidata.org/entity/Q494886,Pilade,,"personaggio della mitologia greca, figlio di Strofio e amico di Oreste",greek_mythological_character
 http://www.wikidata.org/entity/Q15401591,Pilarge,,figlia di Danao,greek_mythological_character
 http://www.wikidata.org/entity/Q1241841,Pilemene,,personaggio della mitologia greca,greek_mythological_character
-http://www.wikidata.org/entity/Q14324181,Pileo,,"re di Orcomeno nella mitologia greca, figlio di Climeno",greek_mythological_character
 http://www.wikidata.org/entity/Q12757284,Pilia,,"personaggio della mitologia greca, figlia di Pilade re di Megara",greek_mythological_character
 http://www.wikidata.org/entity/Q13409873,Piramo,,"personaggio della mitologia greca, amante di Tisbe",greek_mythological_character
 http://www.wikidata.org/entity/Q2067632,Piraso,,"personaggio della mitologia greca, figlio di Argo",greek_mythological_character
@@ -3066,7 +3042,6 @@ http://www.wikidata.org/entity/Q917719,Sarpedonte,,"personaggio della mitologia 
 http://www.wikidata.org/entity/Q3950582,Sarpedonte,,"personaggio della mitologia greca, figlio di Poseidone",greek_mythological_character
 http://www.wikidata.org/entity/Q3473958,Satnio,,"semidio della mitologia greca, guerriero troiano figlio di Enope e di una naiade",greek_mythological_character
 http://www.wikidata.org/entity/Q2291443,Scamandrio,,"personaggio della mitologia greca, figlio di Strofio",greek_mythological_character
-http://www.wikidata.org/entity/Q16600792,Scamandro,,"personaggio della mitologia greca, figlio di Dimaco e Glaucia",greek_mythological_character
 http://www.wikidata.org/entity/Q15208184,Scea,,figlia di Danao,greek_mythological_character
 http://www.wikidata.org/entity/Q17282472,Schedio,,"re di Focide nella mitologia greca, figlio di Ifito",greek_mythological_character
 http://www.wikidata.org/entity/Q2640491,Scheneo,,"personaggio della mitologia greca, figlio di Atamante e, secondo alcune versioni, padre di Atalanta",greek_mythological_character
@@ -3100,10 +3075,10 @@ http://www.wikidata.org/entity/Q663792,Sinone,,personaggio della mitologia greca
 http://www.wikidata.org/entity/Q2289902,Sipilo,,"personaggio della mitologia greca, figlio di Niobe",greek_mythological_character
 http://www.wikidata.org/entity/Q102561,Sisifo,,"re di Efira nella mitologia greca, figlio di Eolo",greek_mythological_character
 http://www.wikidata.org/entity/Q4424511,Smicro,,"personaggio della mitologia greca, padre di Branco",greek_mythological_character
-http://www.wikidata.org/entity/Q137787047,Smirna,Smirne,"amazzone, fondatrice dell'antica città di Smirne",greek_mythological_character
+http://www.wikidata.org/entity/Q137787047,Smirna,,"amazzone, fondatrice dell'antica città di Smirne",greek_mythological_character
 http://www.wikidata.org/entity/Q3963885,Soco,,"personaggio della mitologia greca, guerriero troiano",greek_mythological_character
 http://www.wikidata.org/entity/Q2417746,Soo,,re di Sparta,greek_mythological_character
-http://www.wikidata.org/entity/Q22965580,Sostrato,Polistrato,"personaggio della mitologia greca, amante di Eracle",greek_mythological_character
+http://www.wikidata.org/entity/Q22965580,Sostrato,,"personaggio della mitologia greca, amante di Eracle",greek_mythological_character
 http://www.wikidata.org/entity/Q15206133,Spartone,,"personaggio della mitologia greca, figlio di Tisameno",greek_mythological_character
 http://www.wikidata.org/entity/Q2312008,Sponde,,una delle Ore nella mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q2332185,Stafilo,,"personaggio della mitologia greca, figlio di Dionisio ed Arianna",greek_mythological_character
@@ -3421,7 +3396,6 @@ http://www.wikidata.org/entity/Q907245,Lelapo,Lelope,cane della mitologia greca,
 http://www.wikidata.org/entity/Q1743879,Leone del Citerone,Leone citeronio,leone della mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q596552,Lotofagi,,popolo della mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q28136294,Lupa romana,"Lupa di Roma, Lupa capitolina, Luperca",lupa della mitologia romana che si prese cura dei gemelli Romolo et Remo,mythical_entity
-http://www.wikidata.org/entity/Q1065225,Mini,"Minyes, Minies",popolazione pre-ellenica dell'antica Grecia,mythical_entity
 http://www.wikidata.org/entity/Q3860914,Monocero,,animale mitologico,mythical_entity
 http://www.wikidata.org/entity/Q660623,Numitore,,"personaggio della mitologia romana, nonno materno di Romolo e Remo",mythical_entity
 http://www.wikidata.org/entity/Q1232442,Ogigia,,isola della mitologia greca,mythical_entity
@@ -3431,7 +3405,6 @@ http://www.wikidata.org/entity/Q107822,Pelasgi,,popolazioni pre-elleniche dell'a
 http://www.wikidata.org/entity/Q1747200,Pigmei,,popolo della mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q1751992,Scrofa di Crommio,,creatura dell'antica mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q326380,Simplegadi,,mitiche rocce nello stretto del Bosforo,mythical_entity
-http://www.wikidata.org/entity/Q12777267,Tartaro,,oltretomba nella mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q7695763,Teleboi,,"antica popolazione dell'Acarnania, Grecia",mythical_entity
 http://www.wikidata.org/entity/Q671008,Thule,Tule,isola leggendaria posta nell'estremo nord secondo gli autori dell'età classica,mythical_entity
 http://www.wikidata.org/entity/Q746198,,"Toro di Maratona, Toro cretese",creatura dell'antica mitologia greca,mythical_entity
