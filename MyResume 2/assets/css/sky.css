@@ -534,319 +534,551 @@ canvas#canvas {
   /* ... resto del tuo codice btn-lightning ... */
 }
 
+/* =========================================
+   AETHER SECTION
+========================================= */
 
-/* ===============================
-   AETHER - VERSIONE SOLO CSS
-================================ */
-
-#aether,
-#cielo.aether-section {
-  position: relative;
+#cielo {
+  position: relative !important;
+  overflow: hidden !important;
   min-height: 2600px !important;
-  overflow: hidden;
-  background: #f7fbff;
+
+  background: linear-gradient(
+    to bottom,
+    #eef8ff 0%,
+    #d7ebf8 20%,
+    #a9cde8 45%,
+    #87b4d6 70%,
+    #ffffff 100%
+  ) !important;
 }
 
-/* immagine sotto */
+/* =========================================
+   IMMAGINE OLIMPO
+========================================= */
+
 .aether-divine-image {
   position: absolute;
   inset: 0;
   z-index: 1;
+
   opacity: 0;
-  animation: aetherImageIn 3s ease forwards 6.5s;
+
+  animation: aetherImageReveal 3s ease forwards 8s;
 }
 
 .aether-divine-image img {
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center top;
+
   display: block;
 }
 
-@keyframes aetherImageIn {
+@keyframes aetherImageReveal {
+
   from {
     opacity: 0;
-    filter: blur(10px);
-    transform: scale(1.05);
+    transform: scale(1.04);
+    filter: blur(14px);
   }
 
   to {
     opacity: 1;
-    filter: blur(0);
     transform: scale(1);
+    filter: blur(0);
   }
 }
 
-/* contenuto sopra immagine */
-#cielo .section-title,
-#cielo .content-sky,
-#cielo .aether-extra-content {
-  position: relative;
-  z-index: 10;
-}
+/* =========================================
+   SCENA NUVOLE
+========================================= */
 
-/* titolo AETHER */
-#cielo .content-sky {
-  padding-top: 120px;
-  opacity: 0;
-  animation: aetherContentIn 2s ease forwards 8s;
-}
-
-@keyframes aetherContentIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* scena nuvole */
 .aether-cloud-scene {
+
   position: absolute;
   inset: 0;
+
+  width: 100%;
   height: 100vh;
-  z-index: 30;
+
+  z-index: 999;
+
   overflow: hidden;
+
   pointer-events: none;
 }
 
-/* velo bianco in basso */
+/* bianco basso iniziale */
 .aether-cloud-scene::after {
+
   content: "";
+
   position: absolute;
+
   left: 0;
   bottom: -10%;
+
   width: 100%;
-  height: 70%;
+  height: 45%;
+
+  z-index: 15;
+
   background: linear-gradient(
     to top,
-    #ffffff 0%,
-    rgba(255,255,255,.98) 45%,
-    rgba(255,255,255,.65) 75%,
-    transparent 100%
+    rgba(255,255,255,1),
+    rgba(255,255,255,.72),
+    transparent
   );
-  z-index: 4;
-  animation: bottomWhiteFade 3s ease forwards 6s;
+
+  animation: mistFade 6s ease forwards 6s;
 }
 
-@keyframes bottomWhiteFade {
+@keyframes mistFade {
+
   to {
     opacity: 0;
   }
 }
 
 .aether-clouds {
-  position: absolute;
-  inset: -20%;
-  z-index: 5;
-}
 
-/* nuvole realistiche morbide */
-.cloud {
-  position: absolute;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 25% 45%, rgba(255,255,255,1) 0 20%, transparent 38%),
-    radial-gradient(circle at 45% 35%, rgba(255,255,255,.98) 0 24%, transparent 45%),
-    radial-gradient(circle at 67% 48%, rgba(255,255,255,.96) 0 22%, transparent 43%),
-    radial-gradient(circle at 50% 60%, rgba(230,238,248,.95) 0 36%, transparent 68%);
-  filter: blur(18px);
-  opacity: .98;
-  box-shadow:
-    0 0 90px rgba(255,255,255,.95),
-    0 0 170px rgba(255,255,255,.75);
-}
-
-/* copertura totale iniziale */
-.cloud1 {
-  width: 950px;
-  height: 450px;
-  top: -12%;
-  left: -18%;
-  animation: cloudLeftOpen 6s ease forwards 3.5s;
-}
-
-.cloud2 {
-  width: 1100px;
-  height: 520px;
-  top: -14%;
-  right: -22%;
-  animation: cloudRightOpen 6s ease forwards 3.5s;
-}
-
-.cloud3 {
-  width: 1250px;
-  height: 580px;
-  top: 18%;
-  left: -28%;
-  animation: cloudLeftOpen 6s ease forwards 3.8s;
-}
-
-.cloud4 {
-  width: 1350px;
-  height: 620px;
-  top: 20%;
-  right: -30%;
-  animation: cloudRightOpen 6s ease forwards 3.8s;
-}
-
-.cloud5 {
-  width: 1500px;
-  height: 720px;
-  bottom: -35%;
-  left: -24%;
-  animation: cloudLeftOpen 6s ease forwards 4s;
-}
-
-.cloud6 {
-  width: 1450px;
-  height: 700px;
-  bottom: -33%;
-  right: -24%;
-  animation: cloudRightOpen 6s ease forwards 4s;
-}
-
-@keyframes cloudLeftOpen {
-  0% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(18px);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(-55vw) scale(1.35);
-    filter: blur(40px);
-  }
-}
-
-@keyframes cloudRightOpen {
-  0% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(18px);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(55vw) scale(1.35);
-    filter: blur(40px);
-  }
-}
-
-/* citazione */
-.aether-quote {
   position: absolute;
   inset: 0;
+
+  z-index: 10;
+}
+
+/* =========================================
+   CITAZIONE
+========================================= */
+
+.aether-quote {
+
+  position: absolute;
+  inset: 0;
+
   z-index: 50;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   text-align: center;
+
   padding: 40px;
 
-  opacity: 0;
   animation:
-    quoteAppear 2s ease forwards .8s,
-    quoteDisappear 2s ease forwards 4.5s;
+    quoteAppear 2s ease forwards,
+    quoteDisappear 2.5s ease forwards 5s;
+}
+
+.aether-quote h1 {
+
+  font-family: "Marcellus", serif;
+
+  font-size: clamp(5rem, 10vw, 10rem);
+
+  letter-spacing: .18em;
+
+  color: white;
+
+  margin-bottom: 40px;
+
+  text-shadow:
+    0 0 25px rgba(255,255,255,.95),
+    0 0 60px rgba(255,255,255,.75),
+    0 0 120px rgba(180,220,255,.45);
 }
 
 .aether-quote p {
+
   max-width: 1000px;
-  font-size: clamp(2rem, 4vw, 5rem);
-  line-height: 1.25;
-  color: #314b68;
+
   font-family: "Marcellus", serif;
+
+  font-size: clamp(1.7rem, 3vw, 4rem);
+
+  line-height: 1.3;
+
+  color: #314b68;
+
   text-shadow:
-    0 0 20px rgba(255,255,255,.95),
+    0 0 18px rgba(255,255,255,.95),
     0 0 45px rgba(255,255,255,.8);
 }
 
 .aether-quote span {
-  margin-top: 30px;
+
+  margin-top: 28px;
+
   letter-spacing: .2em;
-  color: rgba(49,75,104,.7);
+
+  color: rgba(49,75,104,.78);
+
   font-size: 1rem;
 }
 
 @keyframes quoteAppear {
+
   from {
     opacity: 0;
-    transform: translateY(30px);
-    filter: blur(10px);
+    transform: translateY(40px) scale(.96);
+    filter: blur(18px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     filter: blur(0);
   }
 }
 
 @keyframes quoteDisappear {
-  to {
+
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  100% {
     opacity: 0;
-    transform: translateY(-30px);
-    filter: blur(10px);
+    transform: scale(1.08);
+    filter: blur(24px);
   }
 }
 
-/* ===============================
-   SLIDER ORIZZONTALE RIPRISTINATO
-================================ */
+/* =========================================
+   NUVOLE
+========================================= */
+
+.cloud {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  opacity: .98;
+
+  filter:
+    blur(7px)
+    contrast(1.08);
+
+  mix-blend-mode: screen;
+
+  background:
+
+    radial-gradient(circle at 18% 52%,
+      #ffffff 0%,
+      #f4f7fb 18%,
+      #d5dde7 30%,
+      transparent 42%),
+
+    radial-gradient(circle at 36% 36%,
+      #ffffff 0%,
+      #f5f8fc 22%,
+      #cfd7e2 38%,
+      transparent 50%),
+
+    radial-gradient(circle at 54% 52%,
+      #ffffff 0%,
+      #eef3f8 26%,
+      #c1cad7 44%,
+      transparent 58%),
+
+    radial-gradient(circle at 72% 40%,
+      #ffffff 0%,
+      #eef4f8 22%,
+      #ccd5df 36%,
+      transparent 50%),
+
+    radial-gradient(circle at 84% 60%,
+      #ffffff 0%,
+      #eef3f8 18%,
+      #d4dde8 32%,
+      transparent 46%),
+
+    radial-gradient(ellipse at center,
+      rgba(255,255,255,.96) 0%,
+      rgba(236,242,249,.92) 45%,
+      rgba(185,198,214,.78) 72%,
+      rgba(140,154,172,.38) 88%,
+      transparent 100%);
+
+  box-shadow:
+    inset 0 -25px 45px rgba(120,130,145,.18),
+    inset 0 15px 30px rgba(255,255,255,.8),
+    0 20px 50px rgba(120,140,170,.22),
+    0 0 80px rgba(255,255,255,.75);
+
+  border:
+    1px solid rgba(180,195,215,.22);
+}
+
+/* =========================================
+   POSIZIONI NUVOLE
+========================================= */
+
+.cloud1 {
+  width: 520px;
+  height: 230px;
+  top: 3%;
+  left: -70px;
+}
+
+.cloud2 {
+  width: 620px;
+  height: 260px;
+  top: 7%;
+  right: -90px;
+}
+
+.cloud3 {
+  width: 700px;
+  height: 300px;
+  top: 28%;
+  left: -120px;
+}
+
+.cloud4 {
+  width: 760px;
+  height: 320px;
+  top: 31%;
+  right: -130px;
+}
+
+.cloud5 {
+  width: 850px;
+  height: 360px;
+  bottom: -90px;
+  left: -160px;
+}
+
+.cloud6 {
+  width: 900px;
+  height: 380px;
+  bottom: -95px;
+  right: -160px;
+}
+
+.cloud7 {
+  width: 650px;
+  height: 280px;
+  top: 55%;
+  left: 18%;
+}
+
+.cloud8 {
+  width: 720px;
+  height: 300px;
+  top: 52%;
+  right: 15%;
+}
+
+.cloud9 {
+  width: 900px;
+  height: 380px;
+  bottom: -12%;
+  left: 10%;
+}
+
+.cloud10 {
+  width: 780px;
+  height: 330px;
+  bottom: -8%;
+  right: 8%;
+}
+
+.cloud11 {
+  width: 500px;
+  height: 210px;
+  top: 16%;
+  left: 35%;
+}
+
+.cloud12 {
+  width: 560px;
+  height: 240px;
+  top: 18%;
+  right: 32%;
+}
+
+.cloud13 {
+  width: 1100px;
+  height: 460px;
+  top: 40%;
+  left: 15%;
+}
+
+/* =========================================
+   MOVIMENTO NUVOLE
+========================================= */
+
+.cloud1,
+.cloud3,
+.cloud5,
+.cloud7,
+.cloud9,
+.cloud11,
+.cloud13 {
+
+  animation:
+    cloudFloat 8s ease-in-out infinite,
+    cloudLeft 7s ease-in-out forwards 5.5s;
+}
+
+.cloud2,
+.cloud4,
+.cloud6,
+.cloud8,
+.cloud10,
+.cloud12 {
+
+  animation:
+    cloudFloat 8s ease-in-out infinite,
+    cloudRight 7s ease-in-out forwards 5.5s;
+}
+
+@keyframes cloudFloat {
+
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-18px) scale(1.04);
+  }
+}
+
+@keyframes cloudLeft {
+
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-120vw) scale(1.45);
+    filter: blur(45px);
+  }
+}
+
+@keyframes cloudRight {
+
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(120vw) scale(1.45);
+    filter: blur(45px);
+  }
+}
+
+/* =========================================
+   CONTENUTO DOPO APERTURA
+========================================= */
+
+#cielo .section-title,
+#cielo .content-sky,
+#cielo .aether-extra-content {
+
+  position: relative;
+  z-index: 30;
+}
+
+#cielo .content-sky {
+
+  padding-top: 120px;
+
+  opacity: 0;
+
+  animation: contentSkyReveal 2s ease forwards 8s;
+}
+
+@keyframes contentSkyReveal {
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   SLIDER DIVINITÀ
+========================================= */
 
 .aether-extra-content {
-  position: relative !important;
-  z-index: 20 !important;
+
+  position: relative;
+  z-index: 40;
+
   margin-top: 105vh;
-  opacity: 1 !important;
+
   width: 100%;
 }
 
-.aether-extra-content section {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
 .indexslider {
-  width: 100% !important;
-  height: 420px !important;
-  overflow: hidden !important;
-  display: block !important;
-  position: relative !important;
-  background: transparent !important;
+
+  width: 100%;
+  height: 420px;
+
+  overflow: hidden;
+
+  background: transparent;
 }
 
 .indexslide-track {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  width: max-content !important;
-  height: 420px !important;
+
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+  height: 420px;
+
   animation: scroll 40s linear infinite;
 }
 
+.indexslide-track:hover {
+
+  animation-play-state: paused;
+}
+
 .index-slide {
-  flex: 0 0 260px !important;
-  width: 260px !important;
-  height: 380px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 15px !important;
+
+  flex: 0 0 260px;
+
+  width: 260px;
+  height: 380px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
 }
 
 .index-slide img {
-  width: auto !important;
-  height: 330px !important;
-  max-width: 240px !important;
-  object-fit: contain !important;
-  display: block !important;
+
+  width: auto;
+  height: 330px;
+
+  max-width: 250px;
+
+  object-fit: contain;
 }
 
 @keyframes scroll {
+
   0% {
     transform: translateX(0);
   }
