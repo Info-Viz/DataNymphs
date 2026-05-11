@@ -1027,67 +1027,158 @@ canvas#canvas {
   width: 100%;
 }
 
-.indexslider {
-
-  width: 100%;
-  height: 420px;
-
-  overflow: hidden;
-
-  background: transparent;
+.indexslider{
+    height: 550px;
+    position: relative;
+    overflow-x: hidden; 
+    padding-top: 20px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-top: 10px;
+    width: auto; /* Adatta la larghezza in base al contenuto */
+    min-width: 100%; /* Impedisce che sia più piccolo della finestra */
+    overflow: clip;
 }
-
-.indexslide-track {
-
-  display: flex;
-  align-items: center;
-
-  width: max-content;
-  height: 420px;
-
-  animation: scroll 40s linear infinite;
+.indexslide-track{
+    display: flex;
+    width: calc(250px * 40);
+    animation: scroll 40s linear infinite;
+    height: fit-content;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
-
-.indexslide-track:hover {
-
-  animation-play-state: paused;
+.indexslide-track:hover{
+    animation-play-state: paused;
+}
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px * 10));
+    }
+}
+.index-slide {
+    height: 400px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+    margin-right: 50px; /* Regola questo valore per aumentare o diminuire lo spazio */
+}
+.indexslider img{
+    height: 340px !important;
+    width: 100% !important;
+}
+img:hover{
+    transform: translateZ(20px);
+    transition: transform 1s;
+}
+.container .text-center{
+    margin: -100px;
+    position: relative;
+    text-align: center;
 }
 
 .index-slide {
-
-  flex: 0 0 260px;
-
-  width: 260px;
-  height: 380px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 15px;
+    height: 450px; /* Aumentato un po' per far spazio al testo */
+    width: 200px;
+    display: flex;
+    flex-direction: column; /* Mette gli elementi uno sotto l'altro */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+    perspective: 1000px; /* Aumentato per un effetto 3D migliore */
+    margin-right: 80px; /* Aumentato il gap per dare respiro al testo */
+    transition: transform 0.5s;
 }
 
-.index-slide img {
 
-  width: auto;
-  height: 330px;
+/* Stile dell'etichetta a forma di nuvola sfumata */
+.slide-info {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.6s ease-out;
+    text-align: center;
+    
+    /* Colore bianco latte con molta trasparenza */
+    background: rgba(255, 255, 255, 0.4); 
+    color: #ffffff; /* Testo bianco per un look divino, o #333 per leggibilità */
+    padding: 20px;
+    
+    /* Forma ovale molto morbida */
+    border-radius: 70%; 
+    width: 250px;
+    height: auto;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin-top: 20px;
+    pointer-events: none;
+    position: relative;
 
-  max-width: 250px;
-
-  object-fit: contain;
+    /* IL SEGRETO: Molteplici ombre bianche sfumate per l'effetto "glow" */
+    box-shadow: 
+        0 0 20px 10px rgba(255, 255, 255, 0.6),  /* Sfumatura esterna */
+        0 0 40px 20px rgba(255, 255, 255, 0.5),  /* Alone più grande */
+        inset 0 0 15px rgba(255, 255, 255, 0.8); /* Sfumatura interna */
+    
+    /* Effetto vetro sfocato (Backdrop Blur) */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    
+    /* Rimuove ogni bordo netto */
+    border: none;
 }
 
-@keyframes scroll {
-
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-1300px);
-  }
+/* Titolo sulla nuvola */
+.slide-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: #0563bb; /* Oro per contrastare con il bianco sfumato */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Ombra sotto il testo per leggerlo meglio */
+    font-weight: bold;
 }
 
+/* Testo descrittivo */
+.slide-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Quando passi il mouse sulla slide */
+.index-slide:hover .slide-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* EFFETTI HOVER */
+
+/* Quando passi il mouse sulla slide... */
+.index-slide:hover .slide-info {
+    opacity: 1; /* Diventa visibile */
+    transform: translateY(0); /* Torna in posizione */
+}
+
+/* Ingrandimento dell'immagine (ho spostato l'hover sulla slide per coerenza) */
+.index-slide:hover img {
+    transform: scale(1.1) translateZ(30px);
+}
+
+.indexslider img {
+    height: 300px !important; /* Ridotto leggermente per bilanciare il testo */
+    width: auto !important;
+    transition: transform 0.5s;
+}
 
 /* =========================================
    AETHER START ON SCROLL
@@ -1186,4 +1277,102 @@ canvas#canvas {
 #cielo:not(.aether-start) .aether-cloud-scene::after {
 
   animation: none !important;
+}
+
+
+
+/*QUIZ DIVINITA'*/
+/* Container principale per isolare tutto */
+#divine-quiz-section {
+  padding: 50px 20px;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.divine-quiz-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.divine-quiz-question {
+  font-family: 'Marcellus', serif;
+  font-size: 2rem;
+  color: #080807; /* Oro scuro */
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Disposizione Orizzontale delle opzioni */
+.divine-quiz-options {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  flex-wrap: wrap; /* Per evitare che si rompa su mobile */
+  margin-bottom: 30px;
+}
+
+.divine-quiz-item {
+  flex: 1;
+  min-width: 150px;
+  padding: 20px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.divine-quiz-item:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+  background-color: rgb(234, 222, 145);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Classe per l'elemento selezionato */
+.divine-quiz-item.selected {
+  border-color: #ffd700;
+  background-color: #fffdf0;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Classi per il risultato finale */
+.divine-quiz-item.correct-answer {
+  background-color: #d4edda !important;
+  border-color: #069c29 !important;
+  color: #155724;
+}
+
+.divine-quiz-item.wrong-answer {
+  background-color: #f8d7da !important;
+  border-color: #dc3545 !important;
+  color: #721c24;
+}
+
+/* Bottone di conferma */
+#divine-quiz-confirm-btn {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #ffd700, #b8860b);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+#divine-quiz-confirm-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#divine-quiz-feedback {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
 }

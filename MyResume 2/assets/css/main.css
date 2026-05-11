@@ -1635,7 +1635,7 @@ section,
     right: 40% !important;
     margin-left: -50vw !important;
     margin-right: -50vw !important;
-    background: #000000 !important; /* Nero assoluto per coprire il verde */
+    background: #3c0000 !important; /* Nero assoluto per coprire il verde */
     overflow: hidden !important;
     min-height: 100vh !important;
 }
@@ -1772,4 +1772,5 @@ body {
     font-size: 20px;
     filter: drop-shadow(0 0 5px rgb(124, 197, 210));
 }
+
 
