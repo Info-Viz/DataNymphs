@@ -197,7 +197,7 @@ h6 {
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
-  min-width: 200px;
+
 }
 
 @media (max-width: 1199px) {
@@ -1579,85 +1579,103 @@ section,
 
 
  /* TARTARUS */
+/* Forza la sezione a non avere sfondi che coprano il canvas */
+/* Container della sezione: deve essere nero e isolato */
 
-#inferi-section {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#canvas-tartarus-dark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    /* Rende le fiammelle più vellutate */
-    filter: blur(1px); 
-}
-
-
-
-
-
-/* INFERIContainer Principale */
 #inferi {
     position: relative;
-    width: 100%;
-    min-height: 100vh;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    cursor: none !important; /* Nasconde cursore standard */
+    /* Rimuovi eventuali padding che stringono il contenuto */
+    padding-left: 0 !important; 
+    padding-right: 0 !important;
 }
 
-/* Canvas WebGL (Sfondo) */
-#canvass-webgl-inferi {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.tartarus-section {
     height: 100%;
-    z-index: 1;
+    position: relative !important;
+    min-height: 100vh !important;
+    background: #000000 !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+}
+
+/* Canvas delle fiamme: posizionato sul fondo della sezione */
+#canvass-webgl-tartarus {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    height: 100% !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    display: block !important;
+}
+/* Assicurati che il container del testo non stringa il background */
+.tartarus-section .container {
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+/* Contenuto sopra le fiamme */
+.tartarus-section .container,
+.tartarus-section .section-title {
+    position: relative !important;
+    z-index: 5 !important; /* Molto sopra le fiamme (2) */
+    background: transparent !important; /* Fondamentale: trasparente */
+    color: white !important;
+    padding-top: 60px;
+}
+.tartarus-section h2 { color: #fdfdfd !important; text-shadow: 0 0 10px rgba(255,100,0,0.8); }
+.tartarus-section p { color: rgba(255,255,255,0.7) !important; }
+
+/* 1. Forza la sezione a coprire l'intera larghezza del browser */
+#inferi.tartarus-section {
+    position: relative !important;
+    width: 110vw !important; /* 100% della larghezza del monitor */
+    left: 40% !important;
+    right: 40% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    background: #000000 !important; /* Nero assoluto per coprire il verde */
+    overflow: hidden !important;
+    min-height: 100vh !important;
+}
+
+/* 2. Assicura che il canvas segua la larghezza della sezione */
+#canvass-webgl-tartarus {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important; /* Sotto il testo, ma sopra il nero */
     pointer-events: none;
 }
 
-/* Canvas Particelle (Sopra WebGL) */
-#canvas-tartarus-dark-particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-    filter: blur(1px);
+/* 3. Riposiziona il contenuto (titolo e testo) al centro corretto */
+#inferi .container {
+    position: relative !important;
+    z-index: 10 !important;
+    margin: 0 auto;
+    width: 100vw !important;
 }
 
-/* Contenuto Testuale */
-.container-inferi {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    color: white;
-    font-family: 'Marcellus', serif;
+
+/* Evita lo scroll orizzontale causato dal 100vw */
+body {
+    overflow-x: hidden !important;
 }
 
-.myth-title-inferi {
-    font-size: clamp(3rem, 8vw, 6rem);
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 /* Cursore Fuoco */
 #fire-pointer-inferi {
@@ -1679,7 +1697,6 @@ section,
     font-size: 20px;
     filter: drop-shadow(0 0 5px gold);
 }
-
 
 
 /* Cursore FULMINE (Aether/Sky) */
@@ -1751,7 +1768,7 @@ section,
 }
 
 #cloud-pointer-sky::after {
-    content: '☁️';
+    content: '☁️' !important;
     font-size: 20px;
     filter: drop-shadow(0 0 5px rgb(124, 197, 210));
 }
