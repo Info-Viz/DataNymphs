@@ -964,10 +964,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const sectionId = entry.target.id;
         
         // Rimuove tutti i temi precedenti
-        navMenu.classList.remove('nav-theme-home', 'nav-theme-terra', 'nav-theme-mare', 'nav-theme-inferno', 'nav-theme-interactive');
+        navMenu.classList.remove('nav-theme-home', 'nav-theme-cielo','nav-theme-terra', 'nav-theme-mare', 'nav-theme-inferno', 'nav-theme-interactive');
 
         // Aggiunge il tema specifico in base all'ID della sezione
         if (sectionId === 'home') navMenu.classList.add('nav-theme-home');
+        if (sectionId === 'cielo') navMenu.classList.add('nav-theme-cielo');
         if (sectionId === 'terra') navMenu.classList.add('nav-theme-terra');
         if (sectionId === 'mare') navMenu.classList.add('nav-theme-mare');
         if (sectionId === 'inferi') navMenu.classList.add('nav-theme-inferno');
