@@ -44,6 +44,7 @@
 #terra .section-title {
   position: relative !important;
   z-index: 2 !important;
+  margin-top: 130px;
 }
 
 /* Testi */
@@ -53,7 +54,7 @@
 #terra li,
 #terra span,
 #terra strong {
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 /* Titolo GEA */
