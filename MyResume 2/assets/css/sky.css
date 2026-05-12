@@ -1327,7 +1327,6 @@ img:hover{
 .divine-quiz-item:hover {
   transform: translateY(-5px);
   border-color: #ffd700;
-  background-color: rgb(234, 222, 145);
   box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
 }
 

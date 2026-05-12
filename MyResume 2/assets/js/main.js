@@ -897,3 +897,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+//QUIZ DIVINITA' --> DOVREBBE STARE IN SKY.JS MA VA SOLO QUI!!!!
+(function() {
+  const options = document.querySelectorAll('.divine-quiz-item');
+  const confirmBtn = document.getElementById('divine-quiz-confirm-btn');
+  const feedback = document.getElementById('divine-quiz-feedback');
+  let selectedOption = null;
+
+  // Gestione selezione
+  options.forEach(option => {
+    option.addEventListener('click', function() {
+      // Se abbiamo già confermato, non facciamo nulla
+      if (confirmBtn.disabled && feedback.innerHTML !== "") return;
+
+      // Rimuovi 'selected' da tutti
+      options.forEach(opt => opt.classList.remove('selected'));
+      
+      // Aggiungi 'selected' a quello cliccato
+      this.classList.add('selected');
+      selectedOption = this;
+      
+      // Attiva il bottone
+      confirmBtn.disabled = false;
+    });
+  });
+
+  // Gestione conferma
+  confirmBtn.addEventListener('click', function() {
+    if (!selectedOption) return;
+
+    const isCorrect = selectedOption.getAttribute('data-value') === 'correct';
+
+    if (isCorrect) {
+      selectedOption.classList.add('correct-answer');
+      feedback.innerHTML = "🏅 Victory! Zeus rewards you with divine Ambrosia. You are worthy of Olympus! Check the charts to learn more";
+      feedback.style.color = "#28a745";
+    } else {
+      selectedOption.classList.add('wrong-answer');
+      feedback.innerHTML = "❌ Error! Zeus condemns you to the shadows of the Underworld.Consult the charts to understand what you got wrong!";
+      feedback.style.color = "#dc3545";
+      
+      // Opzionale: mostra qual era quella corretta
+      document.querySelector('.divine-quiz-item[data-value="correct"]').classList.add('correct-answer');
+    }
+
+    // Disabilita tutto dopo la risposta
+    confirmBtn.disabled = true;
+    options.forEach(opt => opt.style.pointerEvents = 'none');
+  });
+})();
