@@ -19,7 +19,7 @@
   overflow: hidden !important;
 
   background-image: url("../img/montebello.png") !important;
-  background-size: cover !important;
+  background-size: 100% auto !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
 }
@@ -92,4 +92,135 @@
 /* Elimina eventuali vecchi wrapper immagini */
 .terra-image-full {
   display: none !important;
+}
+
+/* FIX: elimina lo spazio lasciato dal template per la navbar laterale */
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .header ~ main {
+    margin-left: 0 !important;
+  }
+
+  .header ~ main .hero {
+    margin-left: 0 !important;
+    width: 100vw !important;
+  }
+}
+
+/* Evita scroll orizzontale */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+/* =========================================
+   GEA - FULLSCREEN BACKGROUND
+========================================= */
+
+#terra,
+#terra.about.section {
+  position: relative !important;
+
+  width: 100vw !important;
+  max-width: 100vw !important;
+
+  min-height: 220vh !important;
+
+  margin: 0 !important;
+  padding: 120px 0 !important;
+
+  overflow: hidden !important;
+
+  background-image: url("../img/montebello.png") !important;
+
+  /* OCCUPA TUTTA LA LARGHEZZA */
+  background-size: 100% auto !important;
+
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Overlay */
+#terra::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  pointer-events: none;
+}
+
+/* Contenuto sopra */
+#terra .container,
+#terra .section-title {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Titoli e testi */
+#terra h2,
+#terra p,
+#terra h3,
+#terra li,
+#terra span,
+#terra strong {
+  color: white !important;
+}
+
+/* Titolo */
+#terra h2 {
+  font-family: "Marcellus", serif !important;
+
+  font-size: clamp(4rem, 8vw, 7rem) !important;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  text-shadow:
+    0 0 20px rgba(255,255,255,0.35),
+    0 0 50px rgba(255,255,255,0.2);
+}
+
+/* Paragrafo */
+#terra p {
+  text-align: center;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  font-size: 1.2rem;
+
+  line-height: 1.7;
+
+  text-shadow:
+    0 0 12px rgba(0,0,0,0.45);
+}
+
+/* Rimuove spazio laterale template */
+@media (min-width: 1200px) and (max-width: 1600px) {
+
+  .header ~ main {
+    margin-left: 0 !important;
+  }
+
+  .header ~ main .hero {
+    margin-left: 0 !important;
+    width: 100vw !important;
+  }
+}
+
+/* Evita scroll orizzontale */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
 }
