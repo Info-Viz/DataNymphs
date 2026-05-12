@@ -3,6 +3,7 @@
 ========================================= */
 
 /* Sezione GEA full width reale */
+/* Tema TERRA (Verde) */
 #terra,
 #terra.about.section {
   position: relative !important;
@@ -344,4 +345,67 @@ body {
     top: 55%; /* Spostato leggermente più in basso per non coprire il testo h2 */
     left: 50%; /* Centrato orizzontalmente su mobile */
   }
+}
+
+
+/* =========================================
+   PROMETEO DESCRIZIONE POPUP
+========================================= */
+
+/* Contenitore principale */
+
+
+/* Stile della casella di testo (Tooltip) */
+.prometeo-tooltip {
+    position: absolute;
+    left: -220px; /* La sposta a sinistra dell'immagine */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px; /* Larghezza della casella */
+    background: rgba(65, 40, 1, 0.6); /* Sfondo nero semi-trasparente */
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border: 1px solid var(--accent-color); /* Usa il tuo colore di accento */
+    
+    /* Effetto scomparsa */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 10;
+}
+
+/* Freccetta della casella (opzionale) */
+.prometeo-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(95, 51, 20, 0.8);
+}
+
+/* MOSTRA AL PASSAGGIO DEL MOUSE */
+.prometeo-group:hover .prometeo-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-50%) translateX(10px); /* Leggero movimento verso destra comparendo */
+}
+
+/* Assicurati che l'immagine non si sposti */
+.prometeo-group img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .prometeo-tooltip {
+        left: 0;
+        top: -120px; /* La sposta sopra l'immagine */
+        width: 100%;
+    }
 }
