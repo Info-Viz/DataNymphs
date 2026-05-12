@@ -1,7 +1,4 @@
-import rdflib
-from rdflib import Graph, URIRef, Literal, Namespace
-from rdflib.namespace import RDF, RDFS, OWL, XSD
-from SPARQLWrapper import SPARQLWrapper, JSON
+from SPARQLWrapper import SPARQLWrapper, JSON 
 import pandas as pd
 import re
 
@@ -10,27 +7,8 @@ arco_endpoint = "https://dati.cultura.gov.it/sparql"
 # set endpoint
 sparql_arco = SPARQLWrapper(arco_endpoint)
 
-# namespaces
-dc = Namespace("http://purl.org/dc/elements/1.1/")
-arco = Namespace("https://w3id.org/arco/ontology/arco/")
-arcd = Namespace("https://w3id.org/arco/ontology/context-description/")
-ardd = Namespace("https://w3id.org/arco/ontology/denotative-description/") # per "hasCulturalPropertyType", e.g. "dipinto"
-arloc = Namespace("https://w3id.org/arco/ontology/location/") # hasCulturalInstituteOrSite
-foaf = Namespace("http://xmlns.com/foaf/0.1/") # per le immagini
-
-# Initialize graph
-g = Graph()
-
-# bind namespaces
-g.bind("dc", dc)
-g.bind("arco", arco)
-g.bind("a-cd", arcd)
-g.bind("a-dd", ardd)
-g.bind("a-loc", arloc)
-g.bind("foaf", foaf)
-
 # codice per serializzare dataframe in triple (aggiungere più campi al dataframe con query sparql a partire dal dataframe filtrato sul soggetto)
-df_matched_items = df_matches[["item"]]
+df_matched_items = df_matches_sorted[["item"]]
 # transform item df in a list of unique values
 arco_items_list = list(set(df_matched_items))
 
@@ -137,10 +115,10 @@ additional_info_df = additional_info_df.drop_duplicates(subset=['identifier'])
 
 # extend the original dataframe with the additional information using the identifier for merging
 # create identifier column in original dataframe
-df_matches["identifier"] = df_matches["item"].apply(lambda x: str(x).split('/')[-1])
+df_matches_sorted["identifier"] = df_matches_sorted["item"].apply(lambda x: str(x).split('/')[-1])
 
 # merge dataframes on identifier column
-df_finale = pd.merge(df_matches, additional_info_df, on='identifier', how='left')
+df_finale = pd.merge(df_matches_sorted, additional_info_df, on='identifier', how='left')
 
 # pulizia date
 def clean_dates(string_date):
