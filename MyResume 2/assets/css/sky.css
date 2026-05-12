@@ -562,9 +562,7 @@ canvas#canvas {
   inset: 0;
   z-index: 1;
 
-  opacity: 0;
-
-  animation: aetherImageReveal 3s ease forwards 8s;
+  opacity: 1;
 }
 
 .aether-divine-image img {
@@ -605,7 +603,7 @@ canvas#canvas {
   width: 100%;
   height: 100vh;
 
-  z-index: 999;
+  z-index: 20;
 
   overflow: hidden;
 
@@ -981,7 +979,7 @@ canvas#canvas {
 
 #cielo .content-sky {
 
-  padding-top: 120px;
+  padding-top: 40px;
 
   opacity: 0;
 
@@ -1234,13 +1232,7 @@ img:hover{
     cloudsOpenSoft 7s ease forwards 5.5s;
 }
 
-/* immagine */
 
-#cielo.aether-start .aether-divine-image {
-
-  animation:
-    aetherImageReveal 3s ease forwards 7s;
-}
 
 /* contenuto */
 
@@ -1435,12 +1427,13 @@ img:hover{
   0% {
     opacity: 1;
     transform: scale(1);
+    filter: blur(0);
   }
 
   100% {
     opacity: 0;
-    transform: scale(1.45) translateY(-120px);
-    filter: blur(20px);
+    transform: scale(1.18);
+    filter: blur(24px);
   }
 }
 
@@ -1534,7 +1527,6 @@ img:hover{
 
 /* contenuto nascosto all'inizio */
 #cielo .content-sky,
-#cielo .aether-divine-image,
 #cielo .aether-extra-content {
   opacity: 0;
   transform: translateY(40px);
@@ -1619,25 +1611,98 @@ img:hover{
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
-  background: linear-gradient(
-    to bottom,
-    #eef8ff 0%,
-    #d7ebf8 20%,
-    #a9cde8 45%,
-    #87b4d6 70%,
-    #ffffff 100%
-  );
-  opacity: 0;
+  z-index: 5;
+  background: #000;
+  opacity: 1;
   pointer-events: none;
 }
 
 #cielo.aether-start::before {
-  animation: aetherSkyFadeIn 4s ease forwards 4.8s;
+  animation: aetherBlackFade 3.5s ease forwards 4.5s;
 }
 
-@keyframes aetherSkyFadeIn {
+@keyframes aetherBlackFade {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#cielo .aether-divine-image {
+  opacity: 0 !important;
+  transform: none !important;
+  animation: none !important;
+  filter: none !important;
+}
+
+#cielo .aether-divine-image {
+  opacity: 0 !important;
+  transform: none !important;
+  animation: none !important;
+  filter: none !important;
+}
+
+#cielo.aether-start .aether-divine-image {
+  opacity: 0 !important;
+  transform: none !important;
+  animation: partenoneFadeIn 1.8s ease forwards 7.6s !important;
+  filter: none !important;
+}
+
+@keyframes partenoneFadeIn {
+  from {
+    opacity: 0;
+  }
+
   to {
     opacity: 1;
   }
+}
+
+/* FIX DEFINITIVO: nero solo all'inizio, poi scompare davvero */
+
+#cielo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #000;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+}
+
+#cielo.aether-start::before {
+  animation: removeBlackLayer 3s ease forwards 4.5s !important;
+}
+
+@keyframes removeBlackLayer {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Partenone: fermo, già presente sotto il nero */
+#cielo .aether-divine-image,
+#cielo.aether-start .aether-divine-image {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+  filter: none !important;
+  z-index: 1 !important;
 }
