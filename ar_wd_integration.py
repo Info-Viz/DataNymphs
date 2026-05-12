@@ -146,8 +146,14 @@ df_finale = pd.merge(df_matches, additional_info_df, on='identifier', how='left'
 # iniziare a pensare a come processare date sulla base dei risultati ottenuti
 def clean_dates(string_date):
     date_to_lower = string_date.lower()
-    # estrai intervallo/data di inizio e di fine. La regex non cerca le stringhe anche a destra del trattino perché altrimenti si perderebbero "data - ante/post 1990". Se non ci sono a.C. nella prima parte dovrebbe andare bene, verificare quando i dati sono pronti
-    parts = re.search(r'(\d+)\s-\s', str(date_to_lower))
+    # estrai parti a sinistra e a destra del trattino del range (c'è almeno uno spazio tra data e trattino separatore sulla base del codice che ho scritto prima)
+    pattern = r'^(.*?)\s+-\s+(.*?)$'
+    match = re.search(pattern, date_to_lower)
+    if match:
+        left_block = match.group(1)
+        right_block = match.group(2)
+    
+    # continuare da qui: check casistiche e gestione dati in base ai casi
     pass
 
     # returns a pandas series with the names of the new columns
