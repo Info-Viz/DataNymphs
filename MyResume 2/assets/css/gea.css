@@ -1,0 +1,34 @@
+
+/* MONTE BELLO - FULL WIDTH SOTTO LA NAVBAR */
+
+#terra.about.section {
+
+    overflow: hidden; /* Evita scroll orizzontale */
+    position: relative;
+}
+
+.terra-image-full {
+    position: relative;
+    width: 110vw; /* Occupa tutta la larghezza del browser */
+    left: 50%;
+    right: 50%;
+    margin-left: -40vw; /* Forza il centro sul bordo sinistro dello schermo */
+    margin-right: -40vw;
+    line-height: 0;
+    z-index: 0; /* Sta sotto la navbar se la navbar ha z-index più alto */
+}
+
+.terra-image-full img {
+    width: 100% !important;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Riporta il testo Gea in posizione corretta e leggibile */
+#terra .container.section-title {
+    z-index: 2;
+
+
+}
+
