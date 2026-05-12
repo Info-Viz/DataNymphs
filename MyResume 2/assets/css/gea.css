@@ -433,3 +433,33 @@ body {
         width: 100%;
     }
 }
+
+/* =========================================
+   OMINI SULLE COLLINE
+========================================= */
+
+.omini-group {
+  position: absolute;
+
+  /* Più in basso di Prometeo */
+  top: 80%;
+
+  /* Spostali sulla collina: modifica questo valore se li vuoi più a destra/sinistra */
+  left: 46%;
+
+  transform: translate(-50%, -50%);
+
+  width: auto;
+  max-width:  7%;
+
+  z-index: 6;
+
+  filter: drop-shadow(0 0 12px rgba(255, 220, 140, 0.35));
+  opacity: 0.95;
+}
+
+.omini-group img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
