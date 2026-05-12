@@ -142,27 +142,74 @@ df_matches["identifier"] = df_matches["item"].apply(lambda x: str(x).split('/')[
 # merge dataframes on identifier column
 df_finale = pd.merge(df_matches, additional_info_df, on='identifier', how='left')
 
-
-# iniziare a pensare a come processare date sulla base dei risultati ottenuti
+# pulizia date
 def clean_dates(string_date):
-    date_to_lower = string_date.lower()
-    # estrai parti a sinistra e a destra del trattino del range (c'è almeno uno spazio tra data e trattino separatore sulla base del codice che ho scritto prima)
+    date_to_lower = string_date.lower().strip()
     pattern = r'^(.*?)\s+-\s+(.*?)$'
     match = re.search(pattern, date_to_lower)
-    if match:
-        left_block = match.group(1)
-        right_block = match.group(2)
     
-    # continuare da qui: check casistiche e gestione dati in base ai casi
-    pass
+    if not match:
+        return pd.Series({
+            'start_orig': None, 'end_orig': None, 
+            'start_norm': None, 'end_norm': None
+        })
+    
+    def process(block):
+        block = block.strip()
+        
+        # Colonna originale (split del range)
+        orig = " ".join(block.split())
+        
+        # Colonna normalizzata (gestione dei vari formati)
+        norm = None
+        
+        # formato date (yyyy/mm/dd)
+        # trasformazione in in yyyy-mm-dd
+        date_format = re.search(r'(\d{4})[/-](\d{2})[/-](\d{2})', block)
+        
+        # intervallo anno-anno (es. 1881-1882)
+        interval = re.search(r'(\d{4})-(\d{4})', block)
 
-    # returns a pandas series with the names of the new columns
-    return pd.Series({'start': start, 'end': end})
+        # anno
+        year_match = re.search(r'\d{4}', block)
 
+        if date_format:
+            # Estraiamo i gruppi e uniamo con il trattino standard
+            norm = f"{date_format.group(1)}-{date_format.group(2)}-{date_format.group(3)}"
+        
+        elif interval:
+            # per il momento usato margine estremo dell'intervallo ma decidere come fare
+            norm = f"{interval.group(2)}"
 
-# Creare due colonne aggiuntive start e end con le date pulite e aggiungerle al dataframe finale
-df_finale[['start_date', 'end_date']] = df_finale['dateRange'].apply(clean_dates, result_type='expand')
+        elif year_match:
+            year_val = int(year_match.group(0))
+            # Gestione post e ante (per il momento aggiunto un anno per 'post' e tolto un anno per 'ante' ma decidere)
+            if 'post' in block:
+                norm = year_val + 1
+            elif 'ante' in block:
+                norm = year_val - 1
+            else:
+                norm = year_val
+        
+        return orig, norm
 
+    # Applichiamo la logica ai due blocchi individuati dalla regex del range
+    start_orig, start_norm = process(match.group(1))
+    end_orig, end_norm = process(match.group(2))
+    
+    return pd.Series({
+        'start_orig': start_orig, 
+        'start_norm': start_norm, 
+        'end_orig': end_orig,
+        'end_norm': end_norm
+    })
+
+# espandi dataset con colonne date splittate e normalizzate
+df_finale[['start_orig', 'start_norm', 'end_orig', 'end_norm']] = df_finale['dateRange'].apply(clean_dates)
+
+# Visualizzazione del risultato finale
+print("\nRisultato dopo il cleaning:")
+print(df_finale[['dateRange', 'start_orig', 'start_norm', 'end_orig', 'end_norm']])
 
 # poi trasformazione in rdf e integrazione wikidata
 # integrazione con dataset wikidata a partire dalle matched words ed estensione con property su wikidata
