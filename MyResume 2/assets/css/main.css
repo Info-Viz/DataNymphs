@@ -320,6 +320,51 @@ h6 {
   display: block;
 }
 
+
+/* Colori base (Cielo/Default) */
+
+/* Tema HOME (Nero) - Navbar dorata o bianca */
+.nav-theme-home {
+  --nav-color: #eceae1 !important;
+  --nav-hover-color: #ffffffb3 !important;
+}
+/* Aggiungi questo per le icone grigie nella Home */
+.nav-theme-home .navmenu a i {
+  background-color: rgba(239, 232, 232, 0.729) !important; /* Grigio chiaro molto trasparente */
+  color: var(--nav-color) !important; /* Mantiene l'icona dorata */
+  border-radius: 50%; /* Assicura che resti rotondo */
+  padding: 8px; /* Regola lo spazio intorno all'icona se necessario */
+}
+
+.nav-theme-cielo .aether-section{
+  --nav-color: #ffffff; 
+  --nav-hover-color: #0563bb !important;
+}
+
+/* Tema TERRA (Verde) */
+.nav-theme-terra {
+  --nav-color: #0b3106 !important;
+  --nav-hover-color: #4b8306 !important;
+}
+
+/* Tema MARE (Blu) */
+.nav-theme-mare {
+  --nav-color: #08baca !important;
+  --nav-hover-color: #00d2ff !important;
+}
+
+/* Tema INFERNO (Bordeaux #3c0000) */
+.nav-theme-inferno {
+  --nav-color: #ff4b2b !important; /* Colore fuoco */
+  --nav-hover-color: #610101 !important;
+}
+
+/* Tema INTERACTIVE (viola) */
+.nav-theme-interactive {
+  --nav-color: #f3e5f5 !important; 
+  --nav-hover-color: #8a5794 !important;
+}
+
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -1747,8 +1792,13 @@ body {
 }
 
 /* Blocca la freccia anche sui link interni */
-#sky-section-unique *, #sky-section-unique a {
-    cursor: none !important;
+.sky-section-unique {
+  cursor: none !important;
+}
+
+.sky-section-unique *,
+.sky-section-unique a {
+  cursor: none !important;
 }
 
 /* Stile Nuvola */
@@ -1772,5 +1822,159 @@ body {
     font-size: 20px;
     filter: drop-shadow(0 0 5px rgb(124, 197, 210));
 }
+
+
+/* =========================
+   AETHER - ENTRATA GUIDATA
+========================= */
+
+#aether,
+#cielo {
+  position: relative;
+}
+
+/* scena iniziale */
+.aether-cloud-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* contenitore nuvole */
+.aether-clouds {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.15);
+}
+
+/* quando si entra nella sezione */
+#cielo.aether-start .aether-clouds {
+  animation: cloudsEntrance 2.2s ease-out forwards,
+             cloudsOpen 2.8s ease-in-out 6.8s forwards;
+}
+
+/* nuvole inizialmente “montano” */
+@keyframes cloudsEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(1.35) translateY(80px);
+    filter: blur(18px);
+  }
+
+  45% {
+    opacity: 1;
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* poi si aprono */
+@keyframes cloudsOpen {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.45) translateY(-120px);
+    filter: blur(20px);
+  }
+}
+
+/* frase */
+.aether-quote {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%) translateY(25px);
+  width: min(760px, 85%);
+  text-align: center;
+  z-index: 30;
+  opacity: 0;
+  color: white;
+  text-shadow: 0 0 20px rgba(70, 110, 160, 0.8);
+}
+
+/* frase appare, resta, scompare */
+#cielo.aether-start .aether-quote {
+  animation: quoteAppear 1.8s ease-out 1.8s forwards,
+             quoteDisappear 1.4s ease-in 5.6s forwards;
+}
+
+@keyframes quoteAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(35px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes quoteDisappear {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-25px);
+    filter: blur(10px);
+  }
+}
+
+.aether-quote p {
+  font-family: "Marcellus", serif;
+  font-size: clamp(1.3rem, 2.3vw, 2.2rem);
+  line-height: 1.45;
+  color: white;
+}
+
+.aether-quote span {
+  display: block;
+  margin-top: 20px;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+}
+
+/* contenuto nascosto all'inizio */
+#cielo .content-sky,
+#cielo .aether-divine-image,
+#cielo .aether-extra-content {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* contenuto appare dopo apertura nuvole */
+#cielo.aether-start .content-sky,
+#cielo.aether-start .aether-divine-image,
+#cielo.aether-start .aether-extra-content {
+  animation: aetherContentReveal 1.8s ease-out 8.8s forwards;
+}
+
+@keyframes aetherContentReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 
 

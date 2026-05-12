@@ -562,9 +562,7 @@ canvas#canvas {
   inset: 0;
   z-index: 1;
 
-  opacity: 0;
-
-  animation: aetherImageReveal 3s ease forwards 8s;
+  opacity: 1;
 }
 
 .aether-divine-image img {
@@ -605,7 +603,7 @@ canvas#canvas {
   width: 100%;
   height: 100vh;
 
-  z-index: 999;
+  z-index: 20;
 
   overflow: hidden;
 
@@ -623,7 +621,7 @@ canvas#canvas {
   bottom: -10%;
 
   width: 100%;
-  height: 45%;
+  height: 100%;
 
   z-index: 15;
 
@@ -650,32 +648,14 @@ canvas#canvas {
   inset: 0;
 
   z-index: 10;
+  opacity: 0;
+
+  transform: scale(1.2);
 }
 
 /* =========================================
    CITAZIONE
 ========================================= */
-
-.aether-quote {
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 50;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  text-align: center;
-
-  padding: 40px;
-
-  animation:
-    quoteAppear 2s ease forwards,
-    quoteDisappear 2.5s ease forwards 5s;
-}
 
 .aether-quote h1 {
 
@@ -999,7 +979,7 @@ canvas#canvas {
 
 #cielo .content-sky {
 
-  padding-top: 120px;
+  padding-top: 40px;
 
   opacity: 0;
 
@@ -1252,13 +1232,7 @@ img:hover{
     cloudsOpenSoft 7s ease forwards 5.5s;
 }
 
-/* immagine */
 
-#cielo.aether-start .aether-divine-image {
-
-  animation:
-    aetherImageReveal 3s ease forwards 7s;
-}
 
 /* contenuto */
 
@@ -1341,7 +1315,7 @@ img:hover{
 .divine-quiz-item.correct-answer {
   background-color: #d4edda !important;
   border-color: #069c29 !important;
-  color: #155724;
+  color: #053d12 !important;
 }
 
 .divine-quiz-item.wrong-answer {
@@ -1374,4 +1348,361 @@ img:hover{
   margin-top: 20px;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+/* =========================
+   AETHER - ENTRATA GUIDATA
+========================= */
+
+#aether,
+#cielo {
+  position: relative;
+}
+
+/* scena iniziale */
+.aether-cloud-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* contenitore nuvole */
+.aether-clouds {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.15);
+}
+
+/* quando si entra nella sezione */
+#cielo.aether-start .aether-clouds {
+  animation:
+    cloudsEntranceFromBlack 4s ease-out forwards,
+    cloudsOpen 3.2s ease-in-out 7.2s forwards;
+}
+
+@keyframes cloudsEntranceFromBlack {
+  0% {
+    opacity: 0;
+    transform: scale(1.35) translateY(80px);
+    filter: blur(30px) brightness(0.35);
+  }
+
+  45% {
+    opacity: 0.65;
+    filter: blur(18px) brightness(0.75);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0) brightness(1);
+  }
+}
+
+/* nuvole inizialmente “montano” */
+@keyframes cloudsEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(1.35) translateY(80px);
+    filter: blur(18px);
+  }
+
+  45% {
+    opacity: 1;
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* poi si aprono */
+@keyframes cloudsOpen {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.18);
+    filter: blur(24px);
+  }
+}
+
+/* CITAZIONE AETHER DEFINITIVA */
+#cielo .aether-quote {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100vh !important;
+
+  z-index: 1000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+
+  text-align: center !important;
+  padding: 40px !important;
+
+  opacity: 0;
+  transform: none !important;
+
+  pointer-events: none !important;
+}
+
+#cielo.aether-start .aether-quote {
+  animation:
+    quoteAppearCentered 1.8s ease-out 2.4s forwards,
+    quoteDisappearCentered 1.4s ease-in 6.7s forwards !important;
+}
+
+#cielo .aether-quote p {
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+
+  font-family: "Marcellus", serif !important;
+  font-size: clamp(1.7rem, 3vw, 4rem) !important;
+  line-height: 1.3 !important;
+
+  color: #314b68 !important;
+
+  text-align: center !important;
+
+  text-shadow:
+    0 0 18px rgba(255,255,255,.95),
+    0 0 45px rgba(255,255,255,.8) !important;
+}
+
+#cielo .aether-quote span {
+  display: block !important;
+  margin-top: 28px !important;
+
+  font-family: "Raleway", sans-serif !important;
+  letter-spacing: .2em !important;
+  font-size: 1rem !important;
+
+  color: rgba(49,75,104,.78) !important;
+  text-align: center !important;
+}
+
+@keyframes quoteAppearCentered {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(.96);
+    filter: blur(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes quoteDisappearCentered {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.08);
+    filter: blur(24px);
+  }
+}
+
+
+/* contenuto nascosto all'inizio */
+#cielo .content-sky,
+#cielo .aether-extra-content {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* contenuto appare dopo apertura nuvole */
+#cielo.aether-start .content-sky,
+#cielo.aether-start .aether-divine-image,
+#cielo.aether-start .aether-extra-content {
+  animation: aetherContentReveal 1.8s ease-out 8.8s forwards;
+}
+
+@keyframes aetherContentReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   AETHER - ALONE DIFFUSO SENZA LINEA
+========================================= */
+
+.aether-cloud-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 15;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      rgba(255,255,255,0.75) 0%,
+      rgba(255,255,255,0.48) 32%,
+      rgba(255,255,255,0.22) 58%,
+      transparent 82%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.62) 0%,
+      rgba(255,255,255,0.38) 35%,
+      rgba(255,255,255,0.20) 65%,
+      rgba(255,255,255,0.08) 100%
+    );
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  opacity: 1;
+}
+
+/* quando parte l’animazione, l’alone si dissolve piano */
+#cielo.aether-start .aether-cloud-scene::after {
+  animation: aetherHaloFade 7s ease forwards 5.5s !important;
+}
+
+@keyframes aetherHaloFade {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 0;
+    filter: blur(35px);
+  }
+}
+
+
+/* AETHER - SFONDO NERO INIZIALE SOTTO LE NUVOLE */
+
+#cielo {
+  background: #000 !important;
+}
+
+#cielo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #000;
+  opacity: 1;
+  pointer-events: none;
+}
+
+#cielo.aether-start::before {
+  animation: aetherBlackFade 3.5s ease forwards 4.5s;
+}
+
+@keyframes aetherBlackFade {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#cielo .aether-divine-image {
+  opacity: 0 !important;
+  transform: none !important;
+  animation: none !important;
+  filter: none !important;
+}
+
+#cielo .aether-divine-image {
+  opacity: 0 !important;
+  transform: none !important;
+  animation: none !important;
+  filter: none !important;
+}
+
+#cielo.aether-start .aether-divine-image {
+  opacity: 0 !important;
+  transform: none !important;
+  animation: partenoneFadeIn 1.8s ease forwards 7.6s !important;
+  filter: none !important;
+}
+
+@keyframes partenoneFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* FIX DEFINITIVO: nero solo all'inizio, poi scompare davvero */
+
+#cielo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #000;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+}
+
+#cielo.aether-start::before {
+  animation: removeBlackLayer 3s ease forwards 4.5s !important;
+}
+
+@keyframes removeBlackLayer {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Partenone: fermo, già presente sotto il nero */
+#cielo .aether-divine-image,
+#cielo.aether-start .aether-divine-image {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  animation: none !important;
+  filter: none !important;
+  z-index: 1 !important;
 }

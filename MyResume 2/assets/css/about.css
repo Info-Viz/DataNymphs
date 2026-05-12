@@ -1,0 +1,658 @@
+/**
+* Template Name: MyResume
+* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+* Updated: Jun 29 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Marcellus",  serif;
+  --nav-font: "Poppins",  sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  /* Testo principale: un marrone-grigio molto scuro per leggibilità */
+  --default-color: #4a3b3e; 
+  
+  /* Titoli: Bordeaux elegante che richiama il rosa dello sfondo */
+  --heading-color: #8d5d66; 
+  
+  /* Accento: Un rosa più intenso e scuro per bottoni e link */
+  --accent-color: #b37a84; 
+  
+  /* Superfici: Bianco sporco/crema per staccare dal rosa senza "sparare" troppo */
+  --surface-color: #fff5f6; 
+  
+  /* Contrasto: bianco puro per testo su bottoni colorati */
+  --contrast-color: #ffffff; 
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  /* Colore base dei link (Bordeaux morbido) */
+  --nav-color: #8d5d66;  
+  
+  /* Colore al passaggio del mouse (Rosa scuro sature) */
+  --nav-hover-color: #b37a84; 
+  
+  /* Background mobile: bianco rosato per continuità */
+  --nav-mobile-background-color: #fff5f6; 
+  
+  /* Dropdown: sfondo chiaro e testo scuro */
+  --nav-dropdown-background-color: #ffffff; 
+  --nav-dropdown-color: #4a3b3e; 
+  --nav-dropdown-hover-color: #b37a84; 
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* Fondamentale per far sì che il gradiente si estenda su tutta la lunghezza */
+  min-height: 100%;
+
+}
+
+body {
+   background-color: #eec2c9 !important;
+    background-attachment: fixed; /* Il gradiente resta fermo come un quadro, il sito ci scorre sopra */
+    background-size: 100% 100vh; /* Forza il gradiente a coprire l'altezza dello schermo */
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+
+/* --- IMPORTANTE: Rimuovere sfondi fissi dalle sezioni --- */
+/* Se le tue sezioni (.hero, .about, ecc.) hanno un background-color, 
+   copriranno il gradiente del body. Dobbiamo renderle trasparenti. */
+
+
+
+/* Se la tua .hero:before ha un gradiente che va al nero, modificalo così: */
+.hero:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0; /* Sotto tutto */
+    pointer-events: none;
+}
+
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color: #f9f9f9;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #252525;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  color: var(--default-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0 15px;
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+  z-index: 997;
+
+}
+
+@media (max-width: 1199px) {
+  .header {
+    background-color: var(--background-color);
+    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    width: 300px;
+    left: -100%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .header~main {
+    margin-left: 160px;
+  }
+
+  .header~main .hero {
+    margin-left: -160px;
+    width: 100vw;
+  }
+}
+
+.header.header-show {
+  left: 0;
+}
+
+.header .header-toggle {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.header .header-toggle:hover {
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navmenu {
+  padding: 0;
+  z-index: 9997;
+}
+
+.navmenu ul {
+  list-style: none;
+  padding: 0 0 20px 0;
+  margin: 0;
+  width: 140px;
+}
+
+.navmenu a,
+.navmenu a:focus {
+  color: var(--nav-color);
+  font-family: var(--nav-font);
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  border-radius: 50px;
+  background: color-mix(in srgb, var(--default-color), transparent 92%);
+  height: 56px;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.navmenu a i,
+.navmenu a:focus i {
+  font-size: 20px;
+}
+
+.navmenu a span,
+.navmenu a:focus span {
+  padding: 0 5px 0 7px;
+}
+
+@media (min-width: 992px) {
+
+  .navmenu a,
+  .navmenu a:focus {
+    max-width: 56px;
+  }
+
+  .navmenu a span,
+  .navmenu a:focus span {
+    display: none;
+  }
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus,
+.navmenu li:hover>a {
+  color: var(--contrast-color);
+  background: var(--nav-hover-color);
+}
+
+.navmenu a:hover,
+.navmenu li:hover>a {
+  max-width: 100%;
+  color: var(--contrast-color);
+}
+
+.navmenu a:hover span,
+.navmenu li:hover>a span {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color);
+  background-color: var(--myth-gradient);
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+  position: relative;
+}
+
+.footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.footer p {
+  font-size: 15;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.footer .social-links {
+  margin: 0 0 30px 0;
+}
+
+.footer .social-links a {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  line-height: 1;
+  margin: 0 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  text-decoration: none;
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .credits {
+  font-size: 13px;
+  padding-top: 5px;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 20px 0;
+  position: relative;
+}
+
+.page-title h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  overflow: clip;
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 1px;
+  background: color-mix(in srgb, var(--default-color), transparent 60%);
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  margin: auto;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Rimuovi o modifica radicalmente l'overlay */
+.hero:before {
+    content: "";
+    /* Se vuoi un effetto nebbia, usa trasparenza molto alta (90%) 
+       oppure rimuovi proprio il background per vedere il gradiente puro */
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+/* Assicurati che il canvas non abbia uno sfondo nero */
+
+
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.hero p {
+  margin: 5px 0 0 0;
+  font-size: 26px;
+}
+
+.hero p span {
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.hero .social-links {
+  margin-top: 25px;
+}
+
+.hero .social-links a {
+  font-size: 20px;
+  display: inline-block;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  line-height: 1;
+  margin-right: 20px;
+  transition: 0.3s;
+}
+
+.hero .social-links a:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content h2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.about .content ul strong {
+  margin-right: 10px;
+}
+
+.about .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: var(--accent-color);
+  line-height: 0;
+}
