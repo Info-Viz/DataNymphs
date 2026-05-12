@@ -1134,6 +1134,30 @@ document.addEventListener("DOMContentLoaded", function () {
       else {
 
         selectedItem.classList.add("wrong-answer");
+        /* FUMO */
+
+            if (!selectedItem.querySelector(".infernal-smoke")) {
+
+              const smoke = document.createElement("div");
+              smoke.className = "infernal-smoke";
+
+              selectedItem.appendChild(smoke);
+            }
+
+            /* CENERE */
+
+            if (!selectedItem.querySelector(".embers")) {
+
+              const embers = document.createElement("div");
+              embers.className = "embers";
+
+              for (let i = 0; i < 5; i++) {
+                const ember = document.createElement("span");
+                embers.appendChild(ember);
+              }
+
+              selectedItem.appendChild(embers);
+            }
 
         const correctItem = document.querySelector(
           '.divine-quiz-item[data-value="correct"]'
