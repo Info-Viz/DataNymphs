@@ -1341,7 +1341,7 @@ img:hover{
 .divine-quiz-item.correct-answer {
   background-color: #d4edda !important;
   border-color: #069c29 !important;
-  color: #155724;
+  color: #053d12 !important;
 }
 
 .divine-quiz-item.wrong-answer {

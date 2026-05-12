@@ -946,3 +946,38 @@ document.addEventListener('DOMContentLoaded', function() {
     options.forEach(opt => opt.style.pointerEvents = 'none');
   });
 })();
+
+
+
+//navbar colorata
+document.addEventListener('DOMContentLoaded', function() {
+  const navMenu = document.getElementById('navmenu');
+  const sections = document.querySelectorAll('section[id]'); // Prende tutte le sezioni con un ID
+
+  const options = {
+    threshold: 0.5 // Si attiva quando la sezione occupa il 50% dello schermo
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id;
+        
+        // Rimuove tutti i temi precedenti
+        navMenu.classList.remove('nav-theme-home', 'nav-theme-terra', 'nav-theme-mare', 'nav-theme-inferno', 'nav-theme-interactive');
+
+        // Aggiunge il tema specifico in base all'ID della sezione
+        if (sectionId === 'home') navMenu.classList.add('nav-theme-home');
+        if (sectionId === 'terra') navMenu.classList.add('nav-theme-terra');
+        if (sectionId === 'mare') navMenu.classList.add('nav-theme-mare');
+        if (sectionId === 'inferi') navMenu.classList.add('nav-theme-inferno');
+        if (sectionId === 'interactive') navMenu.classList.add('nav-theme-interactive');
+        // 'cielo' non aggiunge nulla così usa i colori di default
+      }
+    });
+  }, options);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});
