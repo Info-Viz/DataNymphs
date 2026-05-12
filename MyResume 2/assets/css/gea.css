@@ -251,13 +251,37 @@ body {
 }
 
 /* Overlay scuro leggero (Invariato) */
+/* NEBBIA DI ENTRATA - Inizio sezione Terra */
+#terra,
+#terra.about.section {
+  /* Forza lo sfondo base a bianco per raccordarsi al cielo */
+  background-color: #ffffff !important; 
+  margin-top: -1px !important; /* Elimina eventuali micro-fessure tra div */
+  padding-top: 0 !important;
+}
+
+/* Sovrascriviamo l'overlay superiore di Terra */
 #terra::before {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px; /* Fascia di nebbia molto alta */
+  z-index: 2;
   pointer-events: none;
+  /* Gradiente inverso: parte da bianco pieno e svanisce */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,      /* Bianco identico alla fine del cielo */
+    rgba(255, 255, 255, 0.8) 20%,
+    rgba(255, 255, 255, 0) 100%     /* Qui l'immagine della montagna diventa visibile */
+  );
+}
+
+/* Assicuriamoci che lo sfondo della sezione sia bianco dove non arriva l'immagine */
+#terra {
+    background-color: #ffffff !important;
 }
 
 /* Contenuto testuale sopra lo sfondo (z-index aumentato per sicurezza) */
@@ -311,10 +335,10 @@ body {
   
   /* POSIZIONAMENTO RICHIESTO: */
   /* "poco sopra la metà" (Verticale) */
-  top: 29%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
+  top: 42.2%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
   
   /* "un po' più sulla sinistra rispetto alla linea centrale" (Orizzontale) */
-  left: 34%; /* La linea centrale è 50%. 35% lo sposta a sinistra. Regola a piacere. */
+  left: 40%; /* La linea centrale è 50%. 35% lo sposta a sinistra. Regola a piacere. */
   
   /* Allineamento di precisione */
   transform: translate(-50%, -50%); /* Centra l'immagine sul punto 'top' e 'left' */
