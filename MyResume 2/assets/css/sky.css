@@ -1706,3 +1706,570 @@ img:hover{
   filter: none !important;
   z-index: 1 !important;
 }
+
+/* =========================
+   QUIZ DIVINITÀ - EFFETTI
+========================= */
+
+.divine-quiz-item {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Lampo sulla risposta confermata */
+.divine-quiz-item.lightning-hit::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: 50%;
+  width: 8px;
+  height: 260%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #ffffff,
+    #ffe66d,
+    #ffffff,
+    transparent
+  );
+  transform: translateX(-50%) rotate(18deg);
+  z-index: 5;
+  filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 22px #ffd700);
+  animation: quizLightningStrike 0.55s ease-out forwards;
+}
+
+.divine-quiz-item.lightning-hit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 245, 160, 0.65);
+  z-index: 4;
+  animation: quizFlash 0.55s ease-out forwards;
+}
+
+@keyframes quizLightningStrike {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-40px) rotate(18deg) scaleY(0.2);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotate(18deg) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px) rotate(18deg) scaleY(1.1);
+  }
+}
+
+@keyframes quizFlash {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* =========================
+   RISPOSTA SBAGLIATA - INFERI
+========================= */
+
+.divine-quiz-item.wrong-answer {
+  position: relative;
+  overflow: hidden !important;
+
+  background: #050505 !important;
+
+  border: 2px solid #ff3c00 !important;
+
+  color: #ffd6c7 !important;
+
+  box-shadow:
+    inset 0 0 30px rgba(255, 60, 0, 0.35),
+    inset 0 -25px 40px rgba(255, 80, 0, 0.18),
+    0 0 25px rgba(255, 40, 0, 0.3);
+}
+
+/* GLOW ROSSO INTERNO */
+
+.divine-quiz-item.wrong-answer::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at bottom,
+      rgba(255, 60, 0, 0.28) 0%,
+      rgba(255, 20, 0, 0.14) 35%,
+      transparent 75%
+    );
+
+  animation: infernalGlow 2.5s ease-in-out infinite;
+}
+
+/* FIAMME */
+
+.divine-quiz-item.wrong-answer::before {
+  content: "";
+
+  position: absolute;
+
+  left: -10%;
+  bottom: -30%;
+
+  width: 120%;
+  height: 130%;
+
+  z-index: 2;
+  pointer-events: none;
+
+  background:
+
+    radial-gradient(circle at 8% 100%,
+      rgba(255,220,120,0.95) 0%,
+      rgba(255,120,0,0.95) 12%,
+      rgba(255,40,0,0.82) 22%,
+      transparent 38%),
+
+    radial-gradient(circle at 24% 100%,
+      rgba(255,210,100,0.95) 0%,
+      rgba(255,90,0,0.92) 14%,
+      rgba(255,30,0,0.82) 24%,
+      transparent 40%),
+
+    radial-gradient(circle at 42% 100%,
+      rgba(255,230,140,0.98) 0%,
+      rgba(255,120,0,0.92) 12%,
+      rgba(255,40,0,0.82) 24%,
+      transparent 40%),
+
+    radial-gradient(circle at 60% 100%,
+      rgba(255,220,120,0.95) 0%,
+      rgba(255,100,0,0.92) 12%,
+      rgba(255,30,0,0.8) 24%,
+      transparent 42%),
+
+    radial-gradient(circle at 78% 100%,
+      rgba(255,210,100,0.95) 0%,
+      rgba(255,80,0,0.9) 14%,
+      rgba(255,20,0,0.8) 24%,
+      transparent 42%),
+
+    radial-gradient(circle at 96% 100%,
+      rgba(255,230,140,0.98) 0%,
+      rgba(255,120,0,0.92) 12%,
+      rgba(255,40,0,0.82) 24%,
+      transparent 40%);
+
+  filter:
+    blur(12px)
+    saturate(1.2);
+
+  opacity: 0.95;
+
+  mix-blend-mode: screen;
+
+  animation:
+    infernalFlames 1.8s ease-in-out infinite alternate;
+}
+
+/* TESTO SOPRA */
+
+.divine-quiz-item.wrong-answer * {
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================
+   ANIMAZIONI
+========================= */
+
+@keyframes infernalFlames {
+
+  0% {
+    transform:
+      translateY(0)
+      scaleY(1)
+      scaleX(1);
+
+    filter:
+      blur(12px)
+      brightness(1);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scaleY(1.15)
+      scaleX(1.03);
+
+    filter:
+      blur(16px)
+      brightness(1.15);
+  }
+
+  100% {
+    transform:
+      translateY(-22px)
+      scaleY(1.28)
+      scaleX(0.96);
+
+    filter:
+      blur(20px)
+      brightness(1.28);
+  }
+}
+
+@keyframes infernalGlow {
+
+  0%, 100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+/* =========================
+   RISPOSTA SBAGLIATA - INFERI
+========================= */
+
+.divine-quiz-item.wrong-answer {
+  position: relative;
+  overflow: hidden !important;
+
+  background:
+    radial-gradient(circle at bottom,
+      rgba(255,120,0,0.35) 0%,
+      rgba(180,40,0,0.22) 18%,
+      rgba(40,0,0,0.12) 38%,
+      #050505 75%) !important;
+
+  border: 2px solid #4a1c10 !important;
+  color: #f3f3f3 !important;
+
+  box-shadow:
+    inset 0 -40px 60px rgba(255, 80, 0, 0.22),
+    inset 0 0 45px rgba(0,0,0,0.95),
+    0 0 25px rgba(120,20,0,0.35);
+}
+
+/* FIAMME PROFONDE */
+.divine-quiz-item.wrong-answer::before {
+  content: "";
+
+  position: absolute;
+  left: -10%;
+  bottom: -35%;
+
+  width: 120%;
+  height: 120%;
+
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(ellipse at 15% 100%,
+      rgba(255,180,70,0.95) 0%,
+      rgba(255,120,0,0.7) 18%,
+      rgba(255,60,0,0.42) 38%,
+      transparent 70%),
+
+    radial-gradient(ellipse at 40% 100%,
+      rgba(255,190,90,0.9) 0%,
+      rgba(255,130,0,0.65) 18%,
+      rgba(255,70,0,0.4) 36%,
+      transparent 72%),
+
+    radial-gradient(ellipse at 65% 100%,
+      rgba(255,170,60,0.88) 0%,
+      rgba(255,100,0,0.6) 20%,
+      rgba(255,50,0,0.38) 40%,
+      transparent 72%),
+
+    radial-gradient(ellipse at 88% 100%,
+      rgba(255,160,50,0.82) 0%,
+      rgba(255,90,0,0.55) 20%,
+      rgba(255,40,0,0.3) 38%,
+      transparent 70%);
+
+  filter: blur(18px);
+  opacity: 0.95;
+
+  animation: infernoFlames 2.6s ease-in-out infinite alternate;
+}
+
+/* FUMO SOPRA LE FIAMME */
+.divine-quiz-item.wrong-answer::after {
+  content: "";
+
+  position: absolute;
+  inset: -15%;
+
+  z-index: 2;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 20% 85%,
+      rgba(180,180,180,0.18) 0%,
+      rgba(70,70,70,0.16) 28%,
+      transparent 58%),
+
+    radial-gradient(circle at 60% 90%,
+      rgba(220,220,220,0.16) 0%,
+      rgba(80,80,80,0.14) 30%,
+      transparent 60%),
+
+    radial-gradient(circle at 85% 75%,
+      rgba(180,180,180,0.12) 0%,
+      rgba(60,60,60,0.12) 32%,
+      transparent 62%);
+
+  filter: blur(26px);
+
+  opacity: 0.85;
+
+  animation: infernoSmoke 5s ease-in-out infinite alternate;
+}
+
+/* FUMO EXTRA CREATO DAL JS */
+.divine-quiz-item.wrong-answer .infernal-smoke {
+  position: absolute;
+  inset: -25%;
+
+  z-index: 3;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 25% 85%,
+      rgba(160,160,160,0.24) 0%,
+      rgba(80,80,80,0.2) 25%,
+      transparent 55%),
+
+    radial-gradient(circle at 55% 95%,
+      rgba(210,210,210,0.18) 0%,
+      rgba(70,70,70,0.18) 28%,
+      transparent 58%),
+
+    radial-gradient(circle at 82% 80%,
+      rgba(150,150,150,0.2) 0%,
+      rgba(50,50,50,0.18) 30%,
+      transparent 60%);
+
+  filter: blur(30px);
+  opacity: 0.75;
+
+  animation: infernalSmokeMove 6s ease-in-out infinite alternate;
+}
+
+/* BRACI CREATE DAL JS */
+.divine-quiz-item.wrong-answer .embers {
+  position: absolute;
+  inset: 0;
+
+  z-index: 4;
+  pointer-events: none;
+}
+
+.divine-quiz-item.wrong-answer .embers span {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  bottom: 8%;
+
+  background:
+    radial-gradient(circle,
+      rgba(255,230,160,1) 0%,
+      rgba(255,120,0,0.95) 45%,
+      rgba(255,40,0,0.75) 70%,
+      transparent 100%);
+
+  box-shadow:
+    0 0 8px rgba(255,140,0,0.9),
+    0 0 16px rgba(255,40,0,0.55);
+
+  opacity: 0;
+
+  animation: emberRise 6s linear infinite;
+}
+
+.divine-quiz-item.wrong-answer .embers span:nth-child(1) {
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.divine-quiz-item.wrong-answer .embers span:nth-child(2) {
+  left: 32%;
+  animation-delay: 0.7s;
+}
+
+.divine-quiz-item.wrong-answer .embers span:nth-child(3) {
+  left: 50%;
+  animation-delay: 1.3s;
+}
+
+.divine-quiz-item.wrong-answer .embers span:nth-child(4) {
+  left: 68%;
+  animation-delay: 0.4s;
+}
+
+.divine-quiz-item.wrong-answer .embers span:nth-child(5) {
+  left: 84%;
+  animation-delay: 1s;
+}
+
+/* TESTO SOPRA TUTTO */
+.divine-quiz-item.wrong-answer * {
+  position: relative;
+  z-index: 6;
+
+  text-shadow:
+    0 0 10px rgba(0,0,0,0.95),
+    0 0 18px rgba(255,120,0,0.25);
+}
+
+/* però fumo e braci devono restare dietro al testo */
+.divine-quiz-item.wrong-answer .infernal-smoke {
+  z-index: 3;
+}
+
+.divine-quiz-item.wrong-answer .embers {
+  z-index: 4;
+}
+
+/* ANIMAZIONI */
+@keyframes infernoFlames {
+  0% {
+    transform: translateY(10px) scaleY(1);
+    opacity: 0.75;
+    filter: blur(18px);
+  }
+
+  50% {
+    transform: translateY(-8px) scaleY(1.12);
+    opacity: 1;
+    filter: blur(14px);
+  }
+
+  100% {
+    transform: translateY(-18px) scaleY(1.28);
+    opacity: 0.82;
+    filter: blur(22px);
+  }
+}
+
+@keyframes infernoSmoke {
+  0% {
+    transform: translateX(-10px) translateY(10px);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translateX(18px) translateY(-28px);
+    opacity: 0.75;
+  }
+}
+
+@keyframes infernalSmokeMove {
+  0% {
+    transform: translateX(-12px) translateY(12px) scale(1);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translateX(18px) translateY(-32px) scale(1.12);
+    opacity: 0.8;
+  }
+}
+
+@keyframes emberRise {
+  0% {
+    transform: translateY(20px) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-85px) translateX(14px) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   CORONA D'ALLORO
+========================= */
+
+.divine-quiz-item {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.divine-quiz-item.correct-answer {
+  position: relative;
+  overflow: visible !important;
+}
+
+.divine-quiz-laurel {
+  position: absolute;
+
+  left: 50%;
+  top: -73px;
+
+  width: 220px;
+  height: auto;
+
+  transform: translateX(-50%) scaleX(1.35) scaleY(0.72);
+
+  z-index: 80;
+  pointer-events: none;
+
+  background: transparent !important;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 215, 0, 0.45))
+    drop-shadow(0 0 18px rgba(255, 255, 255, 0.3));
+
+  animation: laurelImageReveal 0.9s ease-out forwards;
+}
+
+@keyframes laurelImageReveal {
+
+  0% {
+    opacity: 0;
+    transform:
+      translateX(-50%)
+      translateY(18px)
+      scaleX(0.75)
+      scaleY(0.4);
+  }
+
+  65% {
+    opacity: 1;
+    transform:
+      translateX(-50%)
+      translateY(-5px)
+      scaleX(1.42)
+      scaleY(0.78);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translateX(-50%)
+      translateY(0)
+      scaleX(1.35)
+      scaleY(0.72);
+  }
+}

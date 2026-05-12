@@ -1049,6 +1049,154 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const quizItems = document.querySelectorAll(".divine-quiz-item");
+  const confirmBtn = document.querySelector("#divine-quiz-confirm-btn");
+  const feedback = document.querySelector("#divine-quiz-feedback");
+
+  let selectedItem = null;
+
+  /* =========================
+     SELEZIONE RISPOSTA
+  ========================= */
+
+  quizItems.forEach(function (item) {
+
+    item.addEventListener("click", function () {
+
+      if (confirmBtn.classList.contains("quiz-locked")) return;
+
+      quizItems.forEach(function (el) {
+        el.classList.remove("selected");
+      });
+
+      item.classList.add("selected");
+
+      selectedItem = item;
+
+      confirmBtn.disabled = false;
+    });
+
+  });
+
+  /* =========================
+     CONFERMA RISPOSTA
+  ========================= */
+
+  confirmBtn.addEventListener("click", function () {
+
+    if (!selectedItem) return;
+
+    confirmBtn.disabled = true;
+    confirmBtn.classList.add("quiz-locked");
+
+    /* FULMINE SU QUALSIASI RISPOSTA */
+
+    selectedItem.classList.remove("lightning-hit");
+
+    void selectedItem.offsetWidth;
+
+    selectedItem.classList.add("lightning-hit");
+
+    setTimeout(function () {
+
+      selectedItem.classList.remove("lightning-hit");
+
+      /* =========================
+         RISPOSTA CORRETTA
+      ========================= */
+
+      if (selectedItem.dataset.value === "correct") {
+
+        selectedItem.classList.add("correct-answer");
+
+        if (!selectedItem.querySelector(".divine-quiz-laurel")) {
+
+          const laurel = document.createElement("img");
+
+          laurel.src = "assets/img/alloro.png";
+          laurel.alt = "Corona d'alloro";
+
+          laurel.className = "divine-quiz-laurel";
+
+          selectedItem.appendChild(laurel);
+        }
+
+        feedback.textContent =
+          "Risposta corretta: Ermes è il messaggero degli dei.";
+
+        feedback.style.color = "#069c29";
+      }
+
+      /* =========================
+         RISPOSTA SBAGLIATA
+      ========================= */
+
+      else {
+
+        selectedItem.classList.add("wrong-answer");
+        /* FUMO */
+
+            if (!selectedItem.querySelector(".infernal-smoke")) {
+
+              const smoke = document.createElement("div");
+              smoke.className = "infernal-smoke";
+
+              selectedItem.appendChild(smoke);
+            }
+
+            /* CENERE */
+
+            if (!selectedItem.querySelector(".embers")) {
+
+              const embers = document.createElement("div");
+              embers.className = "embers";
+
+              for (let i = 0; i < 5; i++) {
+                const ember = document.createElement("span");
+                embers.appendChild(ember);
+              }
+
+              selectedItem.appendChild(embers);
+            }
+
+        const correctItem = document.querySelector(
+          '.divine-quiz-item[data-value="correct"]'
+        );
+
+        if (correctItem) {
+
+          correctItem.classList.add("correct-answer");
+
+          if (!correctItem.querySelector(".divine-quiz-laurel")) {
+
+            const laurel = document.createElement("img");
+
+            laurel.src = "assets/img/alloro.png";
+            laurel.alt = "Corona d'alloro";
+
+            laurel.className = "divine-quiz-laurel";
+
+            correctItem.appendChild(laurel);
+          }
+        }
+
+        feedback.textContent =
+          "Risposta errata: il messaggero degli dei è Ermes.";
+
+        feedback.style.color = "#b12a00";
+      }
+
+    }, 650);
+
+  });
+
+});
+</script>
+
 </body>
 
 </html>
