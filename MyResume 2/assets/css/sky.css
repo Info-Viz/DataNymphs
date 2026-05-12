@@ -650,6 +650,9 @@ canvas#canvas {
   inset: 0;
 
   z-index: 10;
+  opacity: 0;
+
+  transform: scale(1.2);
 }
 
 /* =========================================
@@ -1383,8 +1386,28 @@ img:hover{
 
 /* quando si entra nella sezione */
 #cielo.aether-start .aether-clouds {
-  animation: cloudsEntrance 2.2s ease-out forwards,
-             cloudsOpen 2.8s ease-in-out 6.8s forwards;
+  animation:
+    cloudsEntranceFromBlack 4s ease-out forwards,
+    cloudsOpen 3.2s ease-in-out 7.2s forwards;
+}
+
+@keyframes cloudsEntranceFromBlack {
+  0% {
+    opacity: 0;
+    transform: scale(1.35) translateY(80px);
+    filter: blur(30px) brightness(0.35);
+  }
+
+  45% {
+    opacity: 0.65;
+    filter: blur(18px) brightness(0.75);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0) brightness(1);
+  }
 }
 
 /* nuvole inizialmente “montano” */
@@ -1447,8 +1470,8 @@ img:hover{
 
 #cielo.aether-start .aether-quote {
   animation:
-    quoteAppearCentered 1.8s ease-out 1.5s forwards,
-    quoteDisappearCentered 1.4s ease-in 5.8s forwards !important;
+    quoteAppearCentered 1.8s ease-out 2.4s forwards,
+    quoteDisappearCentered 1.4s ease-in 6.7s forwards !important;
 }
 
 #cielo .aether-quote p {
@@ -1582,5 +1605,39 @@ img:hover{
   to {
     opacity: 0;
     filter: blur(35px);
+  }
+}
+
+
+/* AETHER - SFONDO NERO INIZIALE SOTTO LE NUVOLE */
+
+#cielo {
+  background: #000 !important;
+}
+
+#cielo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    #eef8ff 0%,
+    #d7ebf8 20%,
+    #a9cde8 45%,
+    #87b4d6 70%,
+    #ffffff 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+}
+
+#cielo.aether-start::before {
+  animation: aetherSkyFadeIn 4s ease forwards 4.8s;
+}
+
+@keyframes aetherSkyFadeIn {
+  to {
+    opacity: 1;
   }
 }
