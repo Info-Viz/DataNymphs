@@ -1768,6 +1768,173 @@ img:hover{
   25% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+/* =========================
+   RISPOSTA SBAGLIATA - INFERI
+========================= */
+
+.divine-quiz-item.wrong-answer {
+  position: relative;
+  overflow: hidden !important;
+
+  background: #050505 !important;
+
+  border: 2px solid #ff3c00 !important;
+
+  color: #ffd6c7 !important;
+
+  box-shadow:
+    inset 0 0 30px rgba(255, 60, 0, 0.35),
+    inset 0 -25px 40px rgba(255, 80, 0, 0.18),
+    0 0 25px rgba(255, 40, 0, 0.3);
+}
+
+/* GLOW ROSSO INTERNO */
+
+.divine-quiz-item.wrong-answer::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at bottom,
+      rgba(255, 60, 0, 0.28) 0%,
+      rgba(255, 20, 0, 0.14) 35%,
+      transparent 75%
+    );
+
+  animation: infernalGlow 2.5s ease-in-out infinite;
+}
+
+/* FIAMME */
+
+.divine-quiz-item.wrong-answer::before {
+  content: "";
+
+  position: absolute;
+
+  left: -10%;
+  bottom: -30%;
+
+  width: 120%;
+  height: 130%;
+
+  z-index: 2;
+  pointer-events: none;
+
+  background:
+
+    radial-gradient(circle at 8% 100%,
+      rgba(255,220,120,0.95) 0%,
+      rgba(255,120,0,0.95) 12%,
+      rgba(255,40,0,0.82) 22%,
+      transparent 38%),
+
+    radial-gradient(circle at 24% 100%,
+      rgba(255,210,100,0.95) 0%,
+      rgba(255,90,0,0.92) 14%,
+      rgba(255,30,0,0.82) 24%,
+      transparent 40%),
+
+    radial-gradient(circle at 42% 100%,
+      rgba(255,230,140,0.98) 0%,
+      rgba(255,120,0,0.92) 12%,
+      rgba(255,40,0,0.82) 24%,
+      transparent 40%),
+
+    radial-gradient(circle at 60% 100%,
+      rgba(255,220,120,0.95) 0%,
+      rgba(255,100,0,0.92) 12%,
+      rgba(255,30,0,0.8) 24%,
+      transparent 42%),
+
+    radial-gradient(circle at 78% 100%,
+      rgba(255,210,100,0.95) 0%,
+      rgba(255,80,0,0.9) 14%,
+      rgba(255,20,0,0.8) 24%,
+      transparent 42%),
+
+    radial-gradient(circle at 96% 100%,
+      rgba(255,230,140,0.98) 0%,
+      rgba(255,120,0,0.92) 12%,
+      rgba(255,40,0,0.82) 24%,
+      transparent 40%);
+
+  filter:
+    blur(12px)
+    saturate(1.2);
+
+  opacity: 0.95;
+
+  mix-blend-mode: screen;
+
+  animation:
+    infernalFlames 1.8s ease-in-out infinite alternate;
+}
+
+/* TESTO SOPRA */
+
+.divine-quiz-item.wrong-answer * {
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================
+   ANIMAZIONI
+========================= */
+
+@keyframes infernalFlames {
+
+  0% {
+    transform:
+      translateY(0)
+      scaleY(1)
+      scaleX(1);
+
+    filter:
+      blur(12px)
+      brightness(1);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scaleY(1.15)
+      scaleX(1.03);
+
+    filter:
+      blur(16px)
+      brightness(1.15);
+  }
+
+  100% {
+    transform:
+      translateY(-22px)
+      scaleY(1.28)
+      scaleX(0.96);
+
+    filter:
+      blur(20px)
+      brightness(1.28);
+  }
+}
+
+@keyframes infernalGlow {
+
+  0%, 100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
 /* =========================
    CORONA D'ALLORO
 ========================= */
