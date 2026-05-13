@@ -8,7 +8,7 @@ arco_endpoint = "https://dati.cultura.gov.it/sparql"
 sparql_arco = SPARQLWrapper(arco_endpoint)
 
 # codice per serializzare dataframe in triple (aggiungere più campi al dataframe con query sparql a partire dal dataframe filtrato sul soggetto)
-df_matched_items = df_matches_sorted[["item"]]
+df_matched_items = df_matches_sorted["item"]
 # transform item df in a list of unique values
 arco_items_list = list(set(df_matched_items))
 
