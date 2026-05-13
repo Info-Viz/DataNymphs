@@ -432,7 +432,32 @@
       <img src="assets/img/omini.png" alt="Uomini intorno al fuoco">
       <span class="omini-fire"></span>
     </div>
-   
+    
+
+    <div class="hero-figure ercole">
+        <img src="assets/img/ercole-removebg-preview.png" alt="Ercole">
+    </div>
+
+    <div class="hero-figure giasone">
+        <img src="assets/img/giasone-removebg-preview.png" alt="Giasone">
+    </div>
+
+    <div class="hero-figure achille">
+        <img src="assets/img/achille-removebg-preview.png" alt="Achille">
+    </div>
+
+    <!-- GRUPPO ALBERO E RAGNO -->
+<div class="tree-container">
+    <!-- Usa un'immagine PNG trasparente di un albero realistico -->
+    <img src="assets/img/albero-removebg-preview.png" id="mainTree" alt="Ancient Tree">
+    
+    <!-- Il canvas ora copre esattamente l'area dell'albero -->
+    <canvas id="spiderCanvas"></canvas>
+</div>
+
+<div class="river-wrap" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 150px; z-index: 10;">
+        <canvas id="waterCanvas" style="width: 100%; height: 100%;"></canvas>
+    </div>
 
     <!-- Contenuto testuale esistente -->
     <div class="container section-title" data-aos="fade-up">
@@ -1103,6 +1128,7 @@ within the Digital Humanities and Digital Knowledge Master's Degree at Alma Mate
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/sky.js"></script>
+  <script src="assets/js/gea.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
