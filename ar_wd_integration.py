@@ -51,7 +51,7 @@ def extend_matched_items(items_list):
             OPTIONAL {?item a-dd:hasMaterialOrTechnique ?materialOrTechnique . }
             OPTIONAL {?item a-loc:hasCulturalInstituteOrSite ?instituteOrSite . }
             # OPTIONAL {?item a-cd:hasCreationLocation ?creationLocation . } # rimosso perché il range è un'entitò culturale
-            OPTIONAL {?item dc:coverage ?coverage} # luogo (in cui si trova l'istituzione culturale che conserva il bene)
+            OPTIONAL {?item dc:coverage ?place} # luogo (in cui si trova l'istituzione culturale che conserva il bene)
             OPTIONAL {?item foaf:depiction ?image . }
             
             # OPTIONAL separato per le date: ci possono essere più date associate a un'entità culturale con dc:date, quindi estraggo le date (inizio e fine) dell'evento di creazione associato al bene culturale e le concateno in una colonna
@@ -70,9 +70,9 @@ def extend_matched_items(items_list):
             # OPTIONAL per coordinate geografiche
             OPTIONAL {
                 ?item clvapit:hasGeometry ?geometry .
-                ?geometry arco-location:hasCoordinates ?coordinates .
-                ?coordinates arco-location:lat ?lat ;
-                            arco-location:long ?long .
+                ?geometry a-loc:hasCoordinates ?coordinates .
+                ?coordinates a-loc:lat ?lat ;
+                            a-loc:long ?long .
             }        
         }
 
