@@ -546,3 +546,181 @@ body {
       drop-shadow(0 0 12px rgba(255, 220, 140, 0.35));
   }
 }
+
+/* FIAMMA ANIMATA */
+.omini-fire {
+  position: absolute;
+
+  left: 50%;
+  top: 53%;
+
+  width: 30%;
+  height: 34%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 8;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 50% 78%, #fff7c2 0 12%, transparent 13%),
+    radial-gradient(circle at 50% 58%, #ffd24d 0 30%, transparent 31%),
+    radial-gradient(circle at 50% 38%, #ff7a18 0 52%, transparent 53%);
+
+  clip-path: polygon(
+    50% 0%,
+    65% 18%,
+    82% 40%,
+    74% 72%,
+    58% 100%,
+    42% 100%,
+    26% 72%,
+    18% 40%,
+    35% 18%
+  );
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 220, 120, 0.95))
+    drop-shadow(0 0 18px rgba(255, 140, 0, 0.65));
+
+  opacity: 0.95;
+
+  animation: calmFire 1.4s ease-in-out infinite;
+}
+
+.omini-fire::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 58%;
+
+  width: 45%;
+  height: 58%;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(circle at 50% 60%, #ffffff 0 18%, transparent 19%),
+    radial-gradient(circle at 50% 40%, #ffe66b 0 60%, transparent 61%);
+
+  clip-path: polygon(
+    50% 0%,
+    65% 30%,
+    75% 55%,
+    60% 88%,
+    50% 100%,
+    40% 88%,
+    25% 55%,
+    35% 30%
+  );
+
+  opacity: 0.9;
+}
+
+.omini-fire::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 78%;
+
+  width: 150%;
+  height: 70%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 140, 0, 0.45) 0%,
+    rgba(255, 90, 0, 0.15) 45%,
+    rgba(255, 50, 0, 0) 75%
+  );
+
+  filter: blur(8px);
+
+  z-index: -1;
+
+  animation: glowPulse 1.8s ease-in-out infinite;
+}
+
+/* =========================
+   ANIMAZIONI MORBIDE
+========================= */
+@keyframes calmFire {
+
+  0% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(1)
+      scaleY(1);
+
+    filter:
+      drop-shadow(0 0 8px rgba(255, 220, 120, 0.95))
+      drop-shadow(0 0 18px rgba(255, 140, 0, 0.65));
+  }
+
+  20% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(0.9)
+      scaleY(1.14);
+
+    filter:
+      drop-shadow(0 0 10px rgba(255, 230, 140, 1))
+      drop-shadow(0 0 24px rgba(255, 120, 0, 0.9));
+  }
+
+  45% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(1.08)
+      scaleY(0.92);
+
+    filter:
+      drop-shadow(0 0 9px rgba(255, 220, 120, 0.95))
+      drop-shadow(0 0 20px rgba(255, 100, 0, 0.75));
+  }
+
+  70% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(0.95)
+      scaleY(1.08);
+
+    filter:
+      drop-shadow(0 0 11px rgba(255, 235, 150, 1))
+      drop-shadow(0 0 28px rgba(255, 130, 0, 0.95));
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(1)
+      scaleY(1);
+
+    filter:
+      drop-shadow(0 0 8px rgba(255, 220, 120, 0.95))
+      drop-shadow(0 0 18px rgba(255, 140, 0, 0.65));
+  }
+}
+
+@keyframes glowPulse {
+
+  0% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  50% {
+    opacity: 0.75;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
