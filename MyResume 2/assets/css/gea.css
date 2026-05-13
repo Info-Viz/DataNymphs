@@ -19,7 +19,7 @@
 
   overflow: hidden !important;
 
-  background-image: url("../img/montebello.png") !important;
+  /*background-image: url("../img/montebello.png") !important;*/
   background-size: 100% auto !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -134,7 +134,7 @@ body {
 
   overflow: hidden !important;
 
-  background-image: url("../img/montebello.png") !important;
+  /*background-image: url("../img/montebello.png") !important;*/
 
   /* OCCUPA TUTTA LA LARGHEZZA */
   background-size: 100% auto !important;
@@ -241,11 +241,11 @@ body {
   position: relative !important;
   width: 100vw !important;
   max-width: 100vw !important;
-  min-height: 220vh !important; /* Mantenuto il tuo min-height lungo */
+  min-height: 400vh !important; /* Mantenuto il tuo min-height lungo */
   margin: 0 !important;
   padding: 120px 0 !important;
   overflow: hidden !important;
-  background-image: url("../img/montebello.png") !important;
+  /*background-image: url("../img/montebello.png") !important;*/
   background-size: 100% auto !important;
   background-position: center top !important;
   background-repeat: no-repeat !important;
@@ -336,10 +336,10 @@ body {
   
   /* POSIZIONAMENTO RICHIESTO: */
   /* "poco sopra la metà" (Verticale) */
-  top: 42.2%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
+  top: 33.9%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
   
   /* "un po' più sulla sinistra rispetto alla linea centrale" (Orizzontale) */
-  left: 40%; /* La linea centrale è 50%. 35% lo sposta a sinistra. Regola a piacere. */
+  left: 39.2%; /* La linea centrale è 50%. 35% lo sposta a sinistra. Regola a piacere. */
   
   /* Allineamento di precisione */
   transform: translate(-50%, -50%); /* Centra l'immagine sul punto 'top' e 'left' */
@@ -489,43 +489,43 @@ body {
 
 .omini-1 {
   left: 51%;
-  top: 81%;
+  top: 58%;
   animation-delay: 0.3s;
 }
 
 .omini-2 {
   left: 63%;
-  top: 86%;
+  top: 64%;
   animation-delay: 1s;
 }
 
 .omini-3 {
   left: 35%;
-  top: 86%;
+  top: 67%;
   animation-delay: 1.7s;
 }
 
 .omini-4 {
   left: 78%;
-  top: 81%;
+  top: 60%;
   animation-delay: 2.4s;
 }
 
 .omini-5 {
   left: 19%;
-  top: 79%;
+  top: 60%;
   animation-delay: 3.1s;
 }
 
 .omini-6 {
-  left: 78%;
-  top: 88%;
+  left: 90%;
+  top: 65%;
   animation-delay: 3.8s;
 }
 
 .omini-7 {
-  left: 19%;
-  top: 90%;
+  left: 10%;
+  top: 64%;
   animation-delay: 4.3s;
 }
 
@@ -544,183 +544,5 @@ body {
     filter:
       blur(0)
       drop-shadow(0 0 12px rgba(255, 220, 140, 0.35));
-  }
-}
-
-/* FIAMMA ANIMATA */
-.omini-fire {
-  position: absolute;
-
-  left: 50%;
-  top: 53%;
-
-  width: 30%;
-  height: 34%;
-
-  transform: translate(-50%, -50%);
-
-  z-index: 8;
-  pointer-events: none;
-
-  background:
-    radial-gradient(circle at 50% 78%, #fff7c2 0 12%, transparent 13%),
-    radial-gradient(circle at 50% 58%, #ffd24d 0 30%, transparent 31%),
-    radial-gradient(circle at 50% 38%, #ff7a18 0 52%, transparent 53%);
-
-  clip-path: polygon(
-    50% 0%,
-    65% 18%,
-    82% 40%,
-    74% 72%,
-    58% 100%,
-    42% 100%,
-    26% 72%,
-    18% 40%,
-    35% 18%
-  );
-
-  filter:
-    drop-shadow(0 0 8px rgba(255, 220, 120, 0.95))
-    drop-shadow(0 0 18px rgba(255, 140, 0, 0.65));
-
-  opacity: 0.95;
-
-  animation: calmFire 1.4s ease-in-out infinite;
-}
-
-.omini-fire::before {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  top: 58%;
-
-  width: 45%;
-  height: 58%;
-
-  transform: translate(-50%, -50%);
-
-  background:
-    radial-gradient(circle at 50% 60%, #ffffff 0 18%, transparent 19%),
-    radial-gradient(circle at 50% 40%, #ffe66b 0 60%, transparent 61%);
-
-  clip-path: polygon(
-    50% 0%,
-    65% 30%,
-    75% 55%,
-    60% 88%,
-    50% 100%,
-    40% 88%,
-    25% 55%,
-    35% 30%
-  );
-
-  opacity: 0.9;
-}
-
-.omini-fire::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  top: 78%;
-
-  width: 150%;
-  height: 70%;
-
-  transform: translate(-50%, -50%);
-
-  background: radial-gradient(
-    ellipse,
-    rgba(255, 140, 0, 0.45) 0%,
-    rgba(255, 90, 0, 0.15) 45%,
-    rgba(255, 50, 0, 0) 75%
-  );
-
-  filter: blur(8px);
-
-  z-index: -1;
-
-  animation: glowPulse 1.8s ease-in-out infinite;
-}
-
-/* =========================
-   ANIMAZIONI MORBIDE
-========================= */
-@keyframes calmFire {
-
-  0% {
-    transform:
-      translate(-50%, -50%)
-      scaleX(1)
-      scaleY(1);
-
-    filter:
-      drop-shadow(0 0 8px rgba(255, 220, 120, 0.95))
-      drop-shadow(0 0 18px rgba(255, 140, 0, 0.65));
-  }
-
-  20% {
-    transform:
-      translate(-50%, -50%)
-      scaleX(0.9)
-      scaleY(1.14);
-
-    filter:
-      drop-shadow(0 0 10px rgba(255, 230, 140, 1))
-      drop-shadow(0 0 24px rgba(255, 120, 0, 0.9));
-  }
-
-  45% {
-    transform:
-      translate(-50%, -50%)
-      scaleX(1.08)
-      scaleY(0.92);
-
-    filter:
-      drop-shadow(0 0 9px rgba(255, 220, 120, 0.95))
-      drop-shadow(0 0 20px rgba(255, 100, 0, 0.75));
-  }
-
-  70% {
-    transform:
-      translate(-50%, -50%)
-      scaleX(0.95)
-      scaleY(1.08);
-
-    filter:
-      drop-shadow(0 0 11px rgba(255, 235, 150, 1))
-      drop-shadow(0 0 28px rgba(255, 130, 0, 0.95));
-  }
-
-  100% {
-    transform:
-      translate(-50%, -50%)
-      scaleX(1)
-      scaleY(1);
-
-    filter:
-      drop-shadow(0 0 8px rgba(255, 220, 120, 0.95))
-      drop-shadow(0 0 18px rgba(255, 140, 0, 0.65));
-  }
-}
-
-@keyframes glowPulse {
-
-  0% {
-    opacity: 0.45;
-    transform: translate(-50%, -50%) scale(0.95);
-  }
-
-  50% {
-    opacity: 0.75;
-    transform: translate(-50%, -50%) scale(1.08);
-  }
-
-  100% {
-    opacity: 0.45;
-    transform: translate(-50%, -50%) scale(0.95);
   }
 }
