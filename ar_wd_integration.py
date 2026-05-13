@@ -8,7 +8,7 @@ arco_endpoint = "https://dati.cultura.gov.it/sparql"
 sparql_arco = SPARQLWrapper(arco_endpoint)
 
 # codice per serializzare dataframe in triple (aggiungere più campi al dataframe con query sparql a partire dal dataframe filtrato sul soggetto)
-df_matched_items = df_matches_sorted["item"]
+df_matched_items = arco_myth_matches["item"]
 # transform item df in a list of unique values
 arco_items_list = list(set(df_matched_items))
 
@@ -25,7 +25,7 @@ def extend_matched_items(items_list):
         # wrap arco URIs in <>
         formatted_items = " ".join([f"<{uri}>" for uri in batch])
 
-        query_myth_items = """
+        query_myth_items = """ 
         PREFIX arco: <https://w3id.org/arco/ontology/arco/>
         PREFIX a-cd: <https://w3id.org/arco/ontology/context-description/>
         PREFIX a-dd: <https://w3id.org/arco/ontology/denotative-description/>
@@ -34,7 +34,7 @@ def extend_matched_items(items_list):
         PREFIX dc: <http://purl.org/dc/elements/1.1/>
         PREFIX clvapit: <https://w3id.org/italia/onto/CLV/>
 
-        SELECT ?identifier ?dateRange ?lat ?long
+        SELECT ?identifier ?creation ?dateRange ?geometry ?lat ?long
             (GROUP_CONCAT(DISTINCT ?creator; separator=", ") AS ?creators) 
             (GROUP_CONCAT(DISTINCT ?type; separator=", ") AS ?types) 
             (GROUP_CONCAT(DISTINCT ?materialOrTechnique; separator=", ") AS ?materialsOrTechniques) 
@@ -76,7 +76,7 @@ def extend_matched_items(items_list):
             }        
         }
 
-        GROUP BY ?identifier ?dateRange ?lat ?long
+        GROUP BY ?identifier ?creation ?dateRange ?geometry ?lat ?long
         """
         sparql_arco.setQuery(query_myth_items)
         sparql_arco.setReturnFormat(JSON)
@@ -92,7 +92,11 @@ def extend_matched_items(items_list):
                     "type": result.get("types", {}).get("value"),
                     "materialOrTechnique": result.get("materialsOrTechniques", {}).get("value"),
                     "instituteOrSite": result.get("institutesOrSites", {}).get("value"),
-                    "creationLocation": result.get("creationLocations", {}).get("value")
+                    "creation": result.get("creation", {}).get("value"),
+                    "dateRange": result.get("dateRange", {}).get("value"),
+                    "geometry": result.get("geometry", {}).get("value"),
+                    "lat": result.get("lat", {}).get("value"),
+                    "long": result.get("long", {}).get("value"),
                 })
             
             if query_data:
@@ -115,10 +119,10 @@ additional_info_df = additional_info_df.drop_duplicates(subset=['identifier'])
 
 # extend the original dataframe with the additional information using the identifier for merging
 # create identifier column in original dataframe
-df_matches_sorted["identifier"] = df_matches_sorted["item"].apply(lambda x: str(x).split('/')[-1])
+arco_myth_matches["identifier"] = arco_myth_matches["item"].apply(lambda x: str(x).split('/')[-1])
 
 # merge dataframes on identifier column
-df_finale = pd.merge(df_matches_sorted, additional_info_df, on='identifier', how='left')
+df_finale = pd.merge(arco_myth_matches, additional_info_df, on='identifier', how='left')
 
 # pulizia date
 def clean_dates(string_date):
