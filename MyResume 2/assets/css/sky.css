@@ -496,6 +496,105 @@ canvas#canvas {
 }
 
 
+
+/* =========================================
+   HOME - TESTO INTRODUTTIVO MITOLOGICO
+========================================= */
+
+.home-myth-intro {
+  max-width: 850px;
+  margin: 35px auto 0 auto;
+  padding: 28px 38px;
+
+  position: relative;
+  z-index: 25;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,0.14) 0%,
+      rgba(255,255,255,0.08) 42%,
+      rgba(255,255,255,0.02) 100%
+    );
+
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 28px;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 35px rgba(255,255,255,0.12),
+    0 0 90px rgba(120,180,255,0.18);
+
+  opacity: 0;
+  transform: translateY(35px) scale(0.96);
+  filter: blur(18px);
+
+  animation: homeIntroReveal 3s ease-out 5.8s forwards;
+}
+
+.home-myth-intro::before {
+  content: "";
+
+  position: absolute;
+  inset: -2px;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent,
+      rgba(255,255,255,0.28),
+      transparent
+    );
+
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.home-myth-intro p {
+  margin: 0 auto 15px auto;
+
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(0.85rem, 1.15vw, 1.05rem);
+  line-height: 1.7;
+
+  color: rgba(255,255,255,0.88);
+
+  text-shadow:
+    0 0 12px rgba(0,0,0,0.6),
+    0 0 22px rgba(120,180,255,0.25);
+}
+
+.home-myth-intro p:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes homeIntroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+    filter: blur(18px);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(0) scale(1.02);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+
 /* Modifica il wrapper del bottone per gestire l'apparizione */
 .button-wrapper {
   display: flex;
@@ -508,7 +607,7 @@ canvas#canvas {
   filter: blur(15px);
   
   /* Applichiamo l'animazione dedicata con ritardo di 6 secondi */
-  animation: buttonReveal 2.5s ease-out 6s forwards;
+  animation: buttonReveal 2.5s ease-out 8.2s forwards;
 }
 
 
