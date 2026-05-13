@@ -105,6 +105,7 @@
                           </a>
                       </div>
                   </div>
+                
               </div>
             
           </div>
@@ -120,6 +121,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.clouds2.min.js"></script>
 
 
+
+
+
     </section><!-- /Hero Section -->
     <br>
     <br>
@@ -132,9 +136,14 @@
     <br>
     <br>
     <br>
-  
+  <div id="hometext">
+                   <p class="myth-subtitle">Every statue, every fresco, and every ancient ruin in Italy tells a story. <br>
+                    We have decoded the ArCo datasetto bring these stories to life. Follow the vertical path of the gods: a descent from the marble clouds of Olympus to the silent echoes of the Underworld.</p>
+                 </div>
     
     <section id="cielo" class="hero section aether-section sky-section-unique">
+
+       
 
       <!-- NUVOLE -->
       <div class="aether-cloud-scene">
@@ -171,6 +180,7 @@
           <span>— HOMER, THE ODYSSEY</span>
 
         </div>
+      
 
       </div>
 
@@ -349,14 +359,56 @@
 
 
     
-
-    <!-- About Section - terra -->
+    <!--- GEA -->
+    <!--- GEA -->
+    <!--- GEA -->
 <section id="terra" class="about section">
     
     <!-- NUOVO CONTENITORE PER IL GRUPPO PROMETEO -->
     <div class="prometeo-group" data-aos="fade-right">
+        <span class="prometeo-tooltip">
+            Prometheus was a wise Titan who stole fire from the gods to give it to humanity. 
+            As punishment, Zeus eternally chained him to a mountain.
+        </span>
         <img src="assets/img/prometeo-removebg-preview.png" alt="Prometeo e l'Aquila">
     </div>
+
+
+   <div class="omini-group omini-1">
+      <img src="assets/img/omini.png" alt="Uomini intorno al fuoco">
+      <span class="omini-fire"></span>
+    </div>
+
+    <div class="omini-group omini-2">
+      <img src="assets/img/omini.png" alt="Uomini intorno al fuoco">
+      <span class="omini-fire"></span>
+    </div>
+
+    <div class="omini-group omini-3">
+      <img src="assets/img/omini.png" alt="Uomini intorno al fuoco">
+      <span class="omini-fire"></span>
+    </div>
+
+    <div class="omini-group omini-4">
+      <img src="assets/img/omini.png" alt="Uomini intorno al fuoco">
+      <span class="omini-fire"></span>
+    </div>
+
+    <div class="omini-group omini-5">
+      <img src="assets/img/omini.png" alt="Uomini intorno al fuoco">
+      <span class="omini-fire"></span>
+    </div>
+
+    <div class="omini-group omini-6">
+      <img src="assets/img/omini.png" alt="Uomini intorno al fuoco">
+      <span class="omini-fire"></span>
+    </div>
+
+    <div class="omini-group omini-7">
+      <img src="assets/img/omini.png" alt="Uomini intorno al fuoco">
+      <span class="omini-fire"></span>
+    </div>
+   
 
     <!-- Contenuto testuale esistente -->
     <div class="container section-title" data-aos="fade-up">
@@ -366,6 +418,8 @@
         </div>
     </div>
 </section>
+
+
     <!-- Stats Section - mare -->
     <section id="mare" class="stats section">
       <!-- Section Title -->
@@ -1042,6 +1096,154 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   observer.observe(cieloSection);
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const quizItems = document.querySelectorAll(".divine-quiz-item");
+  const confirmBtn = document.querySelector("#divine-quiz-confirm-btn");
+  const feedback = document.querySelector("#divine-quiz-feedback");
+
+  let selectedItem = null;
+
+  /* =========================
+     SELEZIONE RISPOSTA
+  ========================= */
+
+  quizItems.forEach(function (item) {
+
+    item.addEventListener("click", function () {
+
+      if (confirmBtn.classList.contains("quiz-locked")) return;
+
+      quizItems.forEach(function (el) {
+        el.classList.remove("selected");
+      });
+
+      item.classList.add("selected");
+
+      selectedItem = item;
+
+      confirmBtn.disabled = false;
+    });
+
+  });
+
+  /* =========================
+     CONFERMA RISPOSTA
+  ========================= */
+
+  confirmBtn.addEventListener("click", function () {
+
+    if (!selectedItem) return;
+
+    confirmBtn.disabled = true;
+    confirmBtn.classList.add("quiz-locked");
+
+    /* FULMINE SU QUALSIASI RISPOSTA */
+
+    selectedItem.classList.remove("lightning-hit");
+
+    void selectedItem.offsetWidth;
+
+    selectedItem.classList.add("lightning-hit");
+
+    setTimeout(function () {
+
+      selectedItem.classList.remove("lightning-hit");
+
+      /* =========================
+         RISPOSTA CORRETTA
+      ========================= */
+
+      if (selectedItem.dataset.value === "correct") {
+
+        selectedItem.classList.add("correct-answer");
+
+        if (!selectedItem.querySelector(".divine-quiz-laurel")) {
+
+          const laurel = document.createElement("img");
+
+          laurel.src = "assets/img/alloro.png";
+          laurel.alt = "Corona d'alloro";
+
+          laurel.className = "divine-quiz-laurel";
+
+          selectedItem.appendChild(laurel);
+        }
+
+        feedback.textContent =
+          "Risposta corretta: Ermes è il messaggero degli dei.";
+
+        feedback.style.color = "#069c29";
+      }
+
+      /* =========================
+         RISPOSTA SBAGLIATA
+      ========================= */
+
+      else {
+
+        selectedItem.classList.add("wrong-answer");
+        /* FUMO */
+
+            if (!selectedItem.querySelector(".infernal-smoke")) {
+
+              const smoke = document.createElement("div");
+              smoke.className = "infernal-smoke";
+
+              selectedItem.appendChild(smoke);
+            }
+
+            /* CENERE */
+
+            if (!selectedItem.querySelector(".embers")) {
+
+              const embers = document.createElement("div");
+              embers.className = "embers";
+
+              for (let i = 0; i < 5; i++) {
+                const ember = document.createElement("span");
+                embers.appendChild(ember);
+              }
+
+              selectedItem.appendChild(embers);
+            }
+
+        const correctItem = document.querySelector(
+          '.divine-quiz-item[data-value="correct"]'
+        );
+
+        if (correctItem) {
+
+          correctItem.classList.add("correct-answer");
+
+          if (!correctItem.querySelector(".divine-quiz-laurel")) {
+
+            const laurel = document.createElement("img");
+
+            laurel.src = "assets/img/alloro.png";
+            laurel.alt = "Corona d'alloro";
+
+            laurel.className = "divine-quiz-laurel";
+
+            correctItem.appendChild(laurel);
+          }
+        }
+
+        feedback.textContent =
+          "Risposta errata: il messaggero degli dei è Ermes.";
+
+        feedback.style.color = "#b12a00";
+      }
+
+    }, 650);
+
+  });
+
 });
 </script>
 

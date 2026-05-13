@@ -3,6 +3,7 @@
 ========================================= */
 
 /* Sezione GEA full width reale */
+/* Tema TERRA (Verde) */
 #terra,
 #terra.about.section {
   position: relative !important;
@@ -43,6 +44,7 @@
 #terra .section-title {
   position: relative !important;
   z-index: 2 !important;
+  margin-top: 130px;
 }
 
 /* Testi */
@@ -52,7 +54,7 @@
 #terra li,
 #terra span,
 #terra strong {
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 /* Titolo GEA */
@@ -250,13 +252,37 @@ body {
 }
 
 /* Overlay scuro leggero (Invariato) */
+/* NEBBIA DI ENTRATA - Inizio sezione Terra */
+#terra,
+#terra.about.section {
+  /* Forza lo sfondo base a bianco per raccordarsi al cielo */
+  background-color: #ffffff !important; 
+  margin-top: -1px !important; /* Elimina eventuali micro-fessure tra div */
+  padding-top: 0 !important;
+}
+
+/* Sovrascriviamo l'overlay superiore di Terra */
 #terra::before {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px; /* Fascia di nebbia molto alta */
+  z-index: 2;
   pointer-events: none;
+  /* Gradiente inverso: parte da bianco pieno e svanisce */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,      /* Bianco identico alla fine del cielo */
+    rgba(255, 255, 255, 0.8) 20%,
+    rgba(255, 255, 255, 0) 100%     /* Qui l'immagine della montagna diventa visibile */
+  );
+}
+
+/* Assicuriamoci che lo sfondo della sezione sia bianco dove non arriva l'immagine */
+#terra {
+    background-color: #ffffff !important;
 }
 
 /* Contenuto testuale sopra lo sfondo (z-index aumentato per sicurezza) */
@@ -310,10 +336,10 @@ body {
   
   /* POSIZIONAMENTO RICHIESTO: */
   /* "poco sopra la metà" (Verticale) */
-  top: 29%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
+  top: 42.2%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
   
   /* "un po' più sulla sinistra rispetto alla linea centrale" (Orizzontale) */
-  left: 34%; /* La linea centrale è 50%. 35% lo sposta a sinistra. Regola a piacere. */
+  left: 40%; /* La linea centrale è 50%. 35% lo sposta a sinistra. Regola a piacere. */
   
   /* Allineamento di precisione */
   transform: translate(-50%, -50%); /* Centra l'immagine sul punto 'top' e 'left' */
@@ -343,5 +369,358 @@ body {
     max-width: 70%; /* Più grande su mobile */
     top: 55%; /* Spostato leggermente più in basso per non coprire il testo h2 */
     left: 50%; /* Centrato orizzontalmente su mobile */
+  }
+}
+
+
+/* =========================================
+   PROMETEO DESCRIZIONE POPUP
+========================================= */
+
+/* Contenitore principale */
+
+
+/* Stile della casella di testo (Tooltip) */
+.prometeo-tooltip {
+    position: absolute;
+    left: -220px; /* La sposta a sinistra dell'immagine */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px; /* Larghezza della casella */
+    background: rgba(65, 40, 1, 0.6); /* Sfondo nero semi-trasparente */
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border: 1px solid var(--accent-color); /* Usa il tuo colore di accento */
+    
+    /* Effetto scomparsa */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 10;
+}
+
+/* Freccetta della casella (opzionale) */
+.prometeo-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(95, 51, 20, 0.8);
+}
+
+/* MOSTRA AL PASSAGGIO DEL MOUSE */
+.prometeo-group:hover .prometeo-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-50%) translateX(10px); /* Leggero movimento verso destra comparendo */
+}
+
+/* Assicurati che l'immagine non si sposti */
+.prometeo-group img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .prometeo-tooltip {
+        left: 0;
+        top: -120px; /* La sposta sopra l'immagine */
+        width: 100%;
+    }
+}
+
+/* =========================================
+   OMINI SULLE COLLINE
+========================================= */
+
+.omini-group {
+  position: absolute;
+
+  /* Più in basso di Prometeo */
+  top: 80%;
+
+  /* Spostali sulla collina: modifica questo valore se li vuoi più a destra/sinistra */
+  left: 46%;
+
+  transform: translate(-50%, -50%);
+
+  width: auto;
+  max-width:  7%;
+
+  z-index: 6;
+
+  filter: drop-shadow(0 0 12px rgba(255, 220, 140, 0.35));
+  opacity: 0.95;
+}
+
+.omini-group img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.omini-group {
+  position: absolute;
+
+  width: auto;
+  max-width: 7%;
+
+  z-index: 6;
+
+  opacity: 0;
+  filter: drop-shadow(0 0 12px rgba(255, 220, 140, 0.35));
+
+  animation: ominiFadeIn 1.2s ease forwards;
+}
+
+.omini-group img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* POSIZIONI */
+
+.omini-1 {
+  left: 51%;
+  top: 81%;
+  animation-delay: 0.3s;
+}
+
+.omini-2 {
+  left: 63%;
+  top: 86%;
+  animation-delay: 1s;
+}
+
+.omini-3 {
+  left: 35%;
+  top: 86%;
+  animation-delay: 1.7s;
+}
+
+.omini-4 {
+  left: 78%;
+  top: 81%;
+  animation-delay: 2.4s;
+}
+
+.omini-5 {
+  left: 19%;
+  top: 79%;
+  animation-delay: 3.1s;
+}
+
+.omini-6 {
+  left: 78%;
+  top: 88%;
+  animation-delay: 3.8s;
+}
+
+.omini-7 {
+  left: 19%;
+  top: 90%;
+  animation-delay: 4.3s;
+}
+
+/* ANIMAZIONE SENZA TRANSFORM */
+
+@keyframes ominiFadeIn {
+  from {
+    opacity: 0;
+    filter:
+      blur(6px)
+      drop-shadow(0 0 0 rgba(255, 220, 140, 0));
+  }
+
+  to {
+    opacity: 0.95;
+    filter:
+      blur(0)
+      drop-shadow(0 0 12px rgba(255, 220, 140, 0.35));
+  }
+}
+
+/* FIAMMA ANIMATA */
+.omini-fire {
+  position: absolute;
+
+  left: 50%;
+  top: 53%;
+
+  width: 30%;
+  height: 34%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 8;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 50% 78%, #fff7c2 0 12%, transparent 13%),
+    radial-gradient(circle at 50% 58%, #ffd24d 0 30%, transparent 31%),
+    radial-gradient(circle at 50% 38%, #ff7a18 0 52%, transparent 53%);
+
+  clip-path: polygon(
+    50% 0%,
+    65% 18%,
+    82% 40%,
+    74% 72%,
+    58% 100%,
+    42% 100%,
+    26% 72%,
+    18% 40%,
+    35% 18%
+  );
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 220, 120, 0.95))
+    drop-shadow(0 0 18px rgba(255, 140, 0, 0.65));
+
+  opacity: 0.95;
+
+  animation: calmFire 1.4s ease-in-out infinite;
+}
+
+.omini-fire::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 58%;
+
+  width: 45%;
+  height: 58%;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(circle at 50% 60%, #ffffff 0 18%, transparent 19%),
+    radial-gradient(circle at 50% 40%, #ffe66b 0 60%, transparent 61%);
+
+  clip-path: polygon(
+    50% 0%,
+    65% 30%,
+    75% 55%,
+    60% 88%,
+    50% 100%,
+    40% 88%,
+    25% 55%,
+    35% 30%
+  );
+
+  opacity: 0.9;
+}
+
+.omini-fire::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 78%;
+
+  width: 150%;
+  height: 70%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 140, 0, 0.45) 0%,
+    rgba(255, 90, 0, 0.15) 45%,
+    rgba(255, 50, 0, 0) 75%
+  );
+
+  filter: blur(8px);
+
+  z-index: -1;
+
+  animation: glowPulse 1.8s ease-in-out infinite;
+}
+
+/* =========================
+   ANIMAZIONI MORBIDE
+========================= */
+@keyframes calmFire {
+
+  0% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(1)
+      scaleY(1);
+
+    filter:
+      drop-shadow(0 0 8px rgba(255, 220, 120, 0.95))
+      drop-shadow(0 0 18px rgba(255, 140, 0, 0.65));
+  }
+
+  20% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(0.9)
+      scaleY(1.14);
+
+    filter:
+      drop-shadow(0 0 10px rgba(255, 230, 140, 1))
+      drop-shadow(0 0 24px rgba(255, 120, 0, 0.9));
+  }
+
+  45% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(1.08)
+      scaleY(0.92);
+
+    filter:
+      drop-shadow(0 0 9px rgba(255, 220, 120, 0.95))
+      drop-shadow(0 0 20px rgba(255, 100, 0, 0.75));
+  }
+
+  70% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(0.95)
+      scaleY(1.08);
+
+    filter:
+      drop-shadow(0 0 11px rgba(255, 235, 150, 1))
+      drop-shadow(0 0 28px rgba(255, 130, 0, 0.95));
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scaleX(1)
+      scaleY(1);
+
+    filter:
+      drop-shadow(0 0 8px rgba(255, 220, 120, 0.95))
+      drop-shadow(0 0 18px rgba(255, 140, 0, 0.65));
+  }
+}
+
+@keyframes glowPulse {
+
+  0% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  50% {
+    opacity: 0.75;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.95);
   }
 }
