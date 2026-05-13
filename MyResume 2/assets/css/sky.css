@@ -1008,7 +1008,7 @@ canvas#canvas {
 }
 
 .indexslider{
-    height: 550px;
+    height: 600px;
     position: relative;
     overflow-x: hidden; 
     padding-top: 20px;
@@ -1063,7 +1063,7 @@ img:hover{
 }
 
 .index-slide {
-    height: 450px; /* Aumentato un po' per far spazio al testo */
+    height: 400px; /* Aumentato un po' per far spazio al testo */
     width: 200px;
     display: flex;
     flex-direction: column; /* Mette gli elementi uno sotto l'altro */
