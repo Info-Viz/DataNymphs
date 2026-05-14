@@ -2612,3 +2612,42 @@ img:hover{
     rgba(255, 255, 255, 1) 100%
   );
 }
+
+/* TESTO NARRATIVO AETHER */
+
+.aether-story-text {
+  max-width: 760px;
+  margin: 150px auto 0;
+  padding: 34px 42px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 28px;
+
+  box-shadow:
+    0 18px 45px rgba(78, 105, 130, 0.18),
+    inset 0 0 35px rgba(255, 255, 255, 0.45);
+
+  position: relative;
+  z-index: 20;
+}
+
+.aether-story-text p {
+  margin-bottom: 18px;
+
+  font-family: "Marcellus", serif;
+  font-size: 1.18rem;
+  line-height: 1.85;
+
+  color: #26394a;
+  letter-spacing: 0.03em;
+}
+
+.aether-story-text p:last-child {
+  margin-bottom: 0;
+}
+
