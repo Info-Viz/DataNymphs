@@ -1,5 +1,4 @@
 entity,label,aliases,description,category
-http://www.wikidata.org/entity/Q304227,Aba,,ninfa naiade della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q279782,Abarbarea,,naiade della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q2370052,Acanto,,"personaggio della mitologia greca, probabilmente una ninfa amata da Apollo",greek_deity
 http://www.wikidata.org/entity/Q4668463,Acaste,,Oceanina nella mitologia greca,greek_deity
@@ -255,7 +254,6 @@ http://www.wikidata.org/entity/Q140001,Eris,,dea greca della discordia,greek_dei
 http://www.wikidata.org/entity/Q204146,Ermafrodito,,"divinità della mitologia greca, figlio di Afrodite ed Hermes",greek_deity
 http://www.wikidata.org/entity/Q41484,Ermes,"Ermète, Hermes","dio greco del commercio, dei viaggi, dei confini, dei ladri e dell'eloquenza, messaggero degli dèi e psicopompo",greek_deity
 http://www.wikidata.org/entity/Q1035630,Ermo,,divinità fluviale greca,greek_deity
-http://www.wikidata.org/entity/Q5837114,Eroe,,"ninfa della mitologia greca, figlia di Asopo",greek_deity
 http://www.wikidata.org/entity/Q121973,Eros,,"dio greco dell'amore, passione, procreazione, dell'attrazione sessuale e desiderio fisico",greek_deity
 http://www.wikidata.org/entity/Q180325,Ersa,,divinità greca della rugiada,greek_deity
 http://www.wikidata.org/entity/Q12647143,Esaro,,divinità fluviale greca,greek_deity
@@ -385,7 +383,6 @@ http://www.wikidata.org/entity/Q761106,Nana,,ninfa della mitologia greca,greek_d
 http://www.wikidata.org/entity/Q1984901,Neda,,"ninfa della mitologia greca, figlia di Oceano",greek_deity
 http://www.wikidata.org/entity/Q1375640,Neera,,ninfa della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q624551,Nefele,Nefeli,"ninfa delle nubi, moglie di Atamante e madre di Frisso ed Elle",greek_deity
-http://www.wikidata.org/entity/Q1977078,Nemea,,"divinità greca, eponima di Nemea",greek_deity
 http://www.wikidata.org/entity/Q185747,Nemesi,,dea greca del castigo e della vendetta,greek_deity
 http://www.wikidata.org/entity/Q189527,Nereo,Nereus,divinità marina della mitologia greca,greek_deity
 http://www.wikidata.org/entity/Q3564989,Nerito,Nerite,"personaggio della mitologia greca, figlio di Nereo e Doride",greek_deity
@@ -2335,7 +2332,6 @@ http://www.wikidata.org/entity/Q1675357,Itilo,,"personaggio della mitologia grec
 http://www.wikidata.org/entity/Q4205332,Itono,,"personaggio della mitologia greca, figlio di Anfizione",greek_mythological_character
 http://www.wikidata.org/entity/Q17635079,Itono,,"personaggio della mitologia greca, figlio di Beoto",greek_mythological_character
 http://www.wikidata.org/entity/Q1676112,Iunce,"Iynx, Iunge",ninfa della mitologia greca,greek_mythological_character
-http://www.wikidata.org/entity/Q1604113,La casa del tesoro di Rhampsinit,,antico testo egizio,greek_mythological_character
 http://www.wikidata.org/entity/Q4251796,Laas,,"personaggio della mitologia greca, figlio di Metis",greek_mythological_character
 http://www.wikidata.org/entity/Q6466840,Labda,,madre di Cipselo,greek_mythological_character
 http://www.wikidata.org/entity/Q847005,Labdaco,,"Personaggio della mitologia greca, fu un re di Tebe",greek_mythological_character
@@ -3271,10 +3267,10 @@ http://www.wikidata.org/entity/Q197028,Zeuxippe,Zeussippe,"personaggio della mit
 http://www.wikidata.org/entity/Q23818213,Zeuxippe,Zeussippe,"personaggio della mitologia greca, madre di Priamo",greek_mythological_character
 http://www.wikidata.org/entity/Q3575332,Zeuxippe,Zeussippe,"personaggio della mitologia greca, figlia di Eridano e moglie di Teleone",greek_mythological_character
 http://www.wikidata.org/entity/Q3575333,Zeuxippe,Zeussippe,"personaggio della mitologia greca, figlia di Ippocoonte e moglie di Antifate",greek_mythological_character
-http://www.wikidata.org/entity/Q182790,chimera,,mostro mitologico,greek_mythological_character
+http://www.wikidata.org/entity/Q182790,Chimera,,mostro mitologico,greek_mythological_character
 http://www.wikidata.org/entity/Q122005198,moglie di Codro,,personaggio della mitologia greca,greek_mythological_character
 http://www.wikidata.org/entity/Q37739859,pioggia d'oro,pioggia dorata,pioggia d'oro mandata da Zeus a Danae,greek_mythological_character
-http://www.wikidata.org/entity/Q12737222,sibilla delfica,,"una delle sibille, profetesse presenti nella mitologia classica",greek_mythological_character
+http://www.wikidata.org/entity/Q12737222,Sibilla Delfica,,"una delle sibille, profetesse presenti nella mitologia classica",greek_mythological_character
 http://www.wikidata.org/entity/Q305570,Abaride,,Rutulo nella mitologia romana,roman_mythological_character
 http://www.wikidata.org/entity/Q1501499,Aceste,,personaggio della mitologia romana,roman_mythological_character
 http://www.wikidata.org/entity/Q21548226,Alcatoo,,"personaggio della mitologia greca, amico di Enea",roman_mythological_character
@@ -3318,7 +3314,7 @@ http://www.wikidata.org/entity/Q48800637,Tolumnio,,"personaggio dell'""Eneide"" 
 http://www.wikidata.org/entity/Q127878516,Ufente,,"personaggio dell'""Eneide"" di Virgilio",roman_mythological_character
 http://www.wikidata.org/entity/Q4009778,Venulo,,"personaggio dell'""Eneide"" di Virgilio",roman_mythological_character
 http://www.wikidata.org/entity/Q4016094,Volcente,Volscente,"personaggio dell'""Eneide"" di Virgilio",roman_mythological_character
-http://www.wikidata.org/entity/Q184353,Cariti,"Tre Grazie, Càriti, Grazie","nella mitologia greca, dee personificatrici della grazia e della bellezza",group_of_deities
+http://www.wikidata.org/entity/Q184353,Cariti,"Tre Grazie, Càriti, Grazie, tre grazie, tre Grazie, Tre grazie","nella mitologia greca, dee personificatrici della grazia e della bellezza",group_of_deities
 http://www.wikidata.org/entity/Q5208255,Demoni Ceramici,"Daimones Keramikoi, Daemones Ceramici","cinque spiriti della mitologia greca, di carattere malefico, che si narra rovinassero i vasi agli artigiani",group_of_deities
 http://www.wikidata.org/entity/Q1183096,Dèi Consenti,,dodici dèi principali della mitologia romana,group_of_deities
 http://www.wikidata.org/entity/Q1361380,Eroti,,figure della mitologia greca,group_of_deities
@@ -3335,7 +3331,7 @@ http://www.wikidata.org/entity/Q1570477,Portuno,,dio romano,spirits_of_nature
 http://www.wikidata.org/entity/Q1245697,Telxiepea,"Telxiope, Telxinoe",sirena della mitologia greca,spirits_of_nature
 http://www.wikidata.org/entity/Q937512,Tiberino,Tevere (divinità),"divinità romana dell'acqua, personificazione del fiume Tevere",spirits_of_nature
 http://www.wikidata.org/entity/Q5271357,Diana e Atteone,,tema artistico,mythical_war
-http://www.wikidata.org/entity/Q1233460,Dodici fatiche di Eracle,"Le fatiche di Eracle, Le dodici fatiche di Ercole, Le dodici fatiche di Eracle, Fatiche di Eracle, Dodici fatiche di Ercole, Dodici fatiche d'Eracle, Dodici Fatiche, Le fatiche di Ercole, Fatiche di Ercole",serie di imprese compiute da Ercole,mythical_war
+http://www.wikidata.org/entity/Q1233460,Dodici fatiche di Eracle,"Le fatiche di Eracle, Le dodici fatiche di Ercole, Le dodici fatiche di Eracle, Fatiche di Eracle, Dodici fatiche di Ercole, Dodici fatiche d'Eracle, Dodici Fatiche, Le fatiche di Ercole, Fatiche di Ercole, fatiche di Ercole",serie di imprese compiute da Ercole,mythical_war
 http://www.wikidata.org/entity/Q118937178,Ercole soffoca i serpenti,"Ercole infante e i serpenti, Ercole e i serpenti",tema artistico mitologico,mythical_war
 http://www.wikidata.org/entity/Q494762,Leda e il cigno,Leda col cigno,tema artistico ed episodio della mitologia greca,mythical_war
 http://www.wikidata.org/entity/Q1048568,Ratto delle Sabine,Il ratto delle sabine,evento leggendario della tradizione dell'antica Roma,mythical_war
@@ -3343,8 +3339,8 @@ http://www.wikidata.org/entity/Q220878,Titanomachia,,"lotta mitologica di Zeus e
 http://www.wikidata.org/entity/Q42937,guerra di Troia,"Ilioupersis, Guerra troiana","guerra della mitologia greca combattuta presso Troia, in Anatolia",mythical_war
 http://www.wikidata.org/entity/Q26690200,guerra latina,guerra dei Rutuli,mitica guerra tra Troiani e Rutuli,mythical_war
 http://www.wikidata.org/entity/Q1170206,indovinello della sfinge,Enigma della sfinge,enigma,mythical_war
-http://www.wikidata.org/entity/Q16943283,ratto di Europa,,evento della mitologia greca,mythical_war
-http://www.wikidata.org/entity/Q2132999,ratto di Persefone,,episodio della mitologia greca,mythical_war
+http://www.wikidata.org/entity/Q16943283,Ratto di Europa,,evento della mitologia greca,mythical_war
+http://www.wikidata.org/entity/Q2132999,Ratto di Persefone,,episodio della mitologia greca,mythical_war
 http://www.wikidata.org/entity/Q321399,Abii,,popolo presente nell'Iliade,mythical_entity
 http://www.wikidata.org/entity/Q13081186,Acheronte,,fiume della mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q1521549,Ade,Regno dei morti,regno dei morti nella mitologia greca e romana,mythical_entity
@@ -3393,7 +3389,7 @@ http://www.wikidata.org/entity/Q21636696,Lampo,,cavallo di Aurora,mythical_entit
 http://www.wikidata.org/entity/Q907245,Lelapo,Lelope,cane della mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q1743879,Leone del Citerone,Leone citeronio,leone della mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q596552,Lotofagi,,popolo della mitologia greca,mythical_entity
-http://www.wikidata.org/entity/Q28136294,Lupa romana,"Lupa di Roma, Lupa capitolina, Luperca",lupa della mitologia romana che si prese cura dei gemelli Romolo et Remo,mythical_entity
+http://www.wikidata.org/entity/Q28136294,Lupa romana,"Lupa di Roma, Lupa Capitolina, Luperca",lupa della mitologia romana che si prese cura dei gemelli Romolo et Remo,mythical_entity
 http://www.wikidata.org/entity/Q3860914,Monocero,,animale mitologico,mythical_entity
 http://www.wikidata.org/entity/Q660623,Numitore,,"personaggio della mitologia romana, nonno materno di Romolo e Remo",mythical_entity
 http://www.wikidata.org/entity/Q1232442,Ogigia,,isola della mitologia greca,mythical_entity
@@ -3411,16 +3407,16 @@ http://www.wikidata.org/entity/Q1359925,anello di Gige,,oggetto magico,mythical_
 http://www.wikidata.org/entity/Q474962,anfesibena,anfisbena,serpente mitologico,mythical_entity
 http://www.wikidata.org/entity/Q1960423,calzari alati,,calzari mitologici del dio Ermes/Mercurio,mythical_entity
 http://www.wikidata.org/entity/Q1196035,civetta di Atena,"nottola di Minerva, civetta di Minerva",civetta simbolo della dea greca Atena,mythical_entity
-http://www.wikidata.org/entity/Q816795,ippocampo,,creatura della mitologia greca,mythical_entity
+http://www.wikidata.org/entity/Q816795,Ippocampo,,creatura della mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q158958,lago Tritonide,lago Tritone,antico lago dell'Africa,mythical_entity
 http://www.wikidata.org/entity/Q919702,nettare,,bevanda degli dei nella mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q29655267,pretendenti di Elena,,pretendenti di Elena nella mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q268657,sciapode,"sciapodi, monopodi, monopode",popolo leggendario dell'antichità classica,mythical_entity
 http://www.wikidata.org/entity/Q2712103,scudo di Achille,,"scudo descritto nell'""Iliade"" di Omero",mythical_entity
-http://www.wikidata.org/entity/Q150986,sirena,sirene,"figura mitologico-religiosa greca, metà donna e metà pesce",mythical_entity
+http://www.wikidata.org/entity/Q150986,Sirena,Sirene,"figura mitologico-religiosa greca, metà donna e metà pesce",mythical_entity
 http://www.wikidata.org/entity/Q20644862,tridente di Poseidone,"triaina, tridente",attributo di Poseidone nella mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q937164,vaso di Pandora,,oggetto della mitologia greca,mythical_entity
-http://www.wikidata.org/entity/Q212262,vello d'oro,,oggetto mitologico greco antico,mythical_entity
+http://www.wikidata.org/entity/Q212262,Vello d'oro,,oggetto mitologico greco antico,mythical_entity
 http://www.wikidata.org/entity/Q1857362,volpe di Teumesso,,volpe della mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q21547793,Acoloe,,arpia della mitologia greca,ibrido
 http://www.wikidata.org/entity/Q3605939,Aellopoda,,arpia della mitologia greca,ibrido
