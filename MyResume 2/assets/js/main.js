@@ -838,62 +838,28 @@ $document.mousemove((e) => {
     });
 })();
 
+
+
 // pointer nuvola
 (function() {
-    const skySection = document.getElementById('sky-section'); // Sostituisci con l'ID della tua sezione cielo
+    const cloudSection = document.getElementById('cielo'); // Puntiamo alla sezione Aether/Cielo
     const cloudPointer = document.getElementById('cloud-pointer-sky');
 
-    if (!skySection || !cloudPointer) return;
+    if (!cloudSection || !cloudPointer) return;
 
-    skySection.addEventListener('mousemove', (e) => {
+    cloudSection.addEventListener('mousemove', (e) => {
         cloudPointer.style.display = 'flex';
-        // Movimento fluido
-        requestAnimationFrame(() => {
-            cloudPointer.style.left = e.clientX + 'px';
-            cloudPointer.style.top = e.clientY + 'px';
-        });
+        // Usiamo pageX/pageY se la sezione è molto lunga (scroll) 
+        // o clientX/clientY se vuoi che segua il mouse rispetto alla finestra
+        cloudPointer.style.left = e.clientX + 'px';
+        cloudPointer.style.top = e.clientY + 'px';
     });
 
-    skySection.addEventListener('mouseleave', () => {
+    cloudSection.addEventListener('mouseleave', () => {
         cloudPointer.style.display = 'none';
     });
 })();
 
-
-//pointer nuvola
-document.addEventListener('DOMContentLoaded', function() {
-    (function() {
-        const skySection = document.getElementById('sky-section-unique');
-        const cloudPointer = document.getElementById('cloud-pointer-sky');
-
-        if (!skySection || !cloudPointer) {
-            console.error("Errore: ID sky-section-unique o cloud-pointer-sky non trovati!");
-            return;
-        }
-
-        // 1. Mostra e muovi
-        skySection.addEventListener('mousemove', (e) => {
-            cloudPointer.style.display = 'flex';
-            
-            // Usiamo le coordinate client per il fixed position
-            const x = e.clientX;
-            const y = e.clientY;
-            
-            cloudPointer.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-        });
-
-        // 2. Nascondi quando esci
-        skySection.addEventListener('mouseleave', () => {
-            cloudPointer.style.display = 'none';
-        });
-
-        // 3. Fix per il touch (opzionale)
-        skySection.addEventListener('touchstart', () => {
-            cloudPointer.style.display = 'none';
-        }, {passive: true});
-
-    })();
-});
 
 
 
@@ -930,11 +896,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (isCorrect) {
       selectedOption.classList.add('correct-answer');
-      feedback.innerHTML = "🏅 Victory! Zeus rewards you with divine Ambrosia. You are worthy of Olympus! Check the charts to learn more";
+      feedback.innerHTML = "";
       feedback.style.color = "#28a745";
     } else {
       selectedOption.classList.add('wrong-answer');
-      feedback.innerHTML = "❌ Error! Zeus condemns you to the shadows of the Underworld.Consult the charts to understand what you got wrong!";
+      feedback.innerHTML = "";
       feedback.style.color = "#dc3545";
       
       // Opzionale: mostra qual era quella corretta
