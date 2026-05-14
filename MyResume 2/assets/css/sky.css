@@ -495,6 +495,316 @@ canvas#canvas {
   }
 }
 
+.olympus-separator {
+  position: relative;
+  z-index: 60;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+
+  width: min(620px, 84%);
+  margin: 34px auto 16px auto;
+
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(12px);
+
+  animation: olympusSeparatorReveal 2s ease-out 5.2s forwards;
+}
+
+.olympus-separator span {
+  display: block;
+  flex: 1;
+  height: 2px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,1),
+    transparent
+  );
+
+  box-shadow:
+    0 0 14px rgba(255,255,255,0.85),
+    0 0 35px rgba(180,220,255,0.45);
+}
+
+.olympus-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 0 22px rgba(255,255,255,0.45),
+    0 0 60px rgba(180,220,255,0.25);
+}
+
+.olympus-icon i {
+  display: block;
+
+  font-size: 2.1rem;
+  line-height: 1;
+
+  color: #ffffff !important;
+
+  text-shadow:
+    0 0 12px rgba(255,255,255,1),
+    0 0 32px rgba(180,220,255,0.75);
+}
+
+@keyframes olympusSeparatorReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* =========================================
+   HOME - RACCONTO CHE EMERGE DALLA NEBBIA
+========================================= */
+
+.home-myth-intro {
+  position: relative;
+  z-index: 25;
+
+  max-width: 980px;
+  margin: 42px auto 0 auto;
+  padding: 58px 76px;
+
+  text-align: center;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,0.11) 0%,
+      rgba(120,150,180,0.07) 36%,
+      rgba(0,0,0,0.58) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(8,10,14,0.72),
+      rgba(0,0,0,0.9)
+    );
+
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 36px;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 0 60px rgba(180,220,255,0.22),
+    0 0 140px rgba(120,180,255,0.14),
+    inset 0 0 80px rgba(255,255,255,0.08),
+    inset 0 0 160px rgba(0,0,0,0.7);
+
+  opacity: 0;
+  transform: translateY(45px) scale(0.96);
+  filter: blur(18px);
+
+  animation: mythContainerFromFog 2.8s ease-out 5.6s forwards;
+}
+
+/* alone grande dietro al testo */
+.home-myth-intro::before {
+  content: "";
+  position: absolute;
+  inset: -45%;
+
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 45%,
+      rgba(255,255,255,0.42) 0%,
+      rgba(210,225,245,0.22) 24%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse at 78% 55%,
+      rgba(255,255,255,0.34) 0%,
+      rgba(190,215,245,0.18) 28%,
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255,255,255,0.18) 0%,
+      rgba(180,210,255,0.10) 35%,
+      transparent 70%
+    );
+
+  filter: blur(42px);
+  opacity: 0;
+
+  animation: mythMistCross 9s ease-in-out 5.8s forwards;
+}
+
+/* velo di nebbia che passa sopra il contenitore */
+.home-myth-intro::after {
+  content: "";
+  position: absolute;
+
+  top: -35%;
+  left: -80%;
+
+  width: 130%;
+  height: 170%;
+
+  z-index: 4;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      rgba(255,255,255,0.05) 18%,
+      rgba(255,255,255,0.42) 45%,
+      rgba(210,230,255,0.18) 62%,
+      transparent 100%
+    );
+
+  filter: blur(35px);
+  opacity: 0;
+
+  animation: mistVeilSweep 7.5s ease-in-out 6s forwards;
+}
+
+.home-myth-intro p {
+  position: relative;
+  z-index: 3;
+
+  max-width: 860px;
+  margin: 0 auto 24px auto;
+
+  font-family: "Marcellus", serif;
+  font-size: clamp(1rem, 1.2vw, 1.22rem);
+  line-height: 1.85;
+  letter-spacing: 0.025em;
+
+  color: rgba(245,248,255,0.9);
+
+  text-shadow:
+    0 0 12px rgba(0,0,0,0.8),
+    0 0 24px rgba(180,220,255,0.18);
+
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(14px);
+
+  animation: mythTextFromFog 2.4s ease-out forwards;
+}
+
+.home-myth-intro p:nth-child(1) {
+  animation-delay: 6.4s;
+}
+
+.home-myth-intro p:nth-child(2) {
+  animation-delay: 7.1s;
+}
+
+.home-myth-intro p:nth-child(3) {
+  animation-delay: 7.8s;
+}
+
+.home-myth-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* piccola luce superiore */
+.home-myth-intro .myth-glow,
+.home-myth-intro span.myth-glow {
+  display: none;
+}
+
+@keyframes mythContainerFromFog {
+  0% {
+    opacity: 0;
+    transform: translateY(45px) scale(0.96);
+    filter: blur(18px);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateY(0) scale(1.015);
+    filter: blur(3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes mythMistCross {
+  0% {
+    opacity: 0;
+    transform: translateX(-90px) scale(1);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 0.85;
+  }
+
+  100% {
+    opacity: 0.28;
+    transform: translateX(110px) scale(1.24);
+  }
+}
+
+@keyframes mistVeilSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(0) skewX(-8deg);
+  }
+
+  22% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 0.38;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(165%) skewX(-8deg);
+  }
+}
+
+@keyframes mythTextFromFog {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(14px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+
 
 /* Modifica il wrapper del bottone per gestire l'apparizione */
 .button-wrapper {
@@ -508,7 +818,7 @@ canvas#canvas {
   filter: blur(15px);
   
   /* Applichiamo l'animazione dedicata con ritardo di 6 secondi */
-  animation: buttonReveal 2.5s ease-out 6s forwards;
+  animation: buttonReveal 2.5s ease-out 9.2s forwards;
 }
 
 
@@ -2302,3 +2612,42 @@ img:hover{
     rgba(255, 255, 255, 1) 100%
   );
 }
+
+/* TESTO NARRATIVO AETHER */
+
+.aether-story-text {
+  max-width: 760px;
+  margin: 150px auto 0;
+  padding: 34px 42px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 28px;
+
+  box-shadow:
+    0 18px 45px rgba(78, 105, 130, 0.18),
+    inset 0 0 35px rgba(255, 255, 255, 0.45);
+
+  position: relative;
+  z-index: 20;
+}
+
+.aether-story-text p {
+  margin-bottom: 18px;
+
+  font-family: "Marcellus", serif;
+  font-size: 1.18rem;
+  line-height: 1.85;
+
+  color: #26394a;
+  letter-spacing: 0.03em;
+}
+
+.aether-story-text p:last-child {
+  margin-bottom: 0;
+}
+
