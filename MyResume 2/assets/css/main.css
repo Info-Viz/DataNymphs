@@ -1779,50 +1779,6 @@ body {
 
 
 
-/* Cursore NUVOLA (Aether/Sky) */
-#sky-section-unique {
-    position: relative;
-    width: 100%;
-    min-height: 100vh; /* FONDAMENTALE */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: none !important; /* Sparisce la freccia */
-}
-
-/* Blocca la freccia anche sui link interni */
-.sky-section-unique {
-  cursor: none !important;
-}
-
-.sky-section-unique *,
-.sky-section-unique a {
-  cursor: none !important;
-}
-
-/* Stile Nuvola */
-#cloud-pointer-sky {
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle, rgba(16, 148, 236, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
-    border-radius: 50%;
-    position: fixed;
-    top: 0; left: 0;
-    pointer-events: none !important;
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    transform: translate(-50%, -50%);
-}
-
-#cloud-pointer-sky::after {
-    content: '☁️' !important;
-    font-size: 20px;
-    filter: drop-shadow(0 0 5px rgb(124, 197, 210));
-}
-
 
 /* =========================
    AETHER - ENTRATA GUIDATA
@@ -1839,7 +1795,6 @@ body {
   inset: 0;
   z-index: 20;
   overflow: hidden;
-  pointer-events: none;
 }
 
 /* contenitore nuvole */

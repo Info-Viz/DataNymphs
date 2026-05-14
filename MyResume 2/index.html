@@ -87,8 +87,9 @@
             <h2 class="myth-title">MYTHOS IN ArCo</h2>
 
             <p class="myth-subtitle">
-  Mapping the Divine: From Olympus to the Underworld, through the ArCo Dataset.
-</p>
+            Mapping the Divine: From Olympus to the Underworld, through the ArCo Dataset.
+            </p>
+            
 
 <div class="myth-separator">
   <span></span>
@@ -98,7 +99,7 @@
 
 <div class="home-myth-intro">
   <p>
-    <span class="drop-cap">L</span>ong, long ago, the world belonged to the Titans.Then, after an exhausting war, the Olympic Gods became victorious and they divided the cosmos into three main areas: Zeus took the reign of the sky, Poseidon the sea, Hades the Underworld, while Earth became the realm of mortals.
+    <span class="drop-cap"></span>Long, long ago, the world belonged to the Titans. Then, after an exhausting war, the Olympic Gods became victorious and they divided the cosmos into three main areas: Zeus took the reign of the sky, Poseidon the sea, Hades the Underworld, while Earth became the realm of mortals.
 
   </p>
 
@@ -122,7 +123,7 @@
                
                   <div class="col-lg-9 mx-auto">
                       <div class="button-wrapper">
-                          <a href="#hometext" class="btn-lightning">
+                          <a href="#cielo" class="btn-lightning">
                               <span>Let the descent begin</span>
                               <div class="lightning-flash"></div>
                           </a>
@@ -135,6 +136,7 @@
           
           </div>
         </div>
+
     <div id="lightning-pointer-sky"></div>
 
 
@@ -200,20 +202,6 @@
 
           <h2>AETHER</h2>
 
-          <div class="aether-story-text">
-            <p>
-              Above men, hidden between the clouds, rises Mount Olympus. 
-            </p>
-
-            <p>
-              The 12 main Olympian Gods live here, and from here they rule the cosmos and establish divine laws.
-            </p>
-
-            <p>
-              Let’s discover each one of them.
-            </p>
-          </div>
-
         </div>
       </div>
       
@@ -222,8 +210,20 @@
       <div class="aether-divine-image">
           <img src="assets/img/partenonenuvole.png" alt="Olimpo">
       </div>
+      
 
       <div class="aether-extra-content">
+
+        <div class="aether-story-text">
+            <p>
+              Above men, hidden between the clouds, rises Mount Olympus. 
+              <br>
+              The 12 main Olympian Gods live here, and from here they rule the cosmos and establish divine laws.
+              <br>
+              Let’s discover each one of them.
+            </p>
+          </div>
+          
       <section>
 
       <div class="indexslider">
@@ -245,13 +245,6 @@
             </div>
           </div>
           
-          <div class="index-slide">
-            <img src="assets/img/ade-removebg-preview.png" alt="Ade"> 
-            <div class="slide-info">
-              <h4>Hades</h4>
-              <p>King of the Underworld and the dead. Famous for his dark realm and hidden riches.</p>
-            </div>
-          </div>
       
           <div class="index-slide">
             <img src="assets/img/era-removebg-preview.png" alt="Era"> 
@@ -333,10 +326,8 @@
             </div>
           </div>
 
-
         </div>
       </div>
-      
     
  
      <section id="divine-quiz-section">
@@ -369,7 +360,110 @@
         <section>
           <div style="text-align: center;">
 
-          <h2>grafico</h2>
+
+          <!-- Load d3.js -->
+          <script src="https://d3js.org/d3.v4.js"></script>
+
+          <!-- Create a div where the graph will take place -->
+          <div id="my_dataviz"></div>
+
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 30, left: 40},
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// get the data
+d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) {
+
+  // X axis: scale and draw:
+  var x = d3.scaleLinear()
+      .domain([0, 1000])     // can use this instead of 1000 to have the max of data: d3.max(data, function(d) { return +d.price })
+      .range([0, width]);
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // set the parameters for the histogram
+  var histogram = d3.histogram()
+      .value(function(d) { return d.price; })   // I need to give the vector of value
+      .domain(x.domain())  // then the domain of the graphic
+      .thresholds(x.ticks(70)); // then the numbers of bins
+
+  // And apply this function to data to get the bins
+  var bins = histogram(data);
+
+  // Y axis: scale and draw:
+  var y = d3.scaleLinear()
+      .range([height, 0]);
+      y.domain([0, d3.max(bins, function(d) { return d.length; })]);   // d3.hist has to be called before the Y axis obviously
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  // Add a tooltip div. Here I define the general feature of the tooltip: stuff that do not depend on the data point.
+  // Its opacity is set to 0: we don't see it by default.
+  var tooltip = d3.select("#my_dataviz")
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "black")
+    .style("color", "white")
+    .style("border-radius", "5px")
+    .style("padding", "10px")
+
+  // A function that change this tooltip when the user hover a point.
+  // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
+  var showTooltip = function(d) {
+    tooltip
+      .transition()
+      .duration(100)
+      .style("opacity", 1)
+    tooltip
+      .html("Range: " + d.x0 + " - " + d.x1)
+      .style("left", (d3.mouse(this)[0]+20) + "px")
+      .style("top", (d3.mouse(this)[1]) + "px")
+  }
+  var moveTooltip = function(d) {
+    tooltip
+    .style("left", (d3.mouse(this)[0]+20) + "px")
+    .style("top", (d3.mouse(this)[1]) + "px")
+  }
+  // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
+  var hideTooltip = function(d) {
+    tooltip
+      .transition()
+      .duration(100)
+      .style("opacity", 0)
+  }
+
+  // append the bar rectangles to the svg element
+  svg.selectAll("rect")
+      .data(bins)
+      .enter()
+      .append("rect")
+        .attr("x", 1)
+        .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
+        .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
+        .attr("height", function(d) { return height - y(d.length); })
+        .style("fill", "#69b3a2")
+        // Show tooltip on hover
+        .on("mouseover", showTooltip )
+        .on("mousemove", moveTooltip )
+        .on("mouseleave", hideTooltip )
+
+});
+</script>
+
         </div>
         </section>
 
@@ -377,6 +471,8 @@
         </div>
     
         <div id="cloud-pointer-sky"></div>
+
+
 
 
 </section>
@@ -450,6 +546,7 @@
     <div class="hero-figure achille">
         <img src="assets/img/achille-removebg-preview.png" alt="Achille">
     </div>
+
 
     <!-- GRUPPO ALBERO E RAGNO -->
 <div class="tree-container">
@@ -1233,7 +1330,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         feedback.textContent =
-          "Risposta corretta: Ermes è il messaggero degli dei.";
+          "🏅 Correct answer: Hermes is the messenger of the gods. Zeus deems you worthy of Olympus! Check the charts for more.";
 
         feedback.style.color = "#069c29";
       }
@@ -1292,7 +1389,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         feedback.textContent =
-          "Risposta errata: il messaggero degli dei è Ermes.";
+          "❌ Wrong answer: Hermes is the messenger of the gods. Zeus condemns you to the shadows of the Underworld! Consult the charts to see your mistake.";
 
         feedback.style.color = "#b12a00";
       }

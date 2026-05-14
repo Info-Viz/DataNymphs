@@ -6,7 +6,7 @@
   position: absolute;
   inset: 0;
   z-index: 0; /* Sta sul fondo */
-  pointer-events: none;
+ 
   
 }
 
@@ -31,7 +31,7 @@ canvas#canvas {
   top: 0;
   backdrop-filter: blur(20px);
   z-index: 6; /* Sfuma i fulmini e le nuvole che passano sotto */
-  pointer-events: none;
+
 }
 
 /* LIVELLO 3: Il Contenuto (Testo e Bottoni) */
@@ -60,6 +60,8 @@ canvas#canvas {
 /* Stile del Body per centrare e applicare il tuo sfondo */
 .hero section{
     top: 250px;
+    pointer-events: none;
+
 }
 
 
@@ -122,7 +124,6 @@ canvas#canvas {
     left: 0;
     width: 100%;
     height: 200%; /* Altezza doppia per scorrimento verticale */
-    pointer-events: none;
     mix-blend-mode: screen;
     opacity: 0.3;
     
@@ -201,7 +202,6 @@ canvas#canvas {
   z-index: 8;
 
   overflow: hidden;
-  pointer-events: none;
 
   opacity: 1;
 
@@ -624,7 +624,6 @@ canvas#canvas {
   inset: -45%;
 
   z-index: 1;
-  pointer-events: none;
 
   background:
     radial-gradient(
@@ -664,7 +663,6 @@ canvas#canvas {
   height: 170%;
 
   z-index: 4;
-  pointer-events: none;
 
   background:
     linear-gradient(
@@ -819,6 +817,8 @@ canvas#canvas {
   
   /* Applichiamo l'animazione dedicata con ritardo di 6 secondi */
   animation: buttonReveal 2.5s ease-out 9.2s forwards;
+  z-index: 100 !important;
+    pointer-events: auto !important;
 }
 
 
@@ -837,12 +837,124 @@ canvas#canvas {
   }
 }
 
-/* Mantieni il tuo stile btn-lightning esistente, assicurati solo che sia cliccabile */
-.btn-lightning {
-  position: relative;
-  z-index: 25; /* Sopra la nebbia residua */
-  /* ... resto del tuo codice btn-lightning ... */
+.primordial-fog, 
+.fog-mass, 
+.fog-center,
+.home-myth-intro::before,
+.home-myth-intro::after {
+    pointer-events: none !important; /* Il mouse passa attraverso questi elementi */
 }
+
+/* Mantieni il tuo stile btn-lightning esistente, assicurati solo che sia cliccabile */
+/* Stile Base del Bottone (il link <a>) */
+.btn-lightning {
+    position: relative;
+    z-index: 50 !important; /* Sopra la nebbia come richiesto */
+    display: inline-block;
+    padding: 18px 45px;
+    
+    /* Estetica: Metallo scuro e bordi squadrati epici */
+    background: #111; /* Nero profondo */
+    border: 2px solid rgba(175, 182, 183, 0.5); /* Bordo azzurro tenue */
+    color: #fff;
+    
+    /* Testo */
+    font-family: "Marcellus", serif; /* Stessa font della citazione */
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    
+    /* Effetti */
+    cursor: pointer;
+    overflow: hidden; /* Fondamentale per i lampi interni */
+    transition: all 0.3s ease; /* Transizione morbida dei colori */
+    
+    /* Ombra iniziale: bagliore elettrico soffuso */
+    box-shadow: 0 0 15px rgba(216, 219, 220, 0.3);
+    z-index: 101 !important;
+    pointer-events: auto !important;
+}
+
+
+/* Lo span interno (Let the descent begin) */
+.btn-lightning span {
+    position: relative;
+    z-index: 2; /* Sopra il flash */
+    transition: all 0.3s ease;
+}
+
+/* =========================================
+   ANIMAZIONI (Keyframes)
+========================================= */
+
+/* Animazione di vibrazione rapida e irregolare (come scarica elettrica) */
+@keyframes lightning-vibrate {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(-2px, 1px) rotate(0.5deg); }
+    40%  { transform: translate(1px, -1px) rotate(-0.5deg); }
+    60%  { transform: translate(-1px, -2px) rotate(0.3deg); }
+    80%  { transform: translate(2px, 1px) rotate(-0.3deg); }
+    100% { transform: translate(0, 0); }
+}
+/* =========================================
+   EFFETTI HOVER (Vibrazione e Luce)
+========================================= */
+
+
+.btn-lightning:hover {
+    /* Il bordo e l'ombra diventano intensi al passaggio del mouse */
+    border-color: rgb(149, 153, 154);
+    box-shadow: 0 0 30px rgba(171, 173, 173, 0.7);
+    
+    /* Attiva la vibrazione violenta */
+    animation: lightning-vibrate 0.2s linear infinite !important;
+}
+
+/* Il testo si illumina al hover */
+.btn-lightning:hover span {
+    color: #edf1f1;
+    text-shadow: 0 0 10px rgb(233, 239, 240);
+}
+
+/* =========================================
+   IL FLASH ELETTRICO (.lightning-flash)
+========================================= */
+
+/* Questo div interno è un fulmine che attraversa il bottone */
+.lightning-flash {
+    position: absolute;
+    top: 0;
+    left: -100%; /* Inizia fuori dal bottone a sinistra */
+    width: 200%; /* Abbastanza lungo per coprire l'angolo */
+    height: 100%;
+    
+    /* Il fulmine è una striscia bianca/azzurra molto inclinata */
+    background: linear-gradient(
+        115deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0) 40%, 
+        rgba(255,255,255,1) 50%, /* Nucleo bianco del lampo */
+        rgba(0,212,255,1) 53%,  /* Bordo azzurro */
+        rgba(255,255,255,0) 60%, 
+        rgba(255,255,255,0) 100%
+    );
+    
+    z-index: 1; /* Sotto il testo span */
+    transform: skewX(-20deg); /* Inclinazione epica */
+    opacity: 0; /* Invisibile all'inizio */
+    transition: opacity 0.1s ease;
+}
+
+/* Al hover, il flash attraversa velocemente il bottone */
+.btn-lightning:hover .lightning-flash {
+    opacity: 1;
+    left: 100%; /* Si sposta a destra */
+    transition: left 0.6s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.1s ease;
+}
+
+
 
 /* =========================================
    AETHER SECTION
@@ -852,6 +964,7 @@ canvas#canvas {
   position: relative !important;
   overflow: hidden !important;
   min-height: 2600px !important;
+  cursor: none !important;
 
   background: linear-gradient(
     to bottom,
@@ -916,8 +1029,6 @@ canvas#canvas {
   z-index: 20;
 
   overflow: hidden;
-
-  pointer-events: none;
 }
 
 /* bianco basso iniziale */
@@ -1312,8 +1423,7 @@ canvas#canvas {
   position: relative;
   z-index: 40;
 
-  margin-top: 105vh;
-
+  margin-top: 105vh; /*regola altezza della parte alta della sezione*/
   width: 100%;
 }
 
@@ -1329,17 +1439,20 @@ canvas#canvas {
     width: auto; /* Adatta la larghezza in base al contenuto */
     min-width: 100%; /* Impedisce che sia più piccolo della finestra */
     overflow: clip;
+    pointer-events: none !important;
 }
 .indexslide-track{
     display: flex;
-    width: calc(250px * 40);
+    width: calc(250px * 10);
     animation: scroll 40s linear infinite;
     height: fit-content;
     padding-top: 50px;
     padding-bottom: 20px;
+    pointer-events: none !important;
 }
 .indexslide-track:hover{
     animation-play-state: paused;
+    pointer-events: none !important;
 }
 @keyframes scroll{
     0%{
@@ -1357,13 +1470,17 @@ canvas#canvas {
     padding: 15px;
     perspective: 100px;
     margin-right: 50px; /* Regola questo valore per aumentare o diminuire lo spazio */
+    position: relative;
+    z-index: 110 !important; /* Più alto di tutto il resto */
+    pointer-events: auto !important;
+    cursor: pointer !important
 }
 .indexslider img{
     height: 340px !important;
     width: 100% !important;
 }
 img:hover{
-    transform: translateZ(20px);
+    transform: translateZ(10px);
     transition: transform 1s;
 }
 .container .text-center{
@@ -1404,9 +1521,7 @@ img:hover{
   padding: 25px;
 
   background: transparent;
-
   pointer-events: none;
-
   z-index: 30;
 }
 
@@ -1459,7 +1574,6 @@ img:hover{
     0 0 12px rgba(255,255,255,0.25);
 }
 
-
 /* EFFETTI HOVER */
 
 /* Quando passi il mouse sulla slide... */
@@ -1478,6 +1592,7 @@ img:hover{
     width: auto !important;
     transition: transform 0.5s;
 }
+
 
 /* =========================================
    AETHER START ON SCROLL
@@ -1580,6 +1695,9 @@ img:hover{
   padding: 50px 20px;
   font-family: 'Raleway', sans-serif;
   text-align: center;
+  z-index: 110 !important; /* Più alto di tutto il resto */
+  pointer-events: auto !important;
+  cursor: pointer !important
 }
 
 .divine-quiz-wrapper {
@@ -1612,7 +1730,7 @@ img:hover{
   background: white;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
-  cursor: pointer;
+  cursor: pointer !important;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
@@ -1651,7 +1769,7 @@ img:hover{
   color: white;
   border: none;
   border-radius: 50px;
-  cursor: pointer;
+  cursor: pointer !important;
   text-transform: uppercase;
   font-weight: bold;
   transition: opacity 0.3s;
@@ -1684,7 +1802,6 @@ img:hover{
   inset: 0;
   z-index: 20;
   overflow: hidden;
-  pointer-events: none;
 }
 
 /* contenitore nuvole */
@@ -1777,7 +1894,6 @@ img:hover{
   opacity: 0;
   transform: none !important;
 
-  pointer-events: none !important;
 }
 
 #cielo.aether-start .aether-quote {
@@ -1878,7 +1994,6 @@ img:hover{
   height: 100%;
 
   z-index: 15;
-  pointer-events: none;
 
   background:
     radial-gradient(
@@ -1933,7 +2048,6 @@ img:hover{
   z-index: 5;
   background: #000;
   opacity: 1;
-  pointer-events: none;
 }
 
 #cielo.aether-start::before {
@@ -1991,7 +2105,6 @@ img:hover{
   background: #000;
   opacity: 1;
   visibility: visible;
-  pointer-events: none;
 }
 
 #cielo.aether-start::before {
@@ -2117,7 +2230,6 @@ img:hover{
   inset: 0;
 
   z-index: 1;
-  pointer-events: none;
 
   background:
     radial-gradient(
@@ -2144,7 +2256,6 @@ img:hover{
   height: 130%;
 
   z-index: 2;
-  pointer-events: none;
 
   background:
 
@@ -2289,7 +2400,6 @@ img:hover{
   height: 120%;
 
   z-index: 1;
-  pointer-events: none;
 
   background:
     radial-gradient(ellipse at 15% 100%,
@@ -2330,7 +2440,6 @@ img:hover{
   inset: -15%;
 
   z-index: 2;
-  pointer-events: none;
 
   background:
     radial-gradient(circle at 20% 85%,
@@ -2361,7 +2470,6 @@ img:hover{
   inset: -25%;
 
   z-index: 3;
-  pointer-events: none;
 
   background:
     radial-gradient(circle at 25% 85%,
@@ -2391,7 +2499,6 @@ img:hover{
   inset: 0;
 
   z-index: 4;
-  pointer-events: none;
 }
 
 .divine-quiz-item.wrong-answer .embers span {
@@ -2552,7 +2659,6 @@ img:hover{
   transform: translateX(-50%) scaleX(1.35) scaleY(0.72);
 
   z-index: 80;
-  pointer-events: none;
 
   background: transparent !important;
 
@@ -2603,7 +2709,6 @@ img:hover{
   width: 100%;
   height: 400px; /* Aumentiamo l'altezza per una sfumatura più lunga */
   z-index: 100;
-  pointer-events: none;
   /* Gradiente che va dal trasparente al bianco puro */
   background: linear-gradient(
     to bottom,
@@ -2618,7 +2723,6 @@ img:hover{
 .aether-story-text {
   max-width: 760px;
   margin: 150px auto 0;
-  padding: 34px 42px;
 
   text-align: center;
 
@@ -2649,5 +2753,35 @@ img:hover{
 
 .aether-story-text p:last-child {
   margin-bottom: 0;
+}
+
+
+/* Stile Nuvola */
+#cloud-pointer-sky {
+    position: fixed; /* o absolute se il genitore è relative */
+    pointer-events: none; /* Fondamentale: il mouse deve passare "attraverso" il cursore */
+    display: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%); /* Centra l'icona sulla punta del mouse */
+}
+
+#cloud-pointer-sky {
+    width: 30px; /* Leggermente più grande per contenere l'icona */
+    height: 30px;
+    background: radial-gradient(circle, rgba(6, 185, 221, 0.8) 0%, rgba(255, 0, 0, 0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    display: flex;       /* Centra l'icona */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease-out; /* Rende il movimento più fluido */
+}
+
+#cloud-pointer-sky::after {
+    content: '☁️'; /* Puoi usare l'emoji o un'immagine con background-image */
+    font-size: 20px;
+    filter: drop-shadow(0 0 5px rgb(54, 198, 237)); /* Aggiunge un bagliore dorato alla fiamma */
 }
 

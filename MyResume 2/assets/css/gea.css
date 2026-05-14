@@ -489,43 +489,43 @@ body {
 
 .omini-1 {
   left: 51%;
-  top: 58%;
+  top: 58.3%;
   animation-delay: 0.3s;
 }
 
 .omini-2 {
-  left: 63%;
-  top: 64%;
+  left: 65.2%;
+  top: 54.2%;
   animation-delay: 1s;
 }
 
 .omini-3 {
-  left: 35%;
-  top: 67%;
+  left: 32%;
+  top: 59.3%;
   animation-delay: 1.7s;
 }
 
 .omini-4 {
-  left: 78%;
-  top: 60%;
+  left: 92.4%;
+  top: 56.8%;
   animation-delay: 2.4s;
 }
 
 .omini-5 {
-  left: 19%;
-  top: 60%;
+  left: 10%;
+  top: 53.7%;
   animation-delay: 3.1s;
 }
 
 .omini-6 {
-  left: 90%;
-  top: 65%;
+  left: 75%;
+  top: 58.1%;
   animation-delay: 3.8s;
 }
 
 .omini-7 {
-  left: 10%;
-  top: 64%;
+  left: 9%;
+  top: 58.4%;
   animation-delay: 4.3s;
 }
 
@@ -554,9 +554,9 @@ body {
 ========================================= */
 .tree-container {
   position: absolute;
-  top: 71%; /* Regola in base a dove vuoi l'albero sulle colline */
+  top: 72%; /* Regola in base a dove vuoi l'albero sulle colline */
   left: 59%;
-  width: 250px; /* Dimensione dell'albero */
+  width: 230px; /* Dimensione dell'albero */
   z-index: 20;
   pointer-events: none;
 }
@@ -648,16 +648,22 @@ body.no-scroll {
 
 /* FIGURA 1 -> collina sinistra */
 .ercole {
-    left: 3%;
-    top: 76%;
+    left: 1% !important;
+    top: 68.6%;
     width: 650px;
     animation-delay: 3.5s;
+    /* Inclinazione verso destra (es. 15 gradi) */
+    transform: rotate(10deg) !important; 
+    
+    /* Opzionale: se vuoi che l'inclinazione parta da un punto specifico 
+       (es. la base della statua) aggiungi questo: */
+    transform-origin: bottom center;
 }
 
 /* FIGURA 2 -> zona centrale */
 .giasone {
-    left: 39%;
-    top: 71.2%;
+    left: 87%;
+    top: 60.5%;
     width: 200px;
     animation-delay: 1.5s;
    
@@ -665,8 +671,8 @@ body.no-scroll {
 
 /* FIGURA 3 -> collina destra più lontana */
 .achille {
-    left: 10%;
-    top: 69%;
+    left: 14%;
+    top: 61%;
     width: 90px;
     animation-delay: 2.5s;
     transform: scale(0.85);
