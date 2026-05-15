@@ -336,7 +336,7 @@ body {
   
   /* POSIZIONAMENTO RICHIESTO: */
   /* "poco sopra la metà" (Verticale) */
-  top: 33.9%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
+  top: 13.9%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
   
   /* "un po' più sulla sinistra rispetto alla linea centrale" (Orizzontale) */
   left: 39.2%; /* La linea centrale è 50%. 35% lo sposta a sinistra. Regola a piacere. */
@@ -346,7 +346,7 @@ body {
   
   /* Dimensioni dell'immagine (Regola a piacere per la visibilità) */
   width: auto;
-  max-width: 25%; /* L'immagine non supererà il 40% della larghezza della sezione */
+  max-width: 23%; /* L'immagine non supererà il 40% della larghezza della sezione */
   height: auto;
 
   z-index: 5; /* Sopra l'overlay (z-index 1) ma sotto il testo (z-index 10) */
@@ -488,44 +488,44 @@ body {
 /* POSIZIONI */
 
 .omini-1 {
-  left: 51%;
-  top: 58.3%;
+  left: 49%;
+  top: 26.3%;
   animation-delay: 0.3s;
 }
 
 .omini-2 {
   left: 65.2%;
-  top: 54.2%;
+  top: 24.2%;
   animation-delay: 1s;
 }
 
 .omini-3 {
   left: 32%;
-  top: 59.3%;
+  top: 29.3%;
   animation-delay: 1.7s;
 }
 
 .omini-4 {
   left: 92.4%;
-  top: 56.8%;
+  top: 26.8%;
   animation-delay: 2.4s;
 }
 
 .omini-5 {
-  left: 10%;
-  top: 53.7%;
+  left: 20%;
+  top: 23.7%;
   animation-delay: 3.1s;
 }
 
 .omini-6 {
   left: 75%;
-  top: 58.1%;
+  top: 28.1%;
   animation-delay: 3.8s;
 }
 
 .omini-7 {
   left: 9%;
-  top: 58.4%;
+  top: 28.4%;
   animation-delay: 4.3s;
 }
 
@@ -691,4 +691,341 @@ body.no-scroll {
         opacity: 1;
         transform: translateY(0px) scale(1);
     }
+}
+
+
+/* =========================
+   GEA - DUE SFONDI VERTICALI
+========================= */
+
+#terra,
+#terra.about.section {
+  position: relative !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+
+  min-height: 650vh !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+  background: #ffffff !important;
+}
+
+/* immagini di sfondo */
+#terra .gea-bg {
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  height: 50%;
+
+  z-index: 0;
+  overflow: hidden;
+}
+
+#terra .gea-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* prima immagine: monte */
+#terra .gea-bg-monte {
+  top: 0;
+}
+
+#terra .gea-bg-monte img {
+  object-position: center top;
+}
+
+/* seconda immagine: alberello */
+#terra .gea-bg-alberello {
+  top: 50%;
+}
+
+#terra .gea-bg-alberello img {
+  object-position: center top;
+}
+
+/* sfumatura tra le due immagini */
+#terra .gea-bg-monte::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 280px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(110, 150, 40, 0.45) 45%,
+    rgba(72, 110, 22, 1) 100%
+  );
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* nebbia iniziale da Aether */
+#terra::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 500px;
+
+  z-index: 3;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,0.75) 35%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+/* contenuti sopra gli sfondi */
+#terra .container,
+#terra .section-title {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.prometeo-group,
+.omini-group,
+.hero-figure,
+.tree-container,
+.river-wrap {
+  position: absolute !important;
+  z-index: 20 !important;
+}
+
+/* TESTO GEA SOPRA TUTTO */
+#terra .container.section-title {
+  position: relative !important;
+  z-index: 10 !important;
+
+  margin-top: 180px !important;
+  padding-top: 80px !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#terra .container.section-title h2,
+#terra .container.section-title p {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* =========================================
+   TITOLO GEA VERDE
+========================================= */
+
+#terra .container.section-title h2 {
+  color: #0d9c12 !important;
+  -webkit-text-fill-color: #0aa92a !important;
+  text-shadow: none !important;
+}
+
+
+
+
+/* =========================================
+   MORTAL HEROES SECTION
+========================================= */
+
+.mortal-heroes-section {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90%;
+  max-width: 1200px;
+
+  z-index: 30;
+
+  padding: 60px 40px;
+
+  background: rgba(30, 55, 18, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 28px;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35),
+    inset 0 0 35px rgba(255, 255, 255, 0.08);
+}
+
+.mortal-heroes-title {
+  font-family: "Marcellus", serif !important;
+  text-align: center;
+
+  font-size: clamp(2.8rem, 6vw, 5.5rem) !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #ffffff !important;
+
+  margin-bottom: 50px;
+
+  text-shadow:
+    0 0 18px rgba(255,255,255,0.45),
+    0 0 45px rgba(80,120,40,0.65);
+}
+
+.mortal-heroes-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.mortal-heroes-image-box {
+  position: relative;
+
+  width: 45%;
+  min-height: 440px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mortal-heroes-image-box img {
+  max-width: 100%;
+  max-height: 430px;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 25px 35px rgba(0,0,0,0.45));
+
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.mortal-heroes-image-box img.hero-changing {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.5);
+
+  background: rgba(255,255,255,0.18);
+  color: white;
+
+  font-size: 3rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition: all 0.3s ease;
+}
+
+.hero-arrow:hover {
+  background: rgba(255,255,255,0.35);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.hero-arrow-left {
+  left: -25px;
+}
+
+.hero-arrow-right {
+  right: -25px;
+}
+
+.mortal-heroes-text {
+  width: 50%;
+
+  color: white;
+
+  padding: 35px;
+
+  border-left: 1px solid rgba(255,255,255,0.35);
+}
+
+.mortal-heroes-text h3 {
+  font-family: "Marcellus", serif !important;
+
+  font-size: clamp(2.4rem, 4vw, 4rem);
+
+  color: white !important;
+
+  margin-bottom: 25px;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mortal-heroes-text p {
+  text-align: left !important;
+
+  max-width: 520px !important;
+
+  font-size: 1.15rem !important;
+  line-height: 1.8 !important;
+
+  color: white !important;
+
+  margin: 0 !important;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .mortal-heroes-section {
+    top: 34%;
+    width: 92%;
+    padding: 45px 22px;
+  }
+
+  .mortal-heroes-content {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .mortal-heroes-image-box,
+  .mortal-heroes-text {
+    width: 100%;
+  }
+
+  .mortal-heroes-text {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.35);
+    padding: 25px 10px 0;
+    text-align: center;
+  }
+
+  .mortal-heroes-text p {
+    text-align: center !important;
+  }
+
+  .hero-arrow-left {
+    left: 0;
+  }
+
+  .hero-arrow-right {
+    right: 0;
+  }
 }
