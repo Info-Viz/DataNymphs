@@ -1,11 +1,9 @@
 
 #canvass {
-      display: block;
-    }
-#canvass {
     pointer-events: none !important; /* Il mouse "passa attraverso" il canvas */
     touch-action: none;              /* Evita conflitti su mobile */
     will-change: transform;          /* Suggerisce al browser di ottimizzare il rendering */
+     display: block;
 }
 
 html, body {
@@ -39,9 +37,6 @@ html, body {
 }
 
 /* Aggiusta l'opacità delle fiamme se risultano troppo scure sopra il WebGL */
-#portfolio .fire-glow .inner-glow {
-
-}
 
 #inferi {
     position: relative; /* Importante per contenere il canvas absolute */
