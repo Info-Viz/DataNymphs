@@ -846,94 +846,131 @@ body.no-scroll {
 
 .mortal-heroes-section {
   position: absolute;
-  top: 35%;
+
+  top: 30%;
+
   left: 50%;
   transform: translateX(-50%);
 
+  /* PIÙ LARGA */
   width: 90%;
-  max-width: 1200px;
+  max-width: 1250px;
 
   z-index: 30;
 
-  padding: 60px 40px;
+  padding: 32px 40px;
 
-  background: rgba(30, 55, 18, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 28px;
+  background: rgba(30, 55, 18, 0.34);
 
-  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 24px;
+
+  backdrop-filter: blur(6px);
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.35),
-    inset 0 0 35px rgba(255, 255, 255, 0.08);
+    0 15px 40px rgba(0,0,0,0.25);
 }
+
+
+/* =========================================
+   TITOLO PRINCIPALE
+========================================= */
 
 .mortal-heroes-title {
   font-family: "Marcellus", serif !important;
+
   text-align: center;
 
-  font-size: clamp(2.8rem, 6vw, 5.5rem) !important;
-  letter-spacing: 0.12em;
+  /* MOLTO PIÙ PICCOLO */
+  font-size: clamp(1rem, 1.5vw, 1.6rem) !important;
+
+  letter-spacing: 0.35em;
   text-transform: uppercase;
 
-  color: #ffffff !important;
+  color: rgba(255,255,255,0.82) !important;
 
-  margin-bottom: 50px;
+  margin-bottom: 22px;
 
   text-shadow:
-    0 0 18px rgba(255,255,255,0.45),
-    0 0 45px rgba(80,120,40,0.65);
+    0 0 8px rgba(255,255,255,0.12);
 }
+
+
+/* =========================================
+   CONTENUTO
+========================================= */
 
 .mortal-heroes-content {
   display: flex;
+
   align-items: center;
-  justify-content: space-between;
-  gap: 70px;
+  justify-content: center;
+
+  gap: 55px;
 }
+
+
+/* =========================================
+   BOX IMMAGINE
+========================================= */
 
 .mortal-heroes-image-box {
   position: relative;
 
-  width: 45%;
-  min-height: 440px;
+  width: 42%;
+  min-height: 250px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+
+/* =========================================
+   IMMAGINE
+========================================= */
+
 .mortal-heroes-image-box img {
   max-width: 100%;
-  max-height: 430px;
+  max-height: 250px;
 
   object-fit: contain;
 
-  filter: drop-shadow(0 25px 35px rgba(0,0,0,0.45));
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.3));
 
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .mortal-heroes-image-box img.hero-changing {
   opacity: 0;
-  transform: translateY(20px) scale(0.95);
+  transform: translateY(10px) scale(0.96);
 }
+
+
+/* =========================================
+   FRECCE
+========================================= */
 
 .hero-arrow {
   position: absolute;
+
   top: 50%;
   transform: translateY(-50%);
 
-  width: 54px;
-  height: 54px;
+  width: 36px;
+  height: 36px;
 
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.5);
 
-  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.28);
+
+  background: rgba(255,255,255,0.1);
+
   color: white;
 
-  font-size: 3rem;
+  font-size: 1.7rem;
   line-height: 1;
 
   cursor: pointer;
@@ -944,65 +981,92 @@ body.no-scroll {
 }
 
 .hero-arrow:hover {
-  background: rgba(255,255,255,0.35);
-  transform: translateY(-50%) scale(1.08);
+  background: rgba(255,255,255,0.22);
+
+  transform:
+    translateY(-50%)
+    scale(1.06);
 }
 
 .hero-arrow-left {
-  left: -25px;
+  left: -10px;
 }
 
 .hero-arrow-right {
-  right: -25px;
+  right: -10px;
 }
+
+
+/* =========================================
+   TESTO
+========================================= */
 
 .mortal-heroes-text {
   width: 50%;
 
   color: white;
 
-  padding: 35px;
+  padding-left: 28px;
 
-  border-left: 1px solid rgba(255,255,255,0.35);
+  border-left: 1px solid rgba(255,255,255,0.16);
 }
 
-.mortal-heroes-text h3 {
+
+/* =========================================
+   NOME EROE
+========================================= */
+
+.mortal-heroes-text h2 {
   font-family: "Marcellus", serif !important;
 
-  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-size: clamp(1.5rem, 2.4vw, 2.4rem);
 
   color: white !important;
 
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
+
+/* =========================================
+   DESCRIZIONE
+========================================= */
 
 .mortal-heroes-text p {
   text-align: left !important;
 
   max-width: 520px !important;
 
-  font-size: 1.15rem !important;
-  line-height: 1.8 !important;
+  font-size: 0.92rem !important;
 
-  color: white !important;
+  line-height: 1.75 !important;
+
+  color: rgba(255,255,255,0.92) !important;
 
   margin: 0 !important;
 }
 
-/* MOBILE */
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media (max-width: 768px) {
+
   .mortal-heroes-section {
-    top: 34%;
-    width: 92%;
-    padding: 45px 22px;
+    top: 28%;
+
+    width: 94%;
+
+    padding: 24px 18px;
   }
 
   .mortal-heroes-content {
     flex-direction: column;
-    gap: 35px;
+
+    gap: 22px;
   }
 
   .mortal-heroes-image-box,
@@ -1012,13 +1076,18 @@ body.no-scroll {
 
   .mortal-heroes-text {
     border-left: none;
-    border-top: 1px solid rgba(255,255,255,0.35);
-    padding: 25px 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.16);
+
+    padding-top: 18px;
+    padding-left: 0;
+
     text-align: center;
   }
 
   .mortal-heroes-text p {
     text-align: center !important;
+
+    max-width: 100% !important;
   }
 
   .hero-arrow-left {
@@ -1029,3 +1098,4 @@ body.no-scroll {
     right: 0;
   }
 }
+

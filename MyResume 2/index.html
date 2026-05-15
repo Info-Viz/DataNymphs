@@ -921,21 +921,84 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
 
   const heroes = [
+
     {
-      name: "Heracles",
-      image: "assets/img/ercole-removebg-preview.png",
-      description: "Son of Zeus and a mortal woman, Heracles is the hero of strength and endurance. His twelve labours made him one of the greatest figures of Greek mythology."
-    },
-    {
-      name: "Jason",
+      name: "JASON",
       image: "assets/img/giasone-removebg-preview.png",
-      description: "Leader of the Argonauts, Jason sailed in search of the Golden Fleece. His myth is linked to adventure, courage, and the dangerous help of Medea."
+      description:
+        "Leader of the Argonauts, Jason sailed across the seas in search of the Golden Fleece, becoming one of the greatest adventurers of Greek mythology."
     },
+
     {
-      name: "Achilles",
+      name: "OTRERA",
+      image: "assets/img/otrera.png",
+      description:
+        "Otrera was the legendary queen of the Amazons, fierce warriors devoted to Artemis and symbols of strength, independence, and female power."
+    },
+
+    {
+      name: "HERACLES",
+      image: "assets/img/ercole-removebg-preview.png",
+      description:
+        "Son of Zeus and a mortal woman, Heracles became famous for his twelve labours and unmatched strength."
+    },
+
+    {
+      name: "ATALANTA",
+      image: "assets/img/atalanta.png",
+      description:
+        "Atalanta was a swift huntress raised in the wilderness, renowned for her speed, courage, and refusal to conform to traditional roles."
+    },
+
+    {
+      name: "BELLEROPHON",
+      image: "assets/img/bellerofonte.png",
+      description:
+        "Bellerophon was the hero who tamed Pegasus and defeated the monstrous Chimera, becoming a symbol of heroic ambition."
+    },
+
+    {
+      name: "ANTIGONE",
+      image: "assets/img/antigone.png",
+      description:
+        "Antigone defied royal authority to honor divine law and family duty, becoming one of the most tragic heroines of Greek literature."
+    },
+
+    {
+      name: "PERSEUS",
+      image: "assets/img/perseo.png",
+      description:
+        "Perseus slew Medusa and rescued Andromeda, aided by divine gifts from the Olympian gods."
+    },
+
+    {
+      name: "PSYCHE",
+      image: "assets/img/psiche.png",
+      description:
+        "Psyche underwent impossible trials for love and eventually achieved immortality beside Eros."
+    },
+
+    {
+      name: "ACHILLES",
       image: "assets/img/achille-removebg-preview.png",
-      description: "Achilles was the greatest warrior of the Trojan War. Mortal yet almost invincible, he embodies glory, rage, and the tragic destiny of heroes."
+      description:
+        "Achilles was the greatest warrior of the Trojan War, remembered for his rage, glory, and tragic fate."
+    },
+
+    {
+      name: "CYRENE",
+      image: "assets/img/cirene.png",
+      description:
+        "Cyrene was a fearless huntress beloved by Apollo, associated with nature, independence, and the founding myths of Cyrene."
+    },
+
+    {
+      name: "THESEUS",
+      image: "assets/img/teseo.png",
+      description:
+        "Theseus, hero of Athens, defeated the Minotaur within the Labyrinth and became a symbol of intelligence and courage."
     }
+
   ];
 
   let currentHero = 0;
@@ -947,20 +1010,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevBtn = document.getElementById("heroPrev");
   const nextBtn = document.getElementById("heroNext");
 
+  /* sicurezza */
+  if (
+    !heroImage ||
+    !heroName ||
+    !heroDescription ||
+    !prevBtn ||
+    !nextBtn
+  ) return;
+
   function updateHero() {
+
     heroImage.classList.add("hero-changing");
 
     setTimeout(function () {
+
       heroImage.src = heroes[currentHero].image;
       heroImage.alt = heroes[currentHero].name;
+
       heroName.textContent = heroes[currentHero].name;
-      heroDescription.textContent = heroes[currentHero].description;
+
+      heroDescription.textContent =
+        heroes[currentHero].description;
 
       heroImage.classList.remove("hero-changing");
-    }, 300);
+
+    }, 250);
   }
 
   nextBtn.addEventListener("click", function () {
+
     currentHero++;
 
     if (currentHero >= heroes.length) {
@@ -968,11 +1047,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateHero();
+
   });
 
-  if (!heroImage || !heroName || !heroDescription || !prevBtn || !nextBtn) return;
+  prevBtn.addEventListener("click", function () {
 
-prevBtn.addEventListener("click", function () {
     currentHero--;
 
     if (currentHero < 0) {
@@ -980,6 +1059,7 @@ prevBtn.addEventListener("click", function () {
     }
 
     updateHero();
+
   });
 
 });
