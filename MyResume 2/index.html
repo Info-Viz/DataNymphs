@@ -476,16 +476,8 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
 
 
     
-    <!--- GEA -->
-<<<<<<< Updated upstream
-<section id="terra" class="nav-theme-terra">
-    <div class="aether-divine-image">
-          <img src="assets/img/montebello.png" alt="Olimpo">
-      </div>
-=======
-    <!--- GEA -->
-    <!--- GEA -->
-  <section id="terra" class="about section">
+<!-- GEA -->
+<section id="terra" class="about section">
 
   <div class="gea-bg gea-bg-monte">
     <img src="assets/img/montebello.png" alt="Monte">
@@ -494,8 +486,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
   <div class="gea-bg gea-bg-alberello">
     <img src="assets/img/alberello.png" alt="Albero con mele dorate">
   </div>
->>>>>>> Stashed changes
-
   
 
     <!-- NUOVO CONTENITORE PER IL GRUPPO PROMETEO -->
@@ -543,8 +533,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
       <span class="omini-fire"></span>
     </div>
     
-<<<<<<< Updated upstream
-=======
+
     <!-- SEZIONE EROI MORTALI -->
     <div class="mortal-heroes-section">
 
@@ -577,7 +566,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
     </div>
 
 
->>>>>>> Stashed changes
+
     <div class="hero-figure ercole">
         <img src="assets/img/ercole-removebg-preview.png" alt="Ercole">
     </div>
@@ -944,7 +933,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       name: "Achilles",
-      image: "assets/img/achille.png",
+      image: "assets/img/achille-removebg-preview.png",
       description: "Achilles was the greatest warrior of the Trojan War. Mortal yet almost invincible, he embodies glory, rage, and the tragic destiny of heroes."
     }
   ];
@@ -981,7 +970,9 @@ document.addEventListener("DOMContentLoaded", function () {
     updateHero();
   });
 
-  prevBtn.addEventListener("click", function () {
+  if (!heroImage || !heroName || !heroDescription || !prevBtn || !nextBtn) return;
+
+prevBtn.addEventListener("click", function () {
     currentHero--;
 
     if (currentHero < 0) {
