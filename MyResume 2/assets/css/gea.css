@@ -554,7 +554,7 @@ body {
 ========================================= */
 .tree-container {
   position: absolute;
-  top: 72%; /* Regola in base a dove vuoi l'albero sulle colline */
+  top: 82%; /* Regola in base a dove vuoi l'albero sulle colline */
   left: 59%;
   width: 230px; /* Dimensione dell'albero */
   z-index: 20;
@@ -749,6 +749,42 @@ body.no-scroll {
 #terra .gea-bg-alberello img {
   object-position: center top;
 }
+/* Contenitore dell'immagine */
+.gea-bg-alberello {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0; /* Rimuove spazi bianchi indesiderati sotto l'img */
+}
+
+/* L'immagine all'interno */
+.gea-bg-alberello img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Sfumatura verde superiore per raccordo uniforme */
+.gea-bg-alberello::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 350px; /* Aumentata leggermente per una sfumatura più morbida */
+  
+  /* Inversione: parte dal verde pieno dello slider e sfuma verso il trasparente */
+  background: linear-gradient(
+    to bottom,
+    rgba(72, 110, 22, 1) 0%,    /* Inizio: Verde pieno (combacia con lo slider) */
+    rgba(45, 74, 30, 0.7) 40%,  /* Centro: Diventa più scuro e inizia a perdere opacità */
+    rgba(45, 74, 30, 0.3) 70%,  /* Quasi trasparente */
+    transparent 100%            /* Fine: Trasparenza totale sulla foto */
+  );
+  
+  z-index: 2;
+  pointer-events: none;
+}
 
 /* sfumatura tra le due immagini */
 #terra .gea-bg-monte::after {
@@ -847,7 +883,7 @@ body.no-scroll {
 .mortal-heroes-section {
   position: absolute;
 
-  top: 30%;
+  top: 40.8%;
 
   left: 50%;
   transform: translateX(-50%);
