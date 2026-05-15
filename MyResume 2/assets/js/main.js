@@ -921,7 +921,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const sections = document.querySelectorAll('section[id]'); // Prende tutte le sezioni con un ID
 
   const options = {
-    threshold: 0.5 // Si attiva quando la sezione occupa il 50% dello schermo
+    rootMargin: "-30% 0px -70% 0px" // Si attiva quando la sezione entra nella parte alta dello schermo
   };
 
   const observer = new IntersectionObserver((entries) => {

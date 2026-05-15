@@ -343,7 +343,7 @@ h6 {
 
 /* Tema TERRA (Verde) */
 .nav-theme-terra {
-  --nav-color: #0b3106 !important;
+  --nav-color: #092c04 !important;
   --nav-hover-color: #4b8306 !important;
 }
 
@@ -363,6 +363,18 @@ h6 {
 .nav-theme-interactive {
   --nav-color: #f3e5f5 !important; 
   --nav-hover-color: #8a5794 !important;
+}
+
+
+#navmenu.nav-theme-terra a, 
+#navmenu.nav-theme-terra a i {
+  color: #0b3106 !important; /* Il tuo verde scuro */
+}
+
+/* Effetto Hover specifico per il tema terra */
+#navmenu.nav-theme-terra a:hover, 
+#navmenu.nav-theme-terra a:hover i {
+  color: #4b8306 !important; /* Il tuo verde chiaro */
 }
 
 /*--------------------------------------------------------------
