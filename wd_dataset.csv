@@ -3268,8 +3268,6 @@ http://www.wikidata.org/entity/Q23818213,Zeuxippe,Zeussippe,"personaggio della m
 http://www.wikidata.org/entity/Q3575332,Zeuxippe,Zeussippe,"personaggio della mitologia greca, figlia di Eridano e moglie di Teleone",greek_mythological_character
 http://www.wikidata.org/entity/Q3575333,Zeuxippe,Zeussippe,"personaggio della mitologia greca, figlia di Ippocoonte e moglie di Antifate",greek_mythological_character
 http://www.wikidata.org/entity/Q182790,Chimera,,mostro mitologico,greek_mythological_character
-http://www.wikidata.org/entity/Q122005198,moglie di Codro,,personaggio della mitologia greca,greek_mythological_character
-http://www.wikidata.org/entity/Q37739859,pioggia d'oro,pioggia dorata,pioggia d'oro mandata da Zeus a Danae,greek_mythological_character
 http://www.wikidata.org/entity/Q12737222,Sibilla Delfica,,"una delle sibille, profetesse presenti nella mitologia classica",greek_mythological_character
 http://www.wikidata.org/entity/Q305570,Abaride,,Rutulo nella mitologia romana,roman_mythological_character
 http://www.wikidata.org/entity/Q1501499,Aceste,,personaggio della mitologia romana,roman_mythological_character
@@ -3336,9 +3334,8 @@ http://www.wikidata.org/entity/Q118937178,Ercole soffoca i serpenti,"Ercole infa
 http://www.wikidata.org/entity/Q494762,Leda e il cigno,Leda col cigno,tema artistico ed episodio della mitologia greca,mythical_war
 http://www.wikidata.org/entity/Q1048568,Ratto delle Sabine,Il ratto delle sabine,evento leggendario della tradizione dell'antica Roma,mythical_war
 http://www.wikidata.org/entity/Q220878,Titanomachia,,"lotta mitologica di Zeus e dei suoi fratelli, alleati con Ecatonchiri e Ciclopi, contro Crono e gli altri Titani",mythical_war
-http://www.wikidata.org/entity/Q42937,guerra di Troia,"Ilioupersis, Guerra troiana","guerra della mitologia greca combattuta presso Troia, in Anatolia",mythical_war
+http://www.wikidata.org/entity/Q42937,Guerra di Troia,"Ilioupersis, Guerra troiana","guerra della mitologia greca combattuta presso Troia, in Anatolia",mythical_war
 http://www.wikidata.org/entity/Q26690200,guerra latina,guerra dei Rutuli,mitica guerra tra Troiani e Rutuli,mythical_war
-http://www.wikidata.org/entity/Q1170206,indovinello della sfinge,Enigma della sfinge,enigma,mythical_war
 http://www.wikidata.org/entity/Q16943283,Ratto di Europa,,evento della mitologia greca,mythical_war
 http://www.wikidata.org/entity/Q2132999,Ratto di Persefone,,episodio della mitologia greca,mythical_war
 http://www.wikidata.org/entity/Q321399,Abii,,popolo presente nell'Iliade,mythical_entity
@@ -3403,21 +3400,11 @@ http://www.wikidata.org/entity/Q7695763,Teleboi,,"antica popolazione dell'Acarna
 http://www.wikidata.org/entity/Q671008,Thule,Tule,isola leggendaria posta nell'estremo nord secondo gli autori dell'età classica,mythical_entity
 http://www.wikidata.org/entity/Q746198,,"Toro di Maratona, Toro cretese",creatura dell'antica mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q21560612,Xanto,,uno dei cavalli immortali di Achille nella mitologia greca,mythical_entity
-http://www.wikidata.org/entity/Q1359925,anello di Gige,,oggetto magico,mythical_entity
-http://www.wikidata.org/entity/Q474962,anfesibena,anfisbena,serpente mitologico,mythical_entity
-http://www.wikidata.org/entity/Q1960423,calzari alati,,calzari mitologici del dio Ermes/Mercurio,mythical_entity
-http://www.wikidata.org/entity/Q1196035,civetta di Atena,"nottola di Minerva, civetta di Minerva",civetta simbolo della dea greca Atena,mythical_entity
+http://www.wikidata.org/entity/Q474962,Anfesibena,anfisbena,serpente mitologico,mythical_entity
+http://www.wikidata.org/entity/Q1196035,Civetta di Atena,"nottola di Minerva, civetta di Minerva",civetta simbolo della dea greca Atena,mythical_entity
 http://www.wikidata.org/entity/Q816795,Ippocampo,,creatura della mitologia greca,mythical_entity
-http://www.wikidata.org/entity/Q158958,lago Tritonide,lago Tritone,antico lago dell'Africa,mythical_entity
-http://www.wikidata.org/entity/Q919702,nettare,,bevanda degli dei nella mitologia greca,mythical_entity
-http://www.wikidata.org/entity/Q29655267,pretendenti di Elena,,pretendenti di Elena nella mitologia greca,mythical_entity
-http://www.wikidata.org/entity/Q268657,sciapode,"sciapodi, monopodi, monopode",popolo leggendario dell'antichità classica,mythical_entity
-http://www.wikidata.org/entity/Q2712103,scudo di Achille,,"scudo descritto nell'""Iliade"" di Omero",mythical_entity
 http://www.wikidata.org/entity/Q150986,Sirena,Sirene,"figura mitologico-religiosa greca, metà donna e metà pesce",mythical_entity
-http://www.wikidata.org/entity/Q20644862,tridente di Poseidone,"triaina, tridente",attributo di Poseidone nella mitologia greca,mythical_entity
-http://www.wikidata.org/entity/Q937164,vaso di Pandora,,oggetto della mitologia greca,mythical_entity
-http://www.wikidata.org/entity/Q212262,Vello d'oro,,oggetto mitologico greco antico,mythical_entity
-http://www.wikidata.org/entity/Q1857362,volpe di Teumesso,,volpe della mitologia greca,mythical_entity
+http://www.wikidata.org/entity/Q1857362,Volpe di Teumesso,,volpe della mitologia greca,mythical_entity
 http://www.wikidata.org/entity/Q21547793,Acoloe,,arpia della mitologia greca,ibrido
 http://www.wikidata.org/entity/Q3605939,Aellopoda,,arpia della mitologia greca,ibrido
 http://www.wikidata.org/entity/Q753903,Celeno,,arpia della mitologia greca,ibrido
