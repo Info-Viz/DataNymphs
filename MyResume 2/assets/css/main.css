@@ -341,11 +341,6 @@ h6 {
   --nav-hover-color: #0563bb !important;
 }
 
-/* Tema TERRA (Verde) */
-.nav-theme-terra {
-  --nav-color: #092c04 !important;
-  --nav-hover-color: #4b8306 !important;
-}
 
 /* Tema MARE (Blu) */
 .nav-theme-mare {
