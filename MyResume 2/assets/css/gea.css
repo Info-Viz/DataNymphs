@@ -883,7 +883,7 @@ body.no-scroll {
 .mortal-heroes-section {
   position: absolute;
 
-  top: 40.8%;
+  top: 39.8%;
 
   left: 50%;
   transform: translateX(-50%);
@@ -1134,4 +1134,64 @@ body.no-scroll {
     right: 0;
   }
 }
+
+
+
+/* =========================================
+   PARAGRAFETTO CON TESTO
+========================================= */
+.gea-story-text {
+  /* Layout e Dimensioni */
+  max-width: 820px;
+  margin: 60px auto 100px; /* Spazio bilanciato tra titolo e slider */
+  padding: 40px;
+  margin-top: 1250px !important;
+
+  text-align: center;
+
+  /* Effetto Vetro (Glassmorphism) */
+  background: rgba(183, 225, 138, 0.45); /* Leggermente più trasparente per vedere l'erba */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* Bordi e Arrotondamento */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 35px;
+
+  /* Ombre: una esterna morbida e una interna luminosa */
+  box-shadow:
+    0 20px 50px rgba(45, 74, 30, 0.15), 
+    inset 0 0 30px rgba(255, 255, 255, 0.5);
+
+  /* Posizionamento */
+  position: relative;
+  z-index: 25;
+}
+
+.gea-story-text p {
+  margin: 0;
+  
+  /* Tipografia */
+  font-family: "Marcellus", serif;
+  font-size: 1.25rem;
+  line-height: 1.9;
+
+  /* Colore: Verde fango molto scuro per massima leggibilità */
+  color: #1a2e05; 
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive: riduciamo il margine su mobile */
+@media (max-width: 768px) {
+  .gea-story-text {
+    margin: 40px 20px;
+    padding: 25px;
+  }
+  .gea-story-text p {
+    font-size: 1.1rem;
+  }
+}
+
+
 

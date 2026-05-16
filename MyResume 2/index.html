@@ -532,6 +532,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
       <img src="assets/img/omini.png" alt="Uomini intorno al fuoco">
       <span class="omini-fire"></span>
     </div>
+          
     
 
     <!-- SEZIONE EROI MORTALI -->
@@ -597,9 +598,19 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
     <div class="container section-title" data-aos="fade-up">
         <div id="container">
             <h2>GEA</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
+         </div>
+          <div class="gea-story-text" data-aos="fade-up">
+        <p>
+          On the fertile lands of Gea, the myth blends with the dust of the world. 
+          <br>
+          Here, extraordinary men and women defied fate, earning a place among the legends through courage and sacrifice.
+          <br>
+          Let's meet the mortal heroes who changed history.
+        </p>
+      </div>
     </div>
+
+
 </section>
 
 
@@ -770,13 +781,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
 
-  const quizItems = document.querySelectorAll(".divine-quiz-item");
-  const confirmBtn = document.querySelector("#divine-quiz-confirm-btn");
-  const feedback = document.querySelector("#divine-quiz-feedback");
 
-  let selectedItem = null;
+
+const quizItems = document.querySelectorAll(".divine-quiz-item");
+
+const confirmBtn = document.querySelector("#divine-quiz-confirm-btn");
+
+const feedback = document.querySelector("#divine-quiz-feedback");
+
+
+
+let selectedItem = null;
 
   /* =========================
      SELEZIONE RISPOSTA
