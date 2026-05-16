@@ -513,7 +513,7 @@ body {
 
 .omini-5 {
   left: 20%;
-  top: 23.7%;
+  top: 25.7%;
   animation-delay: 3.1s;
 }
 
@@ -1195,3 +1195,814 @@ body.no-scroll {
 
 
 
+
+
+/*QUIZ GEA*/
+/* Container principale per isolare tutto */
+#gea-quiz-section {
+  padding: 50px 20px;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  z-index: 110 !important; /* Più alto di tutto il resto */
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.gea-quiz-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gea-quiz-question {
+  font-family: 'Marcellus', serif;
+  font-size: 2rem;
+  color: #080807; /* Oro scuro */
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Disposizione Orizzontale delle opzioni */
+.gea-quiz-options {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  flex-wrap: wrap; /* Per evitare che si rompa su mobile */
+  margin-bottom: 30px;
+}
+
+.gea-quiz-item {
+  flex: 1;
+  min-width: 150px;
+  padding: 20px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.gea-quiz-item:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Classe per l'elemento selezionato */
+.gea-quiz-item.selected {
+  border-color: #ffd700;
+  background-color: #fffdf0;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Classi per il risultato finale */
+.gea-quiz-item.correct-answer {
+  background-color: #d4edda !important;
+  border-color: #069c29 !important;
+  color: #053d12 !important;
+}
+
+.gea-quiz-item.wrong-answer {
+  background-color: #f8d7da !important;
+  border-color: #dc3545 !important;
+  color: #721c24;
+}
+
+/* Bottone di conferma */
+#gea-quiz-confirm-btn {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #ffd700, #b8860b);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+#gea-quiz-confirm-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#gea-quiz-feedback {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+/* =========================================
+   FORZATURA VISIBILITÀ QUIZ GEA
+========================================= */
+
+/* Forza il testo della domanda a essere visibile, nero e sopra lo sfondo */
+#gea-quiz-section .gea-quiz-question {
+  color: #000000 !important;
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+  position: relative;
+  z-index: 10;
+}
+
+/* Forza le scritte delle opzioni (Ermes, Apollo, ecc.) a mostrarsi in nero */
+#gea-quiz-section .gea-quiz-item span {
+  color: #000000 !important;
+  opacity: 1 !important;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+/* Crea un leggero sfondo bianco effetto vetro dietro al quiz di Gea 
+   se la foto o lo sfondo della terra coprono le scritte */
+.gea-quiz-wrapper {
+  backdrop-filter: blur(0px);
+}
+/* Disposizione Orizzontale delle opzioni */
+.gea-quiz-options {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Allinea al centro verticalmente */
+  gap: 20px;
+  flex-wrap: nowrap; /* Forza la riga unica su desktop */
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.gea-quiz-item {
+  flex: 1;
+  min-width: 140px;
+  max-width: 200px; /* Evita che diventino troppo larghi */
+  height: 65px;     /* Altezza fissa identica a quella di Cielo per i bottoni */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff !important;
+  border: 2px solid #e0e0e0 !important;
+  border-radius: 12px;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  position: relative; /* Serve per posizionare l'alloro o gli effetti interni */
+}
+
+/* Forza lo span interno ad essere visibile, centrato e leggibile */
+.gea-quiz-item span {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #000000 !important; 
+  font-size: 1.1rem;
+  z-index: 5;
+}
+
+.gea-quiz-item:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700 !important;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+/* Classe per l'elemento selezionato */
+.gea-quiz-item.selected {
+  border-color: #ffd700 !important;
+  background-color: #fffdf0 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Classi per il risultato finale */
+.gea-quiz-item.correct-answer {
+  background-color: #d4edda !important;
+  border-color: #069c29 !important;
+}
+.gea-quiz-item.correct-answer span {
+  color: #053d12 !important; /* Testo verde scuro su fondo verde chiaro */
+}
+
+.gea-quiz-item.wrong-answer {
+  background-color: #f8d7da !important;
+  border-color: #dc3545 !important;
+}
+.gea-quiz-item.wrong-answer span {
+  color: #721c24 !important; /* Testo rosso scuro su fondo rosso chiaro */
+}
+
+/* Forzatura colore feedback (il JS applica feedback.style.color, ma questo garantisce priorità) */
+#gea-quiz-feedback {
+  margin-top: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  min-height: 30px;
+}
+
+
+/* =========================
+   QUIZ DIVINITÀ - EFFETTI
+========================= */
+
+.gea-quiz-item {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Lampo sulla risposta confermata */
+.gea-quiz-item.lightning-hit::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: 50%;
+  width: 8px;
+  height: 260%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #ffffff,
+    #ffe66d,
+    #ffffff,
+    transparent
+  );
+  transform: translateX(-50%) rotate(18deg);
+  z-index: 5;
+  filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 22px #ffd700);
+  animation: quizLightningStrike 0.55s ease-out forwards;
+}
+
+.gea-quiz-item.lightning-hit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 245, 160, 0.65);
+  z-index: 4;
+  animation: quizFlash 0.55s ease-out forwards;
+}
+
+@keyframes quizLightningStrike {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-40px) rotate(18deg) scaleY(0.2);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotate(18deg) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px) rotate(18deg) scaleY(1.1);
+  }
+}
+
+@keyframes quizFlash {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* =========================
+   RISPOSTA SBAGLIATA - INFERI
+========================= */
+
+.gea-quiz-item.wrong-answer {
+  position: relative;
+  overflow: hidden !important;
+
+  background: #050505 !important;
+
+  border: 2px solid #ff3c00 !important;
+
+  color: #ffd6c7 !important;
+
+  box-shadow:
+    inset 0 0 30px rgba(255, 60, 0, 0.35),
+    inset 0 -25px 40px rgba(255, 80, 0, 0.18),
+    0 0 25px rgba(255, 40, 0, 0.3);
+}
+
+/* GLOW ROSSO INTERNO */
+
+.gea-quiz-item.wrong-answer::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      ellipse at bottom,
+      rgba(255, 60, 0, 0.28) 0%,
+      rgba(255, 20, 0, 0.14) 35%,
+      transparent 75%
+    );
+
+  animation: infernalGlow 2.5s ease-in-out infinite;
+}
+
+/* FIAMME */
+
+.gea-quiz-item.wrong-answer::before {
+  content: "";
+
+  position: absolute;
+
+  left: -10%;
+  bottom: -30%;
+
+  width: 120%;
+  height: 130%;
+
+  z-index: 2;
+
+  background:
+
+    radial-gradient(circle at 8% 100%,
+      rgba(255,220,120,0.95) 0%,
+      rgba(255,120,0,0.95) 12%,
+      rgba(255,40,0,0.82) 22%,
+      transparent 38%),
+
+    radial-gradient(circle at 24% 100%,
+      rgba(255,210,100,0.95) 0%,
+      rgba(255,90,0,0.92) 14%,
+      rgba(255,30,0,0.82) 24%,
+      transparent 40%),
+
+    radial-gradient(circle at 42% 100%,
+      rgba(255,230,140,0.98) 0%,
+      rgba(255,120,0,0.92) 12%,
+      rgba(255,40,0,0.82) 24%,
+      transparent 40%),
+
+    radial-gradient(circle at 60% 100%,
+      rgba(255,220,120,0.95) 0%,
+      rgba(255,100,0,0.92) 12%,
+      rgba(255,30,0,0.8) 24%,
+      transparent 42%),
+
+    radial-gradient(circle at 78% 100%,
+      rgba(255,210,100,0.95) 0%,
+      rgba(255,80,0,0.9) 14%,
+      rgba(255,20,0,0.8) 24%,
+      transparent 42%),
+
+    radial-gradient(circle at 96% 100%,
+      rgba(255,230,140,0.98) 0%,
+      rgba(255,120,0,0.92) 12%,
+      rgba(255,40,0,0.82) 24%,
+      transparent 40%);
+
+  filter:
+    blur(12px)
+    saturate(1.2);
+
+  opacity: 0.95;
+
+  mix-blend-mode: screen;
+
+  animation:
+    infernalFlames 1.8s ease-in-out infinite alternate;
+}
+
+/* TESTO SOPRA */
+
+.gea-quiz-item.wrong-answer * {
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================
+   ANIMAZIONI
+========================= */
+
+@keyframes infernalFlames {
+
+  0% {
+    transform:
+      translateY(0)
+      scaleY(1)
+      scaleX(1);
+
+    filter:
+      blur(12px)
+      brightness(1);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scaleY(1.15)
+      scaleX(1.03);
+
+    filter:
+      blur(16px)
+      brightness(1.15);
+  }
+
+  100% {
+    transform:
+      translateY(-22px)
+      scaleY(1.28)
+      scaleX(0.96);
+
+    filter:
+      blur(20px)
+      brightness(1.28);
+  }
+}
+
+@keyframes infernalGlow {
+
+  0%, 100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+/* =========================
+   RISPOSTA SBAGLIATA - INFERI
+========================= */
+
+.gea-quiz-item.wrong-answer {
+  position: relative;
+  overflow: hidden !important;
+
+  background:
+    radial-gradient(circle at bottom,
+      rgba(255,120,0,0.35) 0%,
+      rgba(180,40,0,0.22) 18%,
+      rgba(40,0,0,0.12) 38%,
+      #050505 75%) !important;
+
+  border: 2px solid #4a1c10 !important;
+  color: #f3f3f3 !important;
+
+  box-shadow:
+    inset 0 -40px 60px rgba(255, 80, 0, 0.22),
+    inset 0 0 45px rgba(0,0,0,0.95),
+    0 0 25px rgba(120,20,0,0.35);
+}
+
+/* FIAMME PROFONDE */
+.gea-quiz-item.wrong-answer::before {
+  content: "";
+
+  position: absolute;
+  left: -10%;
+  bottom: -35%;
+
+  width: 120%;
+  height: 120%;
+
+  z-index: 1;
+
+  background:
+    radial-gradient(ellipse at 15% 100%,
+      rgba(255,180,70,0.95) 0%,
+      rgba(255,120,0,0.7) 18%,
+      rgba(255,60,0,0.42) 38%,
+      transparent 70%),
+
+    radial-gradient(ellipse at 40% 100%,
+      rgba(255,190,90,0.9) 0%,
+      rgba(255,130,0,0.65) 18%,
+      rgba(255,70,0,0.4) 36%,
+      transparent 72%),
+
+    radial-gradient(ellipse at 65% 100%,
+      rgba(255,170,60,0.88) 0%,
+      rgba(255,100,0,0.6) 20%,
+      rgba(255,50,0,0.38) 40%,
+      transparent 72%),
+
+    radial-gradient(ellipse at 88% 100%,
+      rgba(255,160,50,0.82) 0%,
+      rgba(255,90,0,0.55) 20%,
+      rgba(255,40,0,0.3) 38%,
+      transparent 70%);
+
+  filter: blur(18px);
+  opacity: 0.95;
+
+  animation: infernoFlames 2.6s ease-in-out infinite alternate;
+}
+
+/* FUMO SOPRA LE FIAMME */
+.gea-quiz-item.wrong-answer::after {
+  content: "";
+
+  position: absolute;
+  inset: -15%;
+
+  z-index: 2;
+
+  background:
+    radial-gradient(circle at 20% 85%,
+      rgba(180,180,180,0.18) 0%,
+      rgba(70,70,70,0.16) 28%,
+      transparent 58%),
+
+    radial-gradient(circle at 60% 90%,
+      rgba(220,220,220,0.16) 0%,
+      rgba(80,80,80,0.14) 30%,
+      transparent 60%),
+
+    radial-gradient(circle at 85% 75%,
+      rgba(180,180,180,0.12) 0%,
+      rgba(60,60,60,0.12) 32%,
+      transparent 62%);
+
+  filter: blur(26px);
+
+  opacity: 0.85;
+
+  animation: infernoSmoke 5s ease-in-out infinite alternate;
+}
+
+/* FUMO EXTRA CREATO DAL JS */
+.gea-quiz-item.wrong-answer .infernal-smoke {
+  position: absolute;
+  inset: -25%;
+
+  z-index: 3;
+
+  background:
+    radial-gradient(circle at 25% 85%,
+      rgba(160,160,160,0.24) 0%,
+      rgba(80,80,80,0.2) 25%,
+      transparent 55%),
+
+    radial-gradient(circle at 55% 95%,
+      rgba(210,210,210,0.18) 0%,
+      rgba(70,70,70,0.18) 28%,
+      transparent 58%),
+
+    radial-gradient(circle at 82% 80%,
+      rgba(150,150,150,0.2) 0%,
+      rgba(50,50,50,0.18) 30%,
+      transparent 60%);
+
+  filter: blur(30px);
+  opacity: 0.75;
+
+  animation: infernalSmokeMove 6s ease-in-out infinite alternate;
+}
+
+/* BRACI CREATE DAL JS */
+.gea-quiz-item.wrong-answer .embers {
+  position: absolute;
+  inset: 0;
+
+  z-index: 4;
+}
+
+.gea-quiz-item.wrong-answer .embers span {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  bottom: 8%;
+
+  background:
+    radial-gradient(circle,
+      rgba(255,230,160,1) 0%,
+      rgba(255,120,0,0.95) 45%,
+      rgba(255,40,0,0.75) 70%,
+      transparent 100%);
+
+  box-shadow:
+    0 0 8px rgba(255,140,0,0.9),
+    0 0 16px rgba(255,40,0,0.55);
+
+  opacity: 0;
+
+  animation: emberRise 6s linear infinite;
+}
+
+.gea-quiz-item.wrong-answer .embers span:nth-child(1) {
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.gea-quiz-item.wrong-answer .embers span:nth-child(2) {
+  left: 32%;
+  animation-delay: 0.7s;
+}
+
+.gea-quiz-item.wrong-answer .embers span:nth-child(3) {
+  left: 50%;
+  animation-delay: 1.3s;
+}
+
+.gea-quiz-item.wrong-answer .embers span:nth-child(4) {
+  left: 68%;
+  animation-delay: 0.4s;
+}
+
+.gea-quiz-item.wrong-answer .embers span:nth-child(5) {
+  left: 84%;
+  animation-delay: 1s;
+}
+
+/* TESTO SOPRA TUTTO */
+.gea-quiz-item.wrong-answer * {
+  position: relative;
+  z-index: 6;
+
+  text-shadow:
+    0 0 10px rgba(0,0,0,0.95),
+    0 0 18px rgba(255,120,0,0.25);
+}
+
+/* però fumo e braci devono restare dietro al testo */
+.gea-quiz-item.wrong-answer .infernal-smoke {
+  z-index: 3;
+}
+
+.gea-quiz-item.wrong-answer .embers {
+  z-index: 4;
+}
+
+/* ANIMAZIONI */
+@keyframes infernoFlames {
+  0% {
+    transform: translateY(10px) scaleY(1);
+    opacity: 0.75;
+    filter: blur(18px);
+  }
+
+  50% {
+    transform: translateY(-8px) scaleY(1.12);
+    opacity: 1;
+    filter: blur(14px);
+  }
+
+  100% {
+    transform: translateY(-18px) scaleY(1.28);
+    opacity: 0.82;
+    filter: blur(22px);
+  }
+}
+
+@keyframes infernoSmoke {
+  0% {
+    transform: translateX(-10px) translateY(10px);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translateX(18px) translateY(-28px);
+    opacity: 0.75;
+  }
+}
+
+@keyframes infernalSmokeMove {
+  0% {
+    transform: translateX(-12px) translateY(12px) scale(1);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translateX(18px) translateY(-32px) scale(1.12);
+    opacity: 0.8;
+  }
+}
+
+@keyframes emberRise {
+  0% {
+    transform: translateY(20px) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-85px) translateX(14px) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   CORONA D'ALLORO
+========================= */
+
+.gea-quiz-item {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.gea-quiz-item.correct-answer {
+  position: relative;
+  overflow: visible !important;
+}
+
+.gea-quiz-laurel {
+  position: absolute;
+
+  left: 50%;
+  top: -73px;
+
+  width: 220px;
+  height: auto;
+
+  transform: translateX(-50%) scaleX(1.35) scaleY(0.72);
+
+  z-index: 80;
+
+  background: transparent !important;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 215, 0, 0.45))
+    drop-shadow(0 0 18px rgba(255, 255, 255, 0.3));
+
+  animation: laurelImageReveal 0.9s ease-out forwards;
+}
+
+@keyframes laurelImageReveal {
+
+  0% {
+    opacity: 0;
+    transform:
+      translateX(-50%)
+      translateY(18px)
+      scaleX(0.75)
+      scaleY(0.4);
+  }
+
+  65% {
+    opacity: 1;
+    transform:
+      translateX(-50%)
+      translateY(-5px)
+      scaleX(1.42)
+      scaleY(0.78);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translateX(-50%)
+      translateY(0)
+      scaleX(1.35)
+      scaleY(0.72);
+  }
+}
+
+
+
+
+
+/* =========================================
+   FORZATURA VISIBILITÀ GRAFICO D3.JS
+========================================= */
+
+#gea-chart-section {
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 100 !important; /* Lo porta sopra lo sfondo */
+  pointer-events: auto !important;
+}
+
+.gea-chart-container {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(227, 240, 226, 0.9) !important; /* Fondo chiaro per far risaltare i punti */
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Costringe il div a stringersi attorno al grafico */
+}
+
+/* Forza l'SVG generato da D3 ad avere dimensioni reali e visibili */
+#gea-my_dataviz svg {
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Rende le linee degli assi e i testi neri/scuri ben definiti */
+#gea-my_dataviz .tick text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  fill: #333333 !important; /* Colore dei numeri degli assi */
+}
+
+#gea-my_dataviz .domain,
+#gea-my_dataviz .tick line {
+  stroke: #666666 !important; /* Colore delle linee degli assi */
+  stroke-width: 1.5px;
+}

@@ -357,114 +357,96 @@
         
         </section>
 
-        <section>
-          <div style="text-align: center;">
-
+        <section style="text-align: center;">
 
           <!-- Load d3.js -->
           <script src="https://d3js.org/d3.v4.js"></script>
 
           <!-- Create a div where the graph will take place -->
-          <div id="my_dataviz"></div>
+            <div class="sky-chart-container">
+              <div id="sky-my_dataviz"></div>
+            </div>
+
 
 <script>
+// Usiamo una funzione auto-eseguibile (IIFE) per creare un'area protetta
+(function() {
+  const margin = {top: 10, right: 30, bottom: 30, left: 40},
+        width = 460 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
 
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 40},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+  // Seleziona specificamente l'ID del cielo
+  const svg = d3.select("#sky-my_dataviz")
+    .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-// append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+  d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) {
 
-// get the data
-d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/1_OneNum.csv", function(data) {
+    const x = d3.scaleLinear()
+        .domain([0, 1000])     
+        .range([0, width]);
+        
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
 
-  // X axis: scale and draw:
-  var x = d3.scaleLinear()
-      .domain([0, 1000])     // can use this instead of 1000 to have the max of data: d3.max(data, function(d) { return +d.price })
-      .range([0, width]);
-  svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x));
+    const histogram = d3.histogram()
+        .value(function(d) { return d.price; })   
+        .domain(x.domain())  
+        .thresholds(x.ticks(70)); 
 
-  // set the parameters for the histogram
-  var histogram = d3.histogram()
-      .value(function(d) { return d.price; })   // I need to give the vector of value
-      .domain(x.domain())  // then the domain of the graphic
-      .thresholds(x.ticks(70)); // then the numbers of bins
+    const bins = histogram(data);
 
-  // And apply this function to data to get the bins
-  var bins = histogram(data);
+    const y = d3.scaleLinear()
+        .range([height, 0]);
+    y.domain([0, d3.max(bins, function(d) { return d.length; })]);   
+    
+    svg.append("g")
+        .call(d3.axisLeft(y));
 
-  // Y axis: scale and draw:
-  var y = d3.scaleLinear()
-      .range([height, 0]);
-      y.domain([0, d3.max(bins, function(d) { return d.length; })]);   // d3.hist has to be called before the Y axis obviously
-  svg.append("g")
-      .call(d3.axisLeft(y));
-
-  // Add a tooltip div. Here I define the general feature of the tooltip: stuff that do not depend on the data point.
-  // Its opacity is set to 0: we don't see it by default.
-  var tooltip = d3.select("#my_dataviz")
-    .append("div")
-    .style("opacity", 0)
-    .attr("class", "tooltip")
-    .style("background-color", "black")
-    .style("color", "white")
-    .style("border-radius", "5px")
-    .style("padding", "10px")
-
-  // A function that change this tooltip when the user hover a point.
-  // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
-  var showTooltip = function(d) {
-    tooltip
-      .transition()
-      .duration(100)
-      .style("opacity", 1)
-    tooltip
-      .html("Range: " + d.x0 + " - " + d.x1)
-      .style("left", (d3.mouse(this)[0]+20) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
-  }
-  var moveTooltip = function(d) {
-    tooltip
-    .style("left", (d3.mouse(this)[0]+20) + "px")
-    .style("top", (d3.mouse(this)[1]) + "px")
-  }
-  // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
-  var hideTooltip = function(d) {
-    tooltip
-      .transition()
-      .duration(100)
+    // FIX: Ora il tooltip viene appeso correttamente dentro il box del cielo
+    const tooltip = d3.select("#sky-my_dataviz")
+      .append("div")
       .style("opacity", 0)
-  }
+      .attr("class", "tooltip")
+      .style("background-color", "black")
+      .style("color", "white")
+      .style("border-radius", "5px")
+      .style("padding", "10px")
+      .style("position", "absolute"); // Garantisce che segua il mouse senza scombinare il layout
 
-  // append the bar rectangles to the svg element
-  svg.selectAll("rect")
-      .data(bins)
-      .enter()
-      .append("rect")
-        .attr("x", 1)
-        .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
-        .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
-        .attr("height", function(d) { return height - y(d.length); })
-        .style("fill", "#69b3a2")
-        // Show tooltip on hover
-        .on("mouseover", showTooltip )
-        .on("mousemove", moveTooltip )
-        .on("mouseleave", hideTooltip )
+    const showTooltip = function(d) {
+      tooltip.transition().duration(100).style("opacity", 1);
+      tooltip.html("Range: " + d.x0 + " - " + d.x1)
+        .style("left", (d3.event.layerX + 20) + "px") // Uso di d3.event più stabile su alcune strutture layout
+        .style("top", (d3.event.layerY) + "px");
+    }
+    const moveTooltip = function(d) {
+      tooltip.style("left", (d3.event.layerX + 20) + "px")
+             .style("top", (d3.event.layerY) + "px");
+    }
+    const hideTooltip = function(d) {
+      tooltip.transition().duration(100).style("opacity", 0);
+    }
 
-});
+    svg.selectAll("rect")
+        .data(bins)
+        .enter()
+        .append("rect")
+          .attr("x", 1)
+          .attr("transform", function(d) { return "translate(" + x(d.x0) + "," + y(d.length) + ")"; })
+          .attr("width", function(d) { return x(d.x1) - x(d.x0) -1 ; })
+          .attr("height", function(d) { return height - y(d.length); })
+          .style("fill", "#69b3a2")
+          .on("mouseover", showTooltip )
+          .on("mousemove", moveTooltip )
+          .on("mouseleave", hideTooltip );
+  });
+})();
 </script>
-
-        </div>
         </section>
 
       </section>
@@ -601,14 +583,104 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
          </div>
           <div class="gea-story-text" data-aos="fade-up">
         <p>
-          On the fertile lands of Gea, the myth blends with the dust of the world. 
+          Beneath the soft clouds that fill the divine sky, the first sign of earth emerges: the mountain where Prometheus hangs chained.
           <br>
-          Here, extraordinary men and women defied fate, earning a place among the legends through courage and sacrifice.
+          At the foot of the peak stretches a lush, vibrant green garden, where extraordinary men and women defied fate.
           <br>
           Let's meet the mortal heroes who changed history.
         </p>
       </div>
     </div>
+
+        <section id="gea-quiz-section" style="margin-top: 470px !important;">
+  <div class="gea-quiz-wrapper">
+    <h3 class="gea-quiz-question">Who among these mortal heroes managed to slay Medusa?</h3>
+    
+    <div class="gea-quiz-options">
+      <div class="gea-quiz-item" data-value="wrong">
+        <span>Heracles</span>
+      </div>
+      
+      <div class="gea-quiz-item" data-value="correct">
+        <span>Perseus</span>
+      </div>
+      
+      <div class="gea-quiz-item" data-value="wrong">
+        <span>Achilles</span>
+      </div>
+      
+      <div class="gea-quiz-item" data-value="wrong">
+        <span>Jason</span>
+      </div>
+    </div>
+
+    <div class="gea-quiz-actions">
+      <button id="gea-quiz-confirm-btn" disabled>Confirm Choice</button>
+      <p id="gea-quiz-feedback"></p>
+    </div>
+  </div>
+</section>
+
+<section id="gea-chart-section" style="margin-top: 770px !important;">
+  <div class="gea-chart-container">
+    <div id="gea-my_dataviz"></div>
+  </div>
+</section>
+
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<script>
+// Il tuo codice JS di D3.js rimane esattamente lo stesso
+var margin = {top: 20, right: 30, bottom: 40, left: 60},
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+var svg = d3.select("#gea-my_dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/2_TwoNum.csv", function(data) {
+  var x = d3.scaleLinear().domain([0, 0]).range([ 0, width ]);
+  svg.append("g")
+    .attr("class", "myXaxis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x))
+    .attr("opacity", "0");
+
+  var y = d3.scaleLinear().domain([0, 500000]).range([ height, 0]);
+  svg.append("g").call(d3.axisLeft(y));
+
+  svg.append('g')
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+      .attr("cx", function (d) { return x(d.GrLivArea); } )
+      .attr("cy", function (d) { return y(d.SalePrice); } )
+      .attr("r", 2) // Ingrandito leggermente a 2 per vederlo meglio
+      .style("fill", "#ffd700"); // Colore Oro per riprendere il tema del quiz
+
+  x.domain([0, 4000]);
+  svg.select(".myXaxis")
+    .transition()
+    .duration(2000)
+    .attr("opacity", "1")
+    .call(d3.axisBottom(x));
+
+  svg.selectAll("circle")
+    .transition()
+    .delay(function(d,i){return(i*3)})
+    .duration(2000)
+    .attr("cx", function (d) { return x(d.GrLivArea); } )
+    .attr("cy", function (d) { return y(d.SalePrice); } );
+});
+</script>
+</section>
+
+
 
 
 </section>
@@ -1080,6 +1152,123 @@ document.addEventListener("DOMContentLoaded", function () {
 
   });
 
+});
+</script>
+
+
+<script> /*QUIZ GEA*/
+  document.addEventListener("DOMContentLoaded", function () {
+
+  const quizItems = document.querySelectorAll(".gea-quiz-item");
+  const confirmBtn = document.querySelector("#gea-quiz-confirm-btn");
+  const feedback = document.querySelector("#gea-quiz-feedback");
+
+  let selectedItem = null;
+
+  /* =========================
+     SELEZIONE RISPOSTA
+  ========================= */
+  quizItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      if (confirmBtn.classList.contains("quiz-locked")) return;
+
+      quizItems.forEach(function (el) {
+        el.classList.remove("selected");
+      });
+
+      item.classList.add("selected");
+      selectedItem = item;
+      confirmBtn.disabled = false;
+    });
+  });
+
+  /* =========================
+     CONFERMA RISPOSTA
+  ========================= */
+  confirmBtn.addEventListener("click", function () {
+    if (!selectedItem) return;
+
+    confirmBtn.disabled = true;
+    confirmBtn.classList.add("quiz-locked");
+
+    /* FULMINE SU QUALSIASI RISPOSTA */
+    selectedItem.classList.remove("lightning-hit");
+    void selectedItem.offsetWidth;
+    selectedItem.classList.add("lightning-hit");
+
+    setTimeout(function () {
+      selectedItem.classList.remove("lightning-hit");
+
+      /* =========================
+         RISPOSTA CORRETTA
+      ========================= */
+      if (selectedItem.dataset.value === "correct") {
+        selectedItem.classList.add("correct-answer");
+
+        if (!selectedItem.querySelector(".gea-quiz-laurel")) {
+          const laurel = document.createElement("img");
+          laurel.src = "assets/img/alloro.png";
+          laurel.alt = "Corona d'alloro";
+          laurel.className = "gea-quiz-laurel";
+          selectedItem.appendChild(laurel);
+        }
+
+        feedback.textContent =
+          "🏅 Correct answer: you have proven your knowledge of the mortal world and its legends! Check the charts for more.";
+           
+        feedback.style.color = "#069c29";
+      }
+
+      /* =========================
+         RISPOSTA SBAGLIATA
+      ========================= */
+      else {
+        selectedItem.classList.add("wrong-answer");
+        
+        /* FUMO */
+        if (!selectedItem.querySelector(".infernal-smoke")) {
+          const smoke = document.createElement("div");
+          smoke.className = "infernal-smoke";
+          selectedItem.appendChild(smoke);
+        }
+
+        /* CENERE */
+        if (!selectedItem.querySelector(".embers")) {
+          const embers = document.createElement("div");
+          embers.className = "embers";
+
+          for (let i = 0; i < 5; i++) {
+            const ember = document.createElement("span");
+            embers.appendChild(ember);
+          }
+          selectedItem.appendChild(embers);
+        }
+
+        // Seleziona la risposta esatta tra gli elementi di Gea
+        const correctItem = document.querySelector(
+          '.gea-quiz-item[data-value="correct"]'
+        );
+
+        if (correctItem) {
+          correctItem.classList.add("correct-answer");
+
+          if (!correctItem.querySelector(".gea-quiz-laurel")) {
+            const laurel = document.createElement("img");
+            laurel.src = "assets/img/alloro.png";
+            laurel.alt = "Corona d'alloro";
+            laurel.className = "gea-quiz-laurel";
+            correctItem.appendChild(laurel);
+          }
+        }
+
+        feedback.textContent =
+          "❌ Wrong answer: the legends of Gea fade into memory! Consult the charts to see your mistake.";
+
+        feedback.style.color = "#b12a00";
+      }
+
+    }, 650);
+  });
 });
 </script>
 

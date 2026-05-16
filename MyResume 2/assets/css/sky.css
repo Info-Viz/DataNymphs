@@ -2787,7 +2787,15 @@ img:hover{
 
 
 
-
+.sky-chart-container{
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(215, 234, 244, 0.9) !important; /* Fondo chiaro per far risaltare i punti */
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Costringe il div a stringersi attorno al grafico */
+}
 
 
 
