@@ -1,0 +1,146 @@
+[
+    {
+        "property": "http://www.wikidata.org/entity/P508",
+        "label": "BNCF Thesaurus ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P268",
+        "label": "Bibliothèque nationale de France ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P373",
+        "label": "Commons category"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P1036",
+        "label": "Dewey Decimal Classification"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P8603",
+        "label": "Istrapedia ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P8189",
+        "label": "J9U entity ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P6573",
+        "label": "Klexikon article ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P244",
+        "label": "Library of Congress authority ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P691",
+        "label": "NL CR AUT ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P1368",
+        "label": "National Library of Latvia ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P4212",
+        "label": "PACTOLS thesaurus ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P13591",
+        "label": "Yale LUX ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P2596",
+        "label": "culture"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P1343",
+        "label": "described by source"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P12596",
+        "label": "museum-digital tag ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P279",
+        "label": "subclass of"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P910",
+        "label": "topic's main category"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P1049",
+        "label": "worshipped by"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P1149",
+        "label": "Library of Congress Classification"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P2521",
+        "label": "female form of label"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P2354",
+        "label": "has list"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P18",
+        "label": "image"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P361",
+        "label": "part of"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P8168",
+        "label": "FactGrid item ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P1889",
+        "label": "different from"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P527",
+        "label": "has part(s)"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P227",
+        "label": "GND ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P2925",
+        "label": "domain of saint or deity"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P460",
+        "label": "said to be the same as"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P1074",
+        "label": "fictional or mythical analog of"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P4073",
+        "label": "Fandom wiki ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P8408",
+        "label": "KBpedia ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P10",
+        "label": "video"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P2671",
+        "label": "Google Knowledge Graph ID"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P31",
+        "label": "instance of"
+    },
+    {
+        "property": "http://www.wikidata.org/entity/P7497",
+        "label": "Wolfram Language entity type"
+    }
+]
