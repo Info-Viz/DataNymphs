@@ -30,6 +30,7 @@
   <link href="assets/css/sky.css" rel="stylesheet">
   <link href="assets/css/terra.css" rel="stylesheet">
   <link href="assets/css/gea.css" rel="stylesheet">
+  <link href="assets/css/thalassa.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -91,11 +92,6 @@
             </p>
             
 
-<div class="myth-separator">
-  <span></span>
-  <i class="bi bi-bank2"></i>
-  <span></span>
-</div>
 
 <div class="home-myth-intro">
   <p>
@@ -700,6 +696,66 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
       
       </div>
 
+
+      <section id="marine-slider-section">
+  <div class="bubble-slider-container">
+    
+    <h2 class="marine-slider-title">Creatures of the Deep</h2>
+    
+    <div class="bubble-slider-wrap">
+      <div class="bubble-slider-track">
+
+        <div class="bubble-slide">
+          <div class="bubble-sphere">
+            <img src="assets/img/tritone.png" alt="Tritone">
+            <div class="bubble-info">
+              <h3>Triton</h3>
+              <p>Messenger of the deep sea and son of Poseidon, known for his powerful conch shell.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bubble-slide">
+          <div class="bubble-sphere">
+            <img src="assets/img/anfitrite.png" alt="Anfitrite">
+            <div class="bubble-info">
+              <h3>Amphitrite</h3>
+              <p>Goddess of the sea and queen consort of Poseidon, ruling over marine creatures.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bubble-slide">
+          <div class="bubble-sphere">
+            <img src="assets/img/nereide.png" alt="Nereide">
+            <div class="bubble-info">
+              <h3>Nereids</h3>
+              <p>Sea nymphs who protect sailors and dance through the waves alongside dolphins.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bubble-slide">
+          <div class="bubble-sphere">
+            <img src="assets/img/cariddi.png" alt="Cariddi">
+            <div class="bubble-info">
+              <h3>Charybdis</h3>
+              <p>A sea monster whose massive whirlpools swallow entire ships into the abyss.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="bubble-slider-nav">
+      <button class="bubble-arrow arrow-left" id="bubblePrev">‹</button>
+      <button class="bubble-arrow arrow-right" id="bubbleNext">›</button>
+    </div>
+
+  </div>
+</section>
+
     </section><!-- /Stats Section -->
 
     <!-- Skills Section - inferi-->
@@ -713,9 +769,68 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
             <p>Il fuoco eterno degli abissi.</p>
         </div>
     </div>
+
+  
+</section>
+
+
       
   
     <div id="fire-pointer-inferi"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  (function() {
+    const slides = document.querySelectorAll(".hades-slide");
+    const nextBtn = document.getElementById("hadesNext");
+    const prevBtn = document.getElementById("hadesPrev");
+    const shockwave = document.querySelector(".shockwave");
+    
+    if (slides.length === 0 || !nextBtn || !prevBtn) return;
+
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    function changeSlide(newIndex) {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      // 1. Attiva l'effetto visivo dell'onda d'urto
+      if (shockwave) {
+        shockwave.classList.remove("animate");
+        void shockwave.offsetWidth; // Reset dell'animazione CSS
+        shockwave.classList.add("animate");
+      }
+
+      // 2. Aspetta una frazione di secondo (l'onda colpisce il personaggio) per cambiare la slide
+      setTimeout(() => {
+        // Rimuove la classe attiva dalla vecchia slide
+        slides[currentIndex].classList.remove("active");
+        
+        // Aggiorna l'indice
+        currentIndex = newIndex;
+        
+        // Attiva la nuova slide
+        slides[currentIndex].classList.add("active");
+        
+        isAnimating = false;
+      }, 250); // Sincronizzato con l'espansione della shockwave
+    }
+
+    nextBtn.addEventListener("click", function () {
+      let nextIndex = currentIndex + 1;
+      if (nextIndex >= slides.length) nextIndex = 0; // Torna alla prima
+      changeSlide(nextIndex);
+    });
+
+    prevBtn.addEventListener("click", function () {
+      let prevIndex = currentIndex - 1;
+      if (prevIndex < 0) prevIndex = slides.length - 1; // Va all'ultima
+      changeSlide(prevIndex);
+    });
+
+  })();
+});
+    </script>
 
   </section>
 
@@ -829,6 +944,7 @@ within the Digital Humanities and Digital Knowledge Master's Degree at Alma Mate
   <script src="assets/js/main.js"></script>
   <script src="assets/js/sky.js"></script>
   <script src="assets/js/gea.js"></script>
+  <script src="assets/js/thalassa.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -1271,6 +1387,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+
 
 
 

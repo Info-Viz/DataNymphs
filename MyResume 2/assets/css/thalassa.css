@@ -1,0 +1,171 @@
+/* Container Principale */
+#marine-slider-section {
+  padding: 80px 20px;
+  position: relative;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.marine-slider-title {
+  font-family: 'Marcellus', serif;
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+/* Finestra dello Slider */
+.bubble-slider-wrap {
+  max-width: 1050px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+/* Binario di scorrimento */
+.bubble-slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  gap: 30px;
+}
+
+/* Singola Slide */
+.bubble-slide {
+  flex: 0 0 calc(33.333% - 20px); /* Mostra 3 bolle alla volta su desktop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* La Bolla Sferica Tridimensionale */
+.bubble-sphere {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  cursor: pointer;
+  
+  /* Effetto Vetro/Bolla d'aria */
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), rgba(0, 150, 255, 0.1) 60%, rgba(0, 100, 200, 0.3) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 110, 255, 0.2), 
+              inset 0 10px 20px rgba(255, 255, 255, 0.4), 
+              inset -10px -10px 20px rgba(0, 150, 255, 0.2);
+  
+  /* Animazione fluttuante iniziale per simulare l'acqua */
+  animation: bubbleFloat 6s ease-in-out infinite alternate;
+  transition: all 0.4s ease;
+}
+
+/* Ritardi nell'animazione per non far muovere le bolle tutte insieme */
+.bubble-slide:nth-child(2) .bubble-sphere { animation-delay: -1.5s; }
+.bubble-slide:nth-child(3) .bubble-sphere { animation-delay: -3s; }
+.bubble-slide:nth-child(4) .bubble-sphere { animation-delay: -4.5s; }
+
+/* Immagine del Personaggio all'interno della bolla */
+.bubble-sphere img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 2;
+}
+
+/* Pannello informativo nascosto che sale al passaggio del mouse */
+.bubble-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background: rgba(1, 28, 54, 0.85); /* Blu abisso semitrasparente */
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+  z-index: 3;
+}
+
+.bubble-info h3 {
+  font-family: 'Marcellus', serif;
+  color: #00d4ff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.bubble-info p {
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* --- EFFETTI HOVER (Espansione Bolla) --- */
+.bubble-sphere:hover {
+  transform: scale(1.05);
+  border-color: #00d4ff;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.bubble-sphere:hover .bubble-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigazione Frecce */
+.bubble-slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.bubble-arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.bubble-arrow:hover {
+  background: #00d4ff;
+  border-color: #00d4ff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* KEYFRAMES PER FLUTTUAZIONE MARINA */
+@keyframes bubbleFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(5px) rotate(-1deg); }
+}
+
+/* Responsive Mobile */
+@media (max-width: 992px) {
+  .bubble-slide { flex: 0 0 calc(50% - 15px); } /* 2 bolle */
+}
+@media (max-width: 600px) {
+  .bubble-slide { flex: 0 0 100%; } /* 1 bolla */
+}

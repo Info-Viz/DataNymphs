@@ -1682,11 +1682,8 @@ section,
 /* 1. Forza la sezione a coprire l'intera larghezza del browser */
 #inferi.tartarus-section {
     position: relative !important;
-    width: 110vw !important; /* 100% della larghezza del monitor */
-    left: 40% !important;
-    right: 40% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
+    width: 100vw !important; /* 100% della larghezza del monitor */
+
     background: #3c0000 !important; /* Nero assoluto per coprire il verde */
     overflow: hidden !important;
     min-height: 100vh !important;

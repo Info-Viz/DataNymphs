@@ -185,14 +185,24 @@ document.querySelector('.btn-lightning').addEventListener('click', function(e) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const section = document.getElementById('cielo');
+    const triggerButton = document.querySelector('.btn-lightning');
 
-    // Aspettiamo 9 secondi (fine apertura nuvole)
-    setTimeout(() => {
-        if (section) {
-            section.classList.add('is-expanded');
-            // Ora l'utente può scorrere verso il basso per vedere gli extra
-        }
-    }, 9000); 
+    // Verifichiamo che il bottone esista nella pagina per evitare errori
+    if (triggerButton && section) {
+        triggerButton.addEventListener('click', function(event) {
+            // Se vuoi evitare che lo scorrimento all'ancora #cielo sia istantaneo 
+            // e preferisci gestirlo dopo l'animazione, scommenta la riga sotto:
+            // event.preventDefault();
+
+            // Facciamo partire il timer al momento del CLICK
+            setTimeout(() => {
+                section.classList.add('is-expanded');
+                
+                // Se hai usato event.preventDefault(), puoi far scorrere la pagina qui:
+                // section.scrollIntoView({ behavior: 'smooth' });
+            }, 9000); // Tiene i 9 secondi della fine dell'apertura nuvole
+        });
+    }
 });
 
 
