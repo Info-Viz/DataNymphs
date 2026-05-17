@@ -407,7 +407,6 @@ Q201411,Q28061975 (group of Greek mythical characters),,,,Q1402198 (Hersilia)
 Q1821610,Q1916821 (water deity),Q6581072 (female),,Q223690 (Ino),
 Q179844,Q150986 (siren),Q6581072 (female),,,Q954048 (Partenope)
 Q1233460,Q63143903 (episode in Greek mythology),,,,Q28022743
-Q494762,Q1406161 (artistic theme),,,,Q219033 (Leda)
 Q1048568,Q1406161 (artistic theme),,,,
 Q16943283,Q1406161 (artistic theme),,,,
 Q13081186,Q24336031 (mythical river),,,,Q12626619 (Acheron)
@@ -429,4 +428,4 @@ Q150986,Q33294038 (class of mythical entities),,,,Q795701 (Siren)
 Q128430,Q24533670 (mythical humanoid race),,,,Q534863 (Cyclops)
 Q170379,Q16326794 (mythological serpent),Q43445 (female organism),,,
 Q66016,Q28061975 (group of Greek mythical characters),Q6581072 (female),,,Q1378626 (Muza)
-Satiro,,,,,
+Q163709,Q24533670 (mythical humanoid race),Q6581097 (male),,Q223194 (faun),Q30167902 (faun or satyr in a work of fiction)
