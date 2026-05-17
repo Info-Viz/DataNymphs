@@ -1,428 +1,432 @@
-qid,P31,P21,P2925,P22,P25,P460,P1889,P4185,P157,P1074
-Q391379,Q3027575 (Potamoi),Q6581097 (male),Q203923 (Achelous River),,Q106515828 (Nais),,,,,
-Q163920,Q22989102 (Greek deity),Q6581097 (male),Q7242 (beauty),Q878246 (Cinyras),Q771366 (Myrrha),,,,Q58697 (Sus scrofa),
-Q35500,Q22989102 (Greek deity),Q6581072 (female),Q316 (love),Q34201 (Zeus),Q199923 (Dione),Q47652 (Venus),Q9141765 (Afrodyta),,,
-Q4439972,Q22989102 (Greek deity),Q6581072 (female),,Q34201 (Zeus),Q548099 (Eurynome),,,,,
-Q911084,Q3027575 (Potamoi),Q6581097 (male),Q941745 (Alfeios),Q161419 (Oceanus),Q184216 (Tethys),,,,,
-Q107785,Q182406 (Oceanids),Q6581072 (female),,Q161419 (Oceanus),Q184216 (Tethys),,Q108904 (Amalthée),,,
-Q3575327,Q22989102 (Greek deity),Q6581097 (male),,,,,,,,
-Q180222,Q22989102 (Greek deity),Q6581072 (female),Q165 (sea),Q161419 (Oceanus),Q184216 (Tethys),Q2987780 (Salacia),Q186663 (leopard seal),,,
-Q572133,Q22989102 (Greek deity),Q6581097 (male),Q316 (love),Q40901 (Ares),Q35500 (Aphrodite),,,,,
-Q37340,Q22989102 (Greek deity),Q6581097 (male),,Q34201 (Zeus),Q103107 (Leto),Q900649 (Apollo),,,,
-Q40901,Q22989102 (Greek deity),Q6581097 (male),Q198 (war),Q34201 (Zeus),Q38012 (Hera),Q112 (Mars),Q642910 (Ares),,,
-Q978079,Q22988604 (mythological Greek character),Q6581072 (female),Q784068 (harmony),Q40901 (Ares),Q35500 (Aphrodite),Q746321 (Concordia),Q26913032 (Harmonia),,,
-Q787492,Q146083 (Ancient Egyptian deity),Q6581097 (male),,,,Q84122 (Horus),Q5264 (Hippocrates),,,
-Q39503,Q113103481 (Olympian god),Q6581072 (female),,Q34201 (Zeus),Q103107 (Leto),Q132543 (Diana),Q159168 (Themis),,,
-Q83223,Q22989102 (Greek deity),Q6581097 (male),,Q37340 (Apollo),Q725286 (Coronis),Q3920788 (Aesculapius),,,,
-Q742680,Q205985 (goddess),Q6581072 (female),,Q34201 (Zeus),Q159168 (Themis),Q465875 (Dike),Q18642285 (Asteria),,,
-Q37122,Q205985 (goddess),Q6581072 (female),Q799 (wisdom),Q34201 (Zeus),Q190565 (Metis),Q126916 (Minerva),Q4813062 (Atena),Q173603 (helmet),,
-Q130818,Q45713 (titan),Q6581097 (male),,Q179543 (Iapetos),Q605744 (Asia),,Q757089 (Atlas),,,
-Q753294,Q22989102 (Greek deity),Q6581072 (female),,Q34201 (Zeus),Q131203 (Nyx),,,,,
-Q109220,Q476682 (Anemoi),Q6581097 (male),,Q250588 (Astraeus),Q178417 (Eos),Q2859290 (Aquilon),Q1016296 (Burias),,,
-Q48961,Q182406 (Oceanids),Q6581072 (female),,Q130818 (Atlas),Q184216 (Tethys),,Q203673 (Callisto),,,
-Q203673,Q3346693 (Greek nymph),Q6581072 (female),,Q501667 (Lycaon),,,Q48961 (Calypso),,,
-Q58371024,Q22989102 (Greek deity),Q6581072 (female),,,,,,Q327954 (torch),,
-Q192082,Q3059255 (Greek water deities),Q6581072 (female),,Q41127 (Poseidon),Q93172 (Gaia),,,,,
-Q6612,Q22989102 (Greek deity),Q6581097 (male),,Q131122 (Erebos),Q131203 (Nyx),,Q1067918 (Charun),,,
-Q131090,Q878099 (Greek primordial deity),Q6581097 (male),,Q272918 (Chronos),Q332246 (Ananke),,Q33060039,,,
-Q188236,Q22989102 (Greek deity),Q6581072 (female),Q7860 (nature),,,Q108419 (Rhea),Q648255 (Kabyle people),Q140 (lion),,
-Q187602,Q22989102 (Greek deity),Q6581072 (female),,Q241971 (Aeëtes),Q1333108 (Perse),,Q28771850 (Kirke),,,
-Q21051010,Q182406 (Oceanids),Q6581072 (female),,Q161419 (Oceanus),Q184216 (Tethys),Q866674 (Clytie),,,,
-Q829669,Q22989102 (Greek deity),Q6581072 (female),,Q34201 (Zeus),Q131203 (Nyx),,,,,
-Q194015,Q182037 (naiad),Q6581072 (female),,Q1364612 (Peneus),Q93172 (Gaia),,Q11692901 (Daphne),,,
-Q12750699,Q242663 (Oread),Q6581072 (female),,,,,Q741627 (Daphnis),,,
-Q40730,Q22989102 (Greek deity),Q6581072 (female),Q36133 (soil),Q44204 (Cronus),Q108419 (Rhea),Q32102 (Ceres),Q513715 (Demeter),,,
-Q199923,Q45713 (titan),Q6581072 (female),,Q161419 (Oceanus),Q184216 (Tethys),,,,,
-Q41680,Q13405593 (nature deity),Q6581097 (male),Q282 (wine),Q34201 (Zeus),Q776139 (Semele),Q645312 (Bacchus),Q10755817 (Dionysos),Q10978 (grape),,
-Q726279,Q182406 (Oceanids),Q6581072 (female),,Q161419 (Oceanus),Q184216 (Tethys),,Q670634 (Doris),,,
-Q910403,Q22988604 (mythological Greek character),Q6581072 (female),,Q3040215 (Dryops),,Q29788463 (Dryope),,,,
-Q131125,Q205985 (goddess),Q6581072 (female),,Q34201 (Zeus),Q38012 (Hera),Q1367680 (Iuventas),,,,
-Q131575,Q205985 (goddess),Q6581072 (female),Q1058800 (moonlight),Q660924 (Perses),Q18642285 (Asteria),Q39503 (Artemis),Q99600343 (Hécate),,,
-Q207368,Q242663 (Oread),Q6581072 (female),Q182767 (echo),,,,,,,
-Q44384,Q22989102 (Greek deity),Q6581097 (male),Q8072 (volcano),Q34201 (Zeus),Q38012 (Hera),Q4640 (Vulcan),,,,
-Q1249106,Q191192 (Giants),Q6581097 (male),,Q79999 (Uranus),Q93172 (Gaia),,Q957340 (Ephialtes),,Q37340 (Apollo),
-Q5820239,Q182037 (naiad),Q6581072 (female),,,,,,,,
-Q321298,Q3346693 (Greek nymph),Q6581072 (female),,Q622781 (Asopus),Q1237258 (Metope),,,,,
-Q638578,Q3059255 (Greek water deities),Q6581072 (female),,Q143880 (Athamas),Q624551 (Nephele),,Q60409839 (Athamantis),,,
-Q845112,Q191192 (Giants),Q6581097 (male),,Q79999 (Uranus),Q93172 (Gaia),,Q15138962 (Enkelados),,Q37122 (Athena),
-Q172549,Q22989102 (Greek deity),Q6581097 (male),,Q41127 (Poseidon),Q1627764 (Arne),Q4532166 (Aeolus),Q252967 (EOL),,,
-Q41054,Q45713 (titan),Q6581097 (male),,Q179543 (Iapetos),Q159168 (Themis),,Q227368 (Epimetheus),,,
-Q38012,Q22989102 (Greek deity),Q6581072 (female),Q8445 (marriage),Q44204 (Cronus),Q108419 (Rhea),Q125046 (Juno),Q242337 (Hera),,,
-Q122248,Q23015925 (demigod of Greek mythology),Q6581097 (male),,Q34201 (Zeus),Q190543 (Alkmene),Q240679 (Hercules),Q106803123 (Idaean Heracles),,,
-Q1135146,Q24336031 (mythical river),Q6581097 (male),,Q161419 (Oceanus),Q184216 (Tethys),,,,,
-Q204146,Q22989102 (Greek deity),Q16674976 (hermaphroditism),,Q41484 (Hermes),Q35500 (Aphrodite),,,,,
-Q41484,Q113103481 (Olympian god),Q6581097 (male),Q3562775 (thief),Q34201 (Zeus),Q205233 (Maia),Q1150 (Mercury),Q223919 (Hermes),Q238577 (caduceus),,
-Q121973,Q878099 (Greek primordial deity),Q6581097 (male),,Q966521 (Porus),Q3899052 (Penia),Q5011 (Cupid),Q602799 (Eros),,,
-Q689422,Q22989102 (Greek deity),Q6581072 (female),,Q34201 (Zeus),Q548099 (Eurynome),,Q60957766 (Euphrosyne),,,
-Q208588,Q202474 (dryad),Q6581072 (female),,,,,,,,
-Q548099,Q182406 (Oceanids),Q6581072 (female),,Q161419 (Oceanus),Q184216 (Tethys),Q60848089 (Eurynome),,,,
-Q1120723,Q22989102 (Greek deity),Q6581072 (female),,,,,Q32752090 (Feme),,,
-Q183281,Q45713 (titan),Q6581072 (female),,Q79999 (Uranus),Q93172 (Gaia),,Q4848733 (Febe),,,
-Q3382132,Q16685255 (epithet),,,,,Q900649 (Apollo),,,,
-Q398524,Q182406 (Oceanids),Q6581072 (female),,Q161419 (Oceanus),Q184216 (Tethys),,Q1177333 (Philyra),,,
-Q649624,Q22988604 (mythological Greek character),Q6581097 (male),,Q735623 (Inachus),Q785598 (Melia),,,,,
-Q1775444,Q207174 (personification),Q6581097 (male),,Q3010239 (Cephalus),Q178417 (Eos),Q2642147 (Danica),,,,
-Q385397,Q3059255 (Greek water deities),Q6581097 (male),,Q3545323 (Polybus of Sicyon),Q1372117 (Euboea),,Q1364945 (Glaucon),,,
-Q134270,Q22989102 (Greek deity),Q6581097 (male),Q525 (Sun),Q179209 (Hyperion),Q184232 (Theia),Q1199937 (Sol),Q226660 (Helios),,,
-Q189347,Q22989102 (Greek deity),Q6581097 (male),Q35831 (sleep),Q131122 (Erebos),Q131203 (Nyx),Q21030618 (Somnus),,,,Q35831 (sleep)
-Q202257,Q22989102 (Greek deity),Q6581072 (female),Q12147 (health),Q83223 (Asclepius),Q2089459 (Epione),Q104845868 (Valetudo),,,,
-Q506770,Q22989102 (Greek deity),Q6581097 (male),Q8445 (marriage),Q41680 (Dionysus),Q35500 (Aphrodite),Q63532530 (Hymen),Q3031019 (Hemmen),,,
-Q179014,Q3346693 (Greek nymph),Q6581072 (female),,Q735623 (Inachus),,,Q103375 (Io),,,
-Q2171892,Q182406 (Oceanids),Q6581072 (female),,Q161419 (Oceanus),Q184216 (Tethys),,,,,
-Q184570,Q22989102 (Greek deity),Q6581072 (female),,Q326767 (Thaumas),Q1438693 (Electra),,Q1471499 (Iris),,,Q1052 (rainbow)
-Q898947,Q22989102 (Greek deity),Q6581072 (female),,Q34201 (Zeus),Q131203 (Nyx),,,,,
-Q190565,Q182406 (Oceanids),Q6581072 (female),Q799 (wisdom),Q161419 (Oceanus),Q184216 (Tethys),,,,,
-Q102884,Q45713 (titan),Q6581072 (female),Q492 (memory),Q79999 (Uranus),Q93172 (Gaia),,,,,
-Q194012,Q22989102 (Greek deity),Q6581097 (male),Q36348 (dream),Q189347 (Hypnos),Q4439972 (Aglaea),,Q174353 (Orpheus),,,
-Q624551,Q3346693 (Greek nymph),Q6581072 (female),,Q161419 (Oceanus),,Q3874213 (Nephele),Q10476719 (Nephele),,,
-Q185747,Q182406 (Oceanids),Q6581072 (female),Q186361 (punishment),Q131122 (Erebos),Q131203 (Nyx),Q742680 (Astraea),Q18338203 (Nemezis),,,
-Q189527,Q3059255 (Greek water deities),Q6581097 (male),,Q190563 (Pontus),Q93172 (Gaia),Q1398720 (Old Man of the Sea),,,,
-Q165023,Q205985 (goddess),Q6581072 (female),Q50000 (victory),Q457294 (Pallas),Q542758 (Styx),Q308902 (Victoria),Q218202 (Nike),,,
-Q685243,Q3027575 (Potamoi),Q6581097 (male),Q3392 (Nile),Q161419 (Oceanus),Q184216 (Tethys),,,,,
-Q131203,Q878099 (Greek primordial deity),Q6581072 (female),Q575 (night),Q131090 (Chaos),Q4286521 (Caligo),Q1651665 (Nox),Q344536 (Nyx),,,
-Q161419,Q45713 (titan),Q6581097 (male),Q107549003 (Oceanus),Q79999 (Uranus),Q93172 (Gaia),,,,,
-Q201261,Q22989102 (Greek deity),Q6581097 (male),,Q1817912 (Hyrieus),,,Q312422 (Arion),,,
-Q1129489,Q3059255 (Greek water deities),Q6581072 (female),,Q301219 (Erechtheus),Q2108224 (Praxithea),,,,,
-Q3357697,Q191192 (Giants),Q6581097 (male),,Q79999 (Uranus),Q93172 (Gaia),,,,,
-Q3361501,Q22989102 (Greek deity),Q6581072 (female),,,,Q37122 (Athena),,Q829650 (Palladium),,
-Q132582,Q22989102 (Greek deity),Q6581097 (male),,Q41484 (Hermes),Q29788463 (Dryope),Q3089703 (Faunus),Q107190 (Peter Pan),,,
-Q1364612,Q3027575 (Potamoi),Q6581097 (male),Q376328 (Pineios),Q161419 (Oceanus),Q184216 (Tethys),,,,,
-Q17996472,Q3346693 (Greek nymph),Q6581072 (female),,Q38016062 (Hippodamas),,,,,,
-Q45967,Q22989102 (Greek deity),Q6581072 (female),,Q34201 (Zeus),Q40730 (Demeter),Q14515330 (Proserpina),,,,
-Q130832,Q23015925 (demigod of Greek mythology),Q6581097 (male),,Q34201 (Zeus),Q190582 (Danaë),Q3476559,Q6502471 (Perseus),,,
-Q41127,Q1916821 (water deity),Q6581097 (male),Q165 (sea),Q44204 (Cronus),Q108419 (Rhea),Q3954 (Neptune),Q227431 (Poseidon),Q20644862 (trident of Poseidon),,
-Q83160,Q45713 (titan),Q6581097 (male),,Q179543 (Iapetos),Q159168 (Themis),,Q2112787 (Prometheus),,,
-Q843382,Q22989102 (Greek deity),Q6581072 (female),,,,,,,,
-Q108419,Q45713 (titan),Q6581072 (female),,Q79999 (Uranus),Q93172 (Gaia),Q188236 (Cybele),Q20000206 (Rhea),,,
-Q1061782,Q22988604 (mythological Greek character),Q6581097 (male),,Q3625559 (Strymon),Q103975 (Calliope),,,,Q208256 (Diomedes),
-Q193115,Q3059255 (Greek water deities),Q43445 (female organism),,Q200382 (Phorcys),Q12725881 (Crataeis),,Q255329 (Scylla),,,
-Q131585,Q22989102 (Greek deity),Q6581072 (female),Q405 (Moon),Q179209 (Hyperion),Q184232 (Theia),Q1235172 (Luna),Q671979 (Selene),,,
-Q214554,Q146083 (Ancient Egyptian deity),Q6581097 (male),,,,,,,,
-Q846129,Q619300 (Hamadryad),Q6581072 (female),,Q3825406 (Ladon),,,Q10902606 (syrinx),,,
-Q1241338,Q3346693 (Greek nymph),Q6581072 (female),,Q189527 (Nereus),Q726279 (Doris),,,,,
-Q3822612,Q878099 (Greek primordial deity),Q6581072 (female),,,,,,,,
-Q180237,Q191192 (Giants),Q6581097 (male),,Q101322 (Tartarus),Q93172 (Gaia),Q190511 (Apophis),Q1784578 (train horn),,,
-Q10696861,Q3346693 (Greek nymph),Q6581072 (female),,Q12760031 (Termessus),,,,,,
-Q18415479,Q45713 (titan),Q6581097 (male),,,,,,,,
-Q148030,Q3059255 (Greek water deities),Q6581097 (male),,Q41127 (Poseidon),Q2987780 (Salacia),,,,,
-Q79999,Q878099 (Greek primordial deity),Q6581097 (male),Q527 (sky),Q131090 (Chaos),Q192107 (Hemera),Q3360794 (Caelus),,,,
-Q483760,Q1406161 (artistic theme),,,,,Q19760026 (birth of Aphrodite),Q4750780 (Anadyomene),,,
-Q59697,Q22989102 (Greek deity),Q6581097 (male),,Q643504 (Cephalus),Q178417 (Eos),Q4110210,,,,
-Q467515,Q476682 (Anemoi),Q6581097 (male),,Q250588 (Astraeus),Q178417 (Eos),,Q8068495 (Zefir),,,
-Q34201,Q842697 (thunder deity),Q6581097 (male),Q33741 (lightning),Q44204 (Cronus),Q108419 (Rhea),Q4649 (Jupiter),Q354151 (Zeus),Q2794866 (thunderbolt),,
-Q336003,Q11688446 (Roman deity),Q6581072 (female),Q336019 (abundance),,,,,,,
-Q381061,Q11688446 (Roman deity),Q6581072 (female),,,,,,Q1370617 (measurement scale),,
-Q581656,Q11688446 (Roman deity),Q6581072 (female),,,,Q3314298 (Euthenia),,,,
-Q178831,Q11688446 (Roman deity),Q6581072 (female),Q11326182 (dawn),Q179209 (Hyperion),Q184232 (Theia),Q178417 (Eos),Q1066178,,,
-Q645312,Q11688446 (Roman deity),Q6581097 (male),Q213376 (winemaking),Q4649 (Jupiter),Q776139 (Semele),Q41680 (Dionysus),Q683204 (Bacchus),,,
-Q207234,Q11688446 (Roman deity),Q6581072 (female),,Q4649 (Jupiter),Q125046 (Juno),Q747657 (Enyo),,,,
-Q32102,Q11688446 (Roman deity),Q6581072 (female),Q11451 (agriculture),Q134388 (Saturn),Q108419 (Rhea),Q40730 (Demeter),Q1055257 (Ceres),,,
-Q746321,Q11688446 (Roman deity),Q6581072 (female),Q16513416 (faithfulness),,,Q978079 (Harmonia),,Q1109404 (patera),,
-Q5011,Q11688446 (Roman deity),Q6581097 (male),,Q1150 (Mercury),Q47652 (Venus),Q121973 (Eros),Q439540 (Cupid),,,
-Q132543,Q11688446 (Roman deity),Q6581072 (female),,Q4649 (Jupiter),Q12958119 (Latona),Q39503 (Artemis),,,,
-Q582268,Q13002315 (legendary figure),Q6581072 (female),,,,,Q164297 (Egeria),,,
-Q240679,Q11688446 (Roman deity),Q6581097 (male),,Q4649 (Jupiter),Q190543 (Alkmene),Q122248 (Heracles),Q4748709 (Herkules),,,
-Q3920788,Q11688446 (Roman deity),Q6581097 (male),,,,Q83223 (Asclepius),,,,
-Q2527609,Q11688446 (Roman deity),Q6581072 (female),Q38933 (fever),,,,Q33533292,,,
-Q209644,Q11688446 (Roman deity),Q6581072 (female),,,,Q1075258 (Chloris),,,,
-Q4654,Q11688446 (Roman deity),Q6581072 (female),,,,Q213440 (Tyche),Q219201 (Fortuna),,,
-Q4649,Q11688446 (Roman deity),Q6581097 (male),,Q134388 (Saturn),Q859392 (Ops),Q34201 (Zeus),Q16280772 (Jowisz),Q2794866 (thunderbolt),,
-Q125046,Q11688446 (Roman deity),Q6581072 (female),Q8445 (marriage),Q134388 (Saturn),,Q38012 (Hera),,Q201251 (peafowl),,
-Q1102307,Q207174 (personification),Q6581072 (female),Q5167661 (justice),,,Q159168 (Themis),Q75133781 (Justice),,,
-Q1367680,Q11688446 (Roman deity),Q6581072 (female),,Q4649 (Jupiter),Q125046 (Juno),Q131125 (Hebe),Q1422 (Juventus FC),,,
-Q112,Q11688446 (Roman deity),Q6581097 (male),Q198 (war),Q4649 (Jupiter),Q125046 (Juno),Q40901 (Ares),Q426315 (Mars),,,
-Q1479084,Q11688446 (Roman deity),Q6581072 (female),,,,Q178831 (Aurora),,Q283202 (harbor),,
-Q1150,Q11688446 (Roman deity),Q6581097 (male),Q2727213 (theft),Q4649 (Jupiter),,Q41484 (Hermes),Q11777485 (Merkury),Q2102 (snake),,
-Q126916,Q205985 (goddess),Q6581072 (female),Q1294787 (artisan),Q4649 (Jupiter),Q190565 (Metis),Q37122 (Athena),,,,
-Q3954,Q1916821 (water deity),Q6581097 (male),,Q134388 (Saturn),,Q41127 (Poseidon),Q1261928 (Neptun),,,
-Q859392,Q205985 (goddess),Q6581072 (female),Q2488752 (earth),Q3360794 (Caelus),Q270867 (Terra),Q108419 (Rhea),Q221197,Q140 (lion),,
-Q152262,Q11688446 (Roman deity),Q6581097 (male),,Q134388 (Saturn),,Q41410 (Hades),Q2099776 (Pluto),,,
-Q171239,Q38618822 (nymph in Roman mythology),Q6581072 (female),,,,,,,,
-Q14515330,Q11688446 (Roman deity),Q6581072 (female),,Q4649 (Jupiter),Q32102 (Ceres),Q45967 (Persephone),Q33056084,,,
-Q953033,Q11688446 (Roman deity),Q6581072 (female),Q18287233 (Roma),,,,,,,
-Q1753275,Q119840097 (Sabine deity),Q6581097 (male),,,,Q5283763 (Dius Fidius),,,,
-Q134388,Q7805266 (time and fate deity),Q6581097 (male),,Q3360794 (Caelus),Q270867 (Terra),Q272918 (Chronos),Q3950829 (Saturn),,,
-Q2062262,Q273320 (sibyl),Q6581072 (female),,,,,,,,
-Q548445,Q11688446 (Roman deity),Q6581097 (male),,,,,Q187489 (Silvanus),,,
-Q580723,Q11688446 (Roman deity),Q6581097 (male),,,,,,,,
-Q47652,Q11688446 (Roman deity),Q6581072 (female),Q316 (love),,,Q35500 (Aphrodite),,,,
-Q3545810,Q207174 (personification),Q6581072 (female),,Q134388 (Saturn),,Q1317994 (Aletheia),Q12644570 (Veritas (magazine)),,,
-Q374311,Q11688446 (Roman deity),Q6581097 (male),,,,,,,,Q24384 (season)
-Q178710,Q11688446 (Roman deity),Q6581072 (female),Q182995 (kitchen stove),Q134388 (Saturn),Q859392 (Ops),Q41419 (Hestia),Q3030 (Vesta),Q182995 (kitchen stove),,
-Q308902,Q11688446 (Roman deity),Q6581072 (female),Q50000 (victory),,,Q165023 (Nike),Q537094 (Victoria),,,
-Q4640,Q11688446 (Roman deity),Q6581097 (male),,Q4649 (Jupiter),Q125046 (Juno),Q44384 (Hephaestus),Q1088708 (Vulcan),,,
-Q555521,Q22988604 (mythological Greek character),Q6581097 (male),,,,,Q123314 (agate),,,
-Q41746,Q22988604 (mythological Greek character),Q6581097 (male),,Q178641 (Peleus),Q184437 (Thetis),Q114839495,Q229835 (Achilles),,Q167646 (Paris),
-Q419156,Q22988604 (mythological Greek character),Q6581097 (male),Q1382342 (Jaci),Q132582 (Pan),Q28224106 (Symaithis),,,,,
-Q128176,Q22988604 (mythological Greek character),Q6581097 (male),,Q192469 (Atreus),Q508543 (Aerope),,Q231724 (Agamemnon),,,
-Q584492,Q22988604 (mythological Greek character),Q6581072 (female),,Q500739 (Cecrops I),Q368994 (Aglauros),,Q243653 (Aglauros),,,
-Q172725,Q22988604 (mythological Greek character),Q6581097 (male),,Q331327 (Telamon),Q1295435 (Periboea),,Q242319 (Ajax the Lesser),,,
-Q320449,Q22988604 (mythological Greek character),Q6581072 (female),,Q182439 (Pelias),Q488624 (Anaxibia),,,,,
-Q912904,Q22988604 (mythological Greek character),Q6581072 (female),,Q406388 (Aiolos),Q48665 (Enarete),,Q12784350 (Alkione),,,
-Q1643451,Q22988604 (mythological Greek character),Q6581072 (female),,Q79999 (Uranus),Q93172 (Gaia),,,,,
-Q482096,Q22988604 (mythological Greek character),Q6581072 (female),,Q210883 (Danaus),Q15208147 (Europe),,,,,
-Q3614346,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q474474,Q163709 (satyr),Q6581097 (male),,,,,,,,
-Q488558,Q22988604 (mythological Greek character),Q6581097 (male),,Q646733 (Argeus),,,,,,
-Q488621,Q22988604 (mythological Greek character),Q6581072 (female),,,,,,,,
-Q211953,Q22988604 (mythological Greek character),Q6581097 (male),,Q20018046 (Capys),,,,,,
-Q19376,Q22988604 (mythological Greek character),Q6581072 (female),,Q1069769 (Eetion),,,,,,
-Q161582,Q22988604 (mythological Greek character),Q6581072 (female),,"Q858116 (Cepheus, King of Aethiopia)",Q207681 (Cassiopeia),,Q102897 (Andromeda),,,
-Q242835,Q22988604 (mythological Greek character),Q6581097 (male),,Q34201 (Zeus),Q461439 (Antiope),,,,,
-Q131351,Q22988604 (mythological Greek character),Q6581072 (female),,Q130890 (Oedipus),Q131445 (Jocasta),,Q20978302,,,
-Q4067040,Q22988604 (mythological Greek character),Q6581072 (female),,"Q1509662 (Cepheus, King of Tegea)",,,Q12748406 (Antinoe),,,
-Q579000,Q22988604 (mythological Greek character),Q6581097 (male),,Q13233212 (Eupeithes),,,Q171876 (Antinous),,,
-Q461439,Q22988604 (mythological Greek character),Q6581072 (female),,Q622781 (Asopus),Q2103193 (Polyxo),,Q255393 (Antiope),,,
-Q333658,Q22988604 (mythological Greek character),Q6581097 (male),,Q241971 (Aeëtes),Q748574 (Asterodeia),Q128903579 (Aegialeus),,,,
-Q190082,Q22988604 (mythological Greek character),Q6581072 (female),,Q24055258 (Idmon),,,,,,
-Q2866192,Q22988604 (mythological Greek character),Q6581072 (female),,Q189527 (Nereus),Q726279 (Doris),Q643456 (Arethusa),,,,
-Q189821,Q22988604 (mythological Greek character),Q6581097 (male),,Q735623 (Inachus),,,,,Q41484 (Hermes),
-Q184874,Q22988604 (mythological Greek character),Q6581072 (female),,Q23168 (Minos),Q203236 (Pasiphaë),,Q654349 (Ariadna),,,
-Q311536,Q22988604 (mythological Greek character),Q6581097 (male),,Q329690 (Cleodaeus),,,,,,
-Q181360,Q28061975 (group of Greek mythical characters),Q6581072 (female),,Q326767 (Thaumas),Q1438693 (Electra),,Q30301514 (harpy in a work of fiction),,,
-Q2655419,Q22988604 (mythological Greek character),Q6581097 (male),,Q1141300 (Celeus),Q12880560 (Misme),Q136512504 (Abas),,,,
-Q655566,Q22988604 (mythological Greek character),Q6581097 (male),,Q82732 (Aeneas),Q375174 (Creusa),Q16523986 (Iulus),Q25939254 (Askaniusz),,,
-Q334787,Q22988604 (mythological Greek character),Q6581097 (male),,Q159666 (Hector),Q19376 (Andromache),,,,,
-Q190323,Q22988604 (mythological Greek character),Q6581072 (female),,Q16559355 (Iasus),Q2344103 (Clymene),Q13375989 (Atalante),Q23556 (Atlanta),,,
-Q208531,Q22988604 (mythological Greek character),Q6581097 (male),,Q392435 (Aristaeus),Q94072 (Autonoë),,,,Q4425724 (Actaeon's Dogs),
-Q791446,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q23034980,Q22988604 (mythological Greek character),Q6581072 (female),,,,,,,,
-Q189872,Q22988604 (mythological Greek character),Q6581097 (male),,Q1232714 (Glaucus),Q956831 (Eurynome),,Q242309 (51 Pegasi b),,,
-Q855426,Q22988604 (mythological Greek character),Q6581072 (female),,Q2470261 (Miletus),Q15543320 (Cyanee),,,,,
-Q29789169,Q22988604 (mythological Greek character),Q6581097 (male),,,Q5796492 (Cydippe),,,,,
-Q244318,Q22988604 (mythological Greek character),Q6581072 (female),,Q734411 (Briseus),,,,,,
-Q754686,Q3707571 (giant),Q6581097 (male),,Q4640 (Vulcan),,,,,,
-Q27613,Q22988604 (mythological Greek character),Q6581097 (male),,Q392631 (Agenor),Q853437 (Telephassa),,,,,
-Q893473,Q22988604 (mythological Greek character),Q6581097 (male),,Q109220 (Boreas),Q1129489 (Orithyia),,Q240840 (Calais),,,
-Q725527,Q22988604 (mythological Greek character),Q6581097 (male),,Q2420316 (Thestor),,,,,,
-Q103975,Q22988604 (mythological Greek character),Q6581072 (female),,Q34201 (Zeus),Q102884 (Mnemosyne),,,,,
-Q1362409,Q22988604 (mythological Greek character),Q6581072 (female),,Q406388 (Aiolos),Q48665 (Enarete),,Q21150330 (Kanaka),,,
-Q11294144,Q22988604 (mythological Greek character),Q6581097 (male),,Q192946 (Tyndareus),Q182019 (Leda),,,,,
-Q500739,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q643504,Q22988604 (mythological Greek character),Q6581097 (male),,Q1183342 (Deioneus),Q3028712 (Diomede),Q3010239 (Cephalus),,,,
-Q578888,Q22988604 (mythological Greek character),Q6581097 (male),,Q1775444 (Phosphorus),,,,,,
-Q1132772,Q22988604 (mythological Greek character),Q2449503 (trans man),,Q4817519 (Atrax),,,,,,
-Q2606272,Q22988604 (mythological Greek character),Q6581097 (male),,Q271891 (Ixion),Q3874213 (Nephele),,Q83203 (centaur),,,
-Q83496,Q2280977 (Hellhound),Q44148 (male organism),,Q180237 (Typhon),Q185670 (Echidna),Q213932 (Garmr),Q6667 (Cerbère),,,
-Q466882,Q2239243 (mythical creature),Q43445 (female organism),,,,,,,,
-Q183417,Q83203 (centaur),Q6581097 (male),,Q44204 (Cronus),Q398524 (Philyra),,,,,
-Q1066344,Q22988604 (mythological Greek character),Q6581097 (male),,Q41127 (Poseidon),Q2934559 (Calyce),Q25433606 (Cycnus),,,,
-Q15711584,Q22988604 (mythological Greek character),Q6581072 (female),,Q189527 (Nereus),Q726279 (Doris),,,,,
-Q334456,Q2239243 (mythical creature),Q44148 (male organism),,,,,,,,
-Q13667632,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q1056143,Q22988604 (mythological Greek character),Q6581097 (male),,Q916442 (Telephus),,,,,,
-Q64581998,Q22988604 (mythological Greek character),Q6581097 (male),,,Q5796492 (Cydippe),,,,,
-Q103968,Q22988604 (mythological Greek character),Q6581072 (female),Q1066186 (study of history),Q34201 (Zeus),Q102884 (Mnemosyne),,Q398232 (Klio),,,
-Q131157,Q22988604 (mythological Greek character),Q6581072 (female),,Q192946 (Tyndareus),Q182019 (Leda),,Q6560236 (Clytemnestra),,,
-Q3682459,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,Q159666 (Hector),
-Q2753233,Q22988604 (mythological Greek character),Q6581097 (male),,Q34201 (Zeus),Q858663 (Electra),,,,,
-Q725286,Q22988604 (mythological Greek character),Q6581072 (female),,Q831583 (Phlegyas),,,Q6432541 (Koronis),,Q37340 (Apollo),
-Q732066,Q22988604 (mythological Greek character),Q6581097 (male),,Q1178176 (Menoeceus),,,Q507107 (Creon),,,
-Q375174,Q22988604 (mythological Greek character),Q6581072 (female),,Q170473 (Priam),Q193433 (Hecuba),,,,,
-Q1043413,Q22988604 (mythological Greek character),Q6581097 (male),,Q192485 (Pelops),Q931321 (Axioche),,,,,
-Q3698712,Q22988604 (mythological Greek character),Q6581097 (male),,Q7179974 (Phaeax),,,,,,
-Q190582,Q22988604 (mythological Greek character),Q6581072 (female),,Q208017 (Acrisius),Q1318307 (Eurydice of Argos),,,,,
-Q134756,Q22988604 (mythological Greek character),Q6581097 (male),,Q591842 (Metion),Q27056217 (Iphinoe),,,,,
-Q272000,Q22988604 (mythological Greek character),Q6581072 (female),,Q749966 (Oeneus),Q440440 (Althaea),,Q13537244,,,
-Q1183358,Q22988604 (mythological Greek character),Q6581097 (male),,Q176758 (Jason),Q775296 (Hypsipyle),,,,,
-Q4157638,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q1475776,Q22988604 (mythological Greek character),Q6581097 (male),,Q1141300 (Celeus),Q1469456 (Metanira),,Q292588 (Démophon),,,
-Q207715,Q22988604 (mythological Greek character),Q6581097 (male),,Q83160 (Prometheus),Q836792 (Klymene),,Q15874488 (Deucalion),,,
-Q905162,Q22988604 (mythological Greek character),Q6581072 (female),,Q888557 (Mattan I),,,,,,
-Q208256,Q22988604 (mythological Greek character),Q6581097 (male),,Q250506 (Tydeus),Q279566 (Deipyle),,,,,
-Q850192,Q22988604 (mythological Greek character),Q6581072 (female),,Q51078734 (Ismenus),,,Q5280177 (Dirce),,Q242835 (Amphion),
-Q3715347,Q22988604 (mythological Greek character),Q6581097 (male),,Q270117 (Lycurgus of Thrace),,,,,,
-Q193433,Q22988604 (mythological Greek character),Q6581072 (female),,Q17486774 (Dymas),Q7695796 (Telecleia),,Q16280070 (Hekabe),,,
-Q130890,Q22988604 (mythological Greek character),Q6581097 (male),,Q463898 (Laius),Q131445 (Jocasta),,,,,
-Q241971,Q22988604 (mythological Greek character),Q6581097 (male),,Q134270 (Helios),Q1333108 (Perse),,,,Q321541 (Meleager),
-Q191725,Q22988604 (mythological Greek character),Q6581097 (male),,Q1076578 (Pandion II),Q12757284 (Pylia),,,,,
-Q164061,Q22988604 (mythological Greek character),Q6581072 (female),,Q34201 (Zeus),Q182019 (Leda),,Q428212 (Helen of Troy),,,
-Q131651,Q22988604 (mythological Greek character),Q6581072 (female),,Q128176 (Agamemnon),Q131157 (Clytemnestra),Q419115 (Laodice),Q217340 (Elektra),,,
-Q272047,Q22988604 (mythological Greek character),Q6581097 (male),,Q381931 (Aethlius),Q1722781 (Calyce),,,,,
-Q82732,Q22988604 (mythological Greek character),Q6581097 (male),,Q211953 (Anchises),Q35500 (Aphrodite),,Q21547988 (Aeneis),,,
-Q847890,Q22988604 (mythological Greek character),Q6581097 (male),,Q40901 (Ares),Q748963 (Sterope),,,,,
-Q2075786,Q22988604 (mythological Greek character),Q6581072 (female),,Q1280725 (Echion),Q381459 (Agave),,,,,
-Q104413,Q22988604 (mythological Greek character),Q6581072 (female),,Q34201 (Zeus),Q102884 (Mnemosyne),,Q238304 (Erato),,,
-Q568768,Q22988604 (mythological Greek character),Q6581072 (female),,Q608800 (Icarius of Athens),,,,,,
-Q644921,Q22988604 (mythological Greek character),Q6581097 (male),,Q44384 (Hephaestus),,,Q343298 (Erichthonius),,,
-Q19776360,Q22988604 (mythological Greek character),Q6581072 (female),,,,,,,,
-Q16641710,Q22988604 (mythological Greek character),Q6581072 (female),,Q500739 (Cecrops I),Q368994 (Aglauros),,,,,
-Q410082,Q22988604 (mythological Greek character),Q6581097 (male),,Q869665 (Cretheus),Q1126715 (Tyro),,,,,
-Q506550,Q22988604 (mythological Greek character),Q6581097 (male),,Q130890 (Oedipus),Q131445 (Jocasta),,,,,
-Q159666,Q22988604 (mythological Greek character),Q6581097 (male),,Q170473 (Priam),Q193433 (Hecuba),Q537554 (Sigurd),Q342314 (Hektor),,Q41746 (Achilles),
-Q1352687,Q22988604 (mythological Greek character),Q6581097 (male),,Q4162118 (Dysaules),,,,,,
-Q16647668,Q22988604 (mythological Greek character),Q6581097 (male),,Q44634078 (Opheltes),,,,,Q4016094 (Volcens),
-Q956831,Q22988604 (mythological Greek character),Q6581072 (female),,Q1136201 (Nisos),Q2634102 (Abrota),,,,,
-Q61014736,Q22988604 (mythological Greek character),Q6581097 (male),,Q37340 (Apollo),Q57843568 (Cleobule),,,,,
-Q212087,Q22988604 (mythological Greek character),Q6581097 (male),,Q1062299 (Sthenelus),Q11938698 (Nicippe),,,,,
-Q1378578,Q83203 (centaur),Q6581097 (male),,,,Q124357578 (Eurytion),,,,
-Q540468,Q83203 (centaur),Q6581097 (male),,,,,,,,
-Q165170,Q22988604 (mythological Greek character),Q6581072 (female),Q46 (Europe),Q392631 (Agenor),Q853437 (Telephassa),Q11921267 (Europa),Q741380 (Europa),,,
-Q104012,Q22988604 (mythological Greek character),Q6581072 (female),,Q34201 (Zeus),Q102884 (Mnemosyne),,,,,
-Q837699,Q22988604 (mythological Greek character),Q6581097 (male),,Q1150 (Mercury),Q12134676 (Nicostrata),,,,,
-Q212818,Q22988604 (mythological Greek character),Q6581072 (female),,Q23168 (Minos),Q203236 (Pasiphaë),,Q5441136 (Fedra),,,
-Q1235168,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q203480,Q22988604 (mythological Greek character),Q6581097 (male),,Q134270 (Helios),Q836792 (Klymene),,Q3378668 (Phaethon),,Q34201 (Zeus),
-Q23034982,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q115449,Q22988604 (mythological Greek character),Q6581072 (female),,Q865111 (Pandion I),Q1641282 (Zeuxippe),,Q11698107 (Filomela),,,
-Q212827,Q22988604 (mythological Greek character),Q6581097 (male),,Q10350754 (Poeas),Q42062010 (Demonassa),,,,,
-Q641065,Q22988604 (mythological Greek character),Q6581097 (male),,Q392631 (Agenor),Q853437 (Telephassa),,Q395356 (Phineus),,,
-Q22965548,Q22988604 (mythological Greek character),Q6581097 (male),,Q1805777 (Lapithes),,Q30097019 (Phorbas),,,,
-Q743482,Q22988604 (mythological Greek character),Q6581097 (male),,Q143880 (Athamas),Q624551 (Nephele),,,,,
-Q241070,Q22988604 (mythological Greek character),Q6581072 (female),,Q189527 (Nereus),Q726279 (Doris),Q3757460 (Galatea),Q12094023 (Galatea),,,
-Q131588,Q22988604 (mythological Greek character),Q6581097 (male),,Q599482 (Tros),Q1361804 (Callirhoe),,,,,
-Q86805,Q22988604 (mythological Greek character),Q6581097 (male),,Q320660 (Chrysaor),Q913161 (Callirhoe),,,,,
-Q176758,Q22988604 (mythological Greek character),Q6581097 (male),,Q410082 (Aeson),Q21548505 (Amphinome),,Q238333 (Jason),,,
-Q1413020,Q22988604 (mythological Greek character),Q6581097 (male),,,,,Q179785 (Gorgias),,,
-Q1180888,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q34041,Q22988604 (mythological Greek character),Q6581097 (male),,Q134756 (Daedalus),Q3337163 (Naucrate),,Q1658039 (Ikar),,,
-Q1136130,Q22988604 (mythological Greek character),Q6581097 (male),,Q578378 (Aphareus),Q641993 (Arene),,,,,
-Q192673,Q22988604 (mythological Greek character),Q6581072 (female),,Q128176 (Agamemnon),Q131157 (Clytemnestra),Q28362963 (Iphianassa),Q28912311 (Ifigenia),,Q128176 (Agamemnon),
-Q332752,Q22988604 (mythological Greek character),Q6581097 (male),,Q12760056 (Theiodamas),Q40196079 (Menodice),,Q1253371 (HYLAS-1),,,
-Q847268,Q22988604 (mythological Greek character),Q6581097 (male),,Q122248 (Heracles),Q272000 (Deianira),Q41505034 (Hyllus),Q2005507 (Hyllus),,,
-Q223690,Q1916821 (water deity),Q6581072 (female),,Q27613 (Cadmus),Q978079 (Harmonia),Q1821610 (Leucothea),Q11712651,,,
-Q744147,Q22988604 (mythological Greek character),Q6581072 (female),,Q939149 (Eurytus),Q22906403 (Antiope),,,,,
-Q2468258,Q22988604 (mythological Greek character),Q6581072 (female),,Q505171 (Butes),,,,,,
-Q338201,Q22988604 (mythological Greek character),Q6581097 (male),,Q1320718 (Theseus),Q580862 (Antiope),,,,,
-Q1455747,Q22988604 (mythological Greek character),Q6581097 (male),,Q247446 (Megareus of Onchestus),Q1564159 (Merope),Q12755124 (Melanion),,,,
-Q2479189,Q22988604 (mythological Greek character),Q6581097 (male),,Q4530734 (Elatus),,Q126901044 (Alcyoneus),,,,
-Q271891,Q22988604 (mythological Greek character),Q6581097 (male),,Q30024297 (Aeton),,,,,,
-Q1675360,Q22988604 (mythological Greek character),Q6581097 (male),,Q1138506 (Tereus),Q1231743 (Procne),,,,,
-Q274600,Q16326794 (mythological serpent),Q44148 (male organism),,Q200382 (Phorcys),Q209489 (Ceto),,Q249548 (Ladon),,Q122248 (Heracles),
-Q200073,Q16326794 (mythological serpent),Q6581072 (female),,Q41127 (Poseidon),Q1129914 (Libya),Q59312503 (lamia in a work of fiction),Q59312503 (lamia in a work of fiction),,,
-Q12754448,Q22988604 (mythological Greek character),Q6581097 (male),,Q1178970 (Porthaon),,,,,,
-Q10316761,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q182019,Q22988604 (mythological Greek character),Q6581072 (female),,Q768822 (Thestius),Q59618605 (Deidamia),Q1298222 (Lada),,,,
-Q4259170,Q22988604 (mythological Greek character),Q6581097 (male),,Q41127 (Poseidon),Q752338 (Astydameia),,,,,
-Q339980,Q22988604 (mythological Greek character),Q6581072 (female),,Q1943618 (Orchamus),Q61046106 (Eurynome),,,,,
-Q922330,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q501667,Q431113 (autochthonos),Q6581097 (male),,Q1636827 (Pelasgus),Q7595427 (Cyllene),,Q1160661 (Lycaon),,,
-Q1330532,Q22988604 (mythological Greek character),Q6581097 (male),,Q37340 (Apollo),Q14702439 (Parthenope),,Q15262316 (Lycomedes),,,
-Q270117,Q22988604 (mythological Greek character),Q6581097 (male),,Q60197377 (Dryas),,,Q225349 (Lycurgus),,,
-Q1124866,Q22988604 (mythological Greek character),Q6581097 (male),,Q578378 (Aphareus),Q641993 (Arene),,Q20088821 (Linkeus),,,
-Q9026462,Q22988604 (mythological Greek character),Q6581097 (male),,Q172549 (Aeolus),,Q113549334 (Macareus of Lesbos),,,,
-Q599737,Q163709 (satyr),Q6581097 (male),,Q30062832 (Hyagnis),,,,,,
-Q174278,Q22988604 (mythological Greek character),Q6581072 (female),,Q241971 (Aeëtes),Q2293877 (Eidyia),,,,,
-Q160730,Q22988604 (mythological Greek character),Q6581072 (female),,Q200382 (Phorcys),Q209489 (Ceto),,Q3558668 (Medousa),,Q130832 (Perseus),
-Q371545,Q22988604 (mythological Greek character),Q6581072 (female),,Q79999 (Uranus),Q93172 (Gaia),,,,,
-Q3854114,Q22988604 (mythological Greek character),Q6581072 (female),,Q207715 (Deucalion),Q622809 (Pyrrha),,,,,
-Q321541,Q22988604 (mythological Greek character),Q6581097 (male),,Q749966 (Oeneus),Q440440 (Althaea),,,,,
-Q3854231,Q22988604 (mythological Greek character),Q6581072 (female),,Q1919444 (Melissus of Crete),,,,,,
-Q103992,Q22988604 (mythological Greek character),Q6581072 (female),,Q34201 (Zeus),Q102884 (Mnemosyne),,,,,
-Q506781,Q22988604 (mythological Greek character),Q6581097 (male),,Q737306 (Tithonus),Q178417 (Eos),Q122066765 (Ismandes),Q297965 (Memnon),,Q41746 (Achilles),
-Q744871,Q22988604 (mythological Greek character),Q6581097 (male),,Q732066 (Creon),,,,,,
-Q171839,Q22988604 (mythological Greek character),Q6581097 (male),,Q192469 (Atreus),Q508543 (Aerope),,Q2153151 (Rimae Menelaus),,,
-Q214003,Q22988604 (mythological Greek character),Q6581097 (male),,Q22965371 (Alkimos),,,Q13442311 (Mentes),,,
-Q308398,Q22988604 (mythological Greek character),Q6581097 (male),,Q1413020 (Gordias),Q188236 (Cybele),,Q436188 (Midas),,,
-Q23168,Q22988604 (mythological Greek character),Q6581097 (male),,Q34201 (Zeus),Q165170 (Europa),,Q527174 (Minos),,,
-Q129866,Q20902363 (mythical human-animal hybrid),Q6581097 (male),,Q746198 (Cretan Bull),Q203236 (Pasiphaë),Q8207417 (Asterion),Q2243366 (Minotauros),,Q1320718 (Theseus),
-Q771366,Q22988604 (mythological Greek character),Q6581072 (female),,Q878246 (Cinyras),Q3298501 (Metharme),,,,,
-Q1149595,Q22988604 (mythological Greek character),Q6581097 (male),,Q40901 (Ares),Q1186488 (Demonice),,,,,
-Q179256,Q22988604 (mythological Greek character),Q6581097 (male),,Q1478704 (Cephissus),Q1815682 (Liriope),,Q828609 (Narcissus of Girona),,,
-Q3870520,Q22988604 (mythological Greek character),Q6581097 (male),,Q3907223 (Polemon),,,,,,
-Q322639,Q22988604 (mythological Greek character),Q6581097 (male),,Q41746 (Achilles),Q431387 (Deidamia),Q12757289 (Pyrrhus),,,Q192407 (Orestes),
-Q466866,Q83203 (centaur),,,Q271891 (Ixion),Q624551 (Nephele),,,,,
-Q213621,Q22988604 (mythological Greek character),Q6581072 (female),,Q182101 (Tantalus),Q112001 (Taygete),,Q1072573 (Niobe),,,
-Q7134950,Q22988604 (mythological Greek character),Q6581097 (male),,Q1539642 (Hyrtacus),Q72211 (Arisbe),,,,,
-Q1929263,Q22988604 (mythological Greek character),Q6581097 (male),,Q937512 (Tiberinus),Q1332949 (Manto),,Q3455419 (Ocnus),,,
-Q1419140,Q22988604 (mythological Greek character),Q6581097 (male),,Q368157 (Lycurgus of Nemea),Q762272 (Eurydice),,Q14522045 (Opheltes),,,
-Q975447,Q22988604 (mythological Greek character),Q6581097 (male),,Q18629526 (Odoedocus),Q3606858 (Agrianome),,Q18592060 (Oileus),,,
-Q290144,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q486698,Q22988604 (mythological Greek character),Q6581072 (female),,Q11710892 (Iardanus),,,,,,
-Q192407,Q22988604 (mythological Greek character),Q6581097 (male),,Q128176 (Agamemnon),Q131157 (Clytemnestra),Q4691174 (Agamemnonides),,,,
-Q174353,Q22988604 (mythological Greek character),Q6581097 (male),,Q1539620 (Oeagrus),Q103975 (Calliope),,Q15615531 (Orfeus),,Q209599 (Maenad),
-Q16328250,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q252387,Q22988604 (mythological Greek character),Q6581097 (male),,Q833826 (Nauplius),Q2980439 (Clymene),,,,,
-Q2048018,Q22988604 (mythological Greek character),Q6581097 (male),,Q837699 (Evander of Pallene),,,,,Q633549 (Turnus),
-Q131346,Q22988604 (mythological Greek character),Q6581072 (female),,,,,Q108349 (Pandora),,,
-Q167646,Q22988604 (mythological Greek character),Q6581097 (male),,Q170473 (Priam),Q193433 (Hecuba),,Q104197 (Paris),,Q212827 (Philoctetes),Q575219 (Alaksandu)
-Q186271,Q22988604 (mythological Greek character),Q6581097 (male),,Q1920680 (Menoetius),,,,,Q159666 (Hector),
-Q178641,Q22988604 (mythological Greek character),Q6581097 (male),,Q206187 (Aeacus),Q2293816 (Endeïs),,,,,
-Q182439,Q22988604 (mythological Greek character),Q6581097 (male),,Q41127 (Poseidon),Q1126715 (Tyro),,Q2035691 (Pelleas),,,
-Q192485,Q22988604 (mythological Greek character),Q6581097 (male),,Q182101 (Tantalus),Q21051020 (Klytia),,Q2068297 (Pelops),,,
-Q165769,Q22988604 (mythological Greek character),Q6581072 (female),,Q1658054 (Icarius of Sparta),Q17197552 (Periboea),,Q11815521 (Penelopa),,,
-Q391091,Q22988604 (mythological Greek character),Q6581097 (male),,Q1280725 (Echion),Q381459 (Agave),,,,,
-Q379828,Q22988604 (mythological Greek character),Q6581072 (female),,Q40901 (Ares),Q1419104 (Otrera),,,,,
-Q63246636,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q1349003,Q22988604 (mythological Greek character),Q6581097 (male),,Q12656482 (Hydros),,,,,,
-Q192343,Q22988604 (mythological Greek character),Q6581097 (male),,,,,Q224984 (Pygmalion),,,
-Q494886,Q22988604 (mythological Greek character),Q6581097 (male),,Q1421896 (Strophius),Q284487 (Anaxibia),Q24731870 (Pylade),,,,
-Q13409873,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q3411429,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q622809,Q22988604 (mythological Greek character),Q6581072 (female),,Q41054 (Epimetheus),Q131346 (Pandora),,,,,
-Q346634,Q22988604 (mythological Greek character),Q6581097 (male),,Q170473 (Priam),Q193433 (Hecuba),Q29626641 (Polydorus),,,,
-Q193567,Q128430 (cyclops),Q6581097 (male),,Q41127 (Poseidon),Q843514 (Thoosa),,Q1173735 (Polyphemus),,,
-Q104425,Q22988604 (mythological Greek character),Q6581072 (female),Q484692 (hymn),Q34201 (Zeus),Q102884 (Mnemosyne),,,,,
-Q334817,Q22988604 (mythological Greek character),Q6581097 (male),,Q130890 (Oedipus),Q131445 (Jocasta),,Q2101336 (Polinik),,,
-Q750236,Q22988604 (mythological Greek character),Q6581072 (female),,Q170473 (Priam),Q193433 (Hecuba),,,,,
-Q12046224,Q22988604 (mythological Greek character),Q6581097 (male),,Q34201 (Zeus),Q182019 (Leda),,,,,
-Q170473,Q22988604 (mythological Greek character),Q6581097 (male),,Q332324 (Laomedon),Q23818213 (Zeuxippe),,,,Q322639 (Neoptolemus),
-Q206878,Q22988604 (mythological Greek character),Q6581097 (male),,Q41680 (Dionysus),Q35500 (Aphrodite),Q9642688 (Baal-Peor),Q38433591 (Phales),,,
-Q1231743,Q22988604 (mythological Greek character),Q6581072 (female),,Q865111 (Pandion I),Q1641282 (Zeuxippe),,,,,
-Q1139470,Q22988604 (mythological Greek character),Q6581072 (female),,Q301219 (Erechtheus),Q2108224 (Praxithea),,,,,
-Q15138255,Q22988604 (mythological Greek character),Q6581097 (male),,Q404844 (Aegyptus),Q12873965 (Argyphia),,,,,
-Q871361,Q22988604 (mythological Greek character),Q6581097 (male),,Q1525379 (Iphiclus),Q3028716 (Diomedea),,,,Q555521 (Achates),
-Q2262042,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q776139,Q22988604 (mythological Greek character),Q6581072 (female),,Q27613 (Cadmus),Q978079 (Harmonia),Q1770908 (Stimula),Q403824 (Semele),,,
-Q762835,Q273320 (sibyl),Q6581072 (female),,,,Q1183352 (Deiphobe),,,,
-Q1121944,Q273320 (sibyl),Q6581072 (female),,,,Q1544642 (Herophile),,,,
-Q2217186,Q273320 (sibyl),Q6581072 (female),,,,,,,,
-Q464091,Q163709 (satyr),Q6581097 (male),,Q41484 (Hermes),Q93172 (Gaia),,Q588632 (Silenoz),,,
-Q663792,Q22988604 (mythological Greek character),Q6581097 (male),,Q409895 (Aesimus),,,,,,
-Q368423,Q22988604 (mythological Greek character),Q6581072 (female),,Q1456409 (Iobates),,Q3629895 (Ausia),,,,
-Q1246563,Q22988604 (mythological Greek character),Q6581072 (female),,,,,,,,
-Q1367860,Q22988604 (mythological Greek character),Q6581097 (male),,,,,,,,
-Q182101,Q22988604 (mythological Greek character),Q6581097 (male),,Q34201 (Zeus),Q662968 (Plouto),,Q515531 (Tantalus),,,
-Q331327,Q22988604 (mythological Greek character),Q6581097 (male),,Q206187 (Aeacus),Q2293816 (Endeïs),,,,,
-Q916442,Q22988604 (mythological Greek character),Q6581097 (male),,Q122248 (Heracles),Q760213 (Auge),,,,,
-Q192482,Q22988604 (mythological Greek character),Q6581097 (male),,Q47231 (Odysseus),Q165769 (Penelope),,Q125567497 (Telemach),,Q1401858 (Cassiphone),
-Q1138506,Q22988604 (mythological Greek character),Q6581097 (male),,Q40901 (Ares),Q11909453 (Bistonis),,,,,
-Q104042,Q22988604 (mythological Greek character),Q6581072 (female),,Q34201 (Zeus),Q102884 (Mnemosyne),,Q443833 (Terpsichore),,,
-Q1320718,Q22988604 (mythological Greek character),Q6581097 (male),,Q191725 (Aegeus),Q11921121 (Aethra),,Q410475 (Theseus),,Q1330532 (Lycomedes),
-Q184437,Q22988604 (mythological Greek character),Q6581072 (female),,Q189527 (Nereus),Q726279 (Doris),,Q26761044 (Thetis),,,
-Q1400413,Q22988604 (mythological Greek character),Q6581097 (male),,Q916442 (Telephus),,,,,,
-Q3991817,Q22988604 (mythological Greek character),Q6581072 (female),,Q79999 (Uranus),Q93172 (Gaia),,,,,
-Q737306,Q22988604 (mythological Greek character),Q6581097 (male),,Q332324 (Laomedon),,,,,,
-Q656887,Q22988604 (mythological Greek character),Q6581097 (male),,Q34201 (Zeus),Q1133495 (Elara),,Q1933958 (Tityus),,,
-Q1475386,Q22988604 (mythological Greek character),Q6581097 (male),,Q634361 (Damasichthon),,,,,,
-Q269243,Q22988604 (mythological Greek character),Q6581097 (male),,Q1328260 (Eleusis),Q40114098 (Hyona),,,,,
-Q47231,Q22988604 (mythological Greek character),Q6581097 (male),,Q748296 (Laertes),Q576170 (Anticlea),,,,,
-Q104002,Q22988604 (mythological Greek character),Q6581072 (female),,Q34201 (Zeus),Q102884 (Mnemosyne),,Q294784 (Urania),,,
-Q4024302,Q22988604 (mythological Greek character),Q6581097 (male),,Q109220 (Boreas),Q1129489 (Orithyia),,,,,
-Q182790,Q1387388 (mythical hybrid),Q43445 (female organism),,Q180237 (Typhon),Q185670 (Echidna),,,,Q189872 (Bellerophon),
-Q12737222,Q273320 (sibyl),Q6581072 (female),,,Q200073 (Lamia),Q1544642 (Herophile),Q682558 (Delphic Oracle),,,
-Q3612821,Q124940323 (mythological Roman character),Q6581097 (male),,Q3991778 (Tyrrhus),,,,,,
-Q2864238,Q124940323 (mythological Roman character),Q6581097 (male),,,,,,,,
-Q17521117,Q124940323 (mythological Roman character),Q6581097 (male),,,,,,,,
-Q3757599,Q124940323 (mythological Roman character),Q6581097 (male),,,,,,,,
-Q12958119,Q124940323 (mythological Roman character),Q6581072 (female),,Q182837 (Coeus),Q183281 (Phoebe),Q103107 (Leto),,,,
-Q1924715,Q21070568 (human whose existence is disputed),Q6581097 (male),,,,,,,,
-Q3929892,Q124940323 (mythological Roman character),Q6581097 (male),,,,,,,Q7134950 (Nisus),
-Q1242632,Q124710051 (legendary human figure),Q6581097 (male),,Q112 (Mars),Q219936 (Rhea Silvia),,Q28540088 (Uncle Remus),,Q2186 (Romulus),
-Q4016094,Q124940323 (mythological Roman character),Q6581097 (male),,,,,,,Q7134950 (Nisus),
-Q184353,Q28061975 (group of Greek mythical characters),,,Q34201 (Zeus),Q548099 (Eurynome),Q12900114 (Gratiae),Q708676 (charitable organization),,,
-Q1361380,Q111252729 (group of deities),,,,,Q2593296 (amorino),,,,
-Q101609,Q20830276 (group of mythical characters),,,,,,,,,
-Q201411,Q28061975 (group of Greek mythical characters),,,Q10448 (Hercules),Q159168 (Themis),,Q1402198 (Hersilia),,,
-Q1821610,Q1916821 (water deity),Q6581072 (female),,,Q978079 (Harmonia),Q223690 (Ino),,,,
-Q179844,Q150986 (siren),Q6581072 (female),,Q391379 (Achelous),Q104042 (Terpsichore),,Q954048 (Partenope),,,
-Q1233460,Q63143903 (episode in Greek mythology),,,,,,Q28022743,,,
-Q494762,Q1406161 (artistic theme),,,,,,Q219033 (Leda),,,
-Q1048568,Q1406161 (artistic theme),,,,,,,,,
-Q16943283,Q1406161 (artistic theme),,,,,,,,,
-Q13081186,Q24336031 (mythical river),,,,,,Q12626619 (Acheron),,,
-Q1521549,Q154365 (underworld),,,,,,,,,
-Q168786,Q3238337 (mythical location),,,,,,,,,
-Q165510,Q28061975 (group of Greek mythical characters),,,,,,Q15727168,,,Q7498038 (shipmate)
-Q842435,Q24296329 (mythological horse),Q44148 (male organism),,Q41127 (Poseidon),Q40730 (Demeter),,,,,
-Q157128,Q154365 (underworld),,,,,Q19848944 (Elysium),,,,
-Q3503382,Q2239243 (mythical creature),,,,,,,,,
-Q654379,Q32012717 (mythological pig),Q44148 (male organism),,,Q1751992 (Crommyonian Sow),,,,,
-Q128693,Q2472587 (people),,,,,,,,,
-Q21636696,Q24296329 (mythological horse),,,,,,Q24297010 (Lampus),,,
-Q28136294,Q30307315 (mythological canine),Q6581072 (female),,,,,,,,
-Q162797,Q2537829 (winged horse),Q44148 (male organism),,Q41127 (Poseidon),Q160730 (Medusa),,Q2620807 (Tulpar),,,
-Q1747200,Q2590445 (fictional ethnic group),,,,,,,,,
-Q21560612,Q24296329 (mythological horse),Q44148 (male organism),,Q467515 (Zephyrus),Q2723576 (Podarge),,,,,
-Q816795,Q2239243 (mythical creature),,,,,,Q74363 (Hippocampus),,,
-Q150986,Q33294038 (class of mythical entities),,,Q391379 (Achelous),,,Q795701 (Siren),,,
+qid,P31,P21,P2925,P460,P1889
+Q391379,Q3027575 (Potamoi),Q6581097 (male),Q203923 (Achelous River),,
+Q163920,Q22989102 (Greek deity),Q6581097 (male),Q7242 (beauty),,
+Q35500,Q22989102 (Greek deity),Q6581072 (female),Q316 (love),Q47652 (Venus),Q9141765 (Afrodyta)
+Q4439972,Q22989102 (Greek deity),Q6581072 (female),,,
+Q911084,Q3027575 (Potamoi),Q6581097 (male),Q941745 (Alfeios),,
+Q107785,Q182406 (Oceanids),Q6581072 (female),,,Q108904 (Amalthée)
+Q3575327,Q22989102 (Greek deity),Q6581097 (male),,,
+Q180222,Q22989102 (Greek deity),Q6581072 (female),Q165 (sea),Q2987780 (Salacia),Q186663 (leopard seal)
+Q572133,Q22989102 (Greek deity),Q6581097 (male),Q316 (love),,
+Q37340,Q22989102 (Greek deity),Q6581097 (male),,Q900649 (Apollo),
+Q40901,Q22989102 (Greek deity),Q6581097 (male),Q198 (war),Q112 (Mars),Q642910 (Ares)
+Q978079,Q22988604 (mythological Greek character),Q6581072 (female),Q784068 (harmony),Q746321 (Concordia),Q26913032 (Harmonia)
+Q787492,Q146083 (Ancient Egyptian deity),Q6581097 (male),,Q84122 (Horus),Q5264 (Hippocrates)
+Q39503,Q113103481 (Olympian god),Q6581072 (female),,Q132543 (Diana),Q159168 (Themis)
+Q83223,Q22989102 (Greek deity),Q6581097 (male),,Q3920788 (Aesculapius),
+Q742680,Q205985 (goddess),Q6581072 (female),,Q465875 (Dike),Q18642285 (Asteria)
+Q37122,Q205985 (goddess),Q6581072 (female),Q799 (wisdom),Q126916 (Minerva),Q4813062 (Atena)
+Q130818,Q45713 (titan),Q6581097 (male),,,Q757089 (Atlas)
+Q753294,Q22989102 (Greek deity),Q6581072 (female),,,
+Q109220,Q476682 (Anemoi),Q6581097 (male),,Q2859290 (Aquilon),Q1016296 (Burias)
+Q48961,Q182406 (Oceanids),Q6581072 (female),,,Q203673 (Callisto)
+Q203673,Q3346693 (Greek nymph),Q6581072 (female),,,Q48961 (Calypso)
+Q58371024,Q22989102 (Greek deity),Q6581072 (female),,,
+Q192082,Q3059255 (Greek water deities),Q6581072 (female),,,
+Q6612,Q22989102 (Greek deity),Q6581097 (male),,,Q1067918 (Charun)
+Q131090,Q878099 (Greek primordial deity),Q6581097 (male),,,Q33060039
+Q188236,Q22989102 (Greek deity),Q6581072 (female),Q7860 (nature),Q108419 (Rhea),Q648255 (Kabyle people)
+Q187602,Q22989102 (Greek deity),Q6581072 (female),,,Q28771850 (Kirke)
+Q21051010,Q182406 (Oceanids),Q6581072 (female),,Q866674 (Clytie),
+Q829669,Q22989102 (Greek deity),Q6581072 (female),,,
+Q194015,Q182037 (naiad),Q6581072 (female),,,Q11692901 (Daphne)
+Q12750699,Q242663 (Oread),Q6581072 (female),,,Q741627 (Daphnis)
+Q40730,Q22989102 (Greek deity),Q6581072 (female),Q36133 (soil),Q32102 (Ceres),Q513715 (Demeter)
+Q199923,Q45713 (titan),Q6581072 (female),,,
+Q41680,Q13405593 (nature deity),Q6581097 (male),Q282 (wine),Q645312 (Bacchus),Q10755817 (Dionysos)
+Q726279,Q182406 (Oceanids),Q6581072 (female),,,Q670634 (Doris)
+Q910403,Q22988604 (mythological Greek character),Q6581072 (female),,Q29788463 (Dryope),
+Q131125,Q205985 (goddess),Q6581072 (female),,Q1367680 (Iuventas),
+Q131575,Q205985 (goddess),Q6581072 (female),Q1058800 (moonlight),Q39503 (Artemis),Q99600343 (Hécate)
+Q207368,Q242663 (Oread),Q6581072 (female),Q182767 (echo),,
+Q44384,Q22989102 (Greek deity),Q6581097 (male),Q8072 (volcano),Q4640 (Vulcan),
+Q1249106,Q191192 (Giants),Q6581097 (male),,,Q957340 (Ephialtes)
+Q5820239,Q182037 (naiad),Q6581072 (female),,,
+Q321298,Q3346693 (Greek nymph),Q6581072 (female),,,
+Q638578,Q3059255 (Greek water deities),Q6581072 (female),,,Q60409839 (Athamantis)
+Q845112,Q191192 (Giants),Q6581097 (male),,,Q15138962 (Enkelados)
+Q172549,Q22989102 (Greek deity),Q6581097 (male),,Q4532166 (Aeolus),Q252967 (EOL)
+Q41054,Q45713 (titan),Q6581097 (male),,,Q227368 (Epimetheus)
+Q38012,Q22989102 (Greek deity),Q6581072 (female),Q8445 (marriage),Q125046 (Juno),Q242337 (Hera)
+Q122248,Q23015925 (demigod of Greek mythology),Q6581097 (male),,Q240679 (Hercules),Q106803123 (Idaean Heracles)
+Q1135146,Q24336031 (mythical river),Q6581097 (male),,,
+Q204146,Q22989102 (Greek deity),Q16674976 (hermaphroditism),,,
+Q41484,Q113103481 (Olympian god),Q6581097 (male),Q3562775 (thief),Q1150 (Mercury),Q223919 (Hermes)
+Q121973,Q878099 (Greek primordial deity),Q6581097 (male),,Q5011 (Cupid),Q602799 (Eros)
+Q689422,Q22989102 (Greek deity),Q6581072 (female),,,Q60957766 (Euphrosyne)
+Q208588,Q202474 (dryad),Q6581072 (female),,,
+Q548099,Q182406 (Oceanids),Q6581072 (female),,Q60848089 (Eurynome),
+Q1120723,Q22989102 (Greek deity),Q6581072 (female),,,Q32752090 (Feme)
+Q183281,Q45713 (titan),Q6581072 (female),,,Q4848733 (Febe)
+Q3382132,Q16685255 (epithet),,,Q900649 (Apollo),
+Q398524,Q182406 (Oceanids),Q6581072 (female),,,Q1177333 (Philyra)
+Q649624,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q1775444,Q207174 (personification),Q6581097 (male),,Q2642147 (Danica),
+Q385397,Q3059255 (Greek water deities),Q6581097 (male),,,Q1364945 (Glaucon)
+Q134270,Q22989102 (Greek deity),Q6581097 (male),Q525 (Sun),Q1199937 (Sol),Q226660 (Helios)
+Q189347,Q22989102 (Greek deity),Q6581097 (male),Q35831 (sleep),Q21030618 (Somnus),
+Q202257,Q22989102 (Greek deity),Q6581072 (female),Q12147 (health),Q104845868 (Valetudo),
+Q506770,Q22989102 (Greek deity),Q6581097 (male),Q8445 (marriage),Q63532530 (Hymen),Q3031019 (Hemmen)
+Q179014,Q3346693 (Greek nymph),Q6581072 (female),,,Q103375 (Io)
+Q2171892,Q182406 (Oceanids),Q6581072 (female),,,
+Q184570,Q22989102 (Greek deity),Q6581072 (female),,,Q1471499 (Iris)
+Q898947,Q22989102 (Greek deity),Q6581072 (female),,,
+Q190565,Q182406 (Oceanids),Q6581072 (female),Q799 (wisdom),,
+Q102884,Q45713 (titan),Q6581072 (female),Q492 (memory),,
+Q194012,Q22989102 (Greek deity),Q6581097 (male),Q36348 (dream),,Q174353 (Orpheus)
+Q624551,Q3346693 (Greek nymph),Q6581072 (female),,Q3874213 (Nephele),Q10476719 (Nephele)
+Q185747,Q182406 (Oceanids),Q6581072 (female),Q186361 (punishment),Q742680 (Astraea),Q18338203 (Nemezis)
+Q189527,Q3059255 (Greek water deities),Q6581097 (male),,Q1398720 (Old Man of the Sea),
+Q165023,Q205985 (goddess),Q6581072 (female),Q50000 (victory),Q308902 (Victoria),Q218202 (Nike)
+Q685243,Q3027575 (Potamoi),Q6581097 (male),Q3392 (Nile),,
+Q131203,Q878099 (Greek primordial deity),Q6581072 (female),Q575 (night),Q1651665 (Nox),Q344536 (Nyx)
+Q161419,Q45713 (titan),Q6581097 (male),Q107549003 (Oceanus),,
+Q201261,Q22989102 (Greek deity),Q6581097 (male),,,Q312422 (Arion)
+Q1129489,Q3059255 (Greek water deities),Q6581072 (female),,,
+Q3357697,Q191192 (Giants),Q6581097 (male),,,
+Q3361501,Q22989102 (Greek deity),Q6581072 (female),,Q37122 (Athena),
+Q132582,Q22989102 (Greek deity),Q6581097 (male),,Q3089703 (Faunus),Q107190 (Peter Pan)
+Q1364612,Q3027575 (Potamoi),Q6581097 (male),Q376328 (Pineios),,
+Q17996472,Q3346693 (Greek nymph),Q6581072 (female),,,
+Q45967,Q22989102 (Greek deity),Q6581072 (female),,Q14515330 (Proserpina),
+Q130832,Q23015925 (demigod of Greek mythology),Q6581097 (male),,Q3476559,Q6502471 (Perseus)
+Q41127,Q1916821 (water deity),Q6581097 (male),Q165 (sea),Q3954 (Neptune),Q227431 (Poseidon)
+Q83160,Q45713 (titan),Q6581097 (male),,,Q2112787 (Prometheus)
+Q843382,Q22989102 (Greek deity),Q6581072 (female),,,
+Q108419,Q45713 (titan),Q6581072 (female),,Q188236 (Cybele),Q20000206 (Rhea)
+Q1061782,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q193115,Q3059255 (Greek water deities),Q43445 (female organism),,,Q255329 (Scylla)
+Q131585,Q22989102 (Greek deity),Q6581072 (female),Q405 (Moon),Q1235172 (Luna),Q671979 (Selene)
+Q214554,Q146083 (Ancient Egyptian deity),Q6581097 (male),,,
+Q846129,Q619300 (Hamadryad),Q6581072 (female),,,Q10902606 (syrinx)
+Q1241338,Q3346693 (Greek nymph),Q6581072 (female),,,
+Q3822612,Q878099 (Greek primordial deity),Q6581072 (female),,,
+Q180237,Q191192 (Giants),Q6581097 (male),,Q190511 (Apophis),Q1784578 (train horn)
+Q10696861,Q3346693 (Greek nymph),Q6581072 (female),,,
+Q18415479,Q45713 (titan),Q6581097 (male),,,
+Q148030,Q3059255 (Greek water deities),Q6581097 (male),,,
+Q79999,Q878099 (Greek primordial deity),Q6581097 (male),Q527 (sky),Q3360794 (Caelus),
+Q483760,Q1406161 (artistic theme),,,Q19760026 (birth of Aphrodite),Q4750780 (Anadyomene)
+Q59697,Q22989102 (Greek deity),Q6581097 (male),,Q4110210,
+Q467515,Q476682 (Anemoi),Q6581097 (male),,,Q8068495 (Zefir)
+Q34201,Q842697 (thunder deity),Q6581097 (male),Q33741 (lightning),Q4649 (Jupiter),Q354151 (Zeus)
+Q336003,Q11688446 (Roman deity),Q6581072 (female),Q336019 (abundance),,
+Q381061,Q11688446 (Roman deity),Q6581072 (female),,,
+Q581656,Q11688446 (Roman deity),Q6581072 (female),,Q3314298 (Euthenia),
+Q178831,Q11688446 (Roman deity),Q6581072 (female),Q11326182 (dawn),Q178417 (Eos),Q1066178
+Q645312,Q11688446 (Roman deity),Q6581097 (male),Q213376 (winemaking),Q41680 (Dionysus),Q683204 (Bacchus)
+Q207234,Q11688446 (Roman deity),Q6581072 (female),,Q747657 (Enyo),
+Q32102,Q11688446 (Roman deity),Q6581072 (female),Q11451 (agriculture),Q40730 (Demeter),Q1055257 (Ceres)
+Q746321,Q11688446 (Roman deity),Q6581072 (female),Q16513416 (faithfulness),Q978079 (Harmonia),
+Q5011,Q11688446 (Roman deity),Q6581097 (male),,Q121973 (Eros),Q439540 (Cupid)
+Q132543,Q11688446 (Roman deity),Q6581072 (female),,Q39503 (Artemis),
+Q582268,Q13002315 (legendary figure),Q6581072 (female),,,Q164297 (Egeria)
+Q240679,Q11688446 (Roman deity),Q6581097 (male),,Q122248 (Heracles),Q4748709 (Herkules)
+Q3920788,Q11688446 (Roman deity),Q6581097 (male),,Q83223 (Asclepius),
+Q2527609,Q11688446 (Roman deity),Q6581072 (female),Q38933 (fever),,Q33533292
+Q209644,Q11688446 (Roman deity),Q6581072 (female),,Q1075258 (Chloris),
+Q4654,Q11688446 (Roman deity),Q6581072 (female),,Q213440 (Tyche),Q219201 (Fortuna)
+Q4649,Q11688446 (Roman deity),Q6581097 (male),,Q34201 (Zeus),Q16280772 (Jowisz)
+Q125046,Q11688446 (Roman deity),Q6581072 (female),Q8445 (marriage),Q38012 (Hera),
+Q1102307,Q207174 (personification),Q6581072 (female),Q5167661 (justice),Q159168 (Themis),Q75133781 (Justice)
+Q1367680,Q11688446 (Roman deity),Q6581072 (female),,Q131125 (Hebe),Q1422 (Juventus FC)
+Q112,Q11688446 (Roman deity),Q6581097 (male),Q198 (war),Q40901 (Ares),Q426315 (Mars)
+Q1479084,Q11688446 (Roman deity),Q6581072 (female),,Q178831 (Aurora),
+Q1150,Q11688446 (Roman deity),Q6581097 (male),Q2727213 (theft),Q41484 (Hermes),Q11777485 (Merkury)
+Q126916,Q205985 (goddess),Q6581072 (female),Q1294787 (artisan),Q37122 (Athena),
+Q3954,Q1916821 (water deity),Q6581097 (male),,Q41127 (Poseidon),Q1261928 (Neptun)
+Q859392,Q205985 (goddess),Q6581072 (female),Q2488752 (earth),Q108419 (Rhea),Q221197
+Q152262,Q11688446 (Roman deity),Q6581097 (male),,Q41410 (Hades),Q2099776 (Pluto)
+Q171239,Q38618822 (nymph in Roman mythology),Q6581072 (female),,,
+Q14515330,Q11688446 (Roman deity),Q6581072 (female),,Q45967 (Persephone),Q33056084
+Q953033,Q11688446 (Roman deity),Q6581072 (female),Q18287233 (Roma),,
+Q1753275,Q119840097 (Sabine deity),Q6581097 (male),,Q5283763 (Dius Fidius),
+Q134388,Q7805266 (time and fate deity),Q6581097 (male),,Q272918 (Chronos),Q3950829 (Saturn)
+Q2062262,Q273320 (sibyl),Q6581072 (female),,,
+Q548445,Q11688446 (Roman deity),Q6581097 (male),,,Q187489 (Silvanus)
+Q580723,Q11688446 (Roman deity),Q6581097 (male),,,
+Q47652,Q11688446 (Roman deity),Q6581072 (female),Q316 (love),Q35500 (Aphrodite),
+Q3545810,Q207174 (personification),Q6581072 (female),,Q1317994 (Aletheia),Q12644570 (Veritas (magazine))
+Q374311,Q11688446 (Roman deity),Q6581097 (male),,,
+Q178710,Q11688446 (Roman deity),Q6581072 (female),Q182995 (kitchen stove),Q41419 (Hestia),Q3030 (Vesta)
+Q308902,Q11688446 (Roman deity),Q6581072 (female),Q50000 (victory),Q165023 (Nike),Q537094 (Victoria)
+Q4640,Q11688446 (Roman deity),Q6581097 (male),,Q44384 (Hephaestus),Q1088708 (Vulcan)
+Q555521,Q22988604 (mythological Greek character),Q6581097 (male),,,Q123314 (agate)
+Q41746,Q22988604 (mythological Greek character),Q6581097 (male),,Q114839495,Q229835 (Achilles)
+Q419156,Q22988604 (mythological Greek character),Q6581097 (male),Q1382342 (Jaci),,
+Q128176,Q22988604 (mythological Greek character),Q6581097 (male),,,Q231724 (Agamemnon)
+Q584492,Q22988604 (mythological Greek character),Q6581072 (female),,,Q243653 (Aglauros)
+Q172725,Q22988604 (mythological Greek character),Q6581097 (male),,,Q242319 (Ajax the Lesser)
+Q320449,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q912904,Q22988604 (mythological Greek character),Q6581072 (female),,,Q12784350 (Alkione)
+Q1643451,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q482096,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q3614346,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q474474,Q163709 (satyr),Q6581097 (male),,,
+Q488558,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q488621,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q211953,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q19376,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q161582,Q22988604 (mythological Greek character),Q6581072 (female),,,Q102897 (Andromeda)
+Q242835,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q131351,Q22988604 (mythological Greek character),Q6581072 (female),,,Q20978302
+Q4067040,Q22988604 (mythological Greek character),Q6581072 (female),,,Q12748406 (Antinoe)
+Q579000,Q22988604 (mythological Greek character),Q6581097 (male),,,Q171876 (Antinous)
+Q461439,Q22988604 (mythological Greek character),Q6581072 (female),,,Q255393 (Antiope)
+Q333658,Q22988604 (mythological Greek character),Q6581097 (male),,Q128903579 (Aegialeus),
+Q190082,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q2866192,Q22988604 (mythological Greek character),Q6581072 (female),,Q643456 (Arethusa),
+Q189821,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q184874,Q22988604 (mythological Greek character),Q6581072 (female),,,Q654349 (Ariadna)
+Q311536,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q181360,Q28061975 (group of Greek mythical characters),Q6581072 (female),,,Q30301514 (harpy in a work of fiction)
+Q2655419,Q22988604 (mythological Greek character),Q6581097 (male),,Q136512504 (Abas),
+Q655566,Q22988604 (mythological Greek character),Q6581097 (male),,Q16523986 (Iulus),Q25939254 (Askaniusz)
+Q334787,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q190323,Q22988604 (mythological Greek character),Q6581072 (female),,Q13375989 (Atalante),Q23556 (Atlanta)
+Q208531,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q791446,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q23034980,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q189872,Q22988604 (mythological Greek character),Q6581097 (male),,,Q242309 (51 Pegasi b)
+Q855426,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q29789169,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q244318,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q754686,Q3707571 (giant),Q6581097 (male),,,
+Q27613,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q893473,Q22988604 (mythological Greek character),Q6581097 (male),,,Q240840 (Calais)
+Q725527,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q103975,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q1362409,Q22988604 (mythological Greek character),Q6581072 (female),,,Q21150330 (Kanaka)
+Q11294144,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q500739,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q643504,Q22988604 (mythological Greek character),Q6581097 (male),,Q3010239 (Cephalus),
+Q578888,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q1132772,Q22988604 (mythological Greek character),Q2449503 (trans man),,,
+Q2606272,Q22988604 (mythological Greek character),Q6581097 (male),,,Q83203 (centaur)
+Q83496,Q2280977 (Hellhound),Q44148 (male organism),,Q213932 (Garmr),Q6667 (Cerbère)
+Q466882,Q2239243 (mythical creature),Q43445 (female organism),,,
+Q183417,Q83203 (centaur),Q6581097 (male),,,
+Q1066344,Q22988604 (mythological Greek character),Q6581097 (male),,Q25433606 (Cycnus),
+Q15711584,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q334456,Q2239243 (mythical creature),Q44148 (male organism),,,
+Q13667632,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q1056143,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q64581998,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q103968,Q22988604 (mythological Greek character),Q6581072 (female),Q1066186 (study of history),,Q398232 (Klio)
+Q131157,Q22988604 (mythological Greek character),Q6581072 (female),,,Q6560236 (Clytemnestra)
+Q3682459,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q2753233,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q725286,Q22988604 (mythological Greek character),Q6581072 (female),,,Q6432541 (Koronis)
+Q732066,Q22988604 (mythological Greek character),Q6581097 (male),,,Q507107 (Creon)
+Q375174,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q1043413,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q3698712,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q190582,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q134756,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q272000,Q22988604 (mythological Greek character),Q6581072 (female),,,Q13537244
+Q1183358,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q4157638,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q1475776,Q22988604 (mythological Greek character),Q6581097 (male),,,Q292588 (Démophon)
+Q207715,Q22988604 (mythological Greek character),Q6581097 (male),,,Q15874488 (Deucalion)
+Q905162,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q208256,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q850192,Q22988604 (mythological Greek character),Q6581072 (female),,,Q5280177 (Dirce)
+Q3715347,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q193433,Q22988604 (mythological Greek character),Q6581072 (female),,,Q16280070 (Hekabe)
+Q130890,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q241971,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q191725,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q164061,Q22988604 (mythological Greek character),Q6581072 (female),,,Q428212 (Helen of Troy)
+Q131651,Q22988604 (mythological Greek character),Q6581072 (female),,Q419115 (Laodice),Q217340 (Elektra)
+Q272047,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q82732,Q22988604 (mythological Greek character),Q6581097 (male),,,Q21547988 (Aeneis)
+Q847890,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q2075786,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q104413,Q22988604 (mythological Greek character),Q6581072 (female),,,Q238304 (Erato)
+Q568768,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q644921,Q22988604 (mythological Greek character),Q6581097 (male),,,Q343298 (Erichthonius)
+Q19776360,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q16641710,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q410082,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q506550,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q159666,Q22988604 (mythological Greek character),Q6581097 (male),,Q537554 (Sigurd),Q342314 (Hektor)
+Q1352687,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q16647668,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q956831,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q61014736,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q212087,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q1378578,Q83203 (centaur),Q6581097 (male),,Q124357578 (Eurytion),
+Q540468,Q83203 (centaur),Q6581097 (male),,,
+Q165170,Q22988604 (mythological Greek character),Q6581072 (female),Q46 (Europe),Q11921267 (Europa),Q741380 (Europa)
+Q104012,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q837699,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q212818,Q22988604 (mythological Greek character),Q6581072 (female),,,Q5441136 (Fedra)
+Q1235168,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q203480,Q22988604 (mythological Greek character),Q6581097 (male),,,Q3378668 (Phaethon)
+Q23034982,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q115449,Q22988604 (mythological Greek character),Q6581072 (female),,,Q11698107 (Filomela)
+Q212827,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q641065,Q22988604 (mythological Greek character),Q6581097 (male),,,Q395356 (Phineus)
+Q22965548,Q22988604 (mythological Greek character),Q6581097 (male),,Q30097019 (Phorbas),
+Q743482,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q241070,Q22988604 (mythological Greek character),Q6581072 (female),,Q3757460 (Galatea),Q12094023 (Galatea)
+Q131588,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q86805,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q176758,Q22988604 (mythological Greek character),Q6581097 (male),,,Q238333 (Jason)
+Q1413020,Q22988604 (mythological Greek character),Q6581097 (male),,,Q179785 (Gorgias)
+Q1180888,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q34041,Q22988604 (mythological Greek character),Q6581097 (male),,,Q1658039 (Ikar)
+Q1136130,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q192673,Q22988604 (mythological Greek character),Q6581072 (female),,Q28362963 (Iphianassa),Q28912311 (Ifigenia)
+Q332752,Q22988604 (mythological Greek character),Q6581097 (male),,,Q1253371 (HYLAS-1)
+Q847268,Q22988604 (mythological Greek character),Q6581097 (male),,Q41505034 (Hyllus),Q2005507 (Hyllus)
+Q223690,Q1916821 (water deity),Q6581072 (female),,Q1821610 (Leucothea),Q11712651
+Q744147,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q2468258,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q338201,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q1455747,Q22988604 (mythological Greek character),Q6581097 (male),,Q12755124 (Melanion),
+Q2479189,Q22988604 (mythological Greek character),Q6581097 (male),,Q126901044 (Alcyoneus),
+Q271891,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q1675360,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q274600,Q16326794 (mythological serpent),Q44148 (male organism),,,Q249548 (Ladon)
+Q200073,Q16326794 (mythological serpent),Q6581072 (female),,Q59312503 (lamia in a work of fiction),Q59312503 (lamia in a work of fiction)
+Q12754448,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q10316761,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q182019,Q22988604 (mythological Greek character),Q6581072 (female),,Q1298222 (Lada),
+Q4259170,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q339980,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q922330,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q501667,Q431113 (autochthonos),Q6581097 (male),,,Q1160661 (Lycaon)
+Q1330532,Q22988604 (mythological Greek character),Q6581097 (male),,,Q15262316 (Lycomedes)
+Q270117,Q22988604 (mythological Greek character),Q6581097 (male),,,Q225349 (Lycurgus)
+Q1124866,Q22988604 (mythological Greek character),Q6581097 (male),,,Q20088821 (Linkeus)
+Q9026462,Q22988604 (mythological Greek character),Q6581097 (male),,Q113549334 (Macareus of Lesbos),
+Q599737,Q163709 (satyr),Q6581097 (male),,,
+Q174278,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q160730,Q22988604 (mythological Greek character),Q6581072 (female),,,Q3558668 (Medousa)
+Q371545,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q3854114,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q321541,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q3854231,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q103992,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q506781,Q22988604 (mythological Greek character),Q6581097 (male),,Q122066765 (Ismandes),Q297965 (Memnon)
+Q744871,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q171839,Q22988604 (mythological Greek character),Q6581097 (male),,,Q2153151 (Rimae Menelaus)
+Q214003,Q22988604 (mythological Greek character),Q6581097 (male),,,Q13442311 (Mentes)
+Q308398,Q22988604 (mythological Greek character),Q6581097 (male),,,Q436188 (Midas)
+Q23168,Q22988604 (mythological Greek character),Q6581097 (male),,,Q527174 (Minos)
+Q129866,Q20902363 (mythical human-animal hybrid),Q6581097 (male),,Q8207417 (Asterion),Q2243366 (Minotauros)
+Q771366,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q1149595,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q179256,Q22988604 (mythological Greek character),Q6581097 (male),,,Q828609 (Narcissus of Girona)
+Q3870520,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q322639,Q22988604 (mythological Greek character),Q6581097 (male),,Q12757289 (Pyrrhus),
+Q466866,Q83203 (centaur),,,,
+Q213621,Q22988604 (mythological Greek character),Q6581072 (female),,,Q1072573 (Niobe)
+Q7134950,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q1929263,Q22988604 (mythological Greek character),Q6581097 (male),,,Q3455419 (Ocnus)
+Q1419140,Q22988604 (mythological Greek character),Q6581097 (male),,,Q14522045 (Opheltes)
+Q975447,Q22988604 (mythological Greek character),Q6581097 (male),,,Q18592060 (Oileus)
+Q290144,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q486698,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q192407,Q22988604 (mythological Greek character),Q6581097 (male),,Q4691174 (Agamemnonides),
+Q174353,Q22988604 (mythological Greek character),Q6581097 (male),,,Q15615531 (Orfeus)
+Q16328250,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q252387,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q2048018,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q131346,Q22988604 (mythological Greek character),Q6581072 (female),,,Q108349 (Pandora)
+Q167646,Q22988604 (mythological Greek character),Q6581097 (male),,,Q104197 (Paris)
+Q186271,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q178641,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q182439,Q22988604 (mythological Greek character),Q6581097 (male),,,Q2035691 (Pelleas)
+Q192485,Q22988604 (mythological Greek character),Q6581097 (male),,,Q2068297 (Pelops)
+Q165769,Q22988604 (mythological Greek character),Q6581072 (female),,,Q11815521 (Penelopa)
+Q391091,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q379828,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q63246636,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q1349003,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q192343,Q22988604 (mythological Greek character),Q6581097 (male),,,Q224984 (Pygmalion)
+Q494886,Q22988604 (mythological Greek character),Q6581097 (male),,Q24731870 (Pylade),
+Q13409873,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q3411429,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q622809,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q346634,Q22988604 (mythological Greek character),Q6581097 (male),,Q29626641 (Polydorus),
+Q193567,Q128430 (cyclops),Q6581097 (male),,,Q1173735 (Polyphemus)
+Q104425,Q22988604 (mythological Greek character),Q6581072 (female),Q484692 (hymn),,
+Q334817,Q22988604 (mythological Greek character),Q6581097 (male),,,Q2101336 (Polinik)
+Q750236,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q12046224,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q170473,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q206878,Q22988604 (mythological Greek character),Q6581097 (male),,Q9642688 (Baal-Peor),Q38433591 (Phales)
+Q1231743,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q1139470,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q15138255,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q871361,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q2262042,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q776139,Q22988604 (mythological Greek character),Q6581072 (female),,Q1770908 (Stimula),Q403824 (Semele)
+Q762835,Q273320 (sibyl),Q6581072 (female),,Q1183352 (Deiphobe),
+Q1121944,Q273320 (sibyl),Q6581072 (female),,Q1544642 (Herophile),
+Q2217186,Q273320 (sibyl),Q6581072 (female),,,
+Q464091,Q163709 (satyr),Q6581097 (male),,,Q588632 (Silenoz)
+Q663792,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q368423,Q22988604 (mythological Greek character),Q6581072 (female),,Q3629895 (Ausia),
+Q1246563,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q1367860,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q182101,Q22988604 (mythological Greek character),Q6581097 (male),,,Q515531 (Tantalus)
+Q331327,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q916442,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q192482,Q22988604 (mythological Greek character),Q6581097 (male),,,Q125567497 (Telemach)
+Q1138506,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q104042,Q22988604 (mythological Greek character),Q6581072 (female),,,Q443833 (Terpsichore)
+Q1320718,Q22988604 (mythological Greek character),Q6581097 (male),,,Q410475 (Theseus)
+Q184437,Q22988604 (mythological Greek character),Q6581072 (female),,,Q26761044 (Thetis)
+Q1400413,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q3991817,Q22988604 (mythological Greek character),Q6581072 (female),,,
+Q737306,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q656887,Q22988604 (mythological Greek character),Q6581097 (male),,,Q1933958 (Tityus)
+Q1475386,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q269243,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q47231,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q104002,Q22988604 (mythological Greek character),Q6581072 (female),,,Q294784 (Urania)
+Q4024302,Q22988604 (mythological Greek character),Q6581097 (male),,,
+Q182790,Q1387388 (mythical hybrid),Q43445 (female organism),,,
+Q12737222,Q273320 (sibyl),Q6581072 (female),,Q1544642 (Herophile),Q682558 (Delphic Oracle)
+Q3612821,Q124940323 (mythological Roman character),Q6581097 (male),,,
+Q2864238,Q124940323 (mythological Roman character),Q6581097 (male),,,
+Q17521117,Q124940323 (mythological Roman character),Q6581097 (male),,,
+Q3757599,Q124940323 (mythological Roman character),Q6581097 (male),,,
+Q12958119,Q124940323 (mythological Roman character),Q6581072 (female),,Q103107 (Leto),
+Q1924715,Q21070568 (human whose existence is disputed),Q6581097 (male),,,
+Q3929892,Q124940323 (mythological Roman character),Q6581097 (male),,,
+Q1242632,Q124710051 (legendary human figure),Q6581097 (male),,,Q28540088 (Uncle Remus)
+Q4016094,Q124940323 (mythological Roman character),Q6581097 (male),,,
+Q184353,Q28061975 (group of Greek mythical characters),,,Q12900114 (Gratiae),Q708676 (charitable organization)
+Q1361380,Q111252729 (group of deities),,,Q2593296 (amorino),
+Q101609,Q20830276 (group of mythical characters),,,,
+Q201411,Q28061975 (group of Greek mythical characters),,,,Q1402198 (Hersilia)
+Q1821610,Q1916821 (water deity),Q6581072 (female),,Q223690 (Ino),
+Q179844,Q150986 (siren),Q6581072 (female),,,Q954048 (Partenope)
+Q1233460,Q63143903 (episode in Greek mythology),,,,Q28022743
+Q494762,Q1406161 (artistic theme),,,,Q219033 (Leda)
+Q1048568,Q1406161 (artistic theme),,,,
+Q16943283,Q1406161 (artistic theme),,,,
+Q13081186,Q24336031 (mythical river),,,,Q12626619 (Acheron)
+Q1521549,Q154365 (underworld),,,,
+Q168786,Q3238337 (mythical location),,,,
+Q165510,Q28061975 (group of Greek mythical characters),,,,Q15727168
+Q842435,Q24296329 (mythological horse),Q44148 (male organism),,,
+Q157128,Q154365 (underworld),,,Q19848944 (Elysium),
+Q3503382,Q2239243 (mythical creature),,,,
+Q654379,Q32012717 (mythological pig),Q44148 (male organism),,,
+Q128693,Q2472587 (people),,,,
+Q21636696,Q24296329 (mythological horse),,,,Q24297010 (Lampus)
+Q28136294,Q30307315 (mythological canine),Q6581072 (female),,,
+Q162797,Q2537829 (winged horse),Q44148 (male organism),,,Q2620807 (Tulpar)
+Q1747200,Q2590445 (fictional ethnic group),,,,
+Q21560612,Q24296329 (mythological horse),Q44148 (male organism),,,
+Q816795,Q2239243 (mythical creature),,,,Q74363 (Hippocampus)
+Q150986,Q33294038 (class of mythical entities),,,,Q795701 (Siren)
+Q128430,Q24533670 (mythical humanoid race),,,,Q534863 (Cyclops)
+Q170379,Q16326794 (mythological serpent),Q43445 (female organism),,,
+Q66016,Q28061975 (group of Greek mythical characters),Q6581072 (female),,,Q1378626 (Muza)
+Satiro,,,,,
