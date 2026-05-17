@@ -136,9 +136,9 @@ print(df[['date_range_originale', 'start_orig', 'start_norm', 'end_orig', 'end_n
 
 #wdt:P451 # unmarried partner
 #wdt:P40 # child
-#wdt:P22 #father
+#wdt:P22 #father # OK
 #wdt:P26 #spouse
-#wdt:P25 #mother
+#wdt:P25 #mother # OK
 #wdt:P3373 #sibling
 
 #wdt:P1889 #different from   # OK
