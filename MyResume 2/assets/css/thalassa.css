@@ -169,3 +169,40 @@
 @media (max-width: 600px) {
   .bubble-slide { flex: 0 0 100%; } /* 1 bolla */
 }
+
+
+
+
+#mare,
+#mare.about.section {
+  position: relative !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+
+  min-height: 400vh !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+}
+
+/* immagini di sfondo */
+#mare .thalassa-bg {
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+  overflow: hidden;
+}
+
+#mare .thalassa-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
