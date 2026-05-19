@@ -245,11 +245,17 @@
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(16, 10, 7, 0.45) 45%, /* Centro: Acqua marina semitrasparente */
-    rgba(116, 242, 230, 0.9) 85%, /* Quasi fondo: Turchese chiaro e vivido */
-    rgba(32, 167, 167, 1) 100%    /* Fine: Chiusura solida sul tono acqua marina */
+    rgba(25, 4, 1, 0.45) 45%, /* Centro: Acqua marina semitrasparente */
+    rgba(24, 35, 35, 0.7) 85%, /* Quasi fondo: Turchese chiaro e vivido */
+    rgb(29, 5, 1) 100%    /* Fine: Chiusura solida sul tono acqua marina */
   );
 
   z-index: 2;
   pointer-events: none;
+}
+
+.thalassa-title{
+  color: white; 
+  font-size: 90px !important; 
+  font-weight: bolder;
 }
