@@ -440,115 +440,184 @@ body {
 /* =========================================
    OMINI SULLE COLLINE
 ========================================= */
+/* =========================================
+   OMINI - ORDINE, PROFONDITÀ E ANIMAZIONE
+========================================= */
 
-.omini-group {
+.omini-group,
+.omini2-group,
+.omini3-group {
   position: absolute;
-
-  /* Più in basso di Prometeo */
-  top: 80%;
-
-  /* Spostali sulla collina: modifica questo valore se li vuoi più a destra/sinistra */
-  left: 46%;
-
-  transform: translate(-50%, -50%);
-
   width: auto;
-  max-width:  7%;
 
-  z-index: 6;
-
-  filter: drop-shadow(0 0 12px rgba(255, 220, 140, 0.35));
-  opacity: 0.95;
-}
-
-.omini-group img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.omini-group {
-  position: absolute;
-
-  width: auto;
-  max-width: 7%;
-
-  z-index: 6;
+  z-index: 20;
 
   opacity: 0;
+
   filter: drop-shadow(0 0 12px rgba(255, 220, 140, 0.35));
 
-  animation: ominiFadeIn 1.2s ease forwards;
+  animation: ominiFadeInUp 1.4s ease forwards;
 }
 
-.omini-group img {
+.omini-group img,
+.omini2-group img,
+.omini3-group img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* POSIZIONI */
+/* Primo livello: omini più in alto, compaiono per primi */
+.omini-group {
+  max-width: 5.5%;
+}
+
+/* Secondo livello: omini2 più sotto, compaiono dopo */
+.omini2-group {
+  max-width: 6.3%;
+}
+
+/* Terzo livello: omini3 più in basso, compaiono per ultimi */
+.omini3-group {
+  max-width: 7%;
+}
+
+
+/* =========================
+   POSIZIONI OMINI
+   più in alto
+========================= */
 
 .omini-1 {
   left: 49%;
-  top: 25%;
-  animation-delay: 0.3s;
+  top: 21.5%;
+  animation-delay: 0.2s;
 }
 
 .omini-2 {
-  left: 65.2%;
-  top: 23.2%;
-  animation-delay: 1s;
+  left: 65%;
+  top: 21.5%;
+  animation-delay: 0.45s;
 }
 
 .omini-3 {
   left: 36%;
-  top: 23.7%;
-  animation-delay: 1.7s;
+  top: 21.8%;
+  animation-delay: 0.7s;
 }
 
 .omini-4 {
   left: 91%;
-  top: 23.8%;
-  animation-delay: 2.4s;
+  top: 23%;
+  animation-delay: 0.95s;
 }
 
 .omini-5 {
   left: 23%;
-  top: 25.7%;
-  animation-delay: 3.1s;
+  top: 21.2%;
+  animation-delay: 1.2s;
 }
 
 .omini-6 {
   left: 75%;
-  top: 25.5%;
-  animation-delay: 3.8s;
+  top: 21%;
+  animation-delay: 1.45s;
 }
 
 .omini-7 {
   left: 16%;
-  top: 22.4%;
-  animation-delay: 4.3s;
+  top: 22.2%;
+  animation-delay: 1.7s;
 }
 
-/* ANIMAZIONE SENZA TRANSFORM */
 
-@keyframes ominiFadeIn {
+/* =========================
+   POSIZIONI OMINI2
+   fascia centrale
+========================= */
+
+.omini2-1 {
+  left: 37%;
+  top: 22.8%;
+  animation-delay: 2.2s;
+}
+
+.omini2-2 {
+  left: 53%;
+  top: 23.4%;
+  animation-delay: 2.45s;
+}
+
+.omini2-3 {
+  left: 26%;
+  top: 23.2%;
+  animation-delay: 2.7s;
+}
+
+.omini2-4 {
+  left: 69%;
+  top: 23.2%;
+  animation-delay: 2.95s;
+}
+
+
+/* =========================
+   POSIZIONI OMINI3
+   fascia più bassa
+========================= */
+
+.omini3-1 {
+  left: 12%;
+  top: 27%;
+  animation-delay: 3.5s;
+}
+
+.omini3-2 {
+  left: 32%;
+  top: 26.8%;
+  animation-delay: 3.75s;
+}
+
+.omini3-3 {
+  left: 40%;
+  top: 26.8%;
+  animation-delay: 4s;
+}
+
+.omini3-4 {
+  left: 56%;
+  top: 27%;
+  animation-delay: 4.25s;
+}
+
+.omini3-5 {
+  left: 73%;
+  top: 26.2%;
+  animation-delay: 4.5s;
+}
+
+
+/* =========================
+   ANIMAZIONE
+========================= */
+
+@keyframes ominiFadeInUp {
   from {
     opacity: 0;
+    transform: translateY(28px) scale(0.92);
     filter:
-      blur(6px)
+      blur(5px)
       drop-shadow(0 0 0 rgba(255, 220, 140, 0));
   }
 
   to {
     opacity: 0.95;
+    transform: translateY(0) scale(1);
     filter:
       blur(0)
       drop-shadow(0 0 12px rgba(255, 220, 140, 0.35));
   }
 }
-
 
 
 /* =========================================
