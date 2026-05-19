@@ -154,8 +154,8 @@ window.addEventListener('load', function() {
             wCtx.fill();
         };
 
-        drawWave(0.6, "rgba(0, 100, 200, 0.3)", 0.8);
-        drawWave(0.8, "rgba(50, 150, 255, 0.4)", 1.2);
+        drawWave(0.6, "rgba(19, 62, 109, 0.3)", 0.8);
+        drawWave(0.8, "hsla(211, 86.00%, 11.20%, 0.40)", 1.2);
     }
 
     function animate() {
