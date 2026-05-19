@@ -746,7 +746,40 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
       </div>
 
 
-      <section id="marine-slider-section">
+
+
+  <div id="thalassa-quiz-section" style="margin-top: 90px !important;">
+    <div class="thalassa-quiz-wrapper">
+      <h3 class="thalassa-quiz-question" style="color: white !important;">Who among these mortal heroes managed to slay Medusa?</h3>
+      
+      <div class="thalassa-quiz-options">
+        <div class="thalassa-quiz-item" data-value="wrong">
+          <span>Heracles</span>
+        </div>
+        
+        <div class="thalassa-quiz-item" data-value="correct">
+          <span>Perseus</span>
+        </div>
+        
+        <div class="thalassa-quiz-item" data-value="wrong">
+          <span>Achilles</span>
+        </div>
+        
+        <div class="thalassa-quiz-item" data-value="wrong">
+          <span>Jason</span>
+        </div>
+      </div>
+
+      <div class="thalassa-quiz-actions">
+        <button id="thalassa-quiz-confirm-btn" disabled>Confirm Choice</button>
+        <p id="thalassa-quiz-feedback"></p>
+      </div>
+    </div>
+  </div>
+
+
+
+      <section id="marine-slider-section" style="margin-top: 40px !important;">
   <div class="bubble-slider-container">
     
     <h2 class="marine-slider-title">Monsters</h2>
@@ -1473,7 +1506,122 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+<script> 
+/* QUIZ THALASSA */
+document.addEventListener("DOMContentLoaded", function () {
 
+  const quizItems = document.querySelectorAll(".thalassa-quiz-item");
+  const confirmBtn = document.querySelector("#thalassa-quiz-confirm-btn");
+  const feedback = document.querySelector("#thalassa-quiz-feedback");
+
+  let selectedItem = null;
+
+  /* =========================
+     SELEZIONE RISPOSTA
+  ========================= */
+  quizItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      if (confirmBtn.classList.contains("quiz-locked")) return;
+
+      quizItems.forEach(function (el) {
+        el.classList.remove("selected");
+      });
+
+      item.classList.add("selected");
+      selectedItem = item;
+      confirmBtn.disabled = false;
+    });
+  });
+
+  /* =========================
+     CONFERMA RISPOSTA
+  ========================= */
+  confirmBtn.addEventListener("click", function () {
+    if (!selectedItem) return;
+
+    confirmBtn.disabled = true;
+    confirmBtn.classList.add("quiz-locked");
+
+    /* FULMINE SU QUALSIASI RISPOSTA */
+    selectedItem.classList.remove("lightning-hit");
+    void selectedItem.offsetWidth;
+    selectedItem.classList.add("lightning-hit");
+
+    setTimeout(function () {
+      selectedItem.classList.remove("lightning-hit");
+
+      /* =========================
+         RISPOSTA CORRETTA
+      ========================= */
+      if (selectedItem.dataset.value === "correct") {
+        selectedItem.classList.add("correct-answer");
+
+        if (!selectedItem.querySelector(".thalassa-laurel")) {
+          const laurel = document.createElement("img");
+          laurel.src = "assets/img/alloro.png";
+          laurel.alt = "Corona d'alloro";
+          laurel.className = "thalassa-laurel";
+          selectedItem.appendChild(laurel);
+        }
+
+        feedback.textContent =
+          "🏅 Correct answer: you have proven your knowledge of the marine world and its legends! Check the charts for more.";
+           
+        feedback.style.color = "#069c29";
+      }
+
+      /* =========================
+         RISPOSTA SBAGLIATA
+      ========================= */
+      else {
+        selectedItem.classList.add("wrong-answer");
+        
+        /* FUMO */
+        if (!selectedItem.querySelector(".infernal-smoke")) {
+          const smoke = document.createElement("div");
+          smoke.className = "infernal-smoke";
+          selectedItem.appendChild(smoke);
+        }
+
+        /* CENERE */
+        if (!selectedItem.querySelector(".embers")) {
+          const embers = document.createElement("div");
+          embers.className = "embers";
+
+          for (let i = 0; i < 5; i++) {
+            const ember = document.createElement("span");
+            embers.appendChild(ember);
+          }
+          selectedItem.appendChild(embers);
+        }
+
+        // Seleziona la risposta esatta tra gli elementi di Thalassa
+        const correctItem = document.querySelector(
+          '.thalassa-quiz-item[data-value="correct"]'
+        );
+
+        if (correctItem) {
+          correctItem.classList.add("correct-answer");
+
+          if (!correctItem.querySelector(".thalassa-laurel")) {
+            const laurel = document.createElement("img");
+            laurel.src = "assets/img/alloro.png";
+            laurel.alt = "Corona d'alloro";
+            laurel.className = "thalassa-laurel";
+            correctItem.appendChild(laurel);
+          }
+        }
+
+        feedback.textContent =
+          "❌ Wrong answer: the legends of Thalassa fade into the deep! Consult the charts to see your mistake.";
+
+        feedback.style.color = "#b12a00";
+      }
+
+    }, 650);
+  });
+});
+</script>
 
 </body>
 
