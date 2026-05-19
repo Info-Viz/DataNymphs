@@ -74,11 +74,12 @@
 
 /* Immagine del Personaggio all'interno della bolla */
 .bubble-sphere img {
-  width: 140px;
-  height: 140px;
+  width: 340px;
+  height: 260px;
   object-fit: contain;
   transition: transform 0.4s ease, opacity 0.4s ease;
   z-index: 2;
+  border-radius: 50%;
 }
 
 /* Pannello informativo nascosto che sale al passaggio del mouse */
