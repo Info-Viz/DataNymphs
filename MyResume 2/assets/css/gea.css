@@ -280,6 +280,8 @@ body {
   );
 }
 
+
+
 /* Assicuriamoci che lo sfondo della sezione sia bianco dove non arriva l'immagine */
 #terra {
     background-color: #ffffff !important;
@@ -336,10 +338,10 @@ body {
   
   /* POSIZIONAMENTO RICHIESTO: */
   /* "poco sopra la metà" (Verticale) */
-  top: 13.9%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
+  top: 12.3%; /* Regola questo valore per "poco sopra" (es. 40% o 48%) */
   
   /* "un po' più sulla sinistra rispetto alla linea centrale" (Orizzontale) */
-  left: 39.2%; /* La linea centrale è 50%. 35% lo sposta a sinistra. Regola a piacere. */
+  left: 40%; /* La linea centrale è 50%. 35% lo sposta a sinistra. Regola a piacere. */
   
   /* Allineamento di precisione */
   transform: translate(-50%, -50%); /* Centra l'immagine sul punto 'top' e 'left' */
@@ -489,43 +491,43 @@ body {
 
 .omini-1 {
   left: 49%;
-  top: 26.3%;
+  top: 25%;
   animation-delay: 0.3s;
 }
 
 .omini-2 {
   left: 65.2%;
-  top: 24.2%;
+  top: 23.2%;
   animation-delay: 1s;
 }
 
 .omini-3 {
-  left: 32%;
-  top: 29.3%;
+  left: 36%;
+  top: 23.7%;
   animation-delay: 1.7s;
 }
 
 .omini-4 {
-  left: 92.4%;
-  top: 26.8%;
+  left: 91%;
+  top: 23.8%;
   animation-delay: 2.4s;
 }
 
 .omini-5 {
-  left: 20%;
+  left: 23%;
   top: 25.7%;
   animation-delay: 3.1s;
 }
 
 .omini-6 {
   left: 75%;
-  top: 28.1%;
+  top: 25.5%;
   animation-delay: 3.8s;
 }
 
 .omini-7 {
-  left: 9%;
-  top: 28.4%;
+  left: 16%;
+  top: 22.4%;
   animation-delay: 4.3s;
 }
 
@@ -743,11 +745,6 @@ body.no-scroll {
    ALBERELLO
 ========================= */
 
-#terra .gea-bg-alberello {
-  top: 50%;
-  height: auto !important;
-  overflow: visible !important;
-}
 
 #terra .gea-bg-alberello img {
   width: 100%;
@@ -759,11 +756,71 @@ body.no-scroll {
   display: block;
 }
 
+/* Sfumatura inferiore di raccordo per la sezione terra/alberello */
+/* Contenitore dell'immagine: applichiamo il gradiente DIRETTAMENTE qui */
+#terra .gea-bg-alberello {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Oppure l'altezza che usi per coprire la metà inferiore di #terra */
+  overflow: hidden;
+  line-height: 0;
+  z-index: 5 !important;
+  height: auto !important;
+}
+
+/* L'immagine all'interno deve stare sotto la sfumatura */
+.gea-bg-alberello img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+  top: 50%;
+}
+
 #terra .gea-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Creiamo un overlay interno dedicato SOLO alla sfumatura inferiore */
+/* 1. Il livello della sfumatura (lo teniamo visibile, ma lo abbassiamo leggermente) */
+.sea-gradient-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0 !important;
+  width: 100%;
+  height: 350px !important;
+  
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(32, 167, 167, 0.25) 40%,
+    rgba(45, 60, 68, 0.75) 75%,
+    rgb(3, 30, 44) 100%
+  ) !important;
+  
+  z-index: 10 !important; /* Passa da 99999 a 10 per stare SOTTO alle onde */
+  pointer-events: none;
+  display: block !important;
+}
+
+/* 2. Il Canvas delle onde (Cerca nel tuo CSS come si chiama il tag <canvas> delle onde) */
+/* Se ha un ID o una classe specifica usa quella, altrimenti applichiamo a tutti i canvas dentro l'alberello */
+.gea-bg-alberello canvas {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; /* O l'altezza che gli hai assegnato */
+  
+  z-index: 20 !important; /* Valore più alto della sfumatura: ora le onde saltano SOPRA il gradiente */
+  pointer-events: none; /* Evita che il canvas blocchi i click del mouse se sotto ci sono link */
 }
 
 /* prima immagine: monte */
@@ -917,7 +974,7 @@ body.no-scroll {
 .mortal-heroes-section {
   position: absolute;
 
-  top: 39.8%;
+  top: 46%;
 
   left: 50%;
   transform: translateX(-50%);
@@ -1250,7 +1307,7 @@ body.no-scroll {
 .gea-quiz-question {
   font-family: 'Marcellus', serif;
   font-size: 2rem;
-  color: #080807; /* Oro scuro */
+  color: #f2f6f5 !important; /* Oro scuro */
   margin-bottom: 40px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -2012,10 +2069,13 @@ body.no-scroll {
 }
 
 .gea-chart-container {
-  max-width: 550px;
+  width: 760px;
+  max-width: 800px;
+  min-height: fit-content;
+  padding-top: 200px !important;
   margin: 0 auto;
-  padding: 30px;
-  background: rgba(227, 240, 226, 0.9) !important; /* Fondo chiaro per far risaltare i punti */
+  padding: 50px;
+  background: rgba(62, 99, 60, 0.9) !important; /* Fondo chiaro per far risaltare i punti */
   border-radius: 24px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   display: inline-block; /* Costringe il div a stringersi attorno al grafico */
@@ -2032,12 +2092,12 @@ body.no-scroll {
 #gea-my_dataviz .tick text {
   font-family: 'Raleway', sans-serif;
   font-size: 12px;
-  fill: #333333 !important; /* Colore dei numeri degli assi */
+  fill: #f0e4e4 !important; /* Colore dei numeri degli assi */
 }
 
 #gea-my_dataviz .domain,
 #gea-my_dataviz .tick line {
-  stroke: #666666 !important; /* Colore delle linee degli assi */
+  stroke: #ebe4e4 !important; /* Colore delle linee degli assi */
   stroke-width: 1.5px;
 }
 

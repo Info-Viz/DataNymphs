@@ -190,13 +190,13 @@
 }
 
 /* immagini di sfondo */
+/* immagini di sfondo */
 #mare .thalassa-bg {
   position: absolute;
   left: 0;
-
+  top: 0; /* Assicura l'ancoraggio in alto */
   width: 100%;
   height: 100%;
-
   z-index: 0;
   overflow: hidden;
 }
@@ -206,4 +206,50 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* --- LE NUOVE SFUMATURE DI RACCORDO --- */
+
+/* Sfumatura superiore: raccordo uniforme con la sezione precedente */
+#mare .thalassa-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 350px; /* Altezza morbida per il passaggio di sezione */
+  
+  /* Parte dal blu abisso scuro (#394951) e sfuma verso il trasparente sulla foto */
+  background: linear-gradient(
+    to bottom,
+    rgb(24, 44, 53) 0%,      /* Inizio: Blu abisso pieno */
+    rgba(45, 60, 68, 0.75) 40%,  /* Centro: Tono scuro che perde opacità */
+    rgba(32, 167, 167, 0.25) 75%, /* Tocco di transizione verso l'acqua */
+    transparent 100%             /* Fine: Trasparenza totale per mostrare l'immagine */
+  );
+  
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Sfumatura inferiore: transizione verso il fondo o la sezione successiva */
+#mare .thalassa-bg::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* Evita fastidiose linee bianche di pixel */
+  width: 100%;
+  height: 280px;
+
+  /* Sfuma dall'immagine verso l'acqua luminosa (#20a7a7) e il turchese (#74f2e6) */
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(16, 10, 7, 0.45) 45%, /* Centro: Acqua marina semitrasparente */
+    rgba(116, 242, 230, 0.9) 85%, /* Quasi fondo: Turchese chiaro e vivido */
+    rgba(32, 167, 167, 1) 100%    /* Fine: Chiusura solida sul tono acqua marina */
+  );
+
+  z-index: 2;
+  pointer-events: none;
 }
