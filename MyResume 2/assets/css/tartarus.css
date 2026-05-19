@@ -1,88 +1,91 @@
+/* ==========================================
+   TARTARUS ANTI-BLOCK SYSTEM
+   ========================================== */
 
-#canvass {
-    pointer-events: none !important; /* Il mouse "passa attraverso" il canvas */
-    touch-action: none;              /* Evita conflitti su mobile */
-    will-change: transform;          /* Suggerisce al browser di ottimizzare il rendering */
-     display: block;
+#inferi.tartarus-section {
+    position: relative !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 1800px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #000000 !important;
 }
 
-html, body {
-    overflow-x: hidden;
-    height: auto;
-    min-height: 100%;
-    background: rgb(31, 2, 2) !important;
+/* Lo sfondo riempie la sezione */
+#inferi .tartarus-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
 }
 
-.main {
-    position: relative;
-    z-index: 5; /* Sta sopra il canvas */
-    /* FONDAMENTALE: Togliamo ogni sfondo da .main per vedere il canvas sotto */
+#inferi .tartarus-bg img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
 }
 
-/* --- 2. Rendiamo trasparenti tutte le sezioni interne --- */
-/* (Inclusi portfolio, services, about, ecc.) */
-
-
-/* --- 3. Posizionamento corretto delle Fiamme (Fire Glows) --- */
-/* Assicuriamoci che il contenitore del portfolio sia il riferimento */
-#portfolio {
-    position: relative;
+/* La sfumatura superiore di congiunzione */
+#inferi .tartarus-overlay-gradient {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 400px !important; /* Altezza del gradiente nero */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1.0) 0%,
+        rgba(0, 0, 0, 0.8) 40%,
+        rgba(0, 0, 0, 0.0) 100%
+    ) !important;
+    z-index: 2 !important; /* Sopra la foto */
+    pointer-events: none !important;
 }
 
-/* Gestione dei div .fire-glow all'interno del portfolio */
-#portfolio .fire-glow {
-    position: absolute;
-    /* Spostiamoli a un livello superiore ma non troppo alto per non coprire i link */
-    pointer-events: none; /* Cruciale: il mouse passa attraverso le fiamme */
+/* IL NUOVO LIVELLO CONTENUTI: Si posiziona sopra alla grafica dello sfondo */
+#inferi .tartarus-content-layer {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 100 !important; /* Valore altissimo per stare SOPRA lo sfondo */
+    padding-top: 100px !important;
+    pointer-events: auto !important;
 }
 
-/* Aggiusta l'opacità delle fiamme se risultano troppo scure sopra il WebGL */
-
-#inferi {
-    position: relative; /* Importante per contenere il canvas absolute */
-    overflow: hidden;
-    cursor: none !important; /* Nasconde la freccia del mouse */
+#inferi .content-sky h2 {
+    color: #ffffff !important;
+    font-size: 3.5rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    margin-bottom: 10px !important;
+    text-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 4px 10px rgba(0, 0, 0, 0.9) !important;
 }
 
-#canvass {
-    position: absolute; /* Non più fixed */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+#inferi .content-sky p {
+    color: #ff8844 !important;
+    font-size: 1.3rem !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
 }
 
-/* Assicurati che il contenuto della section stia sopra le fiamme */
-#inferi .container {
-    position: relative;
-    z-index: 1;
-    cursor: none !important;
+/* IL CANVAS INTERFERENTE: Lo schiacciamo sotto il livello dei testi */
+#canvass-webgl-tartarus {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100% !important;
+    
+    /* Z-INDEX STRATEGICO: Sta sopra la foto (1) ma SOTTO il livello dei testi (100) */
+    z-index: 10 !important; 
+    
+    /* Forza il mouse a passare attraverso il canvas senza bloccare i testi */
+    pointer-events: none !important; 
+    mix-blend-mode: screen !important; /* Forza la trasparenza dei neri dello shader WebGL */
+    display: block !important;
 }
-
-
-/* fire pointer*/
-#fire-pointer {
-    width: 30px; /* Leggermente più grande per contenere l'icona */
-    height: 30px;
-    background: radial-gradient(circle, rgba(255, 69, 0, 0.8) 0%, rgba(255, 0, 0, 0) 70%);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    display: flex;       /* Centra l'icona */
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.1s ease-out; /* Rende il movimento più fluido */
-}
-
-#fire-pointer::after {
-    content: '🔥'; /* Puoi usare l'emoji o un'immagine con background-image */
-    font-size: 20px;
-    filter: drop-shadow(0 0 5px gold); /* Aggiunge un bagliore dorato alla fiamma */
-}
-
-
-
-
-
