@@ -2134,3 +2134,56 @@ body.no-scroll {
 #terra .gea-bg-alberello img {
   display: none !important;
 }
+
+/* Alza leggermente titolo GEA */
+#terra .container.section-title {
+  margin-top: 20px !important; /* prima era 180px */
+  padding-top: 10px !important; /* prima era 80px */
+}
+
+/* Piccolo paragrafo sotto GEA */
+.gea-intro-small {
+  max-width: 980px !important; /* MOLTO PIÙ LARGO */
+
+  margin: 18px auto 0 !important;
+
+  padding: 18px 40px !important; /* MENO ALTO */
+
+  font-family: "Marcellus", serif !important;
+  font-size: 1rem !important;
+
+  line-height: 1.55 !important; /* PIÙ COMPATTO */
+
+  text-align: center !important;
+  letter-spacing: 0.03em;
+
+  color: white !important;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.18);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.18),
+    inset 0 0 22px rgba(255,255,255,0.06);
+
+  text-shadow:
+    0 0 12px rgba(0,0,0,0.7);
+
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform:
+    translateY(20px)
+    scale(0.97);
+
+  animation: geaIntroReveal 1.3s ease forwards;
+  animation-delay: 0.35s;
+}
