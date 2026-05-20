@@ -4,13 +4,33 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import seaborn
 
-arco_enriched = pd.read_csv("data_analysis/arco_myth_enriched.csv", encoding="utf-8")
-wd_relations = pd.read_csv("data_analysis/mythological_network.csv", encoding="utf-8")
+arco_final = pd.read_csv("data_analysis/arco_wd_final.csv", encoding="utf-8")
 
-arco_enriched_filtered = arco_enriched[["item", "label", "subject", "final_terms", "creatorLabel", "typeLabel", "start", "end"]]
-print(arco_enriched_filtered.head())
+# 1. Pulizia preliminare: assicurati che gli anni siano numeri interi (senza decimali)
+# Gestisce anche eventuali valori nulli (NaN) riempiendoli o droppandoli prima se necessario
+arco_final = arco_final.dropna(subset=["start_norm", "end_norm"])
 
-# for each item in the arco dataset, process the uri(s) of the matching wikidata entities to get the properties from the second dataframe and expand the df
+arco_final["start_norm"] = arco_final["start_norm"].astype(int)
+arco_final["end_norm"] = arco_final["end_norm"].astype(int)
 
-# then plot relations in a network
+# 2. Creiamo una lista di tutti gli anni compresi tra 'start' e 'end' (inclusi)
+arco_final["year"] = arco_final.apply(
+    lambda row: list(range(row["start_norm"], row["end_norm"] + 1)), axis=1
+)
+
+# 3. "Esplodiamo" la lista: ogni anno nella lista diventa una riga autonoma
+df_exploded = arco_final.explode("year")
+
+# 4. Ora raggruppiamo per Soggetto e Anno per ottenere il conteggio effettivo
+subjects_by_year = (
+    df_exploded.groupby(["final_terms", "year"])
+    .size()
+    .reset_index(name="collection_count")
+)
+
+# 5. Rinominiamo la colonna dei soggetti per pulizia
+subjects_by_year = subjects_by_year.rename(columns={"final_terms": "subject"})
+
+print(subjects_by_year.head(50))
+print(len(set(subjects_by_year["subject"])))
 
